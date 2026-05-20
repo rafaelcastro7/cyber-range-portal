@@ -1,0 +1,1590 @@
+{
+  "course": "RAIO English Course",
+  "total": 246,
+  "with_video": 220,
+  "completion_pct": 89,
+  "status": "partial",
+  "sections": [
+    {
+      "section": "1",
+      "lessons": [
+        {
+          "idx": "1-1",
+          "lesson_id": "17084641",
+          "title": "[¡EMPIEZA AQUÍ!] Introducción a RAIO",
+          "video": "/english/videos/17084641_EMPIEZA_AQU%C3%8D___Introducci%C3%B3n_a_RAIO.mp4"
+        },
+        {
+          "idx": "1-2",
+          "lesson_id": "17138851",
+          "title": "Preguntas Frecuentes",
+          "video": null
+        }
+      ],
+      "completion_pct": 50,
+      "status": "partial"
+    },
+    {
+      "section": "2",
+      "lessons": [
+        {
+          "idx": "2-1",
+          "lesson_id": "17069842",
+          "title": "SECTION 1: Presenting Yourself",
+          "video": "/english/videos/17069842_SECTION_1__Presenting_Yourself.mp4"
+        },
+        {
+          "idx": "2-2",
+          "lesson_id": "17084382",
+          "title": "SECTION 2: Family",
+          "video": "/english/videos/17084382_SECTION_2__Family.mp4"
+        },
+        {
+          "idx": "2-3",
+          "lesson_id": "17096646",
+          "title": "SECTION 3: Traveling",
+          "video": "/english/videos/17096646_SECTION_3__Traveling.mp4"
+        },
+        {
+          "idx": "2-4",
+          "lesson_id": "17096647",
+          "title": "SECTION 4: Ordering Food",
+          "video": "/english/videos/17096647_SECTION_4__Ordering_Food.mp4"
+        },
+        {
+          "idx": "2-5",
+          "lesson_id": "17096648",
+          "title": "SECTION 5: Shopping",
+          "video": "/english/videos/17096648_SECTION_5__Shopping.mp4"
+        },
+        {
+          "idx": "2-6",
+          "lesson_id": "17096675",
+          "title": "SECTION 6: The RAIO App – ¡Cómo no olvidar lo que aprendes!",
+          "video": "/english/videos/17096675_SECTION_6__The_RAIO_App____C%C3%B3mo_no_olvidar_lo_que.mp4"
+        },
+        {
+          "idx": "2-7",
+          "lesson_id": "17096649",
+          "title": "SECTION 7: Body Parts",
+          "video": "/english/videos/17096649_SECTION_7__Body_Parts.mp4"
+        },
+        {
+          "idx": "2-8",
+          "lesson_id": "17096650",
+          "title": "SECTION 8: Movies & TV",
+          "video": "/english/videos/17096650_SECTION_8__Movies___TV.mp4"
+        },
+        {
+          "idx": "2-9",
+          "lesson_id": "17096651",
+          "title": "SECTION 9: Animals",
+          "video": "/english/videos/17096651_SECTION_9__Animals.mp4"
+        },
+        {
+          "idx": "2-10",
+          "lesson_id": "17096652",
+          "title": "SECTION 10: Culture",
+          "video": "/english/videos/17096652_SECTION_10__Culture.mp4"
+        },
+        {
+          "idx": "2-11",
+          "lesson_id": "17096653",
+          "title": "SECTION 11: Exercise",
+          "video": "/english/videos/17096653_SECTION_11__Exercise.mp4"
+        },
+        {
+          "idx": "2-12",
+          "lesson_id": "17096683",
+          "title": "SECTION 12: Las 15 Reglas de RAIO",
+          "video": "/english/videos/17096683_SECTION_12__Las_15_Reglas_de_RAIO.mp4"
+        },
+        {
+          "idx": "2-13",
+          "lesson_id": "17096654",
+          "title": "SECTION 13: Hobbies",
+          "video": "/english/videos/17096654_SECTION_13__Hobbies.mp4"
+        },
+        {
+          "idx": "2-14",
+          "lesson_id": "17096655",
+          "title": "SECTION 14: Holidays",
+          "video": "/english/videos/17096655_SECTION_14__Holidays.mp4"
+        },
+        {
+          "idx": "2-15",
+          "lesson_id": "17096656",
+          "title": "SECTION 15: Hometown",
+          "video": "/english/videos/17096656_SECTION_15__Hometown.mp4"
+        },
+        {
+          "idx": "2-16",
+          "lesson_id": "17096657",
+          "title": "SECTION 16: Work",
+          "video": "/english/videos/17096657_SECTION_16__Work.mp4"
+        },
+        {
+          "idx": "2-17",
+          "lesson_id": "17096658",
+          "title": "SECTION 17: Love",
+          "video": "/english/videos/17096658_SECTION_17__Love.mp4"
+        },
+        {
+          "idx": "2-18",
+          "lesson_id": "17096691",
+          "title": "SECTION 18: ¡Cómo practicar tu inglés en aulas de conversación y obtener clases privadas!",
+          "video": "/english/videos/17096691_SECTION_18___C%C3%B3mo_practicar_tu_ingl%C3%A9s_en_aulas_de.mp4"
+        },
+        {
+          "idx": "2-19",
+          "lesson_id": "17096659",
+          "title": "SECTION 19: Household Items",
+          "video": "/english/videos/17096659_SECTION_19__Household_Items.mp4"
+        },
+        {
+          "idx": "2-20",
+          "lesson_id": "17096660",
+          "title": "SECTION 20: Time",
+          "video": "/english/videos/17096660_SECTION_20__Time.mp4"
+        },
+        {
+          "idx": "2-21",
+          "lesson_id": "17096661",
+          "title": "SECTION 21: Weather",
+          "video": "/english/videos/17096661_SECTION_21__Weather.mp4"
+        },
+        {
+          "idx": "2-22",
+          "lesson_id": "17096662",
+          "title": "SECTION 22: Music",
+          "video": "/english/videos/17096662_SECTION_22__Music.mp4"
+        },
+        {
+          "idx": "2-23",
+          "lesson_id": "17096663",
+          "title": "SECTION 23: Numbers",
+          "video": "/english/videos/17096663_SECTION_23__Numbers.mp4"
+        },
+        {
+          "idx": "2-24",
+          "lesson_id": "17096700",
+          "title": "SECTION 24: ¡Cómo maximizar la motivación, la constancia y la disciplina!",
+          "video": "/english/videos/17096700_SECTION_24___C%C3%B3mo_maximizar_la_motivaci%C3%B3n__la_cons.mp4"
+        },
+        {
+          "idx": "2-25",
+          "lesson_id": "17096664",
+          "title": "SECTION 25: Politics",
+          "video": "/english/videos/17096664_SECTION_25__Politics.mp4"
+        },
+        {
+          "idx": "2-26",
+          "lesson_id": "17096665",
+          "title": "SECTION 26: Fears",
+          "video": "/english/videos/17096665_SECTION_26__Fears.mp4"
+        },
+        {
+          "idx": "2-27",
+          "lesson_id": "17096666",
+          "title": "SECTION 27: Feelings",
+          "video": "/english/videos/17096666_SECTION_27__Feelings.mp4"
+        },
+        {
+          "idx": "2-28",
+          "lesson_id": "17096667",
+          "title": "SECTION 28: Goals",
+          "video": "/english/videos/17096667_SECTION_28__Goals.mp4"
+        },
+        {
+          "idx": "2-29",
+          "lesson_id": "17096668",
+          "title": "SECTION 29: Desires",
+          "video": "/english/videos/17096668_SECTION_29__Desires.mp4"
+        },
+        {
+          "idx": "2-30",
+          "lesson_id": "18825123",
+          "title": "SECTION 30: Funny Conversations (New Story!)",
+          "video": "/english/videos/18825123_SECTION_30__Funny_Conversations__New_Story.mp4"
+        },
+        {
+          "idx": "2-31",
+          "lesson_id": "18825125",
+          "title": "SECTION 31: Drama (New Story!)",
+          "video": "/english/videos/18825125_SECTION_31__Drama__New_Story.mp4"
+        },
+        {
+          "idx": "2-32",
+          "lesson_id": "18829754",
+          "title": "SECTION 32: Motivation (New Story!)",
+          "video": "/english/videos/18829754_SECTION_32__Motivation__New_Story.mp4"
+        },
+        {
+          "idx": "2-33",
+          "lesson_id": "18829864",
+          "title": "SECTION 33: Psychology (New Story!)",
+          "video": "/english/videos/18829864_SECTION_33__Psychology__New_Story.mp4"
+        },
+        {
+          "idx": "2-34",
+          "lesson_id": "18829866",
+          "title": "SECTION 34: Dates (New Story!)",
+          "video": "/english/videos/18829866_SECTION_34__Dates__New_Story.mp4"
+        },
+        {
+          "idx": "2-35",
+          "lesson_id": "17084496",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17084496_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "3",
+      "lessons": [
+        {
+          "idx": "3-1",
+          "lesson_id": "17099640",
+          "title": "SECTION 1: Presenting Yourself",
+          "video": "/english/videos/17099640_SECTION_1__Presenting_Yourself.mp4"
+        },
+        {
+          "idx": "3-2",
+          "lesson_id": "17099651",
+          "title": "SECTION 2: Family",
+          "video": "/english/videos/17099651_SECTION_2__Family.mp4"
+        },
+        {
+          "idx": "3-3",
+          "lesson_id": "17099671",
+          "title": "SECTION 3: Traveling",
+          "video": "/english/videos/17099671_SECTION_3__Traveling.mp4"
+        },
+        {
+          "idx": "3-4",
+          "lesson_id": "17099679",
+          "title": "SECTION 4: Ordering Food",
+          "video": "/english/videos/17099679_SECTION_4__Ordering_Food.mp4"
+        },
+        {
+          "idx": "3-5",
+          "lesson_id": "17099730",
+          "title": "SECTION 5: Shopping",
+          "video": "/english/videos/17099730_SECTION_5__Shopping.mp4"
+        },
+        {
+          "idx": "3-6",
+          "lesson_id": "17099741",
+          "title": "SECTION 6: Phrasal Verbs – ¡Así es como los aprendes todos!",
+          "video": "/english/videos/17099741_SECTION_6__Phrasal_Verbs____As%C3%AD_es_como_los_aprend.mp4"
+        },
+        {
+          "idx": "3-7",
+          "lesson_id": "17099755",
+          "title": "SECTION 7: Body Parts",
+          "video": "/english/videos/17099755_SECTION_7__Body_Parts.mp4"
+        },
+        {
+          "idx": "3-8",
+          "lesson_id": "17099760",
+          "title": "SECTION 8: Movies & TV",
+          "video": "/english/videos/17099760_SECTION_8__Movies___TV.mp4"
+        },
+        {
+          "idx": "3-9",
+          "lesson_id": "17099763",
+          "title": "SECTION 9: Animals",
+          "video": "/english/videos/17099763_SECTION_9__Animals.mp4"
+        },
+        {
+          "idx": "3-10",
+          "lesson_id": "17099903",
+          "title": "SECTION 10: Culture",
+          "video": "/english/videos/17099903_SECTION_10__Culture.mp4"
+        },
+        {
+          "idx": "3-11",
+          "lesson_id": "17099905",
+          "title": "SECTION 11: Exercise",
+          "video": "/english/videos/17099905_SECTION_11__Exercise.mp4"
+        },
+        {
+          "idx": "3-12",
+          "lesson_id": "17099907",
+          "title": "SECTION 12: Las 4 fases de la escucha: ¡Pon a prueba tu nivel actual!",
+          "video": "/english/videos/17099907_SECTION_12__Las_4_fases_de_la_escucha___Pon_a_prue.mp4"
+        },
+        {
+          "idx": "3-13",
+          "lesson_id": "17099908",
+          "title": "SECTION 13: Hobbies",
+          "video": "/english/videos/17099908_SECTION_13__Hobbies.mp4"
+        },
+        {
+          "idx": "3-14",
+          "lesson_id": "17099909",
+          "title": "SECTION 14: Holidays",
+          "video": "/english/videos/17099909_SECTION_14__Holidays.mp4"
+        },
+        {
+          "idx": "3-15",
+          "lesson_id": "17099931",
+          "title": "SECTION 15: Hometown",
+          "video": "/english/videos/17099931_SECTION_15__Hometown.mp4"
+        },
+        {
+          "idx": "3-16",
+          "lesson_id": "17099932",
+          "title": "SECTION 16: Work",
+          "video": "/english/videos/17099932_SECTION_16__Work.mp4"
+        },
+        {
+          "idx": "3-17",
+          "lesson_id": "17099933",
+          "title": "SECTION 17: Love",
+          "video": "/english/videos/17099933_SECTION_17__Love.mp4"
+        },
+        {
+          "idx": "3-18",
+          "lesson_id": "17099934",
+          "title": "SECTION 18: Las 5 fases del habla: ¡Pon a prueba tu nivel actual!",
+          "video": "/english/videos/17099934_SECTION_18__Las_5_fases_del_habla___Pon_a_prueba_t.mp4"
+        },
+        {
+          "idx": "3-19",
+          "lesson_id": "17099936",
+          "title": "SECTION 19: Household Items",
+          "video": "/english/videos/17099936_SECTION_19__Household_Items.mp4"
+        },
+        {
+          "idx": "3-20",
+          "lesson_id": "17099937",
+          "title": "SECTION 20: Time",
+          "video": "/english/videos/17099937_SECTION_20__Time.mp4"
+        },
+        {
+          "idx": "3-21",
+          "lesson_id": "17099940",
+          "title": "SECTION 21: Weather",
+          "video": "/english/videos/17099940_SECTION_21__Weather.mp4"
+        },
+        {
+          "idx": "3-22",
+          "lesson_id": "17099942",
+          "title": "SECTION 22: Music",
+          "video": "/english/videos/17099942_SECTION_22__Music.mp4"
+        },
+        {
+          "idx": "3-23",
+          "lesson_id": "17099944",
+          "title": "SECTION 23: Numbers",
+          "video": "/english/videos/17099944_SECTION_23__Numbers.mp4"
+        },
+        {
+          "idx": "3-24",
+          "lesson_id": "17099945",
+          "title": "SECTION 24: ¡Recibe accesos exclusivos por grabar un testimonio del curso!",
+          "video": "/english/videos/17099945_SECTION_24___Recibe_accesos_exclusivos_por_grabar.mp4"
+        },
+        {
+          "idx": "3-25",
+          "lesson_id": "17099946",
+          "title": "SECTION 25: Politics",
+          "video": "/english/videos/17099946_SECTION_25__Politics.mp4"
+        },
+        {
+          "idx": "3-26",
+          "lesson_id": "17099947",
+          "title": "SECTION 26: Fears",
+          "video": "/english/videos/17099947_SECTION_26__Fears.mp4"
+        },
+        {
+          "idx": "3-27",
+          "lesson_id": "17099948",
+          "title": "SECTION 27: Feelings",
+          "video": "/english/videos/17099948_SECTION_27__Feelings.mp4"
+        },
+        {
+          "idx": "3-28",
+          "lesson_id": "17099949",
+          "title": "SECTION 28: Goals",
+          "video": "/english/videos/17099949_SECTION_28__Goals.mp4"
+        },
+        {
+          "idx": "3-29",
+          "lesson_id": "17099950",
+          "title": "SECTION 29: Desires",
+          "video": "/english/videos/17099950_SECTION_29__Desires.mp4"
+        },
+        {
+          "idx": "3-30",
+          "lesson_id": "18829869",
+          "title": "SECTION 30: Funny conversations (New Story!)",
+          "video": "/english/videos/18829869_SECTION_30__Funny_conversations__New_Story.mp4"
+        },
+        {
+          "idx": "3-31",
+          "lesson_id": "18830662",
+          "title": "SECTION 31: Drama (New Story!)",
+          "video": "/english/videos/18830662_SECTION_31__Drama__New_Story.mp4"
+        },
+        {
+          "idx": "3-32",
+          "lesson_id": "18830663",
+          "title": "SECTION 32: Motivation (New Story!)",
+          "video": "/english/videos/18830663_SECTION_32__Motivation__New_Story.mp4"
+        },
+        {
+          "idx": "3-33",
+          "lesson_id": "18830664",
+          "title": "SECTION 33: Psychology (New Story!)",
+          "video": "/english/videos/18830664_SECTION_33__Psychology__New_Story.mp4"
+        },
+        {
+          "idx": "3-34",
+          "lesson_id": "18830670",
+          "title": "SECTION 34: Dates (New Story!)",
+          "video": "/english/videos/18830670_SECTION_34__Dates__New_Story.mp4"
+        },
+        {
+          "idx": "3-35",
+          "lesson_id": "17090887",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17090887_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "4",
+      "lessons": [
+        {
+          "idx": "4-1",
+          "lesson_id": "17110035",
+          "title": "SECTION 1: Presenting Yourself",
+          "video": "/english/videos/17110035_SECTION_1__Presenting_Yourself.mp4"
+        },
+        {
+          "idx": "4-2",
+          "lesson_id": "17110036",
+          "title": "SECTION 2: Family",
+          "video": "/english/videos/17110036_SECTION_2__Family.mp4"
+        },
+        {
+          "idx": "4-3",
+          "lesson_id": "17110037",
+          "title": "SECTION 3: Traveling",
+          "video": "/english/videos/17110037_SECTION_3__Traveling.mp4"
+        },
+        {
+          "idx": "4-4",
+          "lesson_id": "17110038",
+          "title": "SECTION 4: Ordering Food",
+          "video": "/english/videos/17110038_SECTION_4__Ordering_Food.mp4"
+        },
+        {
+          "idx": "4-5",
+          "lesson_id": "17110039",
+          "title": "SECTION 5: Shopping",
+          "video": "/english/videos/17110039_SECTION_5__Shopping.mp4"
+        },
+        {
+          "idx": "4-6",
+          "lesson_id": "17110040",
+          "title": "SECTION 6: Cómo seguir tu progreso y evaluar tu nivel de inglés",
+          "video": "/english/videos/17110040_SECTION_6__C%C3%B3mo_seguir_tu_progreso_y_evaluar_tu_ni.mp4"
+        },
+        {
+          "idx": "4-7",
+          "lesson_id": "17110108",
+          "title": "SECTION 7: Body Parts",
+          "video": "/english/videos/17110108_SECTION_7__Body_Parts.mp4"
+        },
+        {
+          "idx": "4-8",
+          "lesson_id": "17110111",
+          "title": "SECTION 8: Movies & TV",
+          "video": "/english/videos/17110111_SECTION_8__Movies___TV.mp4"
+        },
+        {
+          "idx": "4-9",
+          "lesson_id": "17110112",
+          "title": "SECTION 9: Animals",
+          "video": "/english/videos/17110112_SECTION_9__Animals.mp4"
+        },
+        {
+          "idx": "4-10",
+          "lesson_id": "17110113",
+          "title": "SECTION 10: Culture",
+          "video": "/english/videos/17110113_SECTION_10__Culture.mp4"
+        },
+        {
+          "idx": "4-11",
+          "lesson_id": "17110114",
+          "title": "SECTION 11: Exercise",
+          "video": "/english/videos/17110114_SECTION_11__Exercise.mp4"
+        },
+        {
+          "idx": "4-12",
+          "lesson_id": "17110115",
+          "title": "SECTION 12: Cómo deshacerte del miedo a hablar en inglés",
+          "video": "/english/videos/17110115_SECTION_12__C%C3%B3mo_deshacerte_del_miedo_a_hablar_en.mp4"
+        },
+        {
+          "idx": "4-13",
+          "lesson_id": "17110116",
+          "title": "SECTION 13: Hobbies",
+          "video": "/english/videos/17110116_SECTION_13__Hobbies.mp4"
+        },
+        {
+          "idx": "4-14",
+          "lesson_id": "17110276",
+          "title": "SECTION 14: Holidays",
+          "video": "/english/videos/17110276_SECTION_14__Holidays.mp4"
+        },
+        {
+          "idx": "4-15",
+          "lesson_id": "17110278",
+          "title": "SECTION 15: Hometown",
+          "video": "/english/videos/17110278_SECTION_15__Hometown.mp4"
+        },
+        {
+          "idx": "4-16",
+          "lesson_id": "17110279",
+          "title": "SECTION 16: Work",
+          "video": "/english/videos/17110279_SECTION_16__Work.mp4"
+        },
+        {
+          "idx": "4-17",
+          "lesson_id": "17110280",
+          "title": "SECTION 17: Love",
+          "video": "/english/videos/17110280_SECTION_17__Love.mp4"
+        },
+        {
+          "idx": "4-18",
+          "lesson_id": "17110282",
+          "title": "SECTION 18: Qué hacer cuando sientes que no avanzas lo suficientemente rápido",
+          "video": "/english/videos/17110282_SECTION_18__Qu%C3%A9_hacer_cuando_sientes_que_no_avanza.mp4"
+        },
+        {
+          "idx": "4-19",
+          "lesson_id": "17110283",
+          "title": "SECTION 19: Household Items",
+          "video": "/english/videos/17110283_SECTION_19__Household_Items.mp4"
+        },
+        {
+          "idx": "4-20",
+          "lesson_id": "17110284",
+          "title": "SECTION 20: Time",
+          "video": "/english/videos/17110284_SECTION_20__Time.mp4"
+        },
+        {
+          "idx": "4-21",
+          "lesson_id": "17110285",
+          "title": "SECTION 21: Weather",
+          "video": "/english/videos/17110285_SECTION_21__Weather.mp4"
+        },
+        {
+          "idx": "4-22",
+          "lesson_id": "17110286",
+          "title": "SECTION 22: Music",
+          "video": "/english/videos/17110286_SECTION_22__Music.mp4"
+        },
+        {
+          "idx": "4-23",
+          "lesson_id": "17110287",
+          "title": "SECTION 23: Numbers",
+          "video": "/english/videos/17110287_SECTION_23__Numbers.mp4"
+        },
+        {
+          "idx": "4-24",
+          "lesson_id": "17110288",
+          "title": "SECTION 24: ¡Cómo mantenerse motivado, disciplinado y constante HASTA EL FINAL!",
+          "video": "/english/videos/17110288_SECTION_24___C%C3%B3mo_mantenerse_motivado__disciplinad.mp4"
+        },
+        {
+          "idx": "4-25",
+          "lesson_id": "17110289",
+          "title": "SECTION 25: Politics",
+          "video": "/english/videos/17110289_SECTION_25__Politics.mp4"
+        },
+        {
+          "idx": "4-26",
+          "lesson_id": "17110290",
+          "title": "SECTION 26: Fears",
+          "video": "/english/videos/17110290_SECTION_26__Fears.mp4"
+        },
+        {
+          "idx": "4-27",
+          "lesson_id": "17110291",
+          "title": "SECTION 27: Feelings",
+          "video": "/english/videos/17110291_SECTION_27__Feelings.mp4"
+        },
+        {
+          "idx": "4-28",
+          "lesson_id": "17110292",
+          "title": "SECTION 28: Goals",
+          "video": "/english/videos/17110292_SECTION_28__Goals.mp4"
+        },
+        {
+          "idx": "4-29",
+          "lesson_id": "17110293",
+          "title": "SECTION 29: Desires",
+          "video": "/english/videos/17110293_SECTION_29__Desires.mp4"
+        },
+        {
+          "idx": "4-30",
+          "lesson_id": "18830675",
+          "title": "SECTION 30: Funny conversations (New Story!)",
+          "video": "/english/videos/18830675_SECTION_30__Funny_conversations__New_Story.mp4"
+        },
+        {
+          "idx": "4-31",
+          "lesson_id": "18830679",
+          "title": "SECTION 31: Drama (New Story!)",
+          "video": "/english/videos/18830679_SECTION_31__Drama__New_Story.mp4"
+        },
+        {
+          "idx": "4-32",
+          "lesson_id": "18830680",
+          "title": "SECTION 32: Motivation (New Story!)",
+          "video": "/english/videos/18830680_SECTION_32__Motivation__New_Story.mp4"
+        },
+        {
+          "idx": "4-33",
+          "lesson_id": "18830681",
+          "title": "SECTION 33: Psychology (New Story!)",
+          "video": "/english/videos/18830681_SECTION_33__Psychology__New_Story.mp4"
+        },
+        {
+          "idx": "4-34",
+          "lesson_id": "18831030",
+          "title": "SECTION 34: Dates (New Story!)",
+          "video": "/english/videos/18831030_SECTION_34__Dates__New_Story.mp4"
+        },
+        {
+          "idx": "4-35",
+          "lesson_id": "17090888",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17090888_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "5",
+      "lessons": [
+        {
+          "idx": "5-1",
+          "lesson_id": "17110297",
+          "title": "SECTION 1: Presenting Yourself",
+          "video": "/english/videos/17110297_SECTION_1__Presenting_Yourself.mp4"
+        },
+        {
+          "idx": "5-2",
+          "lesson_id": "17110298",
+          "title": "SECTION 2: Family",
+          "video": "/english/videos/17110298_SECTION_2__Family.mp4"
+        },
+        {
+          "idx": "5-3",
+          "lesson_id": "17110299",
+          "title": "SECTION 3: Traveling",
+          "video": "/english/videos/17110299_SECTION_3__Traveling.mp4"
+        },
+        {
+          "idx": "5-4",
+          "lesson_id": "17110300",
+          "title": "SECTION 4: Ordering Food",
+          "video": "/english/videos/17110300_SECTION_4__Ordering_Food.mp4"
+        },
+        {
+          "idx": "5-5",
+          "lesson_id": "17110301",
+          "title": "SECTION 5: Shopping",
+          "video": "/english/videos/17110301_SECTION_5__Shopping.mp4"
+        },
+        {
+          "idx": "5-6",
+          "lesson_id": "17110304",
+          "title": "SECTION 6: ¿La edad y el talento afectan tu aprendizaje?",
+          "video": "/english/videos/17110304_SECTION_6___La_edad_y_el_talento_afectan_tu_aprend.mp4"
+        },
+        {
+          "idx": "5-7",
+          "lesson_id": "17110305",
+          "title": "SECTION 7: Body Parts",
+          "video": "/english/videos/17110305_SECTION_7__Body_Parts.mp4"
+        },
+        {
+          "idx": "5-8",
+          "lesson_id": "17110309",
+          "title": "SECTION 8: Movies & TV",
+          "video": "/english/videos/17110309_SECTION_8__Movies___TV.mp4"
+        },
+        {
+          "idx": "5-9",
+          "lesson_id": "17110310",
+          "title": "SECTION 9: Animals",
+          "video": "/english/videos/17110310_SECTION_9__Animals.mp4"
+        },
+        {
+          "idx": "5-10",
+          "lesson_id": "17110311",
+          "title": "SECTION 10: Culture",
+          "video": "/english/videos/17110311_SECTION_10__Culture.mp4"
+        },
+        {
+          "idx": "5-11",
+          "lesson_id": "17110312",
+          "title": "SECTION 11: Exercise",
+          "video": "/english/videos/17110312_SECTION_11__Exercise.mp4"
+        },
+        {
+          "idx": "5-12",
+          "lesson_id": "17110315",
+          "title": "SECTION 12: Cómo neutralizar tu acento en inglés",
+          "video": "/english/videos/17110315_SECTION_12__C%C3%B3mo_neutralizar_tu_acento_en_ingl%C3%A9s.mp4"
+        },
+        {
+          "idx": "5-13",
+          "lesson_id": "17110317",
+          "title": "SECTION 13: Hobbies",
+          "video": "/english/videos/17110317_SECTION_13__Hobbies.mp4"
+        },
+        {
+          "idx": "5-14",
+          "lesson_id": "17110318",
+          "title": "SECTION 14: Holidays",
+          "video": "/english/videos/17110318_SECTION_14__Holidays.mp4"
+        },
+        {
+          "idx": "5-15",
+          "lesson_id": "17110319",
+          "title": "SECTION 15: Hometown",
+          "video": "/english/videos/17110319_SECTION_15__Hometown.mp4"
+        },
+        {
+          "idx": "5-16",
+          "lesson_id": "17110328",
+          "title": "SECTION 16: Work",
+          "video": "/english/videos/17110328_SECTION_16__Work.mp4"
+        },
+        {
+          "idx": "5-17",
+          "lesson_id": "17110329",
+          "title": "SECTION 17: Love",
+          "video": "/english/videos/17110329_SECTION_17__Love.mp4"
+        },
+        {
+          "idx": "5-18",
+          "lesson_id": "17110331",
+          "title": "SECTION 18: ¿Puedo aprender viendo películas y escuchando música?",
+          "video": "/english/videos/17110331_SECTION_18___Puedo_aprender_viendo_pel%C3%ADculas_y_esc.mp4"
+        },
+        {
+          "idx": "5-19",
+          "lesson_id": "17110333",
+          "title": "SECTION 19: Household Items",
+          "video": "/english/videos/17110333_SECTION_19__Household_Items.mp4"
+        },
+        {
+          "idx": "5-20",
+          "lesson_id": "17110335",
+          "title": "SECTION 20: Time",
+          "video": "/english/videos/17110335_SECTION_20__Time.mp4"
+        },
+        {
+          "idx": "5-21",
+          "lesson_id": "17110336",
+          "title": "SECTION 21: Weather",
+          "video": "/english/videos/17110336_SECTION_21__Weather.mp4"
+        },
+        {
+          "idx": "5-22",
+          "lesson_id": "17110337",
+          "title": "SECTION 22: Music",
+          "video": "/english/videos/17110337_SECTION_22__Music.mp4"
+        },
+        {
+          "idx": "5-23",
+          "lesson_id": "17110339",
+          "title": "SECTION 23: Numbers",
+          "video": "/english/videos/17110339_SECTION_23__Numbers.mp4"
+        },
+        {
+          "idx": "5-24",
+          "lesson_id": "17110340",
+          "title": "SECTION 24: Cómo obtener MÁS historias interactivas",
+          "video": "/english/videos/17110340_SECTION_24__C%C3%B3mo_obtener_M%C3%81S_historias_interactiva.mp4"
+        },
+        {
+          "idx": "5-25",
+          "lesson_id": "17110341",
+          "title": "SECTION 25: Politics",
+          "video": "/english/videos/17110341_SECTION_25__Politics.mp4"
+        },
+        {
+          "idx": "5-26",
+          "lesson_id": "17110342",
+          "title": "SECTION 26: Fears",
+          "video": "/english/videos/17110342_SECTION_26__Fears.mp4"
+        },
+        {
+          "idx": "5-27",
+          "lesson_id": "17110343",
+          "title": "SECTION 27: Feelings",
+          "video": "/english/videos/17110343_SECTION_27__Feelings.mp4"
+        },
+        {
+          "idx": "5-28",
+          "lesson_id": "17110344",
+          "title": "SECTION 28: Goals",
+          "video": "/english/videos/17110344_SECTION_28__Goals.mp4"
+        },
+        {
+          "idx": "5-29",
+          "lesson_id": "17110346",
+          "title": "SECTION 29: Desires",
+          "video": "/english/videos/17110346_SECTION_29__Desires.mp4"
+        },
+        {
+          "idx": "5-30",
+          "lesson_id": "18831036",
+          "title": "SECTION 30: Funny conversations (New Story!)",
+          "video": "/english/videos/18831036_SECTION_30__Funny_conversations__New_Story.mp4"
+        },
+        {
+          "idx": "5-31",
+          "lesson_id": "18831071",
+          "title": "SECTION 31: Drama (New Story!)",
+          "video": "/english/videos/18831071_SECTION_31__Drama__New_Story.mp4"
+        },
+        {
+          "idx": "5-32",
+          "lesson_id": "18831072",
+          "title": "SECTION 32: Motivation (New Story!)",
+          "video": "/english/videos/18831072_SECTION_32__Motivation__New_Story.mp4"
+        },
+        {
+          "idx": "5-33",
+          "lesson_id": "18831076",
+          "title": "SECTION 33: Psychology (New Story!)",
+          "video": "/english/videos/18831076_SECTION_33__Psychology__New_Story.mp4"
+        },
+        {
+          "idx": "5-34",
+          "lesson_id": "18831077",
+          "title": "SECTION 34: Dates (New Story!)",
+          "video": "/english/videos/18831077_SECTION_34__Dates__New_Story.mp4"
+        },
+        {
+          "idx": "5-35",
+          "lesson_id": "17090891",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17090891_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "6",
+      "lessons": [
+        {
+          "idx": "6-1",
+          "lesson_id": "17110360",
+          "title": "SECTION 1: Introducing – The “Ocean” Method!",
+          "video": "/english/videos/17110360_SECTION_1__Introducing___The__Ocean__Method.mp4"
+        },
+        {
+          "idx": "6-2",
+          "lesson_id": "17110361",
+          "title": "SECTION 2: Sentence Mining – How to expand your vocabulary at record speed!",
+          "video": "/english/videos/17110361_SECTION_2__Sentence_Mining___How_to_expand_your_vo.mp4"
+        },
+        {
+          "idx": "6-3",
+          "lesson_id": "17110362",
+          "title": "SECTION 3: Introducing – Kale’s Awesome Classes!",
+          "video": "/english/videos/17110362_SECTION_3__Introducing___Kale_s_Awesome_Classes.mp4"
+        },
+        {
+          "idx": "6-4",
+          "lesson_id": "17110380",
+          "title": "SECTION 4: Basic Present Tense (Class 1)",
+          "video": "/english/videos/17110380_SECTION_4__Basic_Present_Tense__Class_1.mp4"
+        },
+        {
+          "idx": "6-5",
+          "lesson_id": "17110381",
+          "title": "SECTION 5: Basic Present Tense – Negative (Class 2)",
+          "video": "/english/videos/17110381_SECTION_5__Basic_Present_Tense___Negative__Class_2.mp4"
+        },
+        {
+          "idx": "6-6",
+          "lesson_id": "17110384",
+          "title": "SECTION 6: Basic Present Tense – Questions (Class 3)",
+          "video": "/english/videos/17110384_SECTION_6__Basic_Present_Tense___Questions__Class.mp4"
+        },
+        {
+          "idx": "6-7",
+          "lesson_id": "17110385",
+          "title": "SECTION 7: The Famous Verb TO BE (Class 4)",
+          "video": "/english/videos/17110385_SECTION_7__The_Famous_Verb_TO_BE__Class_4.mp4"
+        },
+        {
+          "idx": "6-8",
+          "lesson_id": "17110386",
+          "title": "SECTION 8: Have & Have got! (Class 5)",
+          "video": "/english/videos/17110386_SECTION_8__Have___Have_got___Class_5.mp4"
+        },
+        {
+          "idx": "6-9",
+          "lesson_id": "17110388",
+          "title": "SECTION 9: Have & Have got – Negative (Class 6)",
+          "video": "/english/videos/17110388_SECTION_9__Have___Have_got___Negative__Class_6.mp4"
+        },
+        {
+          "idx": "6-10",
+          "lesson_id": "17110394",
+          "title": "SECTION 10: Have & Have got – Questions (Class 7)",
+          "video": "/english/videos/17110394_SECTION_10__Have___Have_got___Questions__Class_7.mp4"
+        },
+        {
+          "idx": "6-11",
+          "lesson_id": "17110395",
+          "title": "SECTION 11: How to learn irregular verbs (the easy way)!",
+          "video": "/english/videos/17110395_SECTION_11__How_to_learn_irregular_verbs__the_easy.mp4"
+        },
+        {
+          "idx": "6-12",
+          "lesson_id": "17110396",
+          "title": "SECTION 12: Basic Simple Past Tense (Class 8)",
+          "video": "/english/videos/17110396_SECTION_12__Basic_Simple_Past_Tense__Class_8.mp4"
+        },
+        {
+          "idx": "6-13",
+          "lesson_id": "17110397",
+          "title": "SECTION 13: Verb TO BE – Past tense! (Class 9)",
+          "video": "/english/videos/17110397_SECTION_13__Verb_TO_BE___Past_tense___Class_9.mp4"
+        },
+        {
+          "idx": "6-14",
+          "lesson_id": "17110363",
+          "title": "SECTION 14: The Present Perfect Tense – The most complicated grammar tense! (Class 10)",
+          "video": "/english/videos/17110363_SECTION_14__The_Present_Perfect_Tense___The_most_c.mp4"
+        },
+        {
+          "idx": "6-15",
+          "lesson_id": "17110398",
+          "title": "SECTION 15: More ADVANCED Present Perfect (Class 11)",
+          "video": "/english/videos/17110398_SECTION_15__More_ADVANCED_Present_Perfect__Class_1.mp4"
+        },
+        {
+          "idx": "6-16",
+          "lesson_id": "17110401",
+          "title": "SECTION 16: The Future Tense – The easiest grammar! (Class 12)",
+          "video": "/english/videos/17110401_SECTION_16__The_Future_Tense___The_easiest_grammar.mp4"
+        },
+        {
+          "idx": "6-17",
+          "lesson_id": "17110402",
+          "title": "SECTION 17: The super important verb “COULD” (Class 13)",
+          "video": "/english/videos/17110402_SECTION_17__The_super_important_verb__COULD___Clas.mp4"
+        },
+        {
+          "idx": "6-18",
+          "lesson_id": "17110403",
+          "title": "SECTION 18: The super important verb “SHOULD” (Class 14)",
+          "video": "/english/videos/17110403_SECTION_18__The_super_important_verb__SHOULD___Cla.mp4"
+        },
+        {
+          "idx": "6-19",
+          "lesson_id": "17110421",
+          "title": "SECTION 19: The super important verb “WOULD” (Class 15)",
+          "video": "/english/videos/17110421_SECTION_19__The_super_important_verb__WOULD___Clas.mp4"
+        },
+        {
+          "idx": "6-20",
+          "lesson_id": "17110422",
+          "title": "SECTION 20: The super important verb “MAY” (Class 16)",
+          "video": "/english/videos/17110422_SECTION_20__The_super_important_verb__MAY___Class.mp4"
+        },
+        {
+          "idx": "6-21",
+          "lesson_id": "17110423",
+          "title": "SECTION 21: The common verbs MIGHT, MUST, SHALL and OUGHT TO (Class 17)",
+          "video": "/english/videos/17110423_SECTION_21__The_common_verbs_MIGHT__MUST__SHALL_an.mp4"
+        },
+        {
+          "idx": "6-22",
+          "lesson_id": "17110365",
+          "title": "SECTION 22: There is VS There are (Class 18)",
+          "video": "/english/videos/17110365_SECTION_22__There_is_VS_There_are__Class_18.mp4"
+        },
+        {
+          "idx": "6-23",
+          "lesson_id": "17110425",
+          "title": "SECTION 23: There was VS There were (Class 19)",
+          "video": "/english/videos/17110425_SECTION_23__There_was_VS_There_were__Class_19.mp4"
+        },
+        {
+          "idx": "6-24",
+          "lesson_id": "17110427",
+          "title": "SECTION 24: There has/have been VS There had been (Class 20)",
+          "video": "/english/videos/17110427_SECTION_24__There_has_have_been_VS_There_had_been.mp4"
+        },
+        {
+          "idx": "6-25",
+          "lesson_id": "17110430",
+          "title": "SECTION 25: There will/won’t/may/might be (Class 21)",
+          "video": "/english/videos/17110430_SECTION_25__There_will_won_t_may_might_be__Class_2.mp4"
+        },
+        {
+          "idx": "6-26",
+          "lesson_id": "17110435",
+          "title": "SECTION 26: I vs ME. HE vs HIM. WE vs US. THEY vs THEM. (Class 22)",
+          "video": "/english/videos/17110435_SECTION_26__I_vs_ME__HE_vs_HIM__WE_vs_US__THEY_vs.mp4"
+        },
+        {
+          "idx": "6-27",
+          "lesson_id": "17110499",
+          "title": "SECTION 27: MY vs MINE. YOUR vs YOURS. HIS vs HIS. HER vs HERS. IT vs ITS. OUR vs OURS. THEIR vs THEIRS. (Class 23)",
+          "video": "/english/videos/17110499_SECTION_27__MY_vs_MINE__YOUR_vs_YOURS__HIS_vs_HIS.mp4"
+        },
+        {
+          "idx": "6-28",
+          "lesson_id": "17110500",
+          "title": "SECTION 28: Myself, yourself, himself, herself, itself, yourselves, ourselves, themselves, oneself (Class 24)",
+          "video": "/english/videos/17110500_SECTION_28__Myself__yourself__himself__herself__it.mp4"
+        },
+        {
+          "idx": "6-29",
+          "lesson_id": "17110502",
+          "title": "SECTION 29: This, These, That, Those (Class 25)",
+          "video": "/english/videos/17110502_SECTION_29__This__These__That__Those__Class_25.mp4"
+        },
+        {
+          "idx": "6-30",
+          "lesson_id": "17110504",
+          "title": "SECTION 30: How to learn A LOT of English (with just 10 minutes per day)",
+          "video": "/english/videos/17110504_SECTION_30__How_to_learn_A_LOT_of_English__with_ju.mp4"
+        },
+        {
+          "idx": "6-31",
+          "lesson_id": "17110508",
+          "title": "SECTION 31: The super common word – ALL (Class 26)",
+          "video": "/english/videos/17110508_SECTION_31__The_super_common_word___ALL__Class_26.mp4"
+        },
+        {
+          "idx": "6-32",
+          "lesson_id": "17110511",
+          "title": "SECTION 32: The super common word – EVERY (Class 27)",
+          "video": "/english/videos/17110511_SECTION_32__The_super_common_word___EVERY__Class_2.mp4"
+        },
+        {
+          "idx": "6-33",
+          "lesson_id": "17110512",
+          "title": "SECTION 33: The super common word – SOME (Class 28)",
+          "video": "/english/videos/17110512_SECTION_33__The_super_common_word___SOME__Class_28.mp4"
+        },
+        {
+          "idx": "6-34",
+          "lesson_id": "17110514",
+          "title": "SECTION 34: The super common word – ANY (Class 29)",
+          "video": "/english/videos/17110514_SECTION_34__The_super_common_word___ANY__Class_29.mp4"
+        },
+        {
+          "idx": "6-35",
+          "lesson_id": "17110517",
+          "title": "SECTION 35: The Famous Verb GET (Class 30)",
+          "video": "/english/videos/17110517_SECTION_35__The_Famous_Verb_GET__Class_30.mp4"
+        },
+        {
+          "idx": "6-36",
+          "lesson_id": "17090892",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17090892_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "7",
+      "lessons": [
+        {
+          "idx": "7-1",
+          "lesson_id": "17111354",
+          "title": "SECTION 1: Swimming in the ocean (without floaties)!",
+          "video": "/english/videos/17111354_SECTION_1__Swimming_in_the_ocean__without_floaties.mp4"
+        },
+        {
+          "idx": "7-2",
+          "lesson_id": "17111355",
+          "title": "SECTION 2: Monolingual Sentence Mining – Start THINKING in English!",
+          "video": "/english/videos/17111355_SECTION_2__Monolingual_Sentence_Mining___Start_THI.mp4"
+        },
+        {
+          "idx": "7-3",
+          "lesson_id": "17111357",
+          "title": "SECTION 3: Introducing – Kale’s Pronunciation Classes!",
+          "video": "/english/videos/17111357_SECTION_3__Introducing___Kale_s_Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-4",
+          "lesson_id": "17111360",
+          "title": "SECTION 4: “Th” as in Thought (Pronunciation Class 1)",
+          "video": "/english/videos/17111360_SECTION_4___Th__as_in_Thought__Pronunciation_Class.mp4"
+        },
+        {
+          "idx": "7-5",
+          "lesson_id": "17111362",
+          "title": "SECTION 5: The ə and ʌ sounds (Pronunciation Class 2)",
+          "video": "/english/videos/17111362_SECTION_5__The_%C9%99_and_%CA%8C_sounds__Pronunciation_Class.mp4"
+        },
+        {
+          "idx": "7-6",
+          "lesson_id": "17111363",
+          "title": "SECTION 6: “Th” as in They (Pronunciation Class 3)",
+          "video": "/english/videos/17111363_SECTION_6___Th__as_in_They__Pronunciation_Class_3.mp4"
+        },
+        {
+          "idx": "7-7",
+          "lesson_id": "17111379",
+          "title": "SECTION 7: The ɑ and ɔ sounds (Pronunciation Class 4)",
+          "video": "/english/videos/17111379_SECTION_7__The_%C9%91_and_%C9%94_sounds__Pronunciation_Class.mp4"
+        },
+        {
+          "idx": "7-8",
+          "lesson_id": "17111380",
+          "title": "SECTION 8: The æ and e sounds (Pronunciation Class 5)",
+          "video": "/english/videos/17111380_SECTION_8__The_%C3%A6_and_e_sounds__Pronunciation_Class.mp4"
+        },
+        {
+          "idx": "7-9",
+          "lesson_id": "17111409",
+          "title": "SECTION 9: The ɪ and i sounds (Pronunciation Class 6)",
+          "video": "/english/videos/17111409_SECTION_9__The_%C9%AA_and_i_sounds__Pronunciation_Class.mp4"
+        },
+        {
+          "idx": "7-10",
+          "lesson_id": "17111411",
+          "title": "SECTION 10: The u and ʊ sounds (Pronunciation Class 7)",
+          "video": "/english/videos/17111411_SECTION_10__The_u_and_%CA%8A_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-11",
+          "lesson_id": "17111412",
+          "title": "SECTION 11: The famous R sound! (Pronunciation Class 8)",
+          "video": "/english/videos/17111412_SECTION_11__The_famous_R_sound___Pronunciation_Cla.mp4"
+        },
+        {
+          "idx": "7-12",
+          "lesson_id": "17111414",
+          "title": "SECTION 12: The p and b sounds (Pronunciation Class 9)",
+          "video": "/english/videos/17111414_SECTION_12__The_p_and_b_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-13",
+          "lesson_id": "17111415",
+          "title": "SECTION 13: The aɪ and eɪ sounds (Pronunciation Class 10)",
+          "video": "/english/videos/17111415_SECTION_13__The_a%C9%AA_and_e%C9%AA_sounds__Pronunciation_Cl.mp4"
+        },
+        {
+          "idx": "7-14",
+          "lesson_id": "17111419",
+          "title": "SECTION 14: The RAIO End Goal! (IMPORTANT)",
+          "video": "/english/videos/17111419_SECTION_14__The_RAIO_End_Goal___IMPORTANT.mp4"
+        },
+        {
+          "idx": "7-15",
+          "lesson_id": "17111416",
+          "title": "SECTION 15: The oʊ and aʊ sounds (Pronunciation Class 11)",
+          "video": "/english/videos/17111416_SECTION_15__The_o%CA%8A_and_a%CA%8A_sounds__Pronunciation_Cl.mp4"
+        },
+        {
+          "idx": "7-16",
+          "lesson_id": "17111418",
+          "title": "SECTION 16: The ɔɪ and juː sounds (Pronunciation Class 12)",
+          "video": "/english/videos/17111418_SECTION_16__The_%C9%94%C9%AA_and_ju%CB%90_sounds__Pronunciation_C.mp4"
+        },
+        {
+          "idx": "7-17",
+          "lesson_id": "17111421",
+          "title": "SECTION 17: The T and D sounds (Pronunciation Class 13)",
+          "video": "/english/videos/17111421_SECTION_17__The_T_and_D_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-18",
+          "lesson_id": "17111422",
+          "title": "SECTION 18: The K and G sounds (Pronunciation Class 14)",
+          "video": "/english/videos/17111422_SECTION_18__The_K_and_G_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-19",
+          "lesson_id": "17111423",
+          "title": "SECTION 19: The F and V sounds (Pronunciation Class 15)",
+          "video": "/english/videos/17111423_SECTION_19__The_F_and_V_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-20",
+          "lesson_id": "17111424",
+          "title": "SECTION 20: The S and Z sounds (Pronunciation Class 16)",
+          "video": "/english/videos/17111424_SECTION_20__The_S_and_Z_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-21",
+          "lesson_id": "17111425",
+          "title": "SECTION 21: The ʃ and ʒ sounds (Pronunciation Class 17)",
+          "video": "/english/videos/17111425_SECTION_21__The_%CA%83_and_%CA%92_sounds__Pronunciation_Clas.mp4"
+        },
+        {
+          "idx": "7-22",
+          "lesson_id": "17111427",
+          "title": "SECTION 22: The tʃ and dʒ sounds (Pronunciation Class 18)",
+          "video": "/english/videos/17111427_SECTION_22__The_t%CA%83_and_d%CA%92_sounds__Pronunciation_Cl.mp4"
+        },
+        {
+          "idx": "7-23",
+          "lesson_id": "17090893",
+          "title": "RESUMEN Y PASOS DE ACCIÓN",
+          "video": "/english/videos/17090893_RESUMEN_Y_PASOS_DE_ACCI%C3%93N.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "8",
+      "lessons": [
+        {
+          "idx": "8-1",
+          "lesson_id": "15645834",
+          "title": "Ready For Greatness! (Story 1)",
+          "video": null
+        },
+        {
+          "idx": "8-2",
+          "lesson_id": "15645869",
+          "title": "Control Your Body, Control Your Mind (Story 2)",
+          "video": null
+        },
+        {
+          "idx": "8-3",
+          "lesson_id": "15645870",
+          "title": "I Believe I Can Fly! (Story 3)",
+          "video": null
+        },
+        {
+          "idx": "8-4",
+          "lesson_id": "15645871",
+          "title": "You Better Believe It! (Story 4)",
+          "video": null
+        },
+        {
+          "idx": "8-5",
+          "lesson_id": "15645872",
+          "title": "Mind Game Domination (Story 5)",
+          "video": null
+        },
+        {
+          "idx": "8-6",
+          "lesson_id": "15645880",
+          "title": "Follow the Leader! (Story 6)",
+          "video": null
+        },
+        {
+          "idx": "8-7",
+          "lesson_id": "15645893",
+          "title": "Stop Dreaming, Start Repeating! (Story 7)",
+          "video": null
+        },
+        {
+          "idx": "8-8",
+          "lesson_id": "15645896",
+          "title": "Finding Your True Self (Story 8)",
+          "video": null
+        },
+        {
+          "idx": "8-9",
+          "lesson_id": "15645885",
+          "title": "Micro Speed, Macro Patience (Story 9)",
+          "video": null
+        },
+        {
+          "idx": "8-10",
+          "lesson_id": "15645899",
+          "title": "Read To Take The Lead (Story 10)",
+          "video": null
+        },
+        {
+          "idx": "8-11",
+          "lesson_id": "15645902",
+          "title": "Doing Trumps Dreaming! (Story 11)",
+          "video": null
+        },
+        {
+          "idx": "8-12",
+          "lesson_id": "15645904",
+          "title": "My Dear Fear (Story 12)",
+          "video": null
+        },
+        {
+          "idx": "8-13",
+          "lesson_id": "15645910",
+          "title": "Subconsciousness = Awesomeness (Story 13)",
+          "video": null
+        },
+        {
+          "idx": "8-14",
+          "lesson_id": "15645912",
+          "title": "The Beauty of Learning (Story 14)",
+          "video": null
+        },
+        {
+          "idx": "8-15",
+          "lesson_id": "15645915",
+          "title": "Input VS Output (Story 15)",
+          "video": null
+        },
+        {
+          "idx": "8-16",
+          "lesson_id": "15645931",
+          "title": "Good Habits Multiply (Story 16)",
+          "video": null
+        },
+        {
+          "idx": "8-17",
+          "lesson_id": "15645933",
+          "title": "Don't Fail Less, Fail Faster (Story 17)",
+          "video": null
+        },
+        {
+          "idx": "8-18",
+          "lesson_id": "15645935",
+          "title": "Law of Attraction (Story 18)",
+          "video": null
+        },
+        {
+          "idx": "8-19",
+          "lesson_id": "15645937",
+          "title": "Social Longevity (Story 19)",
+          "video": null
+        },
+        {
+          "idx": "8-20",
+          "lesson_id": "15645940",
+          "title": "Power Distance (Story 20)",
+          "video": null
+        },
+        {
+          "idx": "8-21",
+          "lesson_id": "15645942",
+          "title": "The 2020 Pandemic (Story 21)",
+          "video": null
+        },
+        {
+          "idx": "8-22",
+          "lesson_id": "15645945",
+          "title": "Health and Fitness Trends (Story 22)",
+          "video": null
+        },
+        {
+          "idx": "8-23",
+          "lesson_id": "15645946",
+          "title": "Pets as Company (Story 23)",
+          "video": null
+        },
+        {
+          "idx": "8-24",
+          "lesson_id": "15645948",
+          "title": "Online Education, In-Person Education, and Homeschooling (Story 24)",
+          "video": null
+        },
+        {
+          "idx": "8-25",
+          "lesson_id": "15645951",
+          "title": "Gap Years! (Story 25)",
+          "video": null
+        }
+      ],
+      "completion_pct": 0,
+      "status": "empty"
+    },
+    {
+      "section": "9",
+      "lessons": [
+        {
+          "idx": "9-1",
+          "lesson_id": "19175116",
+          "title": "¡Cómo practicar tu inglés en aulas de conversación y obtener clases privadas!",
+          "video": "/english/videos/19175116_C%C3%B3mo_practicar_tu_ingl%C3%A9s_en_aulas_de_conversaci%C3%B3n.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "14",
+      "lessons": [
+        {
+          "idx": "14-1",
+          "lesson_id": "15645475",
+          "title": "¡Recomienda RAIO a tus amigos y recibe accesos exclusivos a nuestros productos!",
+          "video": "/english/videos/15645475_Recomienda_RAIO_a_tus_amigos_y_recibe_accesos_exc.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "15",
+      "lessons": [
+        {
+          "idx": "15-1",
+          "lesson_id": "19121039",
+          "title": "¡Graba un testimonio del curso y recibe accesos exclusivos a nuestros productos!",
+          "video": "/english/videos/19121039_Graba_un_testimonio_del_curso_y_recibe_accesos_ex.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "16",
+      "lessons": [
+        {
+          "idx": "16-1",
+          "lesson_id": "15645478",
+          "title": "Benjamin de Chile compartiendo sus mejores consejos para nuevos estudiantes (¡con su inglés fantástico!)",
+          "video": "/english/videos/15645478_Benjamin_de_Chile_compartiendo_sus_mejores_consejo.mp4"
+        },
+        {
+          "idx": "16-2",
+          "lesson_id": "15646436",
+          "title": "¡Yuliana de México presumiendo sus resultados después de solo 6 meses en el curso!",
+          "video": "/english/videos/15646436_Yuliana_de_M%C3%A9xico_presumiendo_sus_resultados_desp.mp4"
+        },
+        {
+          "idx": "16-3",
+          "lesson_id": "15646459",
+          "title": "Pedro de Colombia aprendió en solo 3 meses: \"¡Salir de la zona de confort es lo más importante!\"",
+          "video": "/english/videos/15646459_Pedro_de_Colombia_aprendi%C3%B3_en_solo_3_meses____Sali.mp4"
+        },
+        {
+          "idx": "16-4",
+          "lesson_id": "15646461",
+          "title": "Los increíbles resultados de Sandra después de solo 3 meses: \"¡Sigue el curso paso a paso!\"",
+          "video": "/english/videos/15646461_Los_incre%C3%ADbles_resultados_de_Sandra_despu%C3%A9s_de_sol.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "17",
+      "lessons": [
+        {
+          "idx": "17-1",
+          "lesson_id": "15645479",
+          "title": "SECTION 1: Exam Overview",
+          "video": "/english/videos/15645479_SECTION_1__Exam_Overview.mp4"
+        },
+        {
+          "idx": "17-2",
+          "lesson_id": "15646429",
+          "title": "SECTION 2: IELTS Preparation",
+          "video": "/english/videos/15646429_SECTION_2__IELTS_Preparation.mp4"
+        },
+        {
+          "idx": "17-3",
+          "lesson_id": "15646431",
+          "title": "SECTION 3: TOEFL Preparation",
+          "video": "/english/videos/15646431_SECTION_3__TOEFL_Preparation.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "18",
+      "lessons": [
+        {
+          "idx": "18-1",
+          "lesson_id": "15645480",
+          "title": "SECTION 1: Job Interview practice",
+          "video": "/english/videos/15645480_SECTION_1__Job_Interview_practice.mp4"
+        },
+        {
+          "idx": "18-2",
+          "lesson_id": "15646422",
+          "title": "SECTION 2: Visa interview preparation",
+          "video": "/english/videos/15646422_SECTION_2__Visa_interview_preparation.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    },
+    {
+      "section": "19",
+      "lessons": [
+        {
+          "idx": "19-1",
+          "lesson_id": "15645483",
+          "title": "SECTION 1: Airport Conversations!",
+          "video": "/english/videos/15645483_SECTION_1__Airport_Conversations.mp4"
+        },
+        {
+          "idx": "19-2",
+          "lesson_id": "15646401",
+          "title": "SECTION 2: Transportation Conversations!",
+          "video": "/english/videos/15646401_SECTION_2__Transportation_Conversations.mp4"
+        },
+        {
+          "idx": "19-3",
+          "lesson_id": "15646403",
+          "title": "SECTION 3: Accommodation Conversations!",
+          "video": "/english/videos/15646403_SECTION_3__Accommodation_Conversations.mp4"
+        },
+        {
+          "idx": "19-4",
+          "lesson_id": "15646404",
+          "title": "SECTION 4: Restaurant Conversations!",
+          "video": "/english/videos/15646404_SECTION_4__Restaurant_Conversations.mp4"
+        },
+        {
+          "idx": "19-5",
+          "lesson_id": "15646405",
+          "title": "SECTION 5: Shopping Conversations!",
+          "video": "/english/videos/15646405_SECTION_5__Shopping_Conversations.mp4"
+        },
+        {
+          "idx": "19-6",
+          "lesson_id": "15646406",
+          "title": "SECTION 6: Doctor Conversations!",
+          "video": "/english/videos/15646406_SECTION_6__Doctor_Conversations.mp4"
+        },
+        {
+          "idx": "19-7",
+          "lesson_id": "15646407",
+          "title": "SECTION 7: Emergency Conversations!",
+          "video": "/english/videos/15646407_SECTION_7__Emergency_Conversations.mp4"
+        },
+        {
+          "idx": "19-8",
+          "lesson_id": "15646408",
+          "title": "SECTION 8: Tour Conversations!",
+          "video": "/english/videos/15646408_SECTION_8__Tour_Conversations.mp4"
+        }
+      ],
+      "completion_pct": 100,
+      "status": "complete"
+    }
+  ]
+}

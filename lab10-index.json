@@ -1,0 +1,189 @@
+{
+  "course": "Lab10 — Reto Agentes + 10x Builders",
+  "total_videos": 28,
+  "with_transcript": 28,
+  "paths": [
+    {
+      "path": "reto-agentes",
+      "total_modules": 2
+    },
+    {
+      "path": "10x-code",
+      "total_modules": 2
+    },
+    {
+      "path": "10x-no-code",
+      "total_modules": 2
+    }
+  ],
+  "items": [
+    {
+      "hash": "12972fd8e4269610e8eafa167b5e2af8",
+      "video": "/lab10/videos/12972fd8e4269610e8eafa167b5e2af8.mp4",
+      "transcript": "/lab10/transcripts/12972fd8e4269610e8eafa167b5e2af8.txt",
+      "title": "Esta semana, Lab10 sacó un reto para construir un agente Auto 9 en 7 días. Hoy v"
+    },
+    {
+      "hash": "15e24ee9fb09191e3127714e8e5ddfb8",
+      "video": "/lab10/videos/15e24ee9fb09191e3127714e8e5ddfb8.mp4",
+      "transcript": "/lab10/transcripts/15e24ee9fb09191e3127714e8e5ddfb8.txt",
+      "title": "Hola, mi nombre es Angelica Tarazana y el objetivo de mi proyecto es hacer una b"
+    },
+    {
+      "hash": "28736805413bdc89bc727d1134fda042",
+      "video": "/lab10/videos/28736805413bdc89bc727d1134fda042.mp4",
+      "transcript": "/lab10/transcripts/28736805413bdc89bc727d1134fda042.txt",
+      "title": "Buenas tardes, me llamo Alejandro Sa y les quiero compartir el proyecto que real"
+    },
+    {
+      "hash": "2ec0cc9dd4e6dcd22bf22dab5d1729b7",
+      "video": "/lab10/videos/2ec0cc9dd4e6dcd22bf22dab5d1729b7.mp4",
+      "transcript": "/lab10/transcripts/2ec0cc9dd4e6dcd22bf22dab5d1729b7.txt",
+      "title": "Bueno, una de las cosas más importantes que siempre como Founders es como logram"
+    },
+    {
+      "hash": "3191213747ce5793c840879eedde34a1",
+      "video": "/lab10/videos/3191213747ce5793c840879eedde34a1.mp4",
+      "transcript": "/lab10/transcripts/3191213747ce5793c840879eedde34a1.txt",
+      "title": "Ahora que ya sabes que un skill no es más que un conjunto de instrucciones escri"
+    },
+    {
+      "hash": "32343eeea850826458db1c4b7bf7320c",
+      "video": "/lab10/videos/32343eeea850826458db1c4b7bf7320c.mp4",
+      "transcript": "/lab10/transcripts/32343eeea850826458db1c4b7bf7320c.txt",
+      "title": "Entremos de lleno en esto. A las 9 de la mañana, hora de la Ciudad de México, el"
+    },
+    {
+      "hash": "4a7b402ecdfcfc808ea245f22ee7f85f",
+      "video": "/lab10/videos/4a7b402ecdfcfc808ea245f22ee7f85f.mp4",
+      "transcript": "/lab10/transcripts/4a7b402ecdfcfc808ea245f22ee7f85f.txt",
+      "title": "Bueno, yo les voy a compartir mi portafolio como diseñadora de producto. La idea"
+    },
+    {
+      "hash": "5644d0e3c2311cb8212478bde8fa61cd",
+      "video": "/lab10/videos/5644d0e3c2311cb8212478bde8fa61cd.mp4",
+      "transcript": "/lab10/transcripts/5644d0e3c2311cb8212478bde8fa61cd.txt",
+      "title": "¿Qué te parece si mejor lo ponemos en práctica? Y creamos un proyecto desde cero"
+    },
+    {
+      "hash": "5827212a4820351aeefc601e7b1b5922",
+      "video": "/lab10/videos/5827212a4820351aeefc601e7b1b5922.mp4",
+      "transcript": "/lab10/transcripts/5827212a4820351aeefc601e7b1b5922.txt",
+      "title": "Hola, bueno, ya estamos en el día 4, sí, 4 del reto. Hoy vamos a darle superpode"
+    },
+    {
+      "hash": "5d5cc9432e5a64abd052fbfa3d04221b",
+      "video": "/lab10/videos/5d5cc9432e5a64abd052fbfa3d04221b.mp4",
+      "transcript": "/lab10/transcripts/5d5cc9432e5a64abd052fbfa3d04221b.txt",
+      "title": "Open Cloud es una de las herramientas que más popularidad ha tenido en los últim"
+    },
+    {
+      "hash": "622c8edc0997ee3406c7799f52029fd7",
+      "video": "/lab10/videos/622c8edc0997ee3406c7799f52029fd7.mp4",
+      "transcript": "/lab10/transcripts/622c8edc0997ee3406c7799f52029fd7.txt",
+      "title": "Hola, bienvenidos al día 5 de reto. Ya estamos a nada de terminar. Y hoy vamos a"
+    },
+    {
+      "hash": "65d23b2bd7ddea079ee58956651c72e7",
+      "video": "/lab10/videos/65d23b2bd7ddea079ee58956651c72e7.mp4",
+      "transcript": "/lab10/transcripts/65d23b2bd7ddea079ee58956651c72e7.txt",
+      "title": "Me han preguntado mucho sobre el tema de costos, optimización de costo, qué valo"
+    },
+    {
+      "hash": "7ed5f6b8855d7cbf404c6b856c1967bd",
+      "video": "/lab10/videos/7ed5f6b8855d7cbf404c6b856c1967bd.mp4",
+      "transcript": "/lab10/transcripts/7ed5f6b8855d7cbf404c6b856c1967bd.txt",
+      "title": "Hola, día 7, terminamos. Y hoy vamos a dar capacidad a la autonomía de nuestra g"
+    },
+    {
+      "hash": "8cc6fee35f0d207d7199d8c6f8c09043",
+      "video": "/lab10/videos/8cc6fee35f0d207d7199d8c6f8c09043.mp4",
+      "transcript": "/lab10/transcripts/8cc6fee35f0d207d7199d8c6f8c09043.txt",
+      "title": "Hola, ya estamos en el día 6 del reto de terminar. Y hoy nos vamos a buscar la m"
+    },
+    {
+      "hash": "8e0bdfbbd9bd01d67b0b8a25030c3d38",
+      "video": "/lab10/videos/8e0bdfbbd9bd01d67b0b8a25030c3d38.mp4",
+      "transcript": "/lab10/transcripts/8e0bdfbbd9bd01d67b0b8a25030c3d38.txt",
+      "title": "Hola, mi nombre es Jenny, yo soy médica y durante este curso de lab 10 realicé e"
+    },
+    {
+      "hash": "8e206845274581413aa94ef0951d2a39",
+      "video": "/lab10/videos/8e206845274581413aa94ef0951d2a39.mp4",
+      "transcript": "/lab10/transcripts/8e206845274581413aa94ef0951d2a39.txt",
+      "title": "Lab10 video 8e206845"
+    },
+    {
+      "hash": "8f6f5220926bc2f09f85e45b1e5e2dce",
+      "video": "/lab10/videos/8f6f5220926bc2f09f85e45b1e5e2dce.mp4",
+      "transcript": "/lab10/transcripts/8f6f5220926bc2f09f85e45b1e5e2dce.txt",
+      "title": "Hasta ahora ya hemos aprendido bloques básicos que nos van a ayudar a construir "
+    },
+    {
+      "hash": "b1a687a3544cb8e113ddf9e7e7f31ede",
+      "video": "/lab10/videos/b1a687a3544cb8e113ddf9e7e7f31ede.mp4",
+      "transcript": "/lab10/transcripts/b1a687a3544cb8e113ddf9e7e7f31ede.txt",
+      "title": "En 2024, el mundo desperdició 151.000 millones de metros cúbicos de gas, quemand"
+    },
+    {
+      "hash": "b536e2ab611b8c70d7d4f0787bca6c69",
+      "video": "/lab10/videos/b536e2ab611b8c70d7d4f0787bca6c69.mp4",
+      "transcript": "/lab10/transcripts/b536e2ab611b8c70d7d4f0787bca6c69.txt",
+      "title": "Bueno, este es mi proyecto. Se llama Imperio de Cristal. Lo que hice aquí a hace"
+    },
+    {
+      "hash": "ba632f80df8085bd90311296adab2bc8",
+      "video": "/lab10/videos/ba632f80df8085bd90311296adab2bc8.mp4",
+      "transcript": "/lab10/transcripts/ba632f80df8085bd90311296adab2bc8.txt",
+      "title": "Hola, para el reto de 7 días de creación de agentes con OpenClub de Lab10 config"
+    },
+    {
+      "hash": "bc08885105d9c34944f66de1534620e3",
+      "video": "/lab10/videos/bc08885105d9c34944f66de1534620e3.mp4",
+      "transcript": "/lab10/transcripts/bc08885105d9c34944f66de1534620e3.txt",
+      "title": "Hola, bienvenidos al día 3 del reto, ya vamos por la mitad, qué cosa tan rápida."
+    },
+    {
+      "hash": "cf1449a69a5be42c1d113f03795aac18",
+      "video": "/lab10/videos/cf1449a69a5be42c1d113f03795aac18.mp4",
+      "transcript": "/lab10/transcripts/cf1449a69a5be42c1d113f03795aac18.txt",
+      "title": "Hola, bueno, después de ayer ustedes deberían tener ya como una guía de lo que v"
+    },
+    {
+      "hash": "d31d6a7276ecfcf3eab207e086e85a79",
+      "video": "/lab10/videos/d31d6a7276ecfcf3eab207e086e85a79.mp4",
+      "transcript": "/lab10/transcripts/d31d6a7276ecfcf3eab207e086e85a79.txt",
+      "title": "Hola, bueno ya pasamos la mitad del curso, de verdad se está pasando a mí y esta"
+    },
+    {
+      "hash": "d4b5f9279a8c927874f12ceb01a7171a",
+      "video": "/lab10/videos/d4b5f9279a8c927874f12ceb01a7171a.mp4",
+      "transcript": "/lab10/transcripts/d4b5f9279a8c927874f12ceb01a7171a.txt",
+      "title": "¿Cuántas veces intentaste llevar el control de tus gastos y lo abandonaste a la "
+    },
+    {
+      "hash": "e3fad29f07860f9e7a7cb52d6670a28f",
+      "video": "/lab10/videos/e3fad29f07860f9e7a7cb52d6670a28f.mp4",
+      "transcript": "/lab10/transcripts/e3fad29f07860f9e7a7cb52d6670a28f.txt",
+      "title": "Hola, bienvenidos al primer día del reto de 7 días para construir una gente. Hoy"
+    },
+    {
+      "hash": "e9995187c551263ff61d8bda14280d86",
+      "video": "/lab10/videos/e9995187c551263ff61d8bda14280d86.mp4",
+      "transcript": "/lab10/transcripts/e9995187c551263ff61d8bda14280d86.txt",
+      "title": "¿Sabías que el 82% de las fallas industriales son accidentales y pasan desaperci"
+    },
+    {
+      "hash": "faff18f11773b447efeba613db1cae31",
+      "video": "/lab10/videos/faff18f11773b447efeba613db1cae31.mp4",
+      "transcript": "/lab10/transcripts/faff18f11773b447efeba613db1cae31.txt",
+      "title": "Ahora que ya has estado explorando, trabajar con OpenCloud, te estarás preguntan"
+    },
+    {
+      "hash": "preview_construyendo_automatizacion_8f6f5220926bc2f09f85e45b1e5e2dce",
+      "video": "/lab10/videos/preview_construyendo_automatizacion_8f6f5220926bc2f09f85e45b1e5e2dce.mp4",
+      "transcript": "/lab10/transcripts/preview_construyendo_automatizacion_8f6f5220926bc2f09f85e45b1e5e2dce.txt",
+      "title": "Hasta ahora ya hemos aprendido bloques básicos que nos van a ayudar a construir "
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+<!--
+War Games UI Component
+Hybrid local/remote support with full i18n
+-->
+
+<script src="wargames-api.js"></script>
+
+<style>
+.wg-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.wg-scenario-selector {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.wg-scenario-selector select {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.wg-button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.wg-button-group button {
+  flex: 1;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #55d68b, #7fff4d);
+  color: #04110b;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wg-button-group button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(85, 214, 139, 0.3);
+}
+
+.wg-button-group button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wg-button-group button.danger {
+  background: linear-gradient(135deg, #ff5c57, #ff8c73);
+  color: #fff;
+}
+
+.wg-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.wg-stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  text-align: center;
+}
+
+.wg-stat-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.wg-stat-value {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  font-family: "Cascadia Mono", monospace;
+}
+
+.wg-agents {
+  display: grid;
+  gap: 12px;
+}
+
+.wg-agent-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.wg-agent-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.wg-agent-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wg-agent-name {
+  font-weight: 600;
+  color: var(--fg);
+  font-size: 12px;
+}
+
+.wg-agent-role {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.wg-agent-badge {
+  background: var(--bg2);
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.wg-feed {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+  font-family: "Cascadia Mono", monospace;
+  font-size: 11px;
+}
+
+.wg-event {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: grid;
+  gap: 2px;
+}
+
+.wg-event:last-child {
+  border-bottom: none;
+}
+
+.wg-event-time {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.wg-event-type {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.wg-event-msg {
+  color: var(--fg);
+  word-break: break-word;
+}
+
+.wg-event.attack .wg-event-type {
+  color: var(--red);
+}
+
+.wg-event.defense .wg-event-type {
+  color: var(--blue);
+}
+
+.wg-event.info .wg-event-type {
+  color: var(--accent);
+}
+
+.wg-error {
+  background: rgba(255, 92, 87, 0.1);
+  border: 1px solid rgba(255, 92, 87, 0.3);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--red);
+  font-size: 12px;
+  margin: 12px 0;
+}
+
+.wg-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.wg-loading::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.wg-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: var(--bg2);
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.wg-status.active {
+  background: rgba(85, 214, 139, 0.15);
+  color: var(--accent);
+}
+
+.wg-status.idle {
+  background: rgba(145, 160, 184, 0.1);
+  color: var(--muted);
+}
+
+.wg-online-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+.wg-status.idle .wg-online-indicator {
+  background: var(--muted);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+</style>
+
+<div id="wg-container" class="wg-container" style="display: none;">
+  <!-- LEFT COLUMN: Control panel -->
+  <div>
+    <!-- Scenario selector -->
+    <div class="wg-scenario-selector">
+      <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+        <span data-i18n="wg_select_scenario">Select Scenario</span>
+        <span id="wg-connection-status" class="wg-status idle">
+          <span class="wg-online-indicator"></span>
+          <span data-i18n="wg_status_offline">Offline</span>
+        </span>
+      </div>
+
+      <select id="wg-scenario-select">
+        <option value="purple-owasp" data-i18n="wg_scenario_owasp">Purple OWASP Siege</option>
+        <option value="apt-gauntlet" data-i18n="wg_scenario_apt">APT Gauntlet (Advanced)</option>
+      </select>
+
+      <div class="wg-button-group">
+        <button id="wg-start-btn" onclick="WG_UI.startScenario()" data-i18n="wg_btn_start">Start</button>
+        <button id="wg-reset-btn" class="danger" onclick="WG_UI.resetScenario()" data-i18n="wg_btn_reset">Reset</button>
+      </div>
+
+      <div id="wg-error-container"></div>
+
+      <!-- Stats -->
+      <div class="wg-stats">
+        <div class="wg-stat-card">
+          <div class="wg-stat-label" data-i18n="wg_attacker_score">Attacker Score</div>
+          <div id="wg-atk-score" class="wg-stat-value">0</div>
+        </div>
+        <div class="wg-stat-card">
+          <div class="wg-stat-label" data-i18n="wg_defender_score">Defender Score</div>
+          <div id="wg-def-score" class="wg-stat-value">0</div>
+        </div>
+        <div class="wg-stat-card" style="grid-column: 1 / -1;">
+          <div class="wg-stat-label" data-i18n="wg_status">Status</div>
+          <div style="color: var(--fg); font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 6px;">
+            <span id="wg-status" style="font-size: 13px;">idle</span>
+            <span id="wg-live" style="display: none; width: 6px; height: 6px; background: #ff5c57; border-radius: 50%; animation: pulse 1s infinite;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agents: Attackers -->
+      <div class="wg-agent-group-label" style="color: var(--red);" data-i18n="wg_attackers">Attackers</div>
+      <div id="wg-attackers" class="wg-agents"></div>
+
+      <!-- Agents: Defenders -->
+      <div class="wg-agent-group-label" style="color: var(--blue);" data-i18n="wg_defenders">Defenders</div>
+      <div id="wg-defenders" class="wg-agents"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN: Live feed -->
+  <div>
+    <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+      <span data-i18n="wg_telemetry">Real-time Telemetry</span>
+      <span style="color: var(--accent);" data-i18n="wg_live">LIVE</span>
+    </div>
+    <div id="wg-feed" class="wg-feed">
+      <div class="wg-loading" data-i18n="wg_loading">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WG_UI = (() => {
+  const translations = {
+    es: {
+      wg_select_scenario: 'Selecciona Escenario',
+      wg_scenario_owasp: 'Asedio Purple OWASP',
+      wg_scenario_apt: 'Guantelete APT (Avanzado)',
+      wg_btn_start: 'Iniciar',
+      wg_btn_reset: 'Resetear',
+      wg_attacker_score: 'Puntuación Atacante',
+      wg_defender_score: 'Puntuación Defensor',
+      wg_status: 'Estado',
+      wg_attackers: 'Atacantes',
+      wg_defenders: 'Defensores',
+      wg_telemetry: 'Telemetría en Tiempo Real',
+      wg_live: 'EN VIVO',
+      wg_loading: 'Cargando...',
+      wg_status_offline: 'Sin conexión',
+      wg_status_active: 'Activo',
+      wg_status_idle: 'Inactivo',
+      wg_error_start: 'Error iniciando escenario',
+      wg_error_load: 'Error cargando estado del juego',
+      wg_success_reset: 'Juego de guerra reiniciado',
+      wg_confirm_reset: '¿Confirmar reinicio del juego de guerra?',
+    },
+    en: {
+      wg_select_scenario: 'Select Scenario',
+      wg_scenario_owasp: 'Purple OWASP Siege',
+      wg_scenario_apt: 'APT Gauntlet (Advanced)',
+      wg_btn_start: 'Start',
+      wg_btn_reset: 'Reset',
+      wg_attacker_score: 'Attacker Score',
+      wg_defender_score: 'Defender Score',
+      wg_status: 'Status',
+      wg_attackers: 'Attackers',
+      wg_defenders: 'Defenders',
+      wg_telemetry: 'Real-time Telemetry',
+      wg_live: 'LIVE',
+      wg_loading: 'Loading...',
+      wg_status_offline: 'Offline',
+      wg_status_active: 'Active',
+      wg_status_idle: 'Idle',
+      wg_error_start: 'Error starting scenario',
+      wg_error_load: 'Error loading game state',
+      wg_success_reset: 'War game reset',
+      wg_confirm_reset: 'Confirm war game reset?',
+    }
+  };
+
+  let currentLang = localStorage.getItem('cr-lang') || 'es';
+  let autoRefreshInterval = null;
+  let wsConnected = false;
+
+  function t(key) {
+    return (translations[currentLang] || translations.en)[key] || key;
+  }
+
+  function translatePage() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.textContent = t(key);
+    });
+  }
+
+  function showError(message) {
+    const container = document.getElementById('wg-error-container');
+    if (!container) return;
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'wg-error';
+    errorDiv.textContent = message;
+
+    container.innerHTML = '';
+    container.appendChild(errorDiv);
+
+    setTimeout(() => {
+      if (container.contains(errorDiv)) {
+        errorDiv.style.opacity = '0';
+        errorDiv.style.transition = 'opacity 0.3s';
+        setTimeout(() => container.removeChild(errorDiv), 300);
+      }
+    }, 5000);
+  }
+
+  function updateConnectionStatus() {
+    const indicator = document.getElementById('wg-connection-status');
+    if (!indicator) return;
+
+    const isOnline = WARGAMES_API.isOnline();
+    indicator.classList.toggle('active', isOnline);
+    indicator.querySelector('span:last-child').textContent =
+      isOnline ? t('wg_status_active') : t('wg_status_offline');
+  }
+
+  async function loadState() {
+    try {
+      const state = await WARGAMES_API.getState();
+      renderState(state);
+      updateConnectionStatus();
+    } catch (error) {
+      showError(`${t('wg_error_load')}: ${WARGAMES_API.translateError(error)}`);
+    }
+  }
+
+  function renderState(state) {
+    if (!state) return;
+
+    // Update stats
+    document.getElementById('wg-atk-score').textContent = state.score?.attacker ?? 0;
+    document.getElementById('wg-def-score').textContent = state.score?.defender ?? 0;
+
+    // Update status
+    const statusEl = document.getElementById('wg-status');
+    const liveEl = document.getElementById('wg-live');
+    if (state.active) {
+      statusEl.textContent = `${t('wg_status_active')} · ${state.scenario?.name || ''}`;
+      if (liveEl) liveEl.style.display = 'inline-block';
+    } else {
+      statusEl.textContent = state.endedAt ? 'finalizado' : 'idle';
+      if (liveEl) liveEl.style.display = 'none';
+    }
+
+    // Render agents
+    const renderAgent = (agent, isAttacker) => {
+      const div = document.createElement('div');
+      div.className = 'wg-agent-card';
+      div.innerHTML = `
+        <div class="wg-agent-info">
+          <div class="wg-agent-name">${escapeHtml(agent.name)}</div>
+          <div class="wg-agent-role">${escapeHtml(agent.role)}</div>
+        </div>
+        <div class="wg-agent-badge" style="color: ${isAttacker ? 'var(--red)' : 'var(--blue)'};">
+          ${escapeHtml(agent.status || 'ready')}
+        </div>
+      `;
+      return div;
+    };
+
+    const atkContainer = document.getElementById('wg-attackers');
+    const defContainer = document.getElementById('wg-defenders');
+
+    atkContainer.innerHTML = '';
+    (state.agents?.attackers || []).forEach(a => atkContainer.appendChild(renderAgent(a, true)));
+
+    defContainer.innerHTML = '';
+    (state.agents?.defenders || []).forEach(a => defContainer.appendChild(renderAgent(a, false)));
+
+    // Render events
+    const feed = document.getElementById('wg-feed');
+    if (feed && !feed.dataset.manualScroll) {
+      feed.innerHTML = (state.events || []).slice().reverse().map(ev => {
+        const div = document.createElement('div');
+        div.className = `wg-event ${ev.type?.includes('attack') ? 'attack' : ev.type?.includes('defense') ? 'defense' : 'info'}`;
+        const time = new Date(ev.ts || Date.now()).toLocaleTimeString(currentLang === 'es' ? 'es-ES' : 'en-US', {hour12: false});
+        div.innerHTML = `
+          <div class="wg-event-time">${time}</div>
+          <div><span class="wg-event-type">${escapeHtml(ev.type || 'event')}</span> <span class="wg-event-msg">${escapeHtml(ev.message || '')}</span></div>
+        `;
+        return div;
+      }).join('') || `<div style="color: var(--muted);">${t('wg_loading')}</div>`;
+    }
+  }
+
+  return {
+    async init() {
+      const container = document.getElementById('wg-container');
+      if (!container) return;
+
+      container.style.display = 'grid';
+
+      // Apply language translations
+      translatePage();
+
+      // Load initial state
+      await loadState();
+
+      // Auto-refresh every 2s
+      autoRefreshInterval = setInterval(loadState, 2000);
+    },
+
+    async startScenario() {
+      const scenario = document.getElementById('wg-scenario-select')?.value || 'purple-owasp';
+      try {
+        const startBtn = document.getElementById('wg-start-btn');
+        if (startBtn) startBtn.disabled = true;
+
+        const state = await WARGAMES_API.startScenario(scenario);
+        renderState(state);
+        updateConnectionStatus();
+      } catch (error) {
+        showError(`${t('wg_error_start')}: ${WARGAMES_API.translateError(error)}`);
+      } finally {
+        const startBtn = document.getElementById('wg-start-btn');
+        if (startBtn) startBtn.disabled = false;
+      }
+    },
+
+    async resetScenario() {
+      if (!confirm(t('wg_confirm_reset') || 'Reset war game?')) return;
+
+      try {
+        const resetBtn = document.getElementById('wg-reset-btn');
+        if (resetBtn) resetBtn.disabled = true;
+
+        const state = await WARGAMES_API.resetScenario();
+        renderState(state);
+        updateConnectionStatus();
+      } catch (error) {
+        showError(`Error: ${WARGAMES_API.translateError(error)}`);
+      } finally {
+        const resetBtn = document.getElementById('wg-reset-btn');
+        if (resetBtn) resetBtn.disabled = false;
+      }
+    },
+
+    setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('cr-lang', lang);
+      WARGAMES_API.setLanguage(lang);
+      // Translate UI
+      translatePage();
+      // Re-render with new language
+      loadState();
+    },
+
+    cleanup() {
+      if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+    }
+  };
+})();
+
+// Helper
+function escapeHtml(text) {
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+  return String(text).replace(/[&<>"']/g, m => map[m]);
+}
+
+// Auto-initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => WG_UI.init());
+} else {
+  WG_UI.init();
+}
+</script>

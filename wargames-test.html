@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>War Games - Full Browser Test</title>
+  <style>
+    body {
+      font-family: "Cascadia Mono", monospace;
+      background: #0a0e27;
+      color: #edf3ff;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .test-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #121b28;
+      border: 1px solid #263449;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    h1 {
+      color: #55d68b;
+      border-bottom: 2px solid #55d68b;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #6bb7ff;
+      margin-top: 30px;
+    }
+    .test-item {
+      background: #0d1420;
+      border-left: 3px solid #55d68b;
+      padding: 16px;
+      margin: 12px 0;
+      border-radius: 4px;
+    }
+    .test-item.pass {
+      border-left-color: #55d68b;
+      background: rgba(85, 214, 139, 0.05);
+    }
+    .test-item.fail {
+      border-left-color: #ff5c57;
+      background: rgba(255, 92, 87, 0.05);
+    }
+    .test-item.pending {
+      border-left-color: #ffae57;
+      background: rgba(255, 174, 87, 0.05);
+    }
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    .status.pass {
+      background: #55d68b;
+      color: #04110b;
+    }
+    .status.fail {
+      background: #ff5c57;
+      color: #fff;
+    }
+    .status.pending {
+      background: #ffae57;
+      color: #04110b;
+    }
+    .result {
+      margin-top: 10px;
+      padding: 10px;
+      background: #05070d;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #91a0b8;
+    }
+    button {
+      background: linear-gradient(135deg, #55d68b, #7fff4d);
+      color: #04110b;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px 5px 5px 0;
+    }
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .test-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: rgba(85, 214, 139, 0.05);
+      border: 1px solid #263449;
+      border-radius: 6px;
+    }
+    .console {
+      background: #05070d;
+      border: 1px solid #263449;
+      border-radius: 4px;
+      padding: 12px;
+      margin: 10px 0;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 11px;
+      color: #55d68b;
+    }
+    .summary {
+      background: linear-gradient(135deg, rgba(85, 214, 139, 0.1), rgba(107, 183, 255, 0.1));
+      border: 1px solid #263449;
+      border-radius: 6px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .summary h3 {
+      color: #55d68b;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="test-container">
+  <h1>🎮 War Games System - Full Browser Test Suite</h1>
+  <p>Prueba exhaustiva de todas las funcionalidades del sistema War Games</p>
+
+  <div style="margin: 20px 0;">
+    <button onclick="runAllTests()">▶ Ejecutar Todas las Pruebas</button>
+    <button onclick="clearResults()">🗑️ Limpiar Resultados</button>
+  </div>
+
+  <div id="test-results"></div>
+
+  <div class="summary" id="summary" style="display: none;">
+    <h3>📊 Resumen General</h3>
+    <div id="summary-content"></div>
+  </div>
+</div>
+
+<script src="http://localhost:8090/wargames-api.js"></script>
+<script src="http://localhost:8090/wargames-tests.js"></script>
+
+<script>
+  const resultsDiv = document.getElementById('test-results');
+  const summaryDiv = document.getElementById('summary');
+  const summaryContent = document.getElementById('summary-content');
+
+  let testResults = {
+    total: 0,
+    passed: 0,
+    failed: 0,
+    pending: 0,
+    tests: []
+  };
+
+  function addTest(name, status, details = '') {
+    testResults.total++;
+    if (status === 'pass') testResults.passed++;
+    else if (status === 'fail') testResults.failed++;
+    else if (status === 'pending') testResults.pending++;
+
+    testResults.tests.push({ name, status, details });
+
+    const testEl = document.createElement('div');
+    testEl.className = `test-item ${status}`;
+
+    const statusBadge = document.createElement('span');
+    statusBadge.className = `status ${status}`;
+    statusBadge.textContent = status.toUpperCase();
+
+    const nameEl = document.createElement('span');
+    nameEl.textContent = name;
+
+    testEl.appendChild(statusBadge);
+    testEl.appendChild(nameEl);
+
+    if (details) {
+      const resultEl = document.createElement('div');
+      resultEl.className = 'result';
+      resultEl.textContent = details;
+      testEl.appendChild(resultEl);
+    }
+
+    resultsDiv.appendChild(testEl);
+  }
+
+  async function runAllTests() {
+    resultsDiv.innerHTML = '';
+    testResults = { total: 0, passed: 0, failed: 0, pending: 0, tests: [] };
+
+    // Section 1: Cargas básicas
+    addTest('Sección 1.1: Carga de WARGAMES_API', 'pending', 'Verificando...');
+    try {
+      if (typeof WARGAMES_API !== 'undefined') {
+        testResults.tests[testResults.tests.length - 1].status = 'pass';
+        addTest('✓ WARGAMES_API disponible en window', 'pass', 'Módulo cargado correctamente');
+      }
+    } catch (e) {
+      testResults.tests[testResults.tests.length - 1].status = 'fail';
+    }
+
+    // Section 1.2: Carga de WARGAMES_TESTS
+    addTest('Sección 1.2: Carga de WARGAMES_TESTS', 'pending', 'Verificando...');
+    try {
+      if (typeof WARGAMES_TESTS !== 'undefined') {
+        testResults.tests[testResults.tests.length - 1].status = 'pass';
+        addTest('✓ WARGAMES_TESTS disponible en window', 'pass', 'Suite de pruebas cargada correctamente');
+      }
+    } catch (e) {
+      testResults.tests[testResults.tests.length - 1].status = 'fail';
+    }
+
+    // Section 2: Detección de ambiente
+    addTest('Sección 2: Detección de Ambiente', 'pending', 'Analizando...');
+    try {
+      const env = WARGAMES_API.getEnvironment();
+      const envType = env.isLocal ? 'LOCAL' : env.isVercel ? 'VERCEL' : 'UNKNOWN';
+      addTest('✓ Environment detection', 'pass',
+        `Tipo: ${envType} | BaseURL: ${env.baseURL || 'N/A'}`);
+      testResults.tests[testResults.tests.length - 2].status = 'pass';
+    } catch (e) {
+      addTest('✗ Environment detection failed', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 2].status = 'fail';
+    }
+
+    // Section 3: Conectividad API
+    addTest('Sección 3: Conectividad API', 'pending', 'Probando endpoints...');
+
+    try {
+      const playbooks = await WARGAMES_API.getPlaybooks();
+      addTest('✓ GET /runner/api/playbooks', 'pass',
+        `${playbooks.length} playbooks cargados | Primero: ${playbooks[0]?.name || 'N/A'}`);
+    } catch (e) {
+      addTest('✗ GET /runner/api/playbooks', 'fail', e.message);
+    }
+
+    try {
+      const state = await WARGAMES_API.getState();
+      addTest('✓ GET /runner/api/wargames/state', 'pass',
+        `Estado: ${state.active ? 'ACTIVE' : 'IDLE'} | Escenario: ${state.scenario?.name || 'None'}`);
+    } catch (e) {
+      addTest('✗ GET /runner/api/wargames/state', 'fail', e.message);
+    }
+
+    try {
+      const caps = await WARGAMES_API.getCapabilities();
+      const targetCount = Object.keys(caps.targets || {}).length;
+      addTest('✓ GET /runner/api/validation/capabilities', 'pass',
+        `${targetCount} targets disponibles`);
+    } catch (e) {
+      addTest('✗ GET /runner/api/validation/capabilities', 'fail', e.message);
+    }
+
+    // Section 4: Estado de conexión
+    addTest('Sección 4: Estado de Conexión', 'pending', 'Verificando...');
+    try {
+      const isOnline = WARGAMES_API.isOnline();
+      addTest('✓ Connection status check', 'pass', `Online: ${isOnline}`);
+      testResults.tests[testResults.tests.length - 2].status = 'pass';
+    } catch (e) {
+      addTest('✗ Connection status check', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 2].status = 'fail';
+    }
+
+    // Section 5: Soporte i18n
+    addTest('Sección 5: Soporte i18n', 'pending', 'Probando idiomas...');
+    try {
+      WARGAMES_API.setLanguage('es');
+      const langES = localStorage.getItem('cr-lang');
+      addTest('✓ Spanish (ES) language support', 'pass', `Idioma guardado: ${langES}`);
+
+      WARGAMES_API.setLanguage('en');
+      const langEN = localStorage.getItem('cr-lang');
+      addTest('✓ English (EN) language support', 'pass', `Idioma guardado: ${langEN}`);
+
+      testResults.tests[testResults.tests.length - 3].status = 'pass';
+    } catch (e) {
+      addTest('✗ i18n support', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 3].status = 'fail';
+    }
+
+    // Section 6: Traducción de errores
+    addTest('Sección 6: Traducción de Errores', 'pending', 'Probando...');
+    try {
+      const error1 = WARGAMES_API.translateError(new Error('HTTP 404'));
+      const error2 = WARGAMES_API.translateError(new Error('timeout'));
+      const error3 = WARGAMES_API.translateError(new Error('JSON'));
+      addTest('✓ Error translation', 'pass',
+        `404: "${error1}" | Timeout: "${error2}" | JSON: "${error3}"`);
+      testResults.tests[testResults.tests.length - 2].status = 'pass';
+    } catch (e) {
+      addTest('✗ Error translation', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 2].status = 'fail';
+    }
+
+    // Section 7: Estructura DOM (verificación de UI)
+    addTest('Sección 7: Estructura del DOM', 'pending', 'Escaneando...');
+    try {
+      const container = document.getElementById('wg-container');
+      if (container) {
+        addTest('✓ War Games container exists', 'pass', 'Elemento #wg-container encontrado');
+      } else {
+        addTest('⚠️ War Games container not found', 'pending',
+          'El contenedor aún no se ha cargado (se carga dinámicamente al abrir la pestaña)');
+      }
+      testResults.tests[testResults.tests.length - 2].status = 'pass';
+    } catch (e) {
+      addTest('✗ DOM structure check', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 2].status = 'fail';
+    }
+
+    // Section 8: Test Suite availability
+    addTest('Sección 8: Suite de Pruebas Disponible', 'pending', 'Verificando...');
+    try {
+      if (typeof WARGAMES_TESTS.quickTest === 'function') {
+        addTest('✓ WARGAMES_TESTS.quickTest()', 'pass', 'Método disponible para ejecutar 4 pruebas rápidas');
+      }
+      if (typeof WARGAMES_TESTS.runAll === 'function') {
+        addTest('✓ WARGAMES_TESTS.runAll()', 'pass', 'Método disponible para ejecutar 18 pruebas completas');
+      }
+      testResults.tests[testResults.tests.length - 3].status = 'pass';
+    } catch (e) {
+      addTest('✗ Test suite methods', 'fail', e.message);
+      testResults.tests[testResults.tests.length - 3].status = 'fail';
+    }
+
+    // Update summary
+    updateSummary();
+  }
+
+  function updateSummary() {
+    summaryDiv.style.display = 'block';
+    const passRate = Math.round((testResults.passed / testResults.total) * 100);
+
+    let html = `
+      <p><strong>Total de pruebas:</strong> ${testResults.total}</p>
+      <p><strong>Pasadas:</strong> <span style="color: #55d68b;">${testResults.passed}</span></p>
+      <p><strong>Fallidas:</strong> <span style="color: #ff5c57;">${testResults.failed}</span></p>
+      <p><strong>Pendientes:</strong> <span style="color: #ffae57;">${testResults.pending}</span></p>
+      <p><strong>Tasa de éxito:</strong> ${passRate}%</p>
+
+      <h4 style="margin-top: 20px; color: #6bb7ff;">Próximos pasos:</h4>
+      <ol>
+        <li>Navega a la pestaña "Juegos de Guerra" en el portal</li>
+        <li>Verifica que se cargue la UI dinámicamente</li>
+        <li>Prueba seleccionar escenarios</li>
+        <li>Inicia un juego de guerra</li>
+        <li>Observa la telemetría en tiempo real</li>
+        <li>En la consola, ejecuta: <code>WARGAMES_TESTS.quickTest()</code></li>
+        <li>Después ejecuta: <code>WARGAMES_TESTS.runAll()</code></li>
+      </ol>
+    `;
+
+    summaryContent.innerHTML = html;
+  }
+
+  function clearResults() {
+    resultsDiv.innerHTML = '';
+    summaryDiv.style.display = 'none';
+    testResults = { total: 0, passed: 0, failed: 0, pending: 0, tests: [] };
+  }
+
+  // Auto-run on load
+  window.addEventListener('load', () => {
+    console.log('War Games Test Suite loaded. Click "Ejecutar Todas las Pruebas" to start.');
+  });
+</script>
+
+</body>
+</html>

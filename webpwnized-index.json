@@ -1,0 +1,822 @@
+{
+  "source": "https://www.youtube.com/user/webpwnized",
+  "channel_id": "UCPeJcqbi8v46Adk59plaaXg",
+  "channel_title": "webpwnized",
+  "counts": {
+    "videos": 404,
+    "playlists": 55,
+    "priority_playlists": 30
+  },
+  "category_counts": {
+    "burp_proxy_testing": 53,
+    "owasp_labs": 81,
+    "web_vulnerabilities": 24,
+    "http_browser_security": 45,
+    "devsecops_scanning": 14,
+    "cloud_security": 29,
+    "lab_operations": 121,
+    "forensics_network_crypto": 31
+  },
+  "tracks": [
+    {
+      "id": "burp_proxy_testing",
+      "title": "Burp Suite y proxy testing",
+      "goal": "Dominar captura, repeticion y analisis de requests antes de pruebas activas."
+    },
+    {
+      "id": "owasp_labs",
+      "title": "OWASP labs: Mutillidae, DVWA, WebGoat",
+      "goal": "Practicar vulnerabilidades reales en entornos propios y documentar mitigaciones."
+    },
+    {
+      "id": "web_vulnerabilities",
+      "title": "XSS, CSRF, SQLi, IDOR, SSRF, JWT",
+      "goal": "Entender causa raiz, evidencia minima y correccion segura por clase de fallo."
+    },
+    {
+      "id": "http_browser_security",
+      "title": "Headers, cookies, CORS, CSP y TLS",
+      "goal": "Auditar postura de navegador, sesiones y protecciones defensivas."
+    },
+    {
+      "id": "devsecops_scanning",
+      "title": "Trivy, Dependency Check, StackHawk, detect-secrets",
+      "goal": "Convertir aprendizaje en gates CI/CD profesionales."
+    },
+    {
+      "id": "cloud_security",
+      "title": "Google Cloud, AWS, Azure y Terraform",
+      "goal": "Mapear IAM, red, logging y WAF a baselines de agencia profesional."
+    },
+    {
+      "id": "lab_operations",
+      "title": "Linux, Docker, VirtualBox, Apache, MySQL",
+      "goal": "Operar laboratorios locales reproducibles sin romper el host."
+    },
+    {
+      "id": "forensics_network_crypto",
+      "title": "Forense, red y criptografia practica",
+      "goal": "Complementar ofensiva autorizada con evidencia defensiva y analisis."
+    }
+  ],
+  "playlists": [
+    {
+      "title": "Introduction to Burp Suite 2",
+      "id": "PLZOToVAK85MqMRuwkplwzs6Kyq0aFc8xh",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqMRuwkplwzs6Kyq0aFc8xh",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "burp"
+      ]
+    },
+    {
+      "title": "Basic Linux Commands",
+      "id": "PLZOToVAK85Mog5j1WL5u9zKHig-n50haG",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mog5j1WL5u9zKHig-n50haG",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "title": "Amazon Web Services (AWS)",
+      "id": "PLZOToVAK85MpQMLBFncDAWQfSVtq9Mvyu",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MpQMLBFncDAWQfSVtq9Mvyu",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "Azure Cloud",
+      "id": "PLZOToVAK85MorrTmWJpsbQTD1kNC0wWb2",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MorrTmWJpsbQTD1kNC0wWb2",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "title": "Google Cloud Platform (GCP)",
+      "id": "PLZOToVAK85Mq1lZ2JPq4bwtru7wkBYhLv",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mq1lZ2JPq4bwtru7wkBYhLv",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "title": "Security in Google Cloud Platform (GCP)",
+      "id": "PLZOToVAK85Mr2Zd9OozxH_3GSHGcNcZA2",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mr2Zd9OozxH_3GSHGcNcZA2",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "title": "Terraform",
+      "id": "PLZOToVAK85MqRD6icac4OgS5DQZq5VyMZ",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqRD6icac4OgS5DQZq5VyMZ",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "StackHawk",
+      "id": "PLZOToVAK85MqgFbzqTRJ70gIaP7RHoMfi",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqgFbzqTRJ70gIaP7RHoMfi",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "AquaSec Trivy",
+      "id": "PLZOToVAK85Mptw7_ik3ZJzds68FJfVeDP",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mptw7_ik3ZJzds68FJfVeDP",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "Cross-Site Request Forgery (CSRF)",
+      "id": "PLZOToVAK85MpH2_epRGIvWH0H-C3Vt3RI",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MpH2_epRGIvWH0H-C3Vt3RI",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "csrf"
+      ]
+    },
+    {
+      "title": "Insecure Direct Object Reference (IDOR)",
+      "id": "PLZOToVAK85MrcM1gwnF0FrIco52s6XpxR",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrcM1gwnF0FrIco52s6XpxR",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "idor"
+      ]
+    },
+    {
+      "title": "Cross-Site Scripting (XSS)",
+      "id": "PLZOToVAK85MogZec7zLtvv_sCahkmHkrr",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MogZec7zLtvv_sCahkmHkrr",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "xss"
+      ]
+    },
+    {
+      "title": "What is SQL Injection?",
+      "id": "PLZOToVAK85MoOOEFOill51So7NMQc8Rox",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MoOOEFOill51So7NMQc8Rox",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "OWASP Dependency Check",
+      "id": "PLZOToVAK85Mp-mPp9KrhKLKfgERrXrcc_",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mp-mPp9KrhKLKfgERrXrcc_",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "owasp"
+      ]
+    },
+    {
+      "title": "Docker",
+      "id": "PLZOToVAK85Mo0dzv0XU58rX8n3tsKorS-",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mo0dzv0XU58rX8n3tsKorS-",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "JSON Web Tokens (JWT)",
+      "id": "PLZOToVAK85MqZQTXlPyY_PZLMmIoe8tcJ",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqZQTXlPyY_PZLMmIoe8tcJ",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "jwt"
+      ]
+    },
+    {
+      "title": "Mutillidae Lab Walkthroughs",
+      "id": "PLZOToVAK85MrwNHWBK1v2MTY9F4M3ka-8",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrwNHWBK1v2MTY9F4M3ka-8",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "mutillidae"
+      ]
+    },
+    {
+      "title": "Checking HTTP Headers",
+      "id": "PLZOToVAK85MrzvkGutC4qphohxmpQkWvY",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrzvkGutC4qphohxmpQkWvY",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "headers"
+      ]
+    },
+    {
+      "title": "Cross-origin Resource Sharing (CORS)",
+      "id": "PLZOToVAK85MqfXb3RxaPKcCMdQv0VXmjh",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqfXb3RxaPKcCMdQv0VXmjh",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "cors"
+      ]
+    },
+    {
+      "title": "Cookies",
+      "id": "PLZOToVAK85Mp7_iZsMgPKKL6UE0LyP6JX",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mp7_iZsMgPKKL6UE0LyP6JX",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "Security-related HTTP Headers",
+      "id": "PLZOToVAK85Mp4O_797wrjQrzfEBV75UmQ",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Mp4O_797wrjQrzfEBV75UmQ",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "headers"
+      ]
+    },
+    {
+      "title": "Burp Suite 2",
+      "id": "PLZOToVAK85MoBg65au9EeFkK7qwzppcnU",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MoBg65au9EeFkK7qwzppcnU",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "burp"
+      ]
+    },
+    {
+      "title": "Installing Mutillidae: The Definitive Guide",
+      "id": "PLZOToVAK85MqxEyrjINe-LwDMhxJJKzmm",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqxEyrjINe-LwDMhxJJKzmm",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "mutillidae"
+      ]
+    },
+    {
+      "title": "LAMP Stack: Linux Apache PHP MySQL",
+      "id": "PLZOToVAK85MqP4Zrd_vlgjuE2Vpvea5jQ",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MqP4Zrd_vlgjuE2Vpvea5jQ",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "title": "OWASP ZAP",
+      "id": "PLZOToVAK85Moz5CQrdRMfsLwFN0XX7gsc",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85Moz5CQrdRMfsLwFN0XX7gsc",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "owasp"
+      ]
+    },
+    {
+      "title": "Linux Basics",
+      "id": "PLZOToVAK85MrLLPbKyvotLJHBw7YKDBsR",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrLLPbKyvotLJHBw7YKDBsR",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "title": "MySQL Server",
+      "id": "PLZOToVAK85MrNIiPSn0qcvkI6cP8FlYYN",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrNIiPSn0qcvkI6cP8FlYYN",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": []
+    },
+    {
+      "title": "Using Mutillidae II",
+      "id": "PLZOToVAK85MrsyNmNp0yyUTBXqKRTh623",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MrsyNmNp0yyUTBXqKRTh623",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "mutillidae"
+      ]
+    },
+    {
+      "title": "Computer Forensics",
+      "id": "PLZOToVAK85MoyvZa2POq_uOmMj4jxZLfw",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MoyvZa2POq_uOmMj4jxZLfw",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "forensics"
+      ]
+    },
+    {
+      "title": "Burp-Suite",
+      "id": "PLZOToVAK85MorLmAqD3117C0s9h7ccxaV",
+      "url": "https://www.youtube.com/playlist?list=PLZOToVAK85MorLmAqD3117C0s9h7ccxaV",
+      "description": "Ruta audiovisual webpwnized para estudio autorizado: fundamentos, laboratorio, evidencia y remediacion.",
+      "tags": [
+        "burp"
+      ]
+    }
+  ],
+  "sample_videos_by_category": {
+    "burp_proxy_testing": [
+      {
+        "title": "Burp Suite 2: Solved - The Proxy Server is Refusing Connections",
+        "url": "https://www.youtube.com/watch?v=AX5iLrUbjoU",
+        "id": "AX5iLrUbjoU"
+      },
+      {
+        "title": "Burp Suite 2: Solved - Failed to Start Proxy Service",
+        "url": "https://www.youtube.com/watch?v=LPsa7EAaQs8",
+        "id": "LPsa7EAaQs8"
+      },
+      {
+        "title": "Burp Suite 2: How to Save Project Settings",
+        "url": "https://www.youtube.com/watch?v=Ls1JhPmoaz4",
+        "id": "Ls1JhPmoaz4"
+      },
+      {
+        "title": "GCP Security: How to Create a Firewall Rule for Identity Aware Proxy (IAP)",
+        "url": "https://www.youtube.com/watch?v=Zc6sPaGosaw",
+        "id": "Zc6sPaGosaw"
+      },
+      {
+        "title": "GCP Security: Use SSH Keys from Secret Manager with Identity Aware Proxy (IAP)",
+        "url": "https://www.youtube.com/watch?v=rb6GauJWBqQ",
+        "id": "rb6GauJWBqQ"
+      },
+      {
+        "title": "GCP Security: Using Identity Aware Proxy with SSH",
+        "url": "https://www.youtube.com/watch?v=7Xo6MhifbpY",
+        "id": "7Xo6MhifbpY"
+      },
+      {
+        "title": "JWT Security: Part 2 - How to View JWT in Burp-Suite",
+        "url": "https://www.youtube.com/watch?v=iZPoBXcSYww",
+        "id": "iZPoBXcSYww"
+      },
+      {
+        "title": "Burp-Suite 2: Inspecting Web Sockets",
+        "url": "https://www.youtube.com/watch?v=qkkFc_6Gr1k",
+        "id": "qkkFc_6Gr1k"
+      },
+      {
+        "title": "Burp Suite 2: Proxy History Filter",
+        "url": "https://www.youtube.com/watch?v=u1SH0nbo1b8",
+        "id": "u1SH0nbo1b8"
+      },
+      {
+        "title": "Burp Suite 2: Site Map Filters",
+        "url": "https://www.youtube.com/watch?v=9SL9968PgUk",
+        "id": "9SL9968PgUk"
+      },
+      {
+        "title": "Burp Suite 2: Proxy History",
+        "url": "https://www.youtube.com/watch?v=k0U47sS2o8g",
+        "id": "k0U47sS2o8g"
+      },
+      {
+        "title": "Burp Suite 2 Professional: Automated Scanning",
+        "url": "https://www.youtube.com/watch?v=W0O53inMaIY",
+        "id": "W0O53inMaIY"
+      }
+    ],
+    "owasp_labs": [
+      {
+        "title": "Mutillidae: Lab 51 Walkthrough - Alternate Method",
+        "url": "https://www.youtube.com/watch?v=Y4TWdPZp2eA",
+        "id": "Y4TWdPZp2eA"
+      },
+      {
+        "title": "Mutillidae: Lab 55 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=x7ibzMx4c3c",
+        "id": "x7ibzMx4c3c"
+      },
+      {
+        "title": "Mutillidae: Lab 54 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=NF8dxs_CQA0",
+        "id": "NF8dxs_CQA0"
+      },
+      {
+        "title": "Mutillidae: Lab 53 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=Gxm1_bkYcZ4",
+        "id": "Gxm1_bkYcZ4"
+      },
+      {
+        "title": "Mutillidae: Lab 52 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=JJOqPu_oyi8",
+        "id": "JJOqPu_oyi8"
+      },
+      {
+        "title": "Mutillidae: Lab 51 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=DGYVXsrZrug",
+        "id": "DGYVXsrZrug"
+      },
+      {
+        "title": "Mutillidae: Lab 50 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=px40hbprIOM",
+        "id": "px40hbprIOM"
+      },
+      {
+        "title": "Mutillidae: Lab 46 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=LkH_qRqcJzo",
+        "id": "LkH_qRqcJzo"
+      },
+      {
+        "title": "Mutillidae: Lab 47 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=ICXErYUJ3sU",
+        "id": "ICXErYUJ3sU"
+      },
+      {
+        "title": "Mutillidae: Lab 49 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=Ddnid67vqq4",
+        "id": "Ddnid67vqq4"
+      },
+      {
+        "title": "Mutillidae: Lab 44 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=ETK7l27eZTs",
+        "id": "ETK7l27eZTs"
+      },
+      {
+        "title": "Mutillidae: Lab 45 Walkthrough",
+        "url": "https://www.youtube.com/watch?v=THnZOa93SOs",
+        "id": "THnZOa93SOs"
+      }
+    ],
+    "web_vulnerabilities": [
+      {
+        "title": "What is Server-side Request Forgery (SSRF)?",
+        "url": "https://www.youtube.com/watch?v=kSVv0AxlTVk",
+        "id": "kSVv0AxlTVk"
+      },
+      {
+        "title": "What is Cross-Site Request Forgery (CSRF)",
+        "url": "https://www.youtube.com/watch?v=UUbeaJiVBAw",
+        "id": "UUbeaJiVBAw"
+      },
+      {
+        "title": "Cross-Site Scripting: Part 3 - What is Persistent XSS?",
+        "url": "https://www.youtube.com/watch?v=i0nOTA2NNDY",
+        "id": "i0nOTA2NNDY"
+      },
+      {
+        "title": "Cross-Site Scripting: Part 2 - What is DOM-based XSS?",
+        "url": "https://www.youtube.com/watch?v=yN6hjtNvhMo",
+        "id": "yN6hjtNvhMo"
+      },
+      {
+        "title": "What is an Open Redirect?",
+        "url": "https://www.youtube.com/watch?v=eQxIPjasZqA",
+        "id": "eQxIPjasZqA"
+      },
+      {
+        "title": "What is Insecure Direct Object Reference (IDOR)?",
+        "url": "https://www.youtube.com/watch?v=V3xCPCaaH4s",
+        "id": "V3xCPCaaH4s"
+      },
+      {
+        "title": "Cross-Site Scripting: Part 1- What is Reflected XSS?",
+        "url": "https://www.youtube.com/watch?v=YoNlia7B5F0",
+        "id": "YoNlia7B5F0"
+      },
+      {
+        "title": "What is SQL Injection?",
+        "url": "https://www.youtube.com/watch?v=Mv7wpCIAdp4",
+        "id": "Mv7wpCIAdp4"
+      },
+      {
+        "title": "Comparing Web/Mobile API Authentication Models",
+        "url": "https://www.youtube.com/watch?v=vE2SoO7FyTo",
+        "id": "vE2SoO7FyTo"
+      },
+      {
+        "title": "JWT Security: Part 6 - Importance of Input Validation",
+        "url": "https://www.youtube.com/watch?v=JST-9GmWA2s",
+        "id": "JST-9GmWA2s"
+      },
+      {
+        "title": "JWT Security: Part 5 - Why use Certificate-based Signatures?",
+        "url": "https://www.youtube.com/watch?v=plv4ilIJbYo",
+        "id": "plv4ilIJbYo"
+      },
+      {
+        "title": "JWT Security: Part 4 - How Signatures Protect Against Forgery",
+        "url": "https://www.youtube.com/watch?v=f-v70H9xgFI",
+        "id": "f-v70H9xgFI"
+      }
+    ],
+    "http_browser_security": [
+      {
+        "title": "JWT Security: Part 5 - Why use Certificate-based Signatures?",
+        "url": "https://www.youtube.com/watch?v=plv4ilIJbYo",
+        "id": "plv4ilIJbYo"
+      },
+      {
+        "title": "How to Check HTTP Headers (Command Line)",
+        "url": "https://www.youtube.com/watch?v=PcXZqUqBJeg",
+        "id": "PcXZqUqBJeg"
+      },
+      {
+        "title": "How to Check HTTP Headers from Browser",
+        "url": "https://www.youtube.com/watch?v=lvi_NM1n5vw",
+        "id": "lvi_NM1n5vw"
+      },
+      {
+        "title": "What is Certificate Transparency? - Part 2 - Expect-CT Header",
+        "url": "https://www.youtube.com/watch?v=eCOkyuLxhl8",
+        "id": "eCOkyuLxhl8"
+      },
+      {
+        "title": "What is Certificate Transparency - Part 1",
+        "url": "https://www.youtube.com/watch?v=Ry884U5YTcs",
+        "id": "Ry884U5YTcs"
+      },
+      {
+        "title": "How to Enable Apache Mod-Headers",
+        "url": "https://www.youtube.com/watch?v=xczzcxL6WY0",
+        "id": "xczzcxL6WY0"
+      },
+      {
+        "title": "What is CORS? - Part 2 - Demonstration",
+        "url": "https://www.youtube.com/watch?v=CxFuAcThKPA",
+        "id": "CxFuAcThKPA"
+      },
+      {
+        "title": "What is CORS? - Part 1 - Explanation",
+        "url": "https://www.youtube.com/watch?v=QDIppL_j6Vo",
+        "id": "QDIppL_j6Vo"
+      },
+      {
+        "title": "How to check HTTPS certificate (command line)",
+        "url": "https://www.youtube.com/watch?v=Eqfe_HYX7MU",
+        "id": "Eqfe_HYX7MU"
+      },
+      {
+        "title": "Check HTTP Headers with cURL",
+        "url": "https://www.youtube.com/watch?v=7O391fuNZMk",
+        "id": "7O391fuNZMk"
+      },
+      {
+        "title": "cURL Error: SSL Certificate Problem",
+        "url": "https://www.youtube.com/watch?v=TpNa09xn34I",
+        "id": "TpNa09xn34I"
+      },
+      {
+        "title": "What is Content Security Policy? - Part 4",
+        "url": "https://www.youtube.com/watch?v=HMm5GC6bcYs",
+        "id": "HMm5GC6bcYs"
+      }
+    ],
+    "devsecops_scanning": [
+      {
+        "title": "How to Automatically Run Detect-Secrets with Git Pre-Commit Hooks | Secure Your Code with Pre-Commit",
+        "url": "https://www.youtube.com/watch?v=15A_TkKipSc",
+        "id": "15A_TkKipSc"
+      },
+      {
+        "title": "Automating AquaSec Trivy scan with GitHub Action",
+        "url": "https://www.youtube.com/watch?v=Sh1FP68rs3M",
+        "id": "Sh1FP68rs3M"
+      },
+      {
+        "title": "GCP Security: Use SSH Keys from Secret Manager with Identity Aware Proxy (IAP)",
+        "url": "https://www.youtube.com/watch?v=rb6GauJWBqQ",
+        "id": "rb6GauJWBqQ"
+      },
+      {
+        "title": "GCP Security: Using Secret Manager",
+        "url": "https://www.youtube.com/watch?v=yilzpyyAtX0",
+        "id": "yilzpyyAtX0"
+      },
+      {
+        "title": "Vuln Scanning Terraform Configuration with Trivy",
+        "url": "https://www.youtube.com/watch?v=yf8JC-aNIV8",
+        "id": "yf8JC-aNIV8"
+      },
+      {
+        "title": "Vuln Scanning Dockerfile with Trivy",
+        "url": "https://www.youtube.com/watch?v=hYxWTideASs",
+        "id": "hYxWTideASs"
+      },
+      {
+        "title": "Vuln Scanning Docker Images with Trivy",
+        "url": "https://www.youtube.com/watch?v=UNf8z5FKnvI",
+        "id": "UNf8z5FKnvI"
+      },
+      {
+        "title": "Install Trivy on Ubuntu (Debian)",
+        "url": "https://www.youtube.com/watch?v=2okPeifASxs",
+        "id": "2okPeifASxs"
+      },
+      {
+        "title": "Automating Web Vulnerability Scans with GitHub Actions and StackHawk",
+        "url": "https://www.youtube.com/watch?v=uo9gzlN4bL8",
+        "id": "uo9gzlN4bL8"
+      },
+      {
+        "title": "Web Vulnerability Scan with StackHawk",
+        "url": "https://www.youtube.com/watch?v=Xt3qAlA6gNk",
+        "id": "Xt3qAlA6gNk"
+      },
+      {
+        "title": "How to create a GitHub Secret",
+        "url": "https://www.youtube.com/watch?v=IuT0Ua7V4xA",
+        "id": "IuT0Ua7V4xA"
+      },
+      {
+        "title": "Scanning Code for Credentials using detect-secrets",
+        "url": "https://www.youtube.com/watch?v=eWdgpaPL8Yg",
+        "id": "eWdgpaPL8Yg"
+      }
+    ],
+    "cloud_security": [
+      {
+        "title": "Troubleshooting Cloud Armor Rules: How to Debug and Resolve Site Blocking Issues in Google Cloud",
+        "url": "https://www.youtube.com/watch?v=lXi1DmPaYi8",
+        "id": "lXi1DmPaYi8"
+      },
+      {
+        "title": "Amazon Cloud: How to Install AWS CLI",
+        "url": "https://www.youtube.com/watch?v=W7YFIzdxflc",
+        "id": "W7YFIzdxflc"
+      },
+      {
+        "title": "Azure Cloud: How to Install Az CLI",
+        "url": "https://www.youtube.com/watch?v=phJqcX-fcOw",
+        "id": "phJqcX-fcOw"
+      },
+      {
+        "title": "How to Use GCP Audit (Local Terminal)",
+        "url": "https://www.youtube.com/watch?v=cnkr_gF7Erg",
+        "id": "cnkr_gF7Erg"
+      },
+      {
+        "title": "How to Use GCP Audit (Cloud Shell)",
+        "url": "https://www.youtube.com/watch?v=-3GKp9kEcwY",
+        "id": "-3GKp9kEcwY"
+      },
+      {
+        "title": "Google Cloud: How to Install gcloud",
+        "url": "https://www.youtube.com/watch?v=04GONi_U6zU",
+        "id": "04GONi_U6zU"
+      },
+      {
+        "title": "How to Install Terraform (Linux)",
+        "url": "https://www.youtube.com/watch?v=LM3RLgNu7tU",
+        "id": "LM3RLgNu7tU"
+      },
+      {
+        "title": "GCP Security: Enable OS Login",
+        "url": "https://www.youtube.com/watch?v=KAtHJn8JuOI",
+        "id": "KAtHJn8JuOI"
+      },
+      {
+        "title": "GCP Security: How to Create a Terraform Service Account",
+        "url": "https://www.youtube.com/watch?v=hMcVrKgX30w",
+        "id": "hMcVrKgX30w"
+      },
+      {
+        "title": "Google Cloud Platform (GCP): How to Delete a Project",
+        "url": "https://www.youtube.com/watch?v=qNA3m2x4V8o",
+        "id": "qNA3m2x4V8o"
+      },
+      {
+        "title": "GCP Security: How to Create a Project",
+        "url": "https://www.youtube.com/watch?v=qUgfKkeJ29Y",
+        "id": "qUgfKkeJ29Y"
+      },
+      {
+        "title": "GCP Security: How to Create a Firewall Rule",
+        "url": "https://www.youtube.com/watch?v=0mUPtUfGrok",
+        "id": "0mUPtUfGrok"
+      }
+    ],
+    "lab_operations": [
+      {
+        "title": "How to Import OVA Files into VirtualBox",
+        "url": "https://www.youtube.com/watch?v=PJdsjpZmMMo",
+        "id": "PJdsjpZmMMo"
+      },
+      {
+        "title": "Installing VirtualBox on Windows 11 | Easy Step-by-Step Guide",
+        "url": "https://www.youtube.com/watch?v=FcEvqAT4lbk",
+        "id": "FcEvqAT4lbk"
+      },
+      {
+        "title": "How to Install Visual Studio Code on Linux",
+        "url": "https://www.youtube.com/watch?v=FCkUp2dexPw",
+        "id": "FCkUp2dexPw"
+      },
+      {
+        "title": "How to Install Terraform (Linux)",
+        "url": "https://www.youtube.com/watch?v=LM3RLgNu7tU",
+        "id": "LM3RLgNu7tU"
+      },
+      {
+        "title": "Linux Basics: How to Enable Auto Login",
+        "url": "https://www.youtube.com/watch?v=OTgExo2848U",
+        "id": "OTgExo2848U"
+      },
+      {
+        "title": "Solved: Kernel Panic Installing Ubuntu on VirtualBox",
+        "url": "https://www.youtube.com/watch?v=cRLPPZdrHwM",
+        "id": "cRLPPZdrHwM"
+      },
+      {
+        "title": "How to Install VirtualBox Guest Additions on Linux Guest",
+        "url": "https://www.youtube.com/watch?v=AuJGvJoMrgQ",
+        "id": "AuJGvJoMrgQ"
+      },
+      {
+        "title": "Solved: Menu Bar Missing in Kali Linux",
+        "url": "https://www.youtube.com/watch?v=LeZSthSdunc",
+        "id": "LeZSthSdunc"
+      },
+      {
+        "title": "Ubuntu: How to Upgrade to Next Release",
+        "url": "https://www.youtube.com/watch?v=mncBOGi_A5A",
+        "id": "mncBOGi_A5A"
+      },
+      {
+        "title": "Linux Basics: How to Create SSH Key",
+        "url": "https://www.youtube.com/watch?v=eUwOlc9HfZs",
+        "id": "eUwOlc9HfZs"
+      },
+      {
+        "title": "Vuln Scanning Dockerfile with Trivy",
+        "url": "https://www.youtube.com/watch?v=hYxWTideASs",
+        "id": "hYxWTideASs"
+      },
+      {
+        "title": "Vuln Scanning Docker Images with Trivy",
+        "url": "https://www.youtube.com/watch?v=UNf8z5FKnvI",
+        "id": "UNf8z5FKnvI"
+      }
+    ],
+    "forensics_network_crypto": [
+      {
+        "title": "GCP Security: Use SSH Keys from Secret Manager with Identity Aware Proxy (IAP)",
+        "url": "https://www.youtube.com/watch?v=rb6GauJWBqQ",
+        "id": "rb6GauJWBqQ"
+      },
+      {
+        "title": "GCP Security: Using Identity Aware Proxy with SSH",
+        "url": "https://www.youtube.com/watch?v=7Xo6MhifbpY",
+        "id": "7Xo6MhifbpY"
+      },
+      {
+        "title": "GCP Security: Enable SSH on Cloud Server",
+        "url": "https://www.youtube.com/watch?v=_TYXaDzmuIY",
+        "id": "_TYXaDzmuIY"
+      },
+      {
+        "title": "Linux Basics: How to Create SSH Key",
+        "url": "https://www.youtube.com/watch?v=eUwOlc9HfZs",
+        "id": "eUwOlc9HfZs"
+      },
+      {
+        "title": "Linux Basics: Enable SSH Service",
+        "url": "https://www.youtube.com/watch?v=mEKHM8EDloA",
+        "id": "mEKHM8EDloA"
+      },
+      {
+        "title": "How to Set Up SSH Key Authentication",
+        "url": "https://www.youtube.com/watch?v=mZSso17Hal8",
+        "id": "mZSso17Hal8"
+      },
+      {
+        "title": "SSH Port Forwarding - Part 5: Tunneling over HTTP",
+        "url": "https://www.youtube.com/watch?v=BDM_vWSjH5Y",
+        "id": "BDM_vWSjH5Y"
+      },
+      {
+        "title": "SSH Port Forwarding - Part 4: Encapsulating Tunnels",
+        "url": "https://www.youtube.com/watch?v=TI8q_4n7OwE",
+        "id": "TI8q_4n7OwE"
+      },
+      {
+        "title": "SSH Port Forwarding - Part 3: Dynamic Port Forwarding",
+        "url": "https://www.youtube.com/watch?v=n8IuItBYdHo",
+        "id": "n8IuItBYdHo"
+      },
+      {
+        "title": "SSH Port Forwarding - Part 2: Remote Port Forwarding",
+        "url": "https://www.youtube.com/watch?v=KjCRIRFwBYY",
+        "id": "KjCRIRFwBYY"
+      },
+      {
+        "title": "SSH Port Forwarding - Part 1: Local Port Forwarding",
+        "url": "https://www.youtube.com/watch?v=JIsfErEbWGg",
+        "id": "JIsfErEbWGg"
+      },
+      {
+        "title": "How to Set Up Host-Only Networking in VirtualBox",
+        "url": "https://www.youtube.com/watch?v=NYmsXjFh5G4",
+        "id": "NYmsXjFh5G4"
+      }
+    ]
+  },
+  "guardrails": [
+    "No se descarga contenido audiovisual.",
+    "Los videos se reproducen con embeds oficiales de YouTube dentro del portal.",
+    "Usar solo laboratorios locales o activos explicitamente autorizados.",
+    "La salida de aprendizaje es evidencia, remediacion y pruebas de regresion."
+  ]
+}

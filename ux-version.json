@@ -1,0 +1,10 @@
+{
+  "version": "ux-v2.0",
+  "deployed_at": "2026-05-18",
+  "markers": [
+    "Command Center hero",
+    "Ctrl+K command palette",
+    "UX v2.0 header chip",
+    "Quick rail"
+  ]
+}

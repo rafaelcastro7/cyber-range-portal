@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-17T09:15:15.817Z",
+  "sources": {
+    "platzi": {
+      "total_courses": 24,
+      "complete": 20,
+      "partial": 4,
+      "empty": 0,
+      "total_classes": 533,
+      "classes_with_video": 522,
+      "missing_videos": 11,
+      "incomplete_courses": [
+        {
+          "slug": "nodejs-graphql-avanzado",
+          "name": "35 opiniones",
+          "completion_pct": 96,
+          "missing": 1,
+          "total": 23
+        },
+        {
+          "slug": "ingeniero-observabilidad-newrelic",
+          "name": "36 opiniones",
+          "completion_pct": 70,
+          "missing": 7,
+          "total": 23
+        },
+        {
+          "slug": "jamstack",
+          "name": "90 opiniones",
+          "completion_pct": 94,
+          "missing": 1,
+          "total": 17
+        },
+        {
+          "slug": "new-relic",
+          "name": "225 opiniones",
+          "completion_pct": 87,
+          "missing": 2,
+          "total": 15
+        }
+      ]
+    },
+    "english": {
+      "course": "RAIO English Course",
+      "total_lessons": 246,
+      "with_video": 220,
+      "missing": 26,
+      "completion_pct": 89,
+      "incomplete_sections": [
+        {
+          "section": "1",
+          "completion_pct": 50,
+          "missing": 1,
+          "total": 2
+        },
+        {
+          "section": "8",
+          "completion_pct": 0,
+          "missing": 25,
+          "total": 25
+        }
+      ]
+    },
+    "lab10": {
+      "total_videos": 28,
+      "with_transcript": 28,
+      "paths": [
+        {
+          "path": "reto-agentes",
+          "total_modules": 2
+        },
+        {
+          "path": "10x-code",
+          "total_modules": 2
+        },
+        {
+          "path": "10x-no-code",
+          "total_modules": 2
+        }
+      ],
+      "note": "Lab10 no tiene índice oficial título→video. Videos identificados por hash MD5."
+    },
+    "datacamp": {
+      "type": "rag_only_no_video",
+      "total_courses": 0,
+      "rag_chunks_bytes": 29971336,
+      "note": "No descarga videos por DRM HLS de Datacamp. Solo metadatos + RAG."
+    }
+  }
+}

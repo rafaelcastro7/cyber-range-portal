@@ -1,0 +1,3440 @@
+[
+  {
+    "slug": "pro-arquitectura",
+    "name": "Curso Profesional de Arquitectura de Software1",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Curso Profesional de Arquitectura de Software",
+        "video": "/platzi/videos/pro-arquitectura_001_Curso_Profesional_de_Arquitectura_de_Software.mp4",
+        "transcript": "/platzi/pro-arquitectura/001_Curso_Profesional_de_Arquitectura_de_Software.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Qué son los atributos de calidad en software",
+        "video": "/platzi/videos/pro-arquitectura_002_Qué_son_los_atributos_de_calidad_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/002_Qu%C3%A9_son_los_atributos_de_calidad_en_software.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Cómo medir idoneidad funcional en software",
+        "video": "/platzi/videos/pro-arquitectura_003_Cómo_medir_idoneidad_funcional_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/003_C%C3%B3mo_medir_idoneidad_funcional_en_software.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Qué es eficiencia de ejecución en software",
+        "video": "/platzi/videos/pro-arquitectura_004_Qué_es_eficiencia_de_ejecución_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/004_Qu%C3%A9_es_eficiencia_de_ejecuci%C3%B3n_en_software.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Cómo medir interoperabilidad y coexistencia",
+        "video": "/platzi/videos/pro-arquitectura_005_Cómo_medir_interoperabilidad_y_coexistencia.mp4",
+        "transcript": "/platzi/pro-arquitectura/005_C%C3%B3mo_medir_interoperabilidad_y_coexistencia.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Qué es la usabilidad y sus 6 dimensiones",
+        "video": "/platzi/videos/pro-arquitectura_006_Qué_es_la_usabilidad_y_sus_6_dimensiones.mp4",
+        "transcript": "/platzi/pro-arquitectura/006_Qu%C3%A9_es_la_usabilidad_y_sus_6_dimensiones.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Cómo medir confiabilidad en software",
+        "video": "/platzi/videos/pro-arquitectura_007_Cómo_medir_confiabilidad_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/007_C%C3%B3mo_medir_confiabilidad_en_software.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Los 5 pilares de seguridad en software",
+        "video": "/platzi/videos/pro-arquitectura_008_Los_5_pilares_de_seguridad_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/008_Los_5_pilares_de_seguridad_en_software.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Cómo garantizar mantenibilidad con tests",
+        "video": "/platzi/videos/pro-arquitectura_009_Cómo_garantizar_mantenibilidad_con_tests.mp4",
+        "transcript": "/platzi/pro-arquitectura/009_C%C3%B3mo_garantizar_mantenibilidad_con_tests.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Adaptabilidad vs capacidad de instalación vs reemplazo",
+        "video": "/platzi/videos/pro-arquitectura_010_Adaptabilidad_vs_capacidad_de_instalación_vs_reemplazo.mp4",
+        "transcript": "/platzi/pro-arquitectura/010_Adaptabilidad_vs_capacidad_de_instalaci%C3%B3n_vs_reemplazo.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Tensiones entre atributos de calidad de software",
+        "video": "/platzi/videos/pro-arquitectura_011_Tensiones_entre_atributos_de_calidad_de_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/011_Tensiones_entre_atributos_de_calidad_de_software.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Atributos de calidad según fase de empresa",
+        "video": "/platzi/videos/pro-arquitectura_012_Atributos_de_calidad_según_fase_de_empresa.mp4",
+        "transcript": "/platzi/pro-arquitectura/012_Atributos_de_calidad_seg%C3%BAn_fase_de_empresa.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Qué es un patrón de arquitectura",
+        "video": "/platzi/videos/pro-arquitectura_013_Qué_es_un_patrón_de_arquitectura.mp4",
+        "transcript": "/platzi/pro-arquitectura/013_Qu%C3%A9_es_un_patr%C3%B3n_de_arquitectura.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Modelo vista controlador: cómo separar responsabilidades",
+        "video": "/platzi/videos/pro-arquitectura_014_Modelo_vista_controlador__cómo_separar_responsabilidades.mp4",
+        "transcript": "/platzi/pro-arquitectura/014_Modelo_vista_controlador__c%C3%B3mo_separar_responsabilidades.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Arquitectura en capas: controller, servicio y repositorio",
+        "video": "/platzi/videos/pro-arquitectura_015_Arquitectura_en_capas__controller__servicio_y_repositorio.mp4",
+        "transcript": "/platzi/pro-arquitectura/015_Arquitectura_en_capas__controller__servicio_y_repositorio.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Event sourcing vs bases relacionales",
+        "video": "/platzi/videos/pro-arquitectura_016_Event_sourcing_vs_bases_relacionales.mp4",
+        "transcript": "/platzi/pro-arquitectura/016_Event_sourcing_vs_bases_relacionales.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Qué es la arquitectura microkernel",
+        "video": "/platzi/videos/pro-arquitectura_017_Qué_es_la_arquitectura_microkernel.mp4",
+        "transcript": "/platzi/pro-arquitectura/017_Qu%C3%A9_es_la_arquitectura_microkernel.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Arquitectura Comparte Nada con Map Reduce",
+        "video": "/platzi/videos/pro-arquitectura_018_Arquitectura_Comparte_Nada_con_Map_Reduce.mp4",
+        "transcript": "/platzi/pro-arquitectura/018_Arquitectura_Comparte_Nada_con_Map_Reduce.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Patrón de microservicios: cuándo y cómo",
+        "video": "/platzi/videos/pro-arquitectura_019_Patrón_de_microservicios__cuándo_y_cómo.mp4",
+        "transcript": "/platzi/pro-arquitectura/019_Patr%C3%B3n_de_microservicios__cu%C3%A1ndo_y_c%C3%B3mo.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Qué es CQRS y cómo separa lectura de escritura",
+        "video": "/platzi/videos/pro-arquitectura_020_Qué_es_CQRS_y_cómo_separa_lectura_de_escritura.mp4",
+        "transcript": "/platzi/pro-arquitectura/020_Qu%C3%A9_es_CQRS_y_c%C3%B3mo_separa_lectura_de_escritura.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Arquitectura hexagonal: puertos y adaptadores",
+        "video": "/platzi/videos/pro-arquitectura_021_Arquitectura_hexagonal__puertos_y_adaptadores.mp4",
+        "transcript": "/platzi/pro-arquitectura/021_Arquitectura_hexagonal__puertos_y_adaptadores.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Qué son los contextos delimitados en DDD",
+        "video": "/platzi/videos/pro-arquitectura_022_Qué_son_los_contextos_delimitados_en_DDD.mp4",
+        "transcript": "/platzi/pro-arquitectura/022_Qu%C3%A9_son_los_contextos_delimitados_en_DDD.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Cómo combinar patrones de arquitectura",
+        "video": "/platzi/videos/pro-arquitectura_023_Cómo_combinar_patrones_de_arquitectura.mp4",
+        "transcript": "/platzi/pro-arquitectura/023_C%C3%B3mo_combinar_patrones_de_arquitectura.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Evolución de patrones desde monolito a microservicios",
+        "video": "/platzi/videos/pro-arquitectura_024_Evolución_de_patrones_desde_monolito_a_microservicios.mp4",
+        "transcript": "/platzi/pro-arquitectura/024_Evoluci%C3%B3n_de_patrones_desde_monolito_a_microservicios.txt"
+      },
+      {
+        "idx": 25,
+        "title": "Cómo traducir requerimientos en decisiones arquitectónicas",
+        "video": "/platzi/videos/pro-arquitectura_025_Cómo_traducir_requerimientos_en_decisiones_arquitectónicas.mp4",
+        "transcript": "/platzi/pro-arquitectura/025_C%C3%B3mo_traducir_requerimientos_en_decisiones_arquitect%C3%B3nicas.txt"
+      },
+      {
+        "idx": 26,
+        "title": "Conectores en arquitectura: tipos y cuándo usarlos",
+        "video": "/platzi/videos/pro-arquitectura_026_Conectores_en_arquitectura__tipos_y_cuándo_usarlos.mp4",
+        "transcript": "/platzi/pro-arquitectura/026_Conectores_en_arquitectura__tipos_y_cu%C3%A1ndo_usarlos.txt"
+      },
+      {
+        "idx": 27,
+        "title": "Llamadas asíncronas vs síncronas vs cliente-servidor",
+        "video": "/platzi/videos/pro-arquitectura_027_Llamadas_asíncronas_vs_síncronas_vs_cliente-servidor.mp4",
+        "transcript": "/platzi/pro-arquitectura/027_Llamadas_as%C3%ADncronas_vs_s%C3%ADncronas_vs_cliente-servidor.txt"
+      },
+      {
+        "idx": 28,
+        "title": "Conector enrutador vs difusión: Twitter",
+        "video": "/platzi/videos/pro-arquitectura_028_Conector_enrutador_vs_difusión__Twitter.mp4",
+        "transcript": "/platzi/pro-arquitectura/028_Conector_enrutador_vs_difusi%C3%B3n__Twitter.txt"
+      },
+      {
+        "idx": 29,
+        "title": "Conectores cola, repositorio y pub/sub",
+        "video": "/platzi/videos/pro-arquitectura_029_Conectores_cola__repositorio_y_pub_sub.mp4",
+        "transcript": "/platzi/pro-arquitectura/029_Conectores_cola__repositorio_y_pub_sub.txt"
+      },
+      {
+        "idx": 30,
+        "title": "Framework de diseño orientado a atributos",
+        "video": "/platzi/videos/pro-arquitectura_030_Framework_de_diseño_orientado_a_atributos.mp4",
+        "transcript": "/platzi/pro-arquitectura/030_Framework_de_dise%C3%B1o_orientado_a_atributos.txt"
+      },
+      {
+        "idx": 31,
+        "title": "Cómo detectar fallas y reparar sistemas",
+        "video": "/platzi/videos/pro-arquitectura_031_Cómo_detectar_fallas_y_reparar_sistemas.mp4",
+        "transcript": "/platzi/pro-arquitectura/031_C%C3%B3mo_detectar_fallas_y_reparar_sistemas.txt"
+      },
+      {
+        "idx": 32,
+        "title": "Cómo recuperar y prevenir fallas en sistemas",
+        "video": "/platzi/videos/pro-arquitectura_032_Cómo_recuperar_y_prevenir_fallas_en_sistemas.mp4",
+        "transcript": "/platzi/pro-arquitectura/032_C%C3%B3mo_recuperar_y_prevenir_fallas_en_sistemas.txt"
+      },
+      {
+        "idx": 33,
+        "title": "Tácticas para confinar modificaciones",
+        "video": "/platzi/videos/pro-arquitectura_033_Tácticas_para_confinar_modificaciones.mp4",
+        "transcript": "/platzi/pro-arquitectura/033_T%C3%A1cticas_para_confinar_modificaciones.txt"
+      },
+      {
+        "idx": 34,
+        "title": "Cómo prevenir efectos dominó en software",
+        "video": "/platzi/videos/pro-arquitectura_034_Cómo_prevenir_efectos_dominó_en_software.mp4",
+        "transcript": "/platzi/pro-arquitectura/034_C%C3%B3mo_prevenir_efectos_domin%C3%B3_en_software.txt"
+      },
+      {
+        "idx": 35,
+        "title": "Tácticas para controlar eficiencia de ejecución",
+        "video": "/platzi/videos/pro-arquitectura_035_Tácticas_para_controlar_eficiencia_de_ejecución.mp4",
+        "transcript": "/platzi/pro-arquitectura/035_T%C3%A1cticas_para_controlar_eficiencia_de_ejecuci%C3%B3n.txt"
+      },
+      {
+        "idx": 36,
+        "title": "Cómo detectar, resistir y recuperarse de ataques",
+        "video": "/platzi/videos/pro-arquitectura_036_Cómo_detectar__resistir_y_recuperarse_de_ataques.mp4",
+        "transcript": "/platzi/pro-arquitectura/036_C%C3%B3mo_detectar__resistir_y_recuperarse_de_ataques.txt"
+      },
+      {
+        "idx": 37,
+        "title": "Cómo probar que el software funciona correctamente",
+        "video": "/platzi/videos/pro-arquitectura_037_Cómo_probar_que_el_software_funciona_correctamente.mp4",
+        "transcript": "/platzi/pro-arquitectura/037_C%C3%B3mo_probar_que_el_software_funciona_correctamente.txt"
+      },
+      {
+        "idx": 38,
+        "title": "Cómo controlar la usabilidad con tácticas",
+        "video": "/platzi/videos/pro-arquitectura_038_Cómo_controlar_la_usabilidad_con_tácticas.mp4",
+        "transcript": "/platzi/pro-arquitectura/038_C%C3%B3mo_controlar_la_usabilidad_con_t%C3%A1cticas.txt"
+      },
+      {
+        "idx": 39,
+        "title": "Cómo validar arquitectura con ATAM y métricas",
+        "video": "/platzi/videos/pro-arquitectura_039_Cómo_validar_arquitectura_con_ATAM_y_métricas.mp4",
+        "transcript": "/platzi/pro-arquitectura/039_C%C3%B3mo_validar_arquitectura_con_ATAM_y_m%C3%A9tricas.txt"
+      },
+      {
+        "idx": 40,
+        "title": "Evolución de arquitectura: startup a gran escala",
+        "video": "/platzi/videos/pro-arquitectura_040_Evolución_de_arquitectura__startup_a_gran_escala.mp4",
+        "transcript": "/platzi/pro-arquitectura/040_Evoluci%C3%B3n_de_arquitectura__startup_a_gran_escala.txt"
+      },
+      {
+        "idx": 41,
+        "title": "Cómo documentar arquitectura que no se erosione",
+        "video": "/platzi/videos/pro-arquitectura_041_Cómo_documentar_arquitectura_que_no_se_erosione.mp4",
+        "transcript": "/platzi/pro-arquitectura/041_C%C3%B3mo_documentar_arquitectura_que_no_se_erosione.txt"
+      },
+      {
+        "idx": 42,
+        "title": "Cómo sincronizar arquitectura y código fuente",
+        "video": "/platzi/videos/pro-arquitectura_042_Cómo_sincronizar_arquitectura_y_código_fuente.mp4",
+        "transcript": "/platzi/pro-arquitectura/042_C%C3%B3mo_sincronizar_arquitectura_y_c%C3%B3digo_fuente.txt"
+      },
+      {
+        "idx": 43,
+        "title": "Cómo aplicar atributos de calidad en proyectos",
+        "video": "/platzi/videos/pro-arquitectura_043_Cómo_aplicar_atributos_de_calidad_en_proyectos.mp4",
+        "transcript": "/platzi/pro-arquitectura/043_C%C3%B3mo_aplicar_atributos_de_calidad_en_proyectos.txt"
+      }
+    ],
+    "total": 43,
+    "with_video": 43,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "angular-avanzado",
+    "name": "Curso de Angular Avanzado",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Curso Avanzado de Desarrollo con Angular para eCommerce",
+        "video": "/platzi/videos/angular-avanzado_001_Curso_Avanzado_de_Desarrollo_con_Angular_para_eCommerce.mp4",
+        "transcript": "/platzi/angular-avanzado/001_Curso_Avanzado_de_Desarrollo_con_Angular_para_eCommerce.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Curso Avanzado de Angular: Mejora y Optimización de Proyectos",
+        "video": "/platzi/videos/angular-avanzado_002_Curso_Avanzado_de_Angular__Mejora_y_Optimización_de_Proyecto.mp4",
+        "transcript": "/platzi/angular-avanzado/002_Curso_Avanzado_de_Angular__Mejora_y_Optimizaci%C3%B3n_de_Proyecto.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Configuración de ESLint y Prettier en proyectos Angular",
+        "video": "/platzi/videos/angular-avanzado_003_Configuración_de_ESLint_y_Prettier_en_proyectos_Angular.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/003_Configuraci%C3%B3n_de_ESLint_y_Prettier_en_proyectos_Angular.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Formateo de Código con Prettier y ESLint en Proyectos Angular",
+        "video": "/platzi/videos/angular-avanzado_004_Formateo_de_Código_con_Prettier_y_ESLint_en_Proyectos_Angula.mp4",
+        "transcript": "/platzi/angular-avanzado/004_Formateo_de_C%C3%B3digo_con_Prettier_y_ESLint_en_Proyectos_Angula.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Configuración de Ambientes en Angular: Desarrollo y Producción",
+        "video": "/platzi/videos/angular-avanzado_005_Configuración_de_Ambientes_en_Angular__Desarrollo_y_Producci.mp4",
+        "transcript": "/platzi/angular-avanzado/005_Configuraci%C3%B3n_de_Ambientes_en_Angular__Desarrollo_y_Producci.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Configuración y uso del ambiente de staging en Angular",
+        "video": "/platzi/videos/angular-avanzado_006_Configuración_y_uso_del_ambiente_de_staging_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/006_Configuraci%C3%B3n_y_uso_del_ambiente_de_staging_en_Angular.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Buenas prácticas con variables locales en Angular",
+        "video": "/platzi/videos/angular-avanzado_007_Buenas_prácticas_con_variables_locales_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/007_Buenas_pr%C3%A1cticas_con_variables_locales_en_Angular.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Optimización de Imágenes en Angular con NG Optimizate Image",
+        "video": "/platzi/videos/angular-avanzado_008_Optimización_de_Imágenes_en_Angular_con_NG_Optimizate_Image.mp4",
+        "transcript": "/platzi/angular-avanzado/008_Optimizaci%C3%B3n_de_Im%C3%A1genes_en_Angular_con_NG_Optimizate_Image.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Optimización de Rutas Amigables para SEO en Angular",
+        "video": "/platzi/videos/angular-avanzado_009_Optimización_de_Rutas_Amigables_para_SEO_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/009_Optimizaci%C3%B3n_de_Rutas_Amigables_para_SEO_en_Angular.txt"
+      },
+      {
+        "idx": 10,
+        "title": "\"Reactividad en Angular: Migración a Input Signals\"",
+        "video": "/platzi/videos/angular-avanzado_010_Reactividad_en_Angular__Migración_a_Input_Signals.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/010_Reactividad_en_Angular__Migraci%C3%B3n_a_Input_Signals.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Migración de Inputs a Signals en Angular: Mejora de Rendimiento y Flujo",
+        "video": "/platzi/videos/angular-avanzado_011_Migración_de_Inputs_a_Signals_en_Angular__Mejora_de_Rendimie.mp4",
+        "transcript": "/platzi/angular-avanzado/011_Migraci%C3%B3n_de_Inputs_a_Signals_en_Angular__Mejora_de_Rendimie.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Migración de Outputs en Angular: De Decoradores a Funciones",
+        "video": "/platzi/videos/angular-avanzado_012_Migración_de_Outputs_en_Angular__De_Decoradores_a_Funciones.mp4",
+        "transcript": "/platzi/angular-avanzado/012_Migraci%C3%B3n_de_Outputs_en_Angular__De_Decoradores_a_Funciones.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Primitivas reactivas de Angular: Uso de Linked Signal y Computed",
+        "video": "/platzi/videos/angular-avanzado_013_Primitivas_reactivas_de_Angular__Uso_de_Linked_Signal_y_Comp.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/013_Primitivas_reactivas_de_Angular__Uso_de_Linked_Signal_y_Comp.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Sincronización de Componentes en Angular con Model y Signals",
+        "video": "/platzi/videos/angular-avanzado_014_Sincronización_de_Componentes_en_Angular_con_Model_y_Signals.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/014_Sincronizaci%C3%B3n_de_Componentes_en_Angular_con_Model_y_Signals.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Interoperabilidad de RXJS y Signals en Angular",
+        "video": "/platzi/videos/angular-avanzado_015_Interoperabilidad_de_RXJS_y_Signals_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/015_Interoperabilidad_de_RXJS_y_Signals_en_Angular.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Conversión de Observables a Signals en Angular con toSignal",
+        "video": "/platzi/videos/angular-avanzado_016_Conversión_de_Observables_a_Signals_en_Angular_con_toSignal.mp4",
+        "transcript": "/platzi/angular-avanzado/016_Conversi%C3%B3n_de_Observables_a_Signals_en_Angular_con_toSignal.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Interoperabilidad de RXDS y Signals en Angular: Uso de RX Resourcers",
+        "video": "/platzi/videos/angular-avanzado_017_Interoperabilidad_de_RXDS_y_Signals_en_Angular__Uso_de_RX_Re.mp4",
+        "transcript": "/platzi/angular-avanzado/017_Interoperabilidad_de_RXDS_y_Signals_en_Angular__Uso_de_RX_Re.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Manejo de Parámetros Reactivos con RX Resource en Angular",
+        "video": "/platzi/videos/angular-avanzado_018_Manejo_de_Parámetros_Reactivos_con_RX_Resource_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/018_Manejo_de_Par%C3%A1metros_Reactivos_con_RX_Resource_en_Angular.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Manejo de Promesas y Fetch en Angular sin RXJS",
+        "video": "/platzi/videos/angular-avanzado_019_Manejo_de_Promesas_y_Fetch_en_Angular_sin_RXJS.mp4",
+        "transcript": "/platzi/angular-avanzado/019_Manejo_de_Promesas_y_Fetch_en_Angular_sin_RXJS.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Reactividad en Angular: Uso de Signals para Consultas DOM",
+        "video": "/platzi/videos/angular-avanzado_020_Reactividad_en_Angular__Uso_de_Signals_para_Consultas_DOM.mp4",
+        "transcript": "/platzi/angular-avanzado/020_Reactividad_en_Angular__Uso_de_Signals_para_Consultas_DOM.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Configuración de Prettier para HTML en Angular",
+        "video": "/platzi/videos/angular-avanzado_021_Configuración_de_Prettier_para_HTML_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/021_Configuraci%C3%B3n_de_Prettier_para_HTML_en_Angular.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Server Side Rendering en Angular: Builders y Migración",
+        "video": "/platzi/videos/angular-avanzado_022_Server_Side_Rendering_en_Angular__Builders_y_Migración.mp4",
+        "transcript": "/platzi/angular-avanzado/022_Server_Side_Rendering_en_Angular__Builders_y_Migraci%C3%B3n.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Server Side Rendering con Angular: Mejora Rendimiento y SEO",
+        "video": "/platzi/videos/angular-avanzado_023_Server_Side_Rendering_con_Angular__Mejora_Rendimiento_y_SEO.mp4",
+        "transcript": "/platzi/angular-avanzado/023_Server_Side_Rendering_con_Angular__Mejora_Rendimiento_y_SEO.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Manejo de APIs del Navegador con Angular: Uso de AfterNextRender",
+        "video": "/platzi/videos/angular-avanzado_024_Manejo_de_APIs_del_Navegador_con_Angular__Uso_de_AfterNextRe.mp4.part-Frag45",
+        "transcript": "/platzi/angular-avanzado/024_Manejo_de_APIs_del_Navegador_con_Angular__Uso_de_AfterNextRe.txt"
+      },
+      {
+        "idx": 25,
+        "title": "Geolocalización y APIs: Creando un Mapa de Tiendas Cercanas",
+        "video": "/platzi/videos/angular-avanzado_025_Geolocalización_y_APIs__Creando_un_Mapa_de_Tiendas_Cercanas.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/025_Geolocalizaci%C3%B3n_y_APIs__Creando_un_Mapa_de_Tiendas_Cercanas.txt"
+      },
+      {
+        "idx": 26,
+        "title": "Habilitar Pre-rendering en Angular para Generación de Sitios Estáticos",
+        "video": "/platzi/videos/angular-avanzado_026_Habilitar_Pre-rendering_en_Angular_para_Generación_de_Sitios.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/026_Habilitar_Pre-rendering_en_Angular_para_Generaci%C3%B3n_de_Sitios.txt"
+      },
+      {
+        "idx": 27,
+        "title": "Despliegue de Aplicaciones Node.js con App Fiber Hosting",
+        "video": "/platzi/videos/angular-avanzado_027_Despliegue_de_Aplicaciones_Node_js_con_App_Fiber_Hosting.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/027_Despliegue_de_Aplicaciones_Node_js_con_App_Fiber_Hosting.txt"
+      },
+      {
+        "idx": 28,
+        "title": "Generación de Meta Tags Dinámicos con Angular y Open Graph",
+        "video": "/platzi/videos/angular-avanzado_028_Generación_de_Meta_Tags_Dinámicos_con_Angular_y_Open_Graph.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/028_Generaci%C3%B3n_de_Meta_Tags_Din%C3%A1micos_con_Angular_y_Open_Graph.txt"
+      },
+      {
+        "idx": 29,
+        "title": "Creación de MetaTags Dinámicos en Angular",
+        "video": "/platzi/videos/angular-avanzado_029_Creación_de_MetaTags_Dinámicos_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/029_Creaci%C3%B3n_de_MetaTags_Din%C3%A1micos_en_Angular.txt"
+      },
+      {
+        "idx": 30,
+        "title": "Proceso de Hydration y Event Replay en Angular",
+        "video": "/platzi/videos/angular-avanzado_030_Proceso_de_Hydration_y_Event_Replay_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/030_Proceso_de_Hydration_y_Event_Replay_en_Angular.txt"
+      },
+      {
+        "idx": 31,
+        "title": "Implementación de Productos Relacionados en Angular eCommerce",
+        "video": "/platzi/videos/angular-avanzado_031_Implementación_de_Productos_Relacionados_en_Angular_eCommerc.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/031_Implementaci%C3%B3n_de_Productos_Relacionados_en_Angular_eCommerc.txt"
+      },
+      {
+        "idx": 32,
+        "title": "Carga diferida de componentes en Angular para mejorar rendimiento",
+        "video": "/platzi/videos/angular-avanzado_032_Carga_diferida_de_componentes_en_Angular_para_mejorar_rendim.mp4",
+        "transcript": "/platzi/angular-avanzado/032_Carga_diferida_de_componentes_en_Angular_para_mejorar_rendim.txt"
+      },
+      {
+        "idx": 33,
+        "title": "Optimización de Incremental Hydration en Angular",
+        "video": "/platzi/videos/angular-avanzado_033_Optimización_de_Incremental_Hydration_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/033_Optimizaci%C3%B3n_de_Incremental_Hydration_en_Angular.txt"
+      },
+      {
+        "idx": 34,
+        "title": "Configuración de Server Routing en Angular",
+        "video": "/platzi/videos/angular-avanzado_034_Configuración_de_Server_Routing_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/034_Configuraci%C3%B3n_de_Server_Routing_en_Angular.txt"
+      },
+      {
+        "idx": 35,
+        "title": "Aplicaciones Sin Zone.js: Migración a Signals en Angular",
+        "video": "/platzi/videos/angular-avanzado_035_Aplicaciones_Sin_Zone_js__Migración_a_Signals_en_Angular.mp4",
+        "transcript": "/platzi/angular-avanzado/035_Aplicaciones_Sin_Zone_js__Migraci%C3%B3n_a_Signals_en_Angular.txt"
+      },
+      {
+        "idx": 36,
+        "title": "Despliegue y Reactividad Avanzada en Angular",
+        "video": "/platzi/videos/angular-avanzado_036_Despliegue_y_Reactividad_Avanzada_en_Angular.mp4.ytdl",
+        "transcript": "/platzi/angular-avanzado/036_Despliegue_y_Reactividad_Avanzada_en_Angular.txt"
+      }
+    ],
+    "total": 36,
+    "with_video": 36,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "nodejs-microservicios",
+    "name": "Curso de Node.js: Autenticación, Microservicios y Redis",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Creación de Backend Complejo con Microservicios y Arquitectura Escalable",
+        "video": "/platzi/videos/nodejs-microservicios_001_Creación_de_Backend_Complejo_con_Microservicios_y_Arquitectu.mp4",
+        "transcript": "/platzi/nodejs-microservicios/001_Creaci%C3%B3n_de_Backend_Complejo_con_Microservicios_y_Arquitectu.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Modelado de Datos para una Red Social Básica en SQL",
+        "video": "/platzi/videos/nodejs-microservicios_002_Modelado_de_Datos_para_una_Red_Social_Básica_en_SQL.mp4",
+        "transcript": "/platzi/nodejs-microservicios/002_Modelado_de_Datos_para_una_Red_Social_B%C3%A1sica_en_SQL.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Configuración de un Servidor API con Express y Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_003_Configuración_de_un_Servidor_API_con_Express_y_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/003_Configuraci%C3%B3n_de_un_Servidor_API_con_Express_y_Node_js.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Estructuración de API y Gestión de Datos en JavaScript",
+        "video": "/platzi/videos/nodejs-microservicios_004_Estructuración_de_API_y_Gestión_de_Datos_en_JavaScript.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/004_Estructuraci%C3%B3n_de_API_y_Gesti%C3%B3n_de_Datos_en_JavaScript.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Controladores con Inyección de Dependencias en Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_005_Controladores_con_Inyección_de_Dependencias_en_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/005_Controladores_con_Inyecci%C3%B3n_de_Dependencias_en_Node_js.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Documentación de APIs con Swagger en Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_006_Documentación_de_APIs_con_Swagger_en_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/006_Documentaci%C3%B3n_de_APIs_con_Swagger_en_Node_js.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Autenticación y Seguridad con Tokens JWT en Aplicaciones Web",
+        "video": "/platzi/videos/nodejs-microservicios_007_Autenticación_y_Seguridad_con_Tokens_JWT_en_Aplicaciones_Web.mp4",
+        "transcript": "/platzi/nodejs-microservicios/007_Autenticaci%C3%B3n_y_Seguridad_con_Tokens_JWT_en_Aplicaciones_Web.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Autenticación de Usuarios con JWT y Gestión de Contraseñas Seguras",
+        "video": "/platzi/videos/nodejs-microservicios_008_Autenticación_de_Usuarios_con_JWT_y_Gestión_de_Contraseñas_S.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/008_Autenticaci%C3%B3n_de_Usuarios_con_JWT_y_Gesti%C3%B3n_de_Contrase%C3%B1as_S.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Implementación de Login Seguro con JWT y Cifrado de Contraseñas",
+        "video": "/platzi/videos/nodejs-microservicios_009_Implementación_de_Login_Seguro_con_JWT_y_Cifrado_de_Contrase.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/009_Implementaci%C3%B3n_de_Login_Seguro_con_JWT_y_Cifrado_de_Contrase.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Cifrado de Contraseñas con Bcrypt en Aplicaciones Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_010_Cifrado_de_Contraseñas_con_Bcrypt_en_Aplicaciones_Node_js.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/010_Cifrado_de_Contrase%C3%B1as_con_Bcrypt_en_Aplicaciones_Node_js.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Autenticación y Autorización con JWT en Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_011_Autenticación_y_Autorización_con_JWT_en_Node_js.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/011_Autenticaci%C3%B3n_y_Autorizaci%C3%B3n_con_JWT_en_Node_js.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Implementación de Autenticación y Autorización en Aplicaciones Web",
+        "video": "/platzi/videos/nodejs-microservicios_012_Implementación_de_Autenticación_y_Autorización_en_Aplicacion.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/012_Implementaci%C3%B3n_de_Autenticaci%C3%B3n_y_Autorizaci%C3%B3n_en_Aplicacion.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Manejo de Errores y Seguridad en Aplicaciones Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_013_Manejo_de_Errores_y_Seguridad_en_Aplicaciones_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/013_Manejo_de_Errores_y_Seguridad_en_Aplicaciones_Node_js.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Almacenamiento de Datos con MySQL en Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_014_Almacenamiento_de_Datos_con_MySQL_en_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/014_Almacenamiento_de_Datos_con_MySQL_en_Node_js.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Funciones CRUD en Base de Datos con Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_015_Funciones_CRUD_en_Base_de_Datos_con_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/015_Funciones_CRUD_en_Base_de_Datos_con_Node_js.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Creación de Tabla Intermedia para Relaciones de Seguimiento de Usuarios",
+        "video": "/platzi/videos/nodejs-microservicios_016_Creación_de_Tabla_Intermedia_para_Relaciones_de_Seguimiento.mp4.ytdl",
+        "transcript": "/platzi/nodejs-microservicios/016_Creaci%C3%B3n_de_Tabla_Intermedia_para_Relaciones_de_Seguimiento.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Gestión de Seguidores y Publicaciones en Redes Sociales",
+        "video": "/platzi/videos/nodejs-microservicios_017_Gestión_de_Seguidores_y_Publicaciones_en_Redes_Sociales.mp4",
+        "transcript": "/platzi/nodejs-microservicios/017_Gesti%C3%B3n_de_Seguidores_y_Publicaciones_en_Redes_Sociales.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Arquitectura de Microservicios: Separación y Gestión Eficiente",
+        "video": "/platzi/videos/nodejs-microservicios_018_Arquitectura_de_Microservicios__Separación_y_Gestión_Eficien.mp4",
+        "transcript": "/platzi/nodejs-microservicios/018_Arquitectura_de_Microservicios__Separaci%C3%B3n_y_Gesti%C3%B3n_Eficien.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Creación de Microservicios para Bases de Datos con Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_019_Creación_de_Microservicios_para_Bases_de_Datos_con_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/019_Creaci%C3%B3n_de_Microservicios_para_Bases_de_Datos_con_Node_js.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Conexión y Configuración de Microservicios de Bases de Datos Remotas",
+        "video": "/platzi/videos/nodejs-microservicios_020_Conexión_y_Configuración_de_Microservicios_de_Bases_de_Datos.mp4",
+        "transcript": "/platzi/nodejs-microservicios/020_Conexi%C3%B3n_y_Configuraci%C3%B3n_de_Microservicios_de_Bases_de_Datos.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Separación Horizontal de Microservicios: Implementación y Beneficios",
+        "video": "/platzi/videos/nodejs-microservicios_021_Separación_Horizontal_de_Microservicios__Implementación_y_Be.mp4",
+        "transcript": "/platzi/nodejs-microservicios/021_Separaci%C3%B3n_Horizontal_de_Microservicios__Implementaci%C3%B3n_y_Be.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Gestión de Microservicios en Producción con PM2",
+        "video": "/platzi/videos/nodejs-microservicios_022_Gestión_de_Microservicios_en_Producción_con_PM2.mp4",
+        "transcript": "/platzi/nodejs-microservicios/022_Gesti%C3%B3n_de_Microservicios_en_Producci%C3%B3n_con_PM2.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Despliegue de Aplicaciones Serverless con Vercel y AWS",
+        "video": "/platzi/videos/nodejs-microservicios_023_Despliegue_de_Aplicaciones_Serverless_con_Vercel_y_AWS.mp4",
+        "transcript": "/platzi/nodejs-microservicios/023_Despliegue_de_Aplicaciones_Serverless_con_Vercel_y_AWS.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Variables de Entorno y Despliegue Local con Node.js",
+        "video": "/platzi/videos/nodejs-microservicios_024_Variables_de_Entorno_y_Despliegue_Local_con_Node_js.mp4",
+        "transcript": "/platzi/nodejs-microservicios/024_Variables_de_Entorno_y_Despliegue_Local_con_Node_js.txt"
+      },
+      {
+        "idx": 25,
+        "title": "Implementación de Caché con Redis para Microservicios",
+        "video": "/platzi/videos/nodejs-microservicios_025_Implementación_de_Caché_con_Redis_para_Microservicios.mp4",
+        "transcript": "/platzi/nodejs-microservicios/025_Implementaci%C3%B3n_de_Cach%C3%A9_con_Redis_para_Microservicios.txt"
+      },
+      {
+        "idx": 26,
+        "title": "Conexión de Microservicios a Redis y Gestión de Caché",
+        "video": "/platzi/videos/nodejs-microservicios_026_Conexión_de_Microservicios_a_Redis_y_Gestión_de_Caché.mp4",
+        "transcript": "/platzi/nodejs-microservicios/026_Conexi%C3%B3n_de_Microservicios_a_Redis_y_Gesti%C3%B3n_de_Cach%C3%A9.txt"
+      },
+      {
+        "idx": 27,
+        "title": "Cacheo y Optimización de Consultas en Microservicios",
+        "video": "/platzi/videos/nodejs-microservicios_027_Cacheo_y_Optimización_de_Consultas_en_Microservicios.mp4",
+        "transcript": "/platzi/nodejs-microservicios/027_Cacheo_y_Optimizaci%C3%B3n_de_Consultas_en_Microservicios.txt"
+      },
+      {
+        "idx": 28,
+        "title": "Instalación y Configuración de Microservicios en Máquinas Virtuales",
+        "video": "/platzi/videos/nodejs-microservicios_028_Instalación_y_Configuración_de_Microservicios_en_Máquinas_Vi.mp4",
+        "transcript": "/platzi/nodejs-microservicios/028_Instalaci%C3%B3n_y_Configuraci%C3%B3n_de_Microservicios_en_M%C3%A1quinas_Vi.txt"
+      },
+      {
+        "idx": 29,
+        "title": "Configuración de Nginx como proxy para microservicios en producción",
+        "video": "/platzi/videos/nodejs-microservicios_029_Configuración_de_Nginx_como_proxy_para_microservicios_en_pro.mp4",
+        "transcript": "/platzi/nodejs-microservicios/029_Configuraci%C3%B3n_de_Nginx_como_proxy_para_microservicios_en_pro.txt"
+      }
+    ],
+    "total": 29,
+    "with_video": 29,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "astro",
+    "name": "Astro",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Creación de Páginas Web con Astro y JavaScript",
+        "video": "/platzi/videos/astro_001_Creación_de_Páginas_Web_con_Astro_y_JavaScript.mp4",
+        "transcript": "/platzi/astro/001_Creaci%C3%B3n_de_P%C3%A1ginas_Web_con_Astro_y_JavaScript.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Introducción a Astro: Framework web para sitios rápidos y centrados en contenido",
+        "video": "/platzi/videos/astro_002_Introducción_a_Astro__Framework_web_para_sitios_rápidos_y_ce.mp4",
+        "transcript": "/platzi/astro/002_Introducci%C3%B3n_a_Astro__Framework_web_para_sitios_r%C3%A1pidos_y_ce.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Estructura de Proyectos en Astro: Primeros Pasos y Configuración",
+        "video": "/platzi/videos/astro_003_Estructura_de_Proyectos_en_Astro__Primeros_Pasos_y_Configura.mp4",
+        "transcript": "/platzi/astro/003_Estructura_de_Proyectos_en_Astro__Primeros_Pasos_y_Configura.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Creación de Páginas Web con Astro: Estructura y Estilos Básicos",
+        "video": "/platzi/videos/astro_004_Creación_de_Páginas_Web_con_Astro__Estructura_y_Estilos_Bási.mp4",
+        "transcript": "/platzi/astro/004_Creaci%C3%B3n_de_P%C3%A1ginas_Web_con_Astro__Estructura_y_Estilos_B%C3%A1si.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Historia y evolución del desarrollo web: de ARPANET a Astro",
+        "video": "/platzi/videos/astro_005_Historia_y_evolución_del_desarrollo_web__de_ARPANET_a_Astro.mp4",
+        "transcript": "/platzi/astro/005_Historia_y_evoluci%C3%B3n_del_desarrollo_web__de_ARPANET_a_Astro.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Creación de un Sitio Web Colaborativo con Astro y Tailwind",
+        "video": "/platzi/videos/astro_006_Creación_de_un_Sitio_Web_Colaborativo_con_Astro_y_Tailwind.mp4",
+        "transcript": "/platzi/astro/006_Creaci%C3%B3n_de_un_Sitio_Web_Colaborativo_con_Astro_y_Tailwind.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Integración de Tailwind CSS en Proyectos Astro",
+        "video": "/platzi/videos/astro_007_Integración_de_Tailwind_CSS_en_Proyectos_Astro.mp4.ytdl",
+        "transcript": "/platzi/astro/007_Integraci%C3%B3n_de_Tailwind_CSS_en_Proyectos_Astro.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Ventajas de TypeScript en Proyectos JavaScript con Tailwind",
+        "video": "/platzi/videos/astro_008_Ventajas_de_TypeScript_en_Proyectos_JavaScript_con_Tailwind.mp4.ytdl",
+        "transcript": "/platzi/astro/008_Ventajas_de_TypeScript_en_Proyectos_JavaScript_con_Tailwind.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Creación y Configuración de Repositorio con Git y Prettier",
+        "video": "/platzi/videos/astro_009_Creación_y_Configuración_de_Repositorio_con_Git_y_Prettier.mp4",
+        "transcript": "/platzi/astro/009_Creaci%C3%B3n_y_Configuraci%C3%B3n_de_Repositorio_con_Git_y_Prettier.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Creación de Componentes en Astro: Header y Hero",
+        "video": "/platzi/videos/astro_010_Creación_de_Componentes_en_Astro__Header_y_Hero.mp4",
+        "transcript": "/platzi/astro/010_Creaci%C3%B3n_de_Componentes_en_Astro__Header_y_Hero.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Creación de Páginas 404 y Markdown en Astro",
+        "video": "/platzi/videos/astro_011_Creación_de_Páginas_404_y_Markdown_en_Astro.mp4.ytdl",
+        "transcript": "/platzi/astro/011_Creaci%C3%B3n_de_P%C3%A1ginas_404_y_Markdown_en_Astro.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Creación de Plantillas en Astro para Páginas Markdown",
+        "video": "/platzi/videos/astro_012_Creación_de_Plantillas_en_Astro_para_Páginas_Markdown.mp4.ytdl",
+        "transcript": "/platzi/astro/012_Creaci%C3%B3n_de_Plantillas_en_Astro_para_P%C3%A1ginas_Markdown.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Iteración de Archivos Markdown en Proyecto Astro con JavaScript",
+        "video": "/platzi/videos/astro_013_Iteración_de_Archivos_Markdown_en_Proyecto_Astro_con_JavaScr.mp4.ytdl",
+        "transcript": "/platzi/astro/013_Iteraci%C3%B3n_de_Archivos_Markdown_en_Proyecto_Astro_con_JavaScr.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Integración de MDX en Proyectos Astro: Variables en JSX",
+        "video": "/platzi/videos/astro_014_Integración_de_MDX_en_Proyectos_Astro__Variables_en_JSX.mp4.ytdl",
+        "transcript": "/platzi/astro/014_Integraci%C3%B3n_de_MDX_en_Proyectos_Astro__Variables_en_JSX.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Rutas Estáticas y Dinámicas en Astro para Sitios Web",
+        "video": "/platzi/videos/astro_015_Rutas_Estáticas_y_Dinámicas_en_Astro_para_Sitios_Web.mp4",
+        "transcript": "/platzi/astro/015_Rutas_Est%C3%A1ticas_y_Din%C3%A1micas_en_Astro_para_Sitios_Web.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Rutas Dinámicas en Astro: Creación y Configuración Paso a Paso",
+        "video": "/platzi/videos/astro_016_Rutas_Dinámicas_en_Astro__Creación_y_Configuración_Paso_a_Pa.mp4",
+        "transcript": "/platzi/astro/016_Rutas_Din%C3%A1micas_en_Astro__Creaci%C3%B3n_y_Configuraci%C3%B3n_Paso_a_Pa.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Creación de Plantillas Dinámicas con Tailwind y Astro",
+        "video": "/platzi/videos/astro_017_Creación_de_Plantillas_Dinámicas_con_Tailwind_y_Astro.mp4",
+        "transcript": "/platzi/astro/017_Creaci%C3%B3n_de_Plantillas_Din%C3%A1micas_con_Tailwind_y_Astro.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Integración de React en Astro para Componentes Web",
+        "video": "/platzi/videos/astro_018_Integración_de_React_en_Astro_para_Componentes_Web.mp4",
+        "transcript": "/platzi/astro/018_Integraci%C3%B3n_de_React_en_Astro_para_Componentes_Web.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Integración de Vue en Proyectos Astro con TailwindCSS",
+        "video": "/platzi/videos/astro_019_Integración_de_Vue_en_Proyectos_Astro_con_TailwindCSS.mp4.ytdl",
+        "transcript": "/platzi/astro/019_Integraci%C3%B3n_de_Vue_en_Proyectos_Astro_con_TailwindCSS.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Integración de Svelte en Proyectos con React y Vue",
+        "video": "/platzi/videos/astro_020_Integración_de_Svelte_en_Proyectos_con_React_y_Vue.mp4.ytdl",
+        "transcript": "/platzi/astro/020_Integraci%C3%B3n_de_Svelte_en_Proyectos_con_React_y_Vue.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Patrón de Diseño de Islas de Componentes en Astro",
+        "video": "/platzi/videos/astro_021_Patrón_de_Diseño_de_Islas_de_Componentes_en_Astro.mp4",
+        "transcript": "/platzi/astro/021_Patr%C3%B3n_de_Dise%C3%B1o_de_Islas_de_Componentes_en_Astro.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Configuración SEO y RSS en Astro: Optimiza y Mejora Visibilidad Web",
+        "video": "/platzi/videos/astro_022_Configuración_SEO_y_RSS_en_Astro__Optimiza_y_Mejora_Visibili.mp4.ytdl",
+        "transcript": "/platzi/astro/022_Configuraci%C3%B3n_SEO_y_RSS_en_Astro__Optimiza_y_Mejora_Visibili.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Despliegue de Sitios Web con Astro y Clover en Producción",
+        "video": "/platzi/videos/astro_023_Despliegue_de_Sitios_Web_con_Astro_y_Clover_en_Producción.mp4",
+        "transcript": "/platzi/astro/023_Despliegue_de_Sitios_Web_con_Astro_y_Clover_en_Producci%C3%B3n.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Mejoras de Fechas en Proyectos con Astro y JavaScript",
+        "video": "/platzi/videos/astro_024_Mejoras_de_Fechas_en_Proyectos_con_Astro_y_JavaScript.mp4",
+        "transcript": "/platzi/astro/024_Mejoras_de_Fechas_en_Proyectos_con_Astro_y_JavaScript.txt"
+      },
+      {
+        "idx": 25,
+        "title": "Creación de Aplicaciones Web con Astro Framework",
+        "video": "/platzi/videos/astro_025_Creación_de_Aplicaciones_Web_con_Astro_Framework.mp4",
+        "transcript": "/platzi/astro/025_Creaci%C3%B3n_de_Aplicaciones_Web_con_Astro_Framework.txt"
+      }
+    ],
+    "total": 25,
+    "with_video": 25,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "practico-backend",
+    "name": "Curso Práctico de Arquitectura Backend",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Arquitectura de Backend: Diseño e Implementación de Sistemas Avanzados",
+        "video": "/platzi/videos/practico-backend_001_Arquitectura_de_Backend__Diseño_e_Implementación_de_Sistemas.mp4",
+        "transcript": "/platzi/practico-backend/001_Arquitectura_de_Backend__Dise%C3%B1o_e_Implementaci%C3%B3n_de_Sistemas.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Conceptos Fundamentales de Back End en Arquitectura Web",
+        "video": "/platzi/videos/practico-backend_002_Conceptos_Fundamentales_de_Back_End_en_Arquitectura_Web.mp4",
+        "transcript": "/platzi/practico-backend/002_Conceptos_Fundamentales_de_Back_End_en_Arquitectura_Web.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Sistemas Monolíticos vs. Distribuidos en Arquitectura Backend",
+        "video": "/platzi/videos/practico-backend_003_Sistemas_Monolíticos_vs__Distribuidos_en_Arquitectura_Backen.mp4",
+        "transcript": "/platzi/practico-backend/003_Sistemas_Monol%C3%ADticos_vs__Distribuidos_en_Arquitectura_Backen.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Componentes de un Sistema Backend Distribuido",
+        "video": "/platzi/videos/practico-backend_004_Componentes_de_un_Sistema_Backend_Distribuido.mp4",
+        "transcript": "/platzi/practico-backend/004_Componentes_de_un_Sistema_Backend_Distribuido.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Conexión de Componentes Backend mediante APIs",
+        "video": "/platzi/videos/practico-backend_005_Conexión_de_Componentes_Backend_mediante_APIs.mp4",
+        "transcript": "/platzi/practico-backend/005_Conexi%C3%B3n_de_Componentes_Backend_mediante_APIs.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Diseño e Implementación de Sistemas Backend Prácticos",
+        "video": "/platzi/videos/practico-backend_006_Diseño_e_Implementación_de_Sistemas_Backend_Prácticos.mp4",
+        "transcript": "/platzi/practico-backend/006_Dise%C3%B1o_e_Implementaci%C3%B3n_de_Sistemas_Backend_Pr%C3%A1cticos.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Definición de Requerimientos de Negocio para Desarrolladores Backend",
+        "video": "/platzi/videos/practico-backend_007_Definición_de_Requerimientos_de_Negocio_para_Desarrolladores.mp4",
+        "transcript": "/platzi/practico-backend/007_Definici%C3%B3n_de_Requerimientos_de_Negocio_para_Desarrolladores.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Creación de Documentos de Diseño de Software",
+        "video": "/platzi/videos/practico-backend_008_Creación_de_Documentos_de_Diseño_de_Software.mp4",
+        "transcript": "/platzi/practico-backend/008_Creaci%C3%B3n_de_Documentos_de_Dise%C3%B1o_de_Software.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Creación de Documentos de Diseño en Markdown para Proyectos de Software",
+        "video": "/platzi/videos/practico-backend_009_Creación_de_Documentos_de_Diseño_en_Markdown_para_Proyectos.mp4",
+        "transcript": "/platzi/practico-backend/009_Creaci%C3%B3n_de_Documentos_de_Dise%C3%B1o_en_Markdown_para_Proyectos.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Revisión Efectiva de Documentos de Diseño en Equipo",
+        "video": "/platzi/videos/practico-backend_010_Revisión_Efectiva_de_Documentos_de_Diseño_en_Equipo.mp4",
+        "transcript": "/platzi/practico-backend/010_Revisi%C3%B3n_Efectiva_de_Documentos_de_Dise%C3%B1o_en_Equipo.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Diseño de Arquitectura de Sistemas Distribuidos",
+        "video": "/platzi/videos/practico-backend_011_Diseño_de_Arquitectura_de_Sistemas_Distribuidos.mp4",
+        "transcript": "/platzi/practico-backend/011_Dise%C3%B1o_de_Arquitectura_de_Sistemas_Distribuidos.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Diseño de Sistemas: Documentación de Bajo Nivel y Pruebas",
+        "video": "/platzi/videos/practico-backend_012_Diseño_de_Sistemas__Documentación_de_Bajo_Nivel_y_Pruebas.mp4",
+        "transcript": "/platzi/practico-backend/012_Dise%C3%B1o_de_Sistemas__Documentaci%C3%B3n_de_Bajo_Nivel_y_Pruebas.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Planificación de Integración Continua y Rollout de Software",
+        "video": "/platzi/videos/practico-backend_013_Planificación_de_Integración_Continua_y_Rollout_de_Software.mp4",
+        "transcript": "/platzi/practico-backend/013_Planificaci%C3%B3n_de_Integraci%C3%B3n_Continua_y_Rollout_de_Software.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Definición y aplicación del concepto \"Code Complete\" en proyectos software",
+        "video": "/platzi/videos/practico-backend_014_Definición_y_aplicación_del_concepto__Code_Complete__en_proy.mp4",
+        "transcript": "/platzi/practico-backend/014_Definici%C3%B3n_y_aplicaci%C3%B3n_del_concepto__Code_Complete__en_proy.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Decisiones en Diseño de Sistemas Basados en Requerimientos del Negocio",
+        "video": "/platzi/videos/practico-backend_015_Decisiones_en_Diseño_de_Sistemas_Basados_en_Requerimientos_d.mp4",
+        "transcript": "/platzi/practico-backend/015_Decisiones_en_Dise%C3%B1o_de_Sistemas_Basados_en_Requerimientos_d.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Desarrollo e Implementación de Sistemas Backend",
+        "video": "/platzi/videos/practico-backend_016_Desarrollo_e_Implementación_de_Sistemas_Backend.mp4",
+        "transcript": "/platzi/practico-backend/016_Desarrollo_e_Implementaci%C3%B3n_de_Sistemas_Backend.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Diseño de Entidades para Reseñas de Cámaras y Productos",
+        "video": "/platzi/videos/practico-backend_017_Diseño_de_Entidades_para_Reseñas_de_Cámaras_y_Productos.mp4",
+        "transcript": "/platzi/practico-backend/017_Dise%C3%B1o_de_Entidades_para_Rese%C3%B1as_de_C%C3%A1maras_y_Productos.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Diseño e Implementación de Interfaces en C para Productos y Reseñas",
+        "video": "/platzi/videos/practico-backend_018_Diseño_e_Implementación_de_Interfaces_en_C_para_Productos_y.mp4",
+        "transcript": "/platzi/practico-backend/018_Dise%C3%B1o_e_Implementaci%C3%B3n_de_Interfaces_en_C_para_Productos_y.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Desarrollo de Pruebas Unitarias con TDD en C#",
+        "video": "/platzi/videos/practico-backend_019_Desarrollo_de_Pruebas_Unitarias_con_TDD_en_C.mp4",
+        "transcript": "/platzi/practico-backend/019_Desarrollo_de_Pruebas_Unitarias_con_TDD_en_C.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Implementación de pruebas unitarias con TDD en proyectos de software",
+        "video": "/platzi/videos/practico-backend_020_Implementación_de_pruebas_unitarias_con_TDD_en_proyectos_de.mp4",
+        "transcript": "/platzi/practico-backend/020_Implementaci%C3%B3n_de_pruebas_unitarias_con_TDD_en_proyectos_de.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Desarrollo de un Sistema de Reseñas en Azure",
+        "video": "/platzi/videos/practico-backend_021_Desarrollo_de_un_Sistema_de_Reseñas_en_Azure.mp4",
+        "transcript": "/platzi/practico-backend/021_Desarrollo_de_un_Sistema_de_Rese%C3%B1as_en_Azure.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Diseño de Servicios de Lectura Escalables y Stateless",
+        "video": "/platzi/videos/practico-backend_022_Diseño_de_Servicios_de_Lectura_Escalables_y_Stateless.mp4",
+        "transcript": "/platzi/practico-backend/022_Dise%C3%B1o_de_Servicios_de_Lectura_Escalables_y_Stateless.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Diseño e Implementación de un Servicio de Autenticación",
+        "video": "/platzi/videos/practico-backend_023_Diseño_e_Implementación_de_un_Servicio_de_Autenticación.mp4",
+        "transcript": "/platzi/practico-backend/023_Dise%C3%B1o_e_Implementaci%C3%B3n_de_un_Servicio_de_Autenticaci%C3%B3n.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Escalabilidad: Implementación de Throttling y Retry Policy",
+        "video": "/platzi/videos/practico-backend_024_Escalabilidad__Implementación_de_Throttling_y_Retry_Policy.mp4",
+        "transcript": "/platzi/practico-backend/024_Escalabilidad__Implementaci%C3%B3n_de_Throttling_y_Retry_Policy.txt"
+      },
+      {
+        "idx": 25,
+        "title": "Preparación Profesional para Desarrolladores Back End Avanzados",
+        "video": "/platzi/videos/practico-backend_025_Preparación_Profesional_para_Desarrolladores_Back_End_Avanza.mp4",
+        "transcript": "/platzi/practico-backend/025_Preparaci%C3%B3n_Profesional_para_Desarrolladores_Back_End_Avanza.txt"
+      }
+    ],
+    "total": 25,
+    "with_video": 25,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "arquitecturas-limpias",
+    "name": "Curso de Arquitecturas Limpias para Desarrollo de Software",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Arquitectura Limpia: Enfoque y Aplicación en Java y C#",
+        "video": "/platzi/videos/arquitecturas-limpias_001_Arquitectura_Limpia__Enfoque_y_Aplicación_en_Java_y_C.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/001_Arquitectura_Limpia__Enfoque_y_Aplicaci%C3%B3n_en_Java_y_C.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Arquitectura de Software: Tres Capas y MVC",
+        "video": "/platzi/videos/arquitecturas-limpias_002_Arquitectura_de_Software__Tres_Capas_y_MVC.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/002_Arquitectura_de_Software__Tres_Capas_y_MVC.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Características y Beneficios de la Arquitectura Limpia",
+        "video": "/platzi/videos/arquitecturas-limpias_003_Características_y_Beneficios_de_la_Arquitectura_Limpia.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/003_Caracter%C3%ADsticas_y_Beneficios_de_la_Arquitectura_Limpia.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Cuándo aplicar o ignorar arquitecturas limpias en desarrollo software",
+        "video": "/platzi/videos/arquitecturas-limpias_004_Cuándo_aplicar_o_ignorar_arquitecturas_limpias_en_desarrollo.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/004_Cu%C3%A1ndo_aplicar_o_ignorar_arquitecturas_limpias_en_desarrollo.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Principios SOLID: Aplicación Práctica en Arquitecturas Limpias",
+        "video": "/platzi/videos/arquitecturas-limpias_005_Principios_SOLID__Aplicación_Práctica_en_Arquitecturas_Limpi.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/005_Principios_SOLID__Aplicaci%C3%B3n_Pr%C3%A1ctica_en_Arquitecturas_Limpi.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Arquitectura Hexagonal: Puertos y Adaptadores en Desarrollo de Software",
+        "video": "/platzi/videos/arquitecturas-limpias_006_Arquitectura_Hexagonal__Puertos_y_Adaptadores_en_Desarrollo.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/006_Arquitectura_Hexagonal__Puertos_y_Adaptadores_en_Desarrollo.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Arquitectura Onion: Diseño y Aplicación en Desarrollo de Software",
+        "video": "/platzi/videos/arquitecturas-limpias_007_Arquitectura_Onion__Diseño_y_Aplicación_en_Desarrollo_de_Sof.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/007_Arquitectura_Onion__Dise%C3%B1o_y_Aplicaci%C3%B3n_en_Desarrollo_de_Sof.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Desglose de Capas en Clean Architecture",
+        "video": "/platzi/videos/arquitecturas-limpias_008_Desglose_de_Capas_en_Clean_Architecture.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/008_Desglose_de_Capas_en_Clean_Architecture.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Implementación de Arquitectura Limpia en Empresas Reales",
+        "video": "/platzi/videos/arquitecturas-limpias_009_Implementación_de_Arquitectura_Limpia_en_Empresas_Reales.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/009_Implementaci%C3%B3n_de_Arquitectura_Limpia_en_Empresas_Reales.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Conclusiones sobre Arquitectura de Software Adaptativa",
+        "video": "/platzi/videos/arquitecturas-limpias_010_Conclusiones_sobre_Arquitectura_de_Software_Adaptativa.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/010_Conclusiones_sobre_Arquitectura_de_Software_Adaptativa.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Errores Comunes al Manejar la Lógica de Dominio en Sistemas de Información",
+        "video": "/platzi/videos/arquitecturas-limpias_011_Errores_Comunes_al_Manejar_la_Lógica_de_Dominio_en_Sistemas.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/011_Errores_Comunes_al_Manejar_la_L%C3%B3gica_de_Dominio_en_Sistemas.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Script de Transacción en Arquitectura de Software",
+        "video": "/platzi/videos/arquitecturas-limpias_012_Script_de_Transacción_en_Arquitectura_de_Software.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/012_Script_de_Transacci%C3%B3n_en_Arquitectura_de_Software.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Inyección de Dependencias e Inversión de Control en Java",
+        "video": "/platzi/videos/arquitecturas-limpias_013_Inyección_de_Dependencias_e_Inversión_de_Control_en_Java.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/013_Inyecci%C3%B3n_de_Dependencias_e_Inversi%C3%B3n_de_Control_en_Java.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Modelos de Dominio en Programación Orientada a Objetos",
+        "video": "/platzi/videos/arquitecturas-limpias_014_Modelos_de_Dominio_en_Programación_Orientada_a_Objetos.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/014_Modelos_de_Dominio_en_Programaci%C3%B3n_Orientada_a_Objetos.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Capa de Servicios y Fachada en la Arquitectura de Software",
+        "video": "/platzi/videos/arquitecturas-limpias_015_Capa_de_Servicios_y_Fachada_en_la_Arquitectura_de_Software.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/015_Capa_de_Servicios_y_Fachada_en_la_Arquitectura_de_Software.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Casos de Uso en Clean Architecture con C#",
+        "video": "/platzi/videos/arquitecturas-limpias_016_Casos_de_Uso_en_Clean_Architecture_con_C.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/016_Casos_de_Uso_en_Clean_Architecture_con_C.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Implementación de CQRS en Arquitecturas Limpias con C#",
+        "video": "/platzi/videos/arquitecturas-limpias_017_Implementación_de_CQRS_en_Arquitecturas_Limpias_con_C.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/017_Implementaci%C3%B3n_de_CQRS_en_Arquitecturas_Limpias_con_C.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Acceso a Datos en Arquitectura Limpia: Fuentes y Pruebas Efectivas",
+        "video": "/platzi/videos/arquitecturas-limpias_018_Acceso_a_Datos_en_Arquitectura_Limpia__Fuentes_y_Pruebas_Efe.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/018_Acceso_a_Datos_en_Arquitectura_Limpia__Fuentes_y_Pruebas_Efe.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Implementación del Patrón Repository en Arquitectura de Software",
+        "video": "/platzi/videos/arquitecturas-limpias_019_Implementación_del_Patrón_Repository_en_Arquitectura_de_Soft.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/019_Implementaci%C3%B3n_del_Patr%C3%B3n_Repository_en_Arquitectura_de_Soft.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Implementación de APIs y Web con Spring Boot en Arquitectura Limpia",
+        "video": "/platzi/videos/arquitecturas-limpias_020_Implementación_de_APIs_y_Web_con_Spring_Boot_en_Arquitectura.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/020_Implementaci%C3%B3n_de_APIs_y_Web_con_Spring_Boot_en_Arquitectura.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Implementación de Integraciones con el Patrón Adapter en Arquitectura Limpia",
+        "video": "/platzi/videos/arquitecturas-limpias_021_Implementación_de_Integraciones_con_el_Patrón_Adapter_en_Arq.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/021_Implementaci%C3%B3n_de_Integraciones_con_el_Patr%C3%B3n_Adapter_en_Arq.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Pruebas Unitarias en Arquitecturas Limpias con Java y Spring Boot",
+        "video": "/platzi/videos/arquitecturas-limpias_022_Pruebas_Unitarias_en_Arquitecturas_Limpias_con_Java_y_Spring.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/022_Pruebas_Unitarias_en_Arquitecturas_Limpias_con_Java_y_Spring.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Pruebas de Integración con Dobles de Prueba en Aplicaciones",
+        "video": "/platzi/videos/arquitecturas-limpias_023_Pruebas_de_Integración_con_Dobles_de_Prueba_en_Aplicaciones.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/023_Pruebas_de_Integraci%C3%B3n_con_Dobles_de_Prueba_en_Aplicaciones.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Desafíos y Recomendaciones en Arquitectura Limpia",
+        "video": "/platzi/videos/arquitecturas-limpias_024_Desafíos_y_Recomendaciones_en_Arquitectura_Limpia.mp4",
+        "transcript": "/platzi/arquitecturas-limpias/024_Desaf%C3%ADos_y_Recomendaciones_en_Arquitectura_Limpia.txt"
+      }
+    ],
+    "total": 24,
+    "with_video": 24,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "fundamentos-arquitectura-software",
+    "name": "Curso de Fundamentos de Arquitectura de Software3%",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Decisiones de arquitectura de software y sus consecuencias reales",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_001_Decisiones_de_arquitectura_de_software_y_sus_consecuencias_r.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/001_Decisiones_de_arquitectura_de_software_y_sus_consecuencias_r.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Inteligencia artificial como herramienta en arquitectura de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_002_Inteligencia_artificial_como_herramienta_en_arquitectura_de.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/002_Inteligencia_artificial_como_herramienta_en_arquitectura_de.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Responsabilidades del arquitecto de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_003_Responsabilidades_del_arquitecto_de_software.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/003_Responsabilidades_del_arquitecto_de_software.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Problemas esenciales vs incidentales en arquitectura de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_004_Problemas_esenciales_vs_incidentales_en_arquitectura_de_soft.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/004_Problemas_esenciales_vs_incidentales_en_arquitectura_de_soft.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Arquitectura de software y metodologías de desarrollo ágiles",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_005_Arquitectura_de_software_y_metodologías_de_desarrollo_ágiles.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/005_Arquitectura_de_software_y_metodolog%C3%ADas_de_desarrollo_%C3%A1giles.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Diferenciación entre espacio del problema y espacio de solución",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_006_Diferenciación_entre_espacio_del_problema_y_espacio_de_soluc.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/006_Diferenciaci%C3%B3n_entre_espacio_del_problema_y_espacio_de_soluc.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Requisitos funcionales y no funcionales en arquitectura de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_007_Requisitos_funcionales_y_no_funcionales_en_arquitectura_de_s.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/007_Requisitos_funcionales_y_no_funcionales_en_arquitectura_de_s.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Costos de operación en arquitecturas de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_008_Costos_de_operación_en_arquitecturas_de_software.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/008_Costos_de_operaci%C3%B3n_en_arquitecturas_de_software.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Alineación de arquitectura de software con estrategia empresarial",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_009_Alineación_de_arquitectura_de_software_con_estrategia_empres.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/009_Alineaci%C3%B3n_de_arquitectura_de_software_con_estrategia_empres.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Mindset de innovación para arquitectos de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_010_Mindset_de_innovación_para_arquitectos_de_software.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/010_Mindset_de_innovaci%C3%B3n_para_arquitectos_de_software.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Selección de estilos arquitectónicos según el contexto del problema",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_011_Selección_de_estilos_arquitectónicos_según_el_contexto_del_p.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/011_Selecci%C3%B3n_de_estilos_arquitect%C3%B3nicos_seg%C3%BAn_el_contexto_del_p.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Arquitectura cliente servidor: fundamentos y comunicación por capas",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_012_Arquitectura_cliente_servidor__fundamentos_y_comunicación_po.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/012_Arquitectura_cliente_servidor__fundamentos_y_comunicaci%C3%B3n_po.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Qué son las arquitecturas monolíticas y sus ventajas y desventajas",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_013_Qué_son_las_arquitecturas_monolíticas_y_sus_ventajas_y_desve.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/013_Qu%C3%A9_son_las_arquitecturas_monol%C3%ADticas_y_sus_ventajas_y_desve.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Arquitecturas orientadas a servicios: contratos y especificaciones",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_014_Arquitecturas_orientadas_a_servicios__contratos_y_especifica.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/014_Arquitecturas_orientadas_a_servicios__contratos_y_especifica.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Arquitecturas orientadas a eventos: conceptos y desafíos principales",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_015_Arquitecturas_orientadas_a_eventos__conceptos_y_desafíos_pri.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/015_Arquitecturas_orientadas_a_eventos__conceptos_y_desaf%C3%ADos_pri.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Ventajas y costos ocultos de arquitecturas de microservicios",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_016_Ventajas_y_costos_ocultos_de_arquitecturas_de_microservicios.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/016_Ventajas_y_costos_ocultos_de_arquitecturas_de_microservicios.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Paradigmas y principios SOLID para arquitectura de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_017_Paradigmas_y_principios_SOLID_para_arquitectura_de_software.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/017_Paradigmas_y_principios_SOLID_para_arquitectura_de_software.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Criterios para evaluar la limpieza de arquitecturas de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_018_Criterios_para_evaluar_la_limpieza_de_arquitecturas_de_softw.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/018_Criterios_para_evaluar_la_limpieza_de_arquitecturas_de_softw.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Cuándo usar patrones de software en arquitectura",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_019_Cuándo_usar_patrones_de_software_en_arquitectura.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/019_Cu%C3%A1ndo_usar_patrones_de_software_en_arquitectura.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Análisis de arquitectura para automatizar transferencia Telegram-Remarkable",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_020_Análisis_de_arquitectura_para_automatizar_transferencia_Tele.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/020_An%C3%A1lisis_de_arquitectura_para_automatizar_transferencia_Tele.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Decisiones de arquitectura al escalar tu MVP con nuevas funcionalidades",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_021_Decisiones_de_arquitectura_al_escalar_tu_MVP_con_nuevas_func.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/021_Decisiones_de_arquitectura_al_escalar_tu_MVP_con_nuevas_func.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Evolución del software personal hacia el modelo empresarial",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_022_Evolución_del_software_personal_hacia_el_modelo_empresarial.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/022_Evoluci%C3%B3n_del_software_personal_hacia_el_modelo_empresarial.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Técnicas de preguntas efectivas para arquitectos de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_023_Técnicas_de_preguntas_efectivas_para_arquitectos_de_software.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/023_T%C3%A9cnicas_de_preguntas_efectivas_para_arquitectos_de_software.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Consejos para desarrollar carrera como arquitecto de software",
+        "video": "/platzi/videos/fundamentos-arquitectura-software_024_Consejos_para_desarrollar_carrera_como_arquitecto_de_softwar.mp4",
+        "transcript": "/platzi/fundamentos-arquitectura-software/024_Consejos_para_desarrollar_carrera_como_arquitecto_de_softwar.txt"
+      }
+    ],
+    "total": 24,
+    "with_video": 24,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "nextjs15",
+    "name": "Curso de Next.js Avanzado",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Desarrollo Web Escalable con Next.js: Optimización y SEO Integrado",
+        "video": "/platzi/videos/nextjs15_001_Desarrollo_Web_Escalable_con_Next_js__Optimización_y_SEO_Int.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/001_Desarrollo_Web_Escalable_con_Next_js__Optimizaci%C3%B3n_y_SEO_Int.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Novedades y Cambios Clave en Next.js 15",
+        "video": "/platzi/videos/nextjs15_002_Novedades_y_Cambios_Clave_en_Next_js_15.mp4",
+        "transcript": "/platzi/nextjs15/002_Novedades_y_Cambios_Clave_en_Next_js_15.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Migración de Next.js 11 a 15: Guía Paso a Paso",
+        "video": "/platzi/videos/nextjs15_003_Migración_de_Next_js_11_a_15__Guía_Paso_a_Paso.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/003_Migraci%C3%B3n_de_Next_js_11_a_15__Gu%C3%ADa_Paso_a_Paso.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Creación de React Server Components con Next.js y PostgreSQL",
+        "video": "/platzi/videos/nextjs15_004_Creación_de_React_Server_Components_con_Next_js_y_PostgreSQL.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/004_Creaci%C3%B3n_de_React_Server_Components_con_Next_js_y_PostgreSQL.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Integración de React Server Components con PostgreSQL",
+        "video": "/platzi/videos/nextjs15_005_Integración_de_React_Server_Components_con_PostgreSQL.mp4",
+        "transcript": "/platzi/nextjs15/005_Integraci%C3%B3n_de_React_Server_Components_con_PostgreSQL.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Consumo de datos en servidores con ORM Drizzle y TypeScript",
+        "video": "/platzi/videos/nextjs15_006_Consumo_de_datos_en_servidores_con_ORM_Drizzle_y_TypeScript.mp4",
+        "transcript": "/platzi/nextjs15/006_Consumo_de_datos_en_servidores_con_ORM_Drizzle_y_TypeScript.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Consumo de APIs en Next.js con ReactQuery y useEffect",
+        "video": "/platzi/videos/nextjs15_007_Consumo_de_APIs_en_Next_js_con_ReactQuery_y_useEffect.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/007_Consumo_de_APIs_en_Next_js_con_ReactQuery_y_useEffect.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Optimización del Consumo de Datos en Aplicaciones Web",
+        "video": "/platzi/videos/nextjs15_008_Optimización_del_Consumo_de_Datos_en_Aplicaciones_Web.mp4",
+        "transcript": "/platzi/nextjs15/008_Optimizaci%C3%B3n_del_Consumo_de_Datos_en_Aplicaciones_Web.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Implementación de Suspense y Streaming en React y Next.js",
+        "video": "/platzi/videos/nextjs15_009_Implementación_de_Suspense_y_Streaming_en_React_y_Next_js.mp4",
+        "transcript": "/platzi/nextjs15/009_Implementaci%C3%B3n_de_Suspense_y_Streaming_en_React_y_Next_js.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Internacionalización en NextJS: Middleware y Rutas Dinámicas",
+        "video": "/platzi/videos/nextjs15_010_Internacionalización_en_NextJS__Middleware_y_Rutas_Dinámicas.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/010_Internacionalizaci%C3%B3n_en_NextJS__Middleware_y_Rutas_Din%C3%A1micas.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Internacionalización en Next.js con Traducciones Dinámicas",
+        "video": "/platzi/videos/nextjs15_011_Internacionalización_en_Next_js_con_Traducciones_Dinámicas.mp4",
+        "transcript": "/platzi/nextjs15/011_Internacionalizaci%C3%B3n_en_Next_js_con_Traducciones_Din%C3%A1micas.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Autenticación de Usuarios con Middleware en Next.js",
+        "video": "/platzi/videos/nextjs15_012_Autenticación_de_Usuarios_con_Middleware_en_Next_js.mp4",
+        "transcript": "/platzi/nextjs15/012_Autenticaci%C3%B3n_de_Usuarios_con_Middleware_en_Next_js.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Administración de Cookies con Next.js y JavaScript para Autenticación",
+        "video": "/platzi/videos/nextjs15_013_Administración_de_Cookies_con_Next_js_y_JavaScript_para_Aute.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/013_Administraci%C3%B3n_de_Cookies_con_Next_js_y_JavaScript_para_Aute.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Integración de Feature Flags en Next.js con LaunchDarkly",
+        "video": "/platzi/videos/nextjs15_014_Integración_de_Feature_Flags_en_Next_js_con_LaunchDarkly.mp4",
+        "transcript": "/platzi/nextjs15/014_Integraci%C3%B3n_de_Feature_Flags_en_Next_js_con_LaunchDarkly.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Manejo de Errores en Next.js: Server Actions y Páginas de Error",
+        "video": "/platzi/videos/nextjs15_015_Manejo_de_Errores_en_Next_js__Server_Actions_y_Páginas_de_Er.mp4",
+        "transcript": "/platzi/nextjs15/015_Manejo_de_Errores_en_Next_js__Server_Actions_y_P%C3%A1ginas_de_Er.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Integración de Sentry para Monitoreo de Errores en Next.js",
+        "video": "/platzi/videos/nextjs15_016_Integración_de_Sentry_para_Monitoreo_de_Errores_en_Next_js.mp4",
+        "transcript": "/platzi/nextjs15/016_Integraci%C3%B3n_de_Sentry_para_Monitoreo_de_Errores_en_Next_js.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Gestión del Caché en Next.js: Novedades y Estrategias Avanzadas",
+        "video": "/platzi/videos/nextjs15_017_Gestión_del_Caché_en_Next_js__Novedades_y_Estrategias_Avanza.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/017_Gesti%C3%B3n_del_Cach%C3%A9_en_Next_js__Novedades_y_Estrategias_Avanza.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Seguridad en Next.js: Server Actions y Componentes React",
+        "video": "/platzi/videos/nextjs15_018_Seguridad_en_Next_js__Server_Actions_y_Componentes_React.mp4",
+        "transcript": "/platzi/nextjs15/018_Seguridad_en_Next_js__Server_Actions_y_Componentes_React.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Seguridad de Cookies y Encriptación en Aplicaciones Next.js",
+        "video": "/platzi/videos/nextjs15_019_Seguridad_de_Cookies_y_Encriptación_en_Aplicaciones_Next_js.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/019_Seguridad_de_Cookies_y_Encriptaci%C3%B3n_en_Aplicaciones_Next_js.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Optimización de Rendimiento en Next.js: Técnicas y Herramientas",
+        "video": "/platzi/videos/nextjs15_020_Optimización_de_Rendimiento_en_Next_js__Técnicas_y_Herramien.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/020_Optimizaci%C3%B3n_de_Rendimiento_en_Next_js__T%C3%A9cnicas_y_Herramien.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Despliegue de Aplicaciones Next.js con Vercel y Docker",
+        "video": "/platzi/videos/nextjs15_021_Despliegue_de_Aplicaciones_Next_js_con_Vercel_y_Docker.mp4",
+        "transcript": "/platzi/nextjs15/021_Despliegue_de_Aplicaciones_Next_js_con_Vercel_y_Docker.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Despliegue de Next.js en Fly.io usando Docker y configuración de Postgres",
+        "video": "/platzi/videos/nextjs15_022_Despliegue_de_Next_js_en_Fly_io_usando_Docker_y_configuració.mp4",
+        "transcript": "/platzi/nextjs15/022_Despliegue_de_Next_js_en_Fly_io_usando_Docker_y_configuraci%C3%B3.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Despliegue de Aplicaciones Next.js con Flyo y Docker",
+        "video": "/platzi/videos/nextjs15_023_Despliegue_de_Aplicaciones_Next_js_con_Flyo_y_Docker.mp4",
+        "transcript": "/platzi/nextjs15/023_Despliegue_de_Aplicaciones_Next_js_con_Flyo_y_Docker.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Migración y Optimización de Páginas con Next.js",
+        "video": "/platzi/videos/nextjs15_024_Migración_y_Optimización_de_Páginas_con_Next_js.mp4.ytdl",
+        "transcript": "/platzi/nextjs15/024_Migraci%C3%B3n_y_Optimizaci%C3%B3n_de_P%C3%A1ginas_con_Next_js.txt"
+      }
+    ],
+    "total": 24,
+    "with_video": 24,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "nodejs-graphql",
+    "name": "Curso de GraphQL con Node.js",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Integración de GraphQL con Node.js y Express",
+        "video": "/platzi/videos/nodejs-graphql_001_Integración_de_GraphQL_con_Node_js_y_Express.mp4",
+        "transcript": "/platzi/nodejs-graphql/001_Integraci%C3%B3n_de_GraphQL_con_Node_js_y_Express.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Integración de GradQL en API REST existente",
+        "video": "/platzi/videos/nodejs-graphql_002_Integración_de_GradQL_en_API_REST_existente.mp4",
+        "transcript": "/platzi/nodejs-graphql/002_Integraci%C3%B3n_de_GradQL_en_API_REST_existente.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Organización del Código para Implementar GraphQL",
+        "video": "/platzi/videos/nodejs-graphql_003_Organización_del_Código_para_Implementar_GraphQL.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql/003_Organizaci%C3%B3n_del_C%C3%B3digo_para_Implementar_GraphQL.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Creación de tu primer servidor GradQL con Apollo Server Express",
+        "video": "/platzi/videos/nodejs-graphql_004_Creación_de_tu_primer_servidor_GradQL_con_Apollo_Server_Expr.mp4.part-Frag67",
+        "transcript": "/platzi/nodejs-graphql/004_Creaci%C3%B3n_de_tu_primer_servidor_GradQL_con_Apollo_Server_Expr.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Consumo de API GradQL con Insomnia y Postman",
+        "video": "/platzi/videos/nodejs-graphql_005_Consumo_de_API_GradQL_con_Insomnia_y_Postman.mp4",
+        "transcript": "/platzi/nodejs-graphql/005_Consumo_de_API_GradQL_con_Insomnia_y_Postman.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Sistema de Tipado en GradQL: Queries y Mutations",
+        "video": "/platzi/videos/nodejs-graphql_006_Sistema_de_Tipado_en_GradQL__Queries_y_Mutations.mp4",
+        "transcript": "/platzi/nodejs-graphql/006_Sistema_de_Tipado_en_GradQL__Queries_y_Mutations.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Tipos de Datos Básicos en GraphQL: Int, Float, String, Boolean, ID",
+        "video": "/platzi/videos/nodejs-graphql_007_Tipos_de_Datos_Básicos_en_GraphQL__Int__Float__String__Boole.mp4",
+        "transcript": "/platzi/nodejs-graphql/007_Tipos_de_Datos_B%C3%A1sicos_en_GraphQL__Int__Float__String__Boole.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Validación de Nullables y Listas en GradQL",
+        "video": "/platzi/videos/nodejs-graphql_008_Validación_de_Nullables_y_Listas_en_GradQL.mp4",
+        "transcript": "/platzi/nodejs-graphql/008_Validaci%C3%B3n_de_Nullables_y_Listas_en_GradQL.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Creación y Manejo de Tipos de Datos en GraphQL",
+        "video": "/platzi/videos/nodejs-graphql_009_Creación_y_Manejo_de_Tipos_de_Datos_en_GraphQL.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql/009_Creaci%C3%B3n_y_Manejo_de_Tipos_de_Datos_en_GraphQL.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Integración de Archivos GradQL y Live Reloading en Node.js",
+        "video": "/platzi/videos/nodejs-graphql_010_Integración_de_Archivos_GradQL_y_Live_Reloading_en_Node_js.mp4",
+        "transcript": "/platzi/nodejs-graphql/010_Integraci%C3%B3n_de_Archivos_GradQL_y_Live_Reloading_en_Node_js.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Organización de Resolvers con el Principio de Responsabilidad Única",
+        "video": "/platzi/videos/nodejs-graphql_011_Organización_de_Resolvers_con_el_Principio_de_Responsabilida.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql/011_Organizaci%C3%B3n_de_Resolvers_con_el_Principio_de_Responsabilida.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Conexión de Base de Datos y Consultas en GraphQL con SQLite",
+        "video": "/platzi/videos/nodejs-graphql_012_Conexión_de_Base_de_Datos_y_Consultas_en_GraphQL_con_SQLite.mp4",
+        "transcript": "/platzi/nodejs-graphql/012_Conexi%C3%B3n_de_Base_de_Datos_y_Consultas_en_GraphQL_con_SQLite.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Creación de productos con mutations e inputs en GraphQL",
+        "video": "/platzi/videos/nodejs-graphql_013_Creación_de_productos_con_mutations_e_inputs_en_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql/013_Creaci%C3%B3n_de_productos_con_mutations_e_inputs_en_GraphQL.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Uso de Variables y Alias en GradQL para Optimizar Consultas",
+        "video": "/platzi/videos/nodejs-graphql_014_Uso_de_Variables_y_Alias_en_GradQL_para_Optimizar_Consultas.mp4",
+        "transcript": "/platzi/nodejs-graphql/014_Uso_de_Variables_y_Alias_en_GradQL_para_Optimizar_Consultas.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Actualización y Eliminación de Productos con GraphQL",
+        "video": "/platzi/videos/nodejs-graphql_015_Actualización_y_Eliminación_de_Productos_con_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql/015_Actualizaci%C3%B3n_y_Eliminaci%C3%B3n_de_Productos_con_GraphQL.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Anidamiento de Entidades con GradQL en APIs",
+        "video": "/platzi/videos/nodejs-graphql_016_Anidamiento_de_Entidades_con_GradQL_en_APIs.mp4",
+        "transcript": "/platzi/nodejs-graphql/016_Anidamiento_de_Entidades_con_GradQL_en_APIs.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Autenticación de Usuarios con JWT en GraphQL y Node.js",
+        "video": "/platzi/videos/nodejs-graphql_017_Autenticación_de_Usuarios_con_JWT_en_GraphQL_y_Node_js.mp4",
+        "transcript": "/platzi/nodejs-graphql/017_Autenticaci%C3%B3n_de_Usuarios_con_JWT_en_GraphQL_y_Node_js.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Creación de Mutación para Categorías con Validación de Roles",
+        "video": "/platzi/videos/nodejs-graphql_018_Creación_de_Mutación_para_Categorías_con_Validación_de_Roles.mp4",
+        "transcript": "/platzi/nodejs-graphql/018_Creaci%C3%B3n_de_Mutaci%C3%B3n_para_Categor%C3%ADas_con_Validaci%C3%B3n_de_Roles.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Autenticación de JSON Web Tokens en GraphQL con Passport",
+        "video": "/platzi/videos/nodejs-graphql_019_Autenticación_de_JSON_Web_Tokens_en_GraphQL_con_Passport.mp4",
+        "transcript": "/platzi/nodejs-graphql/019_Autenticaci%C3%B3n_de_JSON_Web_Tokens_en_GraphQL_con_Passport.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Validación de Roles y Sesiones con GradQL y Express",
+        "video": "/platzi/videos/nodejs-graphql_020_Validación_de_Roles_y_Sesiones_con_GradQL_y_Express.mp4",
+        "transcript": "/platzi/nodejs-graphql/020_Validaci%C3%B3n_de_Roles_y_Sesiones_con_GradQL_y_Express.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Validación de Datos en GradQL con Scalars Personalizados",
+        "video": "/platzi/videos/nodejs-graphql_021_Validación_de_Datos_en_GradQL_con_Scalars_Personalizados.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql/021_Validaci%C3%B3n_de_Datos_en_GradQL_con_Scalars_Personalizados.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Anidamiento dinámico en GraphQL: optimización de consultas SQL",
+        "video": "/platzi/videos/nodejs-graphql_022_Anidamiento_dinámico_en_GraphQL__optimización_de_consultas_S.mp4",
+        "transcript": "/platzi/nodejs-graphql/022_Anidamiento_din%C3%A1mico_en_GraphQL__optimizaci%C3%B3n_de_consultas_S.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Comparativa entre WPI y GradQL: Ventajas y Desventajas",
+        "video": "/platzi/videos/nodejs-graphql_023_Comparativa_entre_WPI_y_GradQL__Ventajas_y_Desventajas.mp4",
+        "transcript": "/platzi/nodejs-graphql/023_Comparativa_entre_WPI_y_GradQL__Ventajas_y_Desventajas.txt"
+      },
+      {
+        "idx": 24,
+        "title": "Creación de Servidores GradQL con Node.js",
+        "video": "/platzi/videos/nodejs-graphql_024_Creación_de_Servidores_GradQL_con_Node_js.mp4",
+        "transcript": "/platzi/nodejs-graphql/024_Creaci%C3%B3n_de_Servidores_GradQL_con_Node_js.txt"
+      }
+    ],
+    "total": 24,
+    "with_video": 24,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "go-eventos-cqrs",
+    "name": "Curso de Go Avanzado: Arquitectura de Eventos y CQRS",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "¿Qué estaremos construyendo en el curso?",
+        "video": "/platzi/videos/go-eventos-cqrs_001_Qué_estaremos_construyendo_en_el_curso.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/001_Qu%C3%A9_estaremos_construyendo_en_el_curso.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Microservicios y arquitecturas basadas en eventos",
+        "video": "/platzi/videos/go-eventos-cqrs_002_Microservicios_y_arquitecturas_basadas_en_eventos.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/002_Microservicios_y_arquitecturas_basadas_en_eventos.txt"
+      },
+      {
+        "idx": 3,
+        "title": "CQRS: Command Query Responsibility Segregation",
+        "video": "/platzi/videos/go-eventos-cqrs_003_CQRS__Command_Query_Responsibility_Segregation.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/003_CQRS__Command_Query_Responsibility_Segregation.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Creando modelos y repositorios",
+        "video": "/platzi/videos/go-eventos-cqrs_004_Creando_modelos_y_repositorios.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/004_Creando_modelos_y_repositorios.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Implementando repositorio",
+        "video": "/platzi/videos/go-eventos-cqrs_005_Implementando_repositorio.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/005_Implementando_repositorio.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Agregando NATS",
+        "video": "/platzi/videos/go-eventos-cqrs_006_Agregando_NATS.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/006_Agregando_NATS.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Definiendo mensajes y eventos",
+        "video": "/platzi/videos/go-eventos-cqrs_007_Definiendo_mensajes_y_eventos.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/007_Definiendo_mensajes_y_eventos.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Implementado interfaces para mensajes y eventos",
+        "video": "/platzi/videos/go-eventos-cqrs_008_Implementado_interfaces_para_mensajes_y_eventos.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/008_Implementado_interfaces_para_mensajes_y_eventos.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Reaccionando a eventos",
+        "video": "/platzi/videos/go-eventos-cqrs_009_Reaccionando_a_eventos.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/009_Reaccionando_a_eventos.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Agregando indexación",
+        "video": "/platzi/videos/go-eventos-cqrs_010_Agregando_indexación.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/010_Agregando_indexaci%C3%B3n.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Implementando indexación mediante Elastic Search",
+        "video": "/platzi/videos/go-eventos-cqrs_011_Implementando_indexación_mediante_Elastic_Search.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/011_Implementando_indexaci%C3%B3n_mediante_Elastic_Search.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Búsqueda mediante Elastic Search",
+        "video": "/platzi/videos/go-eventos-cqrs_012_Búsqueda_mediante_Elastic_Search.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/012_B%C3%BAsqueda_mediante_Elastic_Search.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Serialización de resultados de Elastic Search",
+        "video": "/platzi/videos/go-eventos-cqrs_013_Serialización_de_resultados_de_Elastic_Search.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/013_Serializaci%C3%B3n_de_resultados_de_Elastic_Search.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Creando Feed Service",
+        "video": "/platzi/videos/go-eventos-cqrs_014_Creando_Feed_Service.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/014_Creando_Feed_Service.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Creando Handlers para Feed Service",
+        "video": "/platzi/videos/go-eventos-cqrs_015_Creando_Handlers_para_Feed_Service.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/015_Creando_Handlers_para_Feed_Service.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Agregando Feed Service como Command",
+        "video": "/platzi/videos/go-eventos-cqrs_016_Agregando_Feed_Service_como_Command.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/016_Agregando_Feed_Service_como_Command.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Creando Query Service",
+        "video": "/platzi/videos/go-eventos-cqrs_017_Creando_Query_Service.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/017_Creando_Query_Service.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Creando Handlers para Query Service",
+        "video": "/platzi/videos/go-eventos-cqrs_018_Creando_Handlers_para_Query_Service.mp4.ytdl",
+        "transcript": "/platzi/go-eventos-cqrs/018_Creando_Handlers_para_Query_Service.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Creando el Servicio Pusher",
+        "video": "/platzi/videos/go-eventos-cqrs_019_Creando_el_Servicio_Pusher.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/019_Creando_el_Servicio_Pusher.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Agregando NGINX",
+        "video": "/platzi/videos/go-eventos-cqrs_020_Agregando_NGINX.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/020_Agregando_NGINX.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Probando nuestra aplicación de Feeds",
+        "video": "/platzi/videos/go-eventos-cqrs_021_Probando_nuestra_aplicación_de_Feeds.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/021_Probando_nuestra_aplicaci%C3%B3n_de_Feeds.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Conclusiones",
+        "video": "/platzi/videos/go-eventos-cqrs_022_Conclusiones.mp4",
+        "transcript": "/platzi/go-eventos-cqrs/022_Conclusiones.txt"
+      }
+    ],
+    "total": 22,
+    "with_video": 22,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "go-protobuffers-grpc",
+    "name": "Curso de Go Avanzado: Protobuffers y gRPC",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Construcción de Microservicios con Go y gRPC",
+        "video": "/platzi/videos/go-protobuffers-grpc_001_Construcción_de_Microservicios_con_Go_y_gRPC.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/001_Construcci%C3%B3n_de_Microservicios_con_Go_y_gRPC.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Creación de Servicios para Gestión de Exámenes con Postman",
+        "video": "/platzi/videos/go-protobuffers-grpc_002_Creación_de_Servicios_para_Gestión_de_Exámenes_con_Postman.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/002_Creaci%C3%B3n_de_Servicios_para_Gesti%C3%B3n_de_Ex%C3%A1menes_con_Postman.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Serialización de Datos con Protocol Buffers en Go",
+        "video": "/platzi/videos/go-protobuffers-grpc_003_Serialización_de_Datos_con_Protocol_Buffers_en_Go.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/003_Serializaci%C3%B3n_de_Datos_con_Protocol_Buffers_en_Go.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Generación de Protobufs y Paquetes Go para gRPC",
+        "video": "/platzi/videos/go-protobuffers-grpc_004_Generación_de_Protobufs_y_Paquetes_Go_para_gRPC.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/004_Generaci%C3%B3n_de_Protobufs_y_Paquetes_Go_para_gRPC.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Evolución de Arquitecturas de Software y el Rol de gRPC",
+        "video": "/platzi/videos/go-protobuffers-grpc_005_Evolución_de_Arquitecturas_de_Software_y_el_Rol_de_gRPC.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/005_Evoluci%C3%B3n_de_Arquitecturas_de_Software_y_el_Rol_de_gRPC.txt"
+      },
+      {
+        "idx": 6,
+        "title": "RPC y gRPC: Protocolos para Comunicación Eficiente entre Servicios",
+        "video": "/platzi/videos/go-protobuffers-grpc_006_RPC_y_gRPC__Protocolos_para_Comunicación_Eficiente_entre_Ser.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/006_RPC_y_gRPC__Protocolos_para_Comunicaci%C3%B3n_Eficiente_entre_Ser.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Comparativa de JSON y Protobufers en Intercambio de Datos",
+        "video": "/platzi/videos/go-protobuffers-grpc_007_Comparativa_de_JSON_y_Protobufers_en_Intercambio_de_Datos.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/007_Comparativa_de_JSON_y_Protobufers_en_Intercambio_de_Datos.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Definición de Servicios gRPC con Protocol Buffers en Go",
+        "video": "/platzi/videos/go-protobuffers-grpc_008_Definición_de_Servicios_gRPC_con_Protocol_Buffers_en_Go.mp4.ytdl",
+        "transcript": "/platzi/go-protobuffers-grpc/008_Definici%C3%B3n_de_Servicios_gRPC_con_Protocol_Buffers_en_Go.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Implementación de Repositorios y gRPC en Go con PostgreSQL",
+        "video": "/platzi/videos/go-protobuffers-grpc_009_Implementación_de_Repositorios_y_gRPC_en_Go_con_PostgreSQL.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/009_Implementaci%C3%B3n_de_Repositorios_y_gRPC_en_Go_con_PostgreSQL.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Implementación de Servidor gRPC para Gestión de Estudiantes",
+        "video": "/platzi/videos/go-protobuffers-grpc_010_Implementación_de_Servidor_gRPC_para_Gestión_de_Estudiantes.mp4.ytdl",
+        "transcript": "/platzi/go-protobuffers-grpc/010_Implementaci%C3%B3n_de_Servidor_gRPC_para_Gesti%C3%B3n_de_Estudiantes.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Pruebas de API gRPC con Postman y Docker",
+        "video": "/platzi/videos/go-protobuffers-grpc_011_Pruebas_de_API_gRPC_con_Postman_y_Docker.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/011_Pruebas_de_API_gRPC_con_Postman_y_Docker.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Definición de Servicios gRPC en Go para Pruebas y Exámenes",
+        "video": "/platzi/videos/go-protobuffers-grpc_012_Definición_de_Servicios_gRPC_en_Go_para_Pruebas_y_Exámenes.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/012_Definici%C3%B3n_de_Servicios_gRPC_en_Go_para_Pruebas_y_Ex%C3%A1menes.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Implementación de gRPC Server y Métodos en Go",
+        "video": "/platzi/videos/go-protobuffers-grpc_013_Implementación_de_gRPC_Server_y_Métodos_en_Go.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/013_Implementaci%C3%B3n_de_gRPC_Server_y_M%C3%A9todos_en_Go.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Implementación de Streaming del Cliente con gRPC en Go",
+        "video": "/platzi/videos/go-protobuffers-grpc_014_Implementación_de_Streaming_del_Cliente_con_gRPC_en_Go.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/014_Implementaci%C3%B3n_de_Streaming_del_Cliente_con_gRPC_en_Go.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Implementación de Streaming del Servidor con gRPC y Protobufs",
+        "video": "/platzi/videos/go-protobuffers-grpc_015_Implementación_de_Streaming_del_Servidor_con_gRPC_y_Protobuf.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/015_Implementaci%C3%B3n_de_Streaming_del_Servidor_con_gRPC_y_Protobuf.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Implementación de Streaming gRPC del Lado del Servidor en Go",
+        "video": "/platzi/videos/go-protobuffers-grpc_016_Implementación_de_Streaming_gRPC_del_Lado_del_Servidor_en_Go.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/016_Implementaci%C3%B3n_de_Streaming_gRPC_del_Lado_del_Servidor_en_Go.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Streaming Bidireccional con gRPC: Implementación y Pruebas",
+        "video": "/platzi/videos/go-protobuffers-grpc_017_Streaming_Bidireccional_con_gRPC__Implementación_y_Pruebas.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/017_Streaming_Bidireccional_con_gRPC__Implementaci%C3%B3n_y_Pruebas.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Pruebas de Streaming Bidireccional con gRPC y Postman",
+        "video": "/platzi/videos/go-protobuffers-grpc_018_Pruebas_de_Streaming_Bidireccional_con_gRPC_y_Postman.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/018_Pruebas_de_Streaming_Bidireccional_con_gRPC_y_Postman.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Implementación de Cliente gRPC en Go para Comunicación con Servidor",
+        "video": "/platzi/videos/go-protobuffers-grpc_019_Implementación_de_Cliente_gRPC_en_Go_para_Comunicación_con_S.mp4.ytdl",
+        "transcript": "/platzi/go-protobuffers-grpc/019_Implementaci%C3%B3n_de_Cliente_gRPC_en_Go_para_Comunicaci%C3%B3n_con_S.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Implementación de Streaming en gRPC: Servidor y Bidireccional",
+        "video": "/platzi/videos/go-protobuffers-grpc_020_Implementación_de_Streaming_en_gRPC__Servidor_y_Bidirecciona.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/020_Implementaci%C3%B3n_de_Streaming_en_gRPC__Servidor_y_Bidirecciona.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Implementación de gRPC Web con Proxy Envoy y JavaScript",
+        "video": "/platzi/videos/go-protobuffers-grpc_021_Implementación_de_gRPC_Web_con_Proxy_Envoy_y_JavaScript.mp4",
+        "transcript": "/platzi/go-protobuffers-grpc/021_Implementaci%C3%B3n_de_gRPC_Web_con_Proxy_Envoy_y_JavaScript.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Streaming de Datos con gRPC y Protobufers en Backends",
+        "video": "/platzi/videos/go-protobuffers-grpc_022_Streaming_de_Datos_con_gRPC_y_Protobufers_en_Backends.mp4.ytdl",
+        "transcript": "/platzi/go-protobuffers-grpc/022_Streaming_de_Datos_con_gRPC_y_Protobufers_en_Backends.txt"
+      }
+    ],
+    "total": 22,
+    "with_video": 22,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "nodejs-graphql-avanzado",
+    "name": "35 opiniones",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "¿Por qué GraphQL?",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_001_Por_qué_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/001_Por_qu%C3%A9_GraphQL.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Arquitectura backend con Node.js y GraphQL",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_002_Arquitectura_backend_con_Node_js_y_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/002_Arquitectura_backend_con_Node_js_y_GraphQL.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Construyendo una query simple con Apollo Server",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_003_Construyendo_una_query_simple_con_Apollo_Server.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/003_Construyendo_una_query_simple_con_Apollo_Server.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Scalars, filtros y queries avanzadas",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_004_Scalars__filtros_y_queries_avanzadas.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/004_Scalars__filtros_y_queries_avanzadas.txt"
+      },
+      {
+        "idx": 5,
+        "title": "ORMs, Prisma y automatización",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_005_ORMs__Prisma_y_automatización.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/005_ORMs__Prisma_y_automatizaci%C3%B3n.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Modelando la base datos y schema",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_006_Modelando_la_base_datos_y_schema.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/006_Modelando_la_base_datos_y_schema.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Resolvers para mutaciones y filtros",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_007_Resolvers_para_mutaciones_y_filtros.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/007_Resolvers_para_mutaciones_y_filtros.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Filtros en Prisma",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_008_Filtros_en_Prisma.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/008_Filtros_en_Prisma.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Paginación y filtros avanzados",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_009_Paginación_y_filtros_avanzados.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/009_Paginaci%C3%B3n_y_filtros_avanzados.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Archivos estáticos",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_010_Archivos_estáticos.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/010_Archivos_est%C3%A1ticos.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Archivos estáticos con Express.js y Apollo Server",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_011_Archivos_estáticos_con_Express_js_y_Apollo_Server.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql-avanzado/011_Archivos_est%C3%A1ticos_con_Express_js_y_Apollo_Server.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Protección de recursos en GraphQL",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_012_Protección_de_recursos_en_GraphQL.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql-avanzado/012_Protecci%C3%B3n_de_recursos_en_GraphQL.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Testing",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_013_Testing.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/013_Testing.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Pruebas End to End: Estrategias y Herramientas Efectivas",
+        "video": null,
+        "transcript": "/platzi/nodejs-graphql-avanzado/014_Pruebas_End_to_End__Estrategias_y_Herramientas_Efectivas.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Preparando la app para producción",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_015_Preparando_la_app_para_producción.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/015_Preparando_la_app_para_producci%C3%B3n.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Preparando el servidor para Heroku",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_016_Preparando_el_servidor_para_Heroku.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/016_Preparando_el_servidor_para_Heroku.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Introspección",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_017_Introspección.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/017_Introspecci%C3%B3n.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Bases de datos en producción",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_018_Bases_de_datos_en_producción.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/018_Bases_de_datos_en_producci%C3%B3n.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Deploying",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_019_Deploying.mp4.ytdl",
+        "transcript": "/platzi/nodejs-graphql-avanzado/019_Deploying.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Reto: guestbook",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_020_Reto__guestbook.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/020_Reto__guestbook.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Desventajas de GraphQL",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_021_Desventajas_de_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/021_Desventajas_de_GraphQL.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Frameworks de GraphQL",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_022_Frameworks_de_GraphQL.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/022_Frameworks_de_GraphQL.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Conectemos el frontend",
+        "video": "/platzi/videos/nodejs-graphql-avanzado_023_Conectemos_el_frontend.mp4",
+        "transcript": "/platzi/nodejs-graphql-avanzado/023_Conectemos_el_frontend.txt"
+      }
+    ],
+    "total": 23,
+    "with_video": 22,
+    "completion_pct": 96,
+    "status": "partial"
+  },
+  {
+    "slug": "nuxt",
+    "name": "Curso de Server Side Rendering con Nuxt 2",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Introducción a Nuxtjs",
+        "video": "/platzi/videos/nuxt_001_Introducción_a_Nuxtjs.mp4",
+        "transcript": "/platzi/nuxt/001_Introducci%C3%B3n_a_Nuxtjs.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Características de NuxtJS",
+        "video": "/platzi/videos/nuxt_002_Características_de_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/002_Caracter%C3%ADsticas_de_NuxtJS.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Cómo crear un proyecto con NuxtJS",
+        "video": "/platzi/videos/nuxt_003_Cómo_crear_un_proyecto_con_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/003_C%C3%B3mo_crear_un_proyecto_con_NuxtJS.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Rutas dinámicas con NuxtJS",
+        "video": "/platzi/videos/nuxt_004_Rutas_dinámicas_con_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/004_Rutas_din%C3%A1micas_con_NuxtJS.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Maquetación de vistas en nuestro proyecto",
+        "video": "/platzi/videos/nuxt_005_Maquetación_de_vistas_en_nuestro_proyecto.mp4",
+        "transcript": "/platzi/nuxt/005_Maquetaci%C3%B3n_de_vistas_en_nuestro_proyecto.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Creación del componente para las cards",
+        "video": "/platzi/videos/nuxt_006_Creación_del_componente_para_las_cards.mp4.ytdl",
+        "transcript": "/platzi/nuxt/006_Creaci%C3%B3n_del_componente_para_las_cards.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Integración del intérprete de Markdown en NuxtJS",
+        "video": "/platzi/videos/nuxt_007_Integración_del_intérprete_de_Markdown_en_NuxtJS.mp4.ytdl",
+        "transcript": "/platzi/nuxt/007_Integraci%C3%B3n_del_int%C3%A9rprete_de_Markdown_en_NuxtJS.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Cómo agregar SEO y meta tags en NuxtJS",
+        "video": "/platzi/videos/nuxt_008_Cómo_agregar_SEO_y_meta_tags_en_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/008_C%C3%B3mo_agregar_SEO_y_meta_tags_en_NuxtJS.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Built-In Components",
+        "video": "/platzi/videos/nuxt_009_Built-In_Components.mp4",
+        "transcript": "/platzi/nuxt/009_Built-In_Components.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Backend con Airtable",
+        "video": "/platzi/videos/nuxt_010_Backend_con_Airtable.mp4",
+        "transcript": "/platzi/nuxt/010_Backend_con_Airtable.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Despliegue y API con Netlify",
+        "video": "/platzi/videos/nuxt_011_Despliegue_y_API_con_Netlify.mp4",
+        "transcript": "/platzi/nuxt/011_Despliegue_y_API_con_Netlify.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Configuración de Netlify",
+        "video": "/platzi/videos/nuxt_012_Configuración_de_Netlify.mp4.ytdl",
+        "transcript": "/platzi/nuxt/012_Configuraci%C3%B3n_de_Netlify.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Programando las funciones para Netlify",
+        "video": "/platzi/videos/nuxt_013_Programando_las_funciones_para_Netlify.mp4",
+        "transcript": "/platzi/nuxt/013_Programando_las_funciones_para_Netlify.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Módulos de NuxtJS",
+        "video": "/platzi/videos/nuxt_014_Módulos_de_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/014_M%C3%B3dulos_de_NuxtJS.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Usando el módulo HTTP para consumir nuestro backend",
+        "video": "/platzi/videos/nuxt_015_Usando_el_módulo_HTTP_para_consumir_nuestro_backend.mp4",
+        "transcript": "/platzi/nuxt/015_Usando_el_m%C3%B3dulo_HTTP_para_consumir_nuestro_backend.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Context",
+        "video": "/platzi/videos/nuxt_016_Context.mp4.ytdl",
+        "transcript": "/platzi/nuxt/016_Context.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Consumir el API",
+        "video": "/platzi/videos/nuxt_017_Consumir_el_API.mp4",
+        "transcript": "/platzi/nuxt/017_Consumir_el_API.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Sistema de comentarios",
+        "video": "/platzi/videos/nuxt_018_Sistema_de_comentarios.mp4",
+        "transcript": "/platzi/nuxt/018_Sistema_de_comentarios.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Utilidades en NuxtJS",
+        "video": "/platzi/videos/nuxt_019_Utilidades_en_NuxtJS.mp4",
+        "transcript": "/platzi/nuxt/019_Utilidades_en_NuxtJS.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Estrategias de renderizado",
+        "video": "/platzi/videos/nuxt_020_Estrategias_de_renderizado.mp4",
+        "transcript": "/platzi/nuxt/020_Estrategias_de_renderizado.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Despedida del curso",
+        "video": "/platzi/videos/nuxt_021_Despedida_del_curso.mp4",
+        "transcript": "/platzi/nuxt/021_Despedida_del_curso.txt"
+      }
+    ],
+    "total": 21,
+    "with_video": 21,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "arquitecturas-css",
+    "name": "Curso de Arquitecturas CSS",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Arquitecturas de CSS: Limpieza, Escalabilidad y Mantenibilidad",
+        "video": "/platzi/videos/arquitecturas-css_001_Arquitecturas_de_CSS__Limpieza__Escalabilidad_y_Mantenibilid.mp4",
+        "transcript": "/platzi/arquitecturas-css/001_Arquitecturas_de_CSS__Limpieza__Escalabilidad_y_Mantenibilid.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Principios SOLID aplicados a CSS: Guía práctica",
+        "video": "/platzi/videos/arquitecturas-css_002_Principios_SOLID_aplicados_a_CSS__Guía_práctica.mp4",
+        "transcript": "/platzi/arquitecturas-css/002_Principios_SOLID_aplicados_a_CSS__Gu%C3%ADa_pr%C3%A1ctica.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Metodología BEM: Uso en HTML y CSS con Ejemplos Prácticos",
+        "video": "/platzi/videos/arquitecturas-css_003_Metodología_BEM__Uso_en_HTML_y_CSS_con_Ejemplos_Prácticos.mp4",
+        "transcript": "/platzi/arquitecturas-css/003_Metodolog%C3%ADa_BEM__Uso_en_HTML_y_CSS_con_Ejemplos_Pr%C3%A1cticos.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Metodología BEM: Bloques, Elementos y Modificadores en HTML/CSS",
+        "video": "/platzi/videos/arquitecturas-css_004_Metodología_BEM__Bloques__Elementos_y_Modificadores_en_HTML.mp4",
+        "transcript": "/platzi/arquitecturas-css/004_Metodolog%C3%ADa_BEM__Bloques__Elementos_y_Modificadores_en_HTML.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Solución de Problemas Comunes en BEM y Mejores Prácticas",
+        "video": "/platzi/videos/arquitecturas-css_005_Solución_de_Problemas_Comunes_en_BEM_y_Mejores_Prácticas.mp4",
+        "transcript": "/platzi/arquitecturas-css/005_Soluci%C3%B3n_de_Problemas_Comunes_en_BEM_y_Mejores_Pr%C3%A1cticas.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Refactorización de Código con Metodología BEM en Proyectos Reales",
+        "video": "/platzi/videos/arquitecturas-css_006_Refactorización_de_Código_con_Metodología_BEM_en_Proyectos_R.mp4",
+        "transcript": "/platzi/arquitecturas-css/006_Refactorizaci%C3%B3n_de_C%C3%B3digo_con_Metodolog%C3%ADa_BEM_en_Proyectos_R.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Refactorización de CSS en Vue usando la metodología BEM",
+        "video": "/platzi/videos/arquitecturas-css_007_Refactorización_de_CSS_en_Vue_usando_la_metodología_BEM.mp4",
+        "transcript": "/platzi/arquitecturas-css/007_Refactorizaci%C3%B3n_de_CSS_en_Vue_usando_la_metodolog%C3%ADa_BEM.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Refactorización de Componentes en React con BEM y Styled Components",
+        "video": "/platzi/videos/arquitecturas-css_008_Refactorización_de_Componentes_en_React_con_BEM_y_Styled_Com.mp4",
+        "transcript": "/platzi/arquitecturas-css/008_Refactorizaci%C3%B3n_de_Componentes_en_React_con_BEM_y_Styled_Com.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Metodología Atomic Design para estructurar proyectos de software",
+        "video": "/platzi/videos/arquitecturas-css_009_Metodología_Atomic_Design_para_estructurar_proyectos_de_soft.mp4",
+        "transcript": "/platzi/arquitecturas-css/009_Metodolog%C3%ADa_Atomic_Design_para_estructurar_proyectos_de_soft.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Refactorización de Proyectos React con Atomic Design",
+        "video": "/platzi/videos/arquitecturas-css_010_Refactorización_de_Proyectos_React_con_Atomic_Design.mp4",
+        "transcript": "/platzi/arquitecturas-css/010_Refactorizaci%C3%B3n_de_Proyectos_React_con_Atomic_Design.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Atomic Design en Vue: Organización de Componentes y Carpetas",
+        "video": "/platzi/videos/arquitecturas-css_011_Atomic_Design_en_Vue__Organización_de_Componentes_y_Carpetas.mp4",
+        "transcript": "/platzi/arquitecturas-css/011_Atomic_Design_en_Vue__Organizaci%C3%B3n_de_Componentes_y_Carpetas.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Principios de OOCSS: Separación de Estructura y Estilo en CSS",
+        "video": "/platzi/videos/arquitecturas-css_012_Principios_de_OOCSS__Separación_de_Estructura_y_Estilo_en_CS.mp4.ytdl",
+        "transcript": "/platzi/arquitecturas-css/012_Principios_de_OOCSS__Separaci%C3%B3n_de_Estructura_y_Estilo_en_CS.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Refactorización de CSS en Angular con OOCSS y SASS",
+        "video": "/platzi/videos/arquitecturas-css_013_Refactorización_de_CSS_en_Angular_con_OOCSS_y_SASS.mp4.ytdl",
+        "transcript": "/platzi/arquitecturas-css/013_Refactorizaci%C3%B3n_de_CSS_en_Angular_con_OOCSS_y_SASS.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Metodología SMACS para Organizar Proyectos CSS",
+        "video": "/platzi/videos/arquitecturas-css_014_Metodología_SMACS_para_Organizar_Proyectos_CSS.mp4.ytdl",
+        "transcript": "/platzi/arquitecturas-css/014_Metodolog%C3%ADa_SMACS_para_Organizar_Proyectos_CSS.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Refactorización de CSS en Angular con SMACS y SASS",
+        "video": "/platzi/videos/arquitecturas-css_015_Refactorización_de_CSS_en_Angular_con_SMACS_y_SASS.mp4",
+        "transcript": "/platzi/arquitecturas-css/015_Refactorizaci%C3%B3n_de_CSS_en_Angular_con_SMACS_y_SASS.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Arquitectura ITCSS: Principios y Capas para Proyectos CSS Grandes",
+        "video": "/platzi/videos/arquitecturas-css_016_Arquitectura_ITCSS__Principios_y_Capas_para_Proyectos_CSS_Gr.mp4.ytdl",
+        "transcript": "/platzi/arquitecturas-css/016_Arquitectura_ITCSS__Principios_y_Capas_para_Proyectos_CSS_Gr.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Limitaciones de ITSSS en Proyectos Pequeños",
+        "video": "/platzi/videos/arquitecturas-css_017_Limitaciones_de_ITSSS_en_Proyectos_Pequeños.mp4",
+        "transcript": "/platzi/arquitecturas-css/017_Limitaciones_de_ITSSS_en_Proyectos_Peque%C3%B1os.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Frameworks de CSS: Uso y Aplicación en Proyectos Reales",
+        "video": "/platzi/videos/arquitecturas-css_018_Frameworks_de_CSS__Uso_y_Aplicación_en_Proyectos_Reales.mp4.ytdl",
+        "transcript": "/platzi/arquitecturas-css/018_Frameworks_de_CSS__Uso_y_Aplicaci%C3%B3n_en_Proyectos_Reales.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Evaluación de Arquitecturas CSS para Proyectos Front-end",
+        "video": "/platzi/videos/arquitecturas-css_019_Evaluación_de_Arquitecturas_CSS_para_Proyectos_Front-end.mp4",
+        "transcript": "/platzi/arquitecturas-css/019_Evaluaci%C3%B3n_de_Arquitecturas_CSS_para_Proyectos_Front-end.txt"
+      }
+    ],
+    "total": 19,
+    "with_video": 19,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "nextjs-jamstack",
+    "name": "Curso de Next.js: Sitios Estáticos y Jamstack",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Creación de sitios estáticos con Next.js y Jamstack",
+        "video": "/platzi/videos/nextjs-jamstack_001_Creación_de_sitios_estáticos_con_Next_js_y_Jamstack.mp4",
+        "transcript": "/platzi/nextjs-jamstack/001_Creaci%C3%B3n_de_sitios_est%C3%A1ticos_con_Next_js_y_Jamstack.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Modos de Rendering en Next.js: Cliente, Servidor y Estático",
+        "video": "/platzi/videos/nextjs-jamstack_002_Modos_de_Rendering_en_Next_js__Cliente__Servidor_y_Estático.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/002_Modos_de_Rendering_en_Next_js__Cliente__Servidor_y_Est%C3%A1tico.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Arquitectura Jam Stack con Next.js y GraphQL",
+        "video": "/platzi/videos/nextjs-jamstack_003_Arquitectura_Jam_Stack_con_Next_js_y_GraphQL.mp4",
+        "transcript": "/platzi/nextjs-jamstack/003_Arquitectura_Jam_Stack_con_Next_js_y_GraphQL.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Configuración de Contentful: Creación de Cuenta y API Tokens",
+        "video": "/platzi/videos/nextjs-jamstack_004_Configuración_de_Contentful__Creación_de_Cuenta_y_API_Tokens.mp4",
+        "transcript": "/platzi/nextjs-jamstack/004_Configuraci%C3%B3n_de_Contentful__Creaci%C3%B3n_de_Cuenta_y_API_Tokens.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Importación de Datos y Configuración en Contentful",
+        "video": "/platzi/videos/nextjs-jamstack_005_Importación_de_Datos_y_Configuración_en_Contentful.mp4",
+        "transcript": "/platzi/nextjs-jamstack/005_Importaci%C3%B3n_de_Datos_y_Configuraci%C3%B3n_en_Contentful.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Configuración y uso inicial de un proyecto Next.js con Contentful",
+        "video": "/platzi/videos/nextjs-jamstack_006_Configuración_y_uso_inicial_de_un_proyecto_Next_js_con_Conte.mp4",
+        "transcript": "/platzi/nextjs-jamstack/006_Configuraci%C3%B3n_y_uso_inicial_de_un_proyecto_Next_js_con_Conte.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Uso de GraphQL y Autogeneración en Next.js con Contentful",
+        "video": "/platzi/videos/nextjs-jamstack_007_Uso_de_GraphQL_y_Autogeneración_en_Next_js_con_Contentful.mp4",
+        "transcript": "/platzi/nextjs-jamstack/007_Uso_de_GraphQL_y_Autogeneraci%C3%B3n_en_Next_js_con_Contentful.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Renderizado de Listas con Next.js y Contentful",
+        "video": "/platzi/videos/nextjs-jamstack_008_Renderizado_de_Listas_con_Next_js_y_Contentful.mp4",
+        "transcript": "/platzi/nextjs-jamstack/008_Renderizado_de_Listas_con_Next_js_y_Contentful.txt"
+      },
+      {
+        "idx": 9,
+        "title": "\"Uso de getStaticProps en Next.js para Renderizado en Servidor\"",
+        "video": "/platzi/videos/nextjs-jamstack_009_Uso_de_getStaticProps_en_Next_js_para_Renderizado_en_Servid.mp4",
+        "transcript": "/platzi/nextjs-jamstack/009_Uso_de_getStaticProps_en_Next_js_para_Renderizado_en_Servid.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Páginas Dinámicas en Next.js: Renderizado de Plantas y Entradas",
+        "video": "/platzi/videos/nextjs-jamstack_010_Páginas_Dinámicas_en_Next_js__Renderizado_de_Plantas_y_Entra.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/010_P%C3%A1ginas_Din%C3%A1micas_en_Next_js__Renderizado_de_Plantas_y_Entra.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Uso de getStaticPaths y getStaticProps en Next.js para páginas dinámicas",
+        "video": "/platzi/videos/nextjs-jamstack_011_Uso_de_getStaticPaths_y_getStaticProps_en_Next_js_para_págin.mp4",
+        "transcript": "/platzi/nextjs-jamstack/011_Uso_de_getStaticPaths_y_getStaticProps_en_Next_js_para_p%C3%A1gin.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Ventajas y desventajas de Static Site Generation en Next.js",
+        "video": "/platzi/videos/nextjs-jamstack_012_Ventajas_y_desventajas_de_Static_Site_Generation_en_Next_js.mp4",
+        "transcript": "/platzi/nextjs-jamstack/012_Ventajas_y_desventajas_de_Static_Site_Generation_en_Next_js.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Configuración de Incremental Static Generation en Next.js",
+        "video": "/platzi/videos/nextjs-jamstack_013_Configuración_de_Incremental_Static_Generation_en_Next_js.mp4",
+        "transcript": "/platzi/nextjs-jamstack/013_Configuraci%C3%B3n_de_Incremental_Static_Generation_en_Next_js.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Uso del Fallback en Next.js: Estrategias y Aplicaciones",
+        "video": "/platzi/videos/nextjs-jamstack_014_Uso_del_Fallback_en_Next_js__Estrategias_y_Aplicaciones.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/014_Uso_del_Fallback_en_Next_js__Estrategias_y_Aplicaciones.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Estrategia Stale-While-Revalidate en Next.js",
+        "video": "/platzi/videos/nextjs-jamstack_015_Estrategia_Stale-While-Revalidate_en_Next_js.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/015_Estrategia_Stale-While-Revalidate_en_Next_js.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Ventajas y desventajas del Incremental Static Generation en Next.js",
+        "video": "/platzi/videos/nextjs-jamstack_016_Ventajas_y_desventajas_del_Incremental_Static_Generation_en.mp4.part",
+        "transcript": "/platzi/nextjs-jamstack/016_Ventajas_y_desventajas_del_Incremental_Static_Generation_en.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Server Side Rendering con Next.js: Ventajas y Desventajas",
+        "video": "/platzi/videos/nextjs-jamstack_017_Server_Side_Rendering_con_Next_js__Ventajas_y_Desventajas.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/017_Server_Side_Rendering_con_Next_js__Ventajas_y_Desventajas.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Despliegue de Next.js hacia Producción: Variables y Optimización",
+        "video": "/platzi/videos/nextjs-jamstack_018_Despliegue_de_Next_js_hacia_Producción__Variables_y_Optimiza.mp4",
+        "transcript": "/platzi/nextjs-jamstack/018_Despliegue_de_Next_js_hacia_Producci%C3%B3n__Variables_y_Optimiza.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Lectura de Archivos en Next.js con Node.js y File System",
+        "video": "/platzi/videos/nextjs-jamstack_019_Lectura_de_Archivos_en_Next_js_con_Node_js_y_File_System.mp4.ytdl",
+        "transcript": "/platzi/nextjs-jamstack/019_Lectura_de_Archivos_en_Next_js_con_Node_js_y_File_System.txt"
+      }
+    ],
+    "total": 19,
+    "with_video": 19,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "arquitectura-alta-concurrencia",
+    "name": "Audiocurso de Fundamentos de Arquitectura de Alta Concurrencia",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Sistemas de Arquitectura de Alta Concurrencia y DevOps",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_001_Sistemas_de_Arquitectura_de_Alta_Concurrencia_y_DevOps.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/001_Sistemas_de_Arquitectura_de_Alta_Concurrencia_y_DevOps.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Fundamentos de Arquitectura de Alta Concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_002_Fundamentos_de_Arquitectura_de_Alta_Concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/002_Fundamentos_de_Arquitectura_de_Alta_Concurrencia.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Escalamiento Vertical vs Horizontal: Cuándo y Cómo Usarlos",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_003_Escalamiento_Vertical_vs_Horizontal__Cuándo_y_Cómo_Usarlos.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/003_Escalamiento_Vertical_vs_Horizontal__Cu%C3%A1ndo_y_C%C3%B3mo_Usarlos.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Diferencias entre servidores Stateless y Stateful en alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_004_Diferencias_entre_servidores_Stateless_y_Stateful_en_alta_co.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/004_Diferencias_entre_servidores_Stateless_y_Stateful_en_alta_co.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Resiliencia y pruebas en sistemas de alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_005_Resiliencia_y_pruebas_en_sistemas_de_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/005_Resiliencia_y_pruebas_en_sistemas_de_alta_concurrencia.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Qué métricas usar para escalar",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_006_Qué_métricas_usar_para_escalar.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/006_Qu%C3%A9_m%C3%A9tricas_usar_para_escalar.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Manejando el tráfico por países",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_007_Manejando_el_tráfico_por_países.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/007_Manejando_el_tr%C3%A1fico_por_pa%C3%ADses.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Linux en servidores y lenguajes para alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_008_Linux_en_servidores_y_lenguajes_para_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/008_Linux_en_servidores_y_lenguajes_para_alta_concurrencia.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Manejar usuarios en entornos de staging y production",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_009_Manejar_usuarios_en_entornos_de_staging_y_production.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/009_Manejar_usuarios_en_entornos_de_staging_y_production.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Orquestadores y serverless en de alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_010_Orquestadores_y_serverless_en_de_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/010_Orquestadores_y_serverless_en_de_alta_concurrencia.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Motores de bases de datos y caché",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_011_Motores_de_bases_de_datos_y_caché.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/011_Motores_de_bases_de_datos_y_cach%C3%A9.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Uso de las CDN en alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_012_Uso_de_las_CDN_en_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/012_Uso_de_las_CDN_en_alta_concurrencia.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Cómo manejar ataques DDOS en alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_013_Cómo_manejar_ataques_DDOS_en_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/013_C%C3%B3mo_manejar_ataques_DDOS_en_alta_concurrencia.txt"
+      },
+      {
+        "idx": 14,
+        "title": "gRPC o REST en alta concurrencia",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_014_gRPC_o_REST_en_alta_concurrencia.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/014_gRPC_o_REST_en_alta_concurrencia.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Consideraciones de negocio para alta concurrencia y caso de uso",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_015_Consideraciones_de_negocio_para_alta_concurrencia_y_caso_de.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/015_Consideraciones_de_negocio_para_alta_concurrencia_y_caso_de.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Caso de uso: blog con enfoque en serverless",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_016_Caso_de_uso__blog_con_enfoque_en_serverless.mp4",
+        "transcript": "/platzi/arquitectura-alta-concurrencia/016_Caso_de_uso__blog_con_enfoque_en_serverless.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Conclusiones",
+        "video": "/platzi/videos/arquitectura-alta-concurrencia_017_Conclusiones.mp4",
+        "transcript": null
+      }
+    ],
+    "total": 17,
+    "with_video": 17,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "monorepo",
+    "name": "Curso de Monorepositorios con NX",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Configuración de mono repo con NX para Angular y Node.js",
+        "video": "/platzi/videos/monorepo_001_Configuración_de_mono_repo_con_NX_para_Angular_y_Node_js.mp4",
+        "transcript": "/platzi/monorepo/001_Configuraci%C3%B3n_de_mono_repo_con_NX_para_Angular_y_Node_js.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Monorepo con Nx: ventajas, riesgos y cuándo elegir esta arquitectura",
+        "video": "/platzi/videos/monorepo_002_Monorepo_con_Nx__ventajas__riesgos_y_cuándo_elegir_esta_arqu.mp4.ytdl",
+        "transcript": "/platzi/monorepo/002_Monorepo_con_Nx__ventajas__riesgos_y_cu%C3%A1ndo_elegir_esta_arqu.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Instalación de entorno de desarrollo para Angular y Nx",
+        "video": "/platzi/videos/monorepo_003_Instalación_de_entorno_de_desarrollo_para_Angular_y_Nx.mp4",
+        "transcript": "/platzi/monorepo/003_Instalaci%C3%B3n_de_entorno_de_desarrollo_para_Angular_y_Nx.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Creación de workspace Nx con GitHub y Nx Cloud",
+        "video": "/platzi/videos/monorepo_004_Creación_de_workspace_Nx_con_GitHub_y_Nx_Cloud.mp4",
+        "transcript": "/platzi/monorepo/004_Creaci%C3%B3n_de_workspace_Nx_con_GitHub_y_Nx_Cloud.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Configuración básica del workspace de Nx con Angular",
+        "video": "/platzi/videos/monorepo_005_Configuración_básica_del_workspace_de_Nx_con_Angular.mp4.ytdl",
+        "transcript": "/platzi/monorepo/005_Configuraci%C3%B3n_b%C3%A1sica_del_workspace_de_Nx_con_Angular.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Creación de aplicaciones Angular en monorepo Nx",
+        "video": "/platzi/videos/monorepo_006_Creación_de_aplicaciones_Angular_en_monorepo_Nx.mp4.ytdl",
+        "transcript": "/platzi/monorepo/006_Creaci%C3%B3n_de_aplicaciones_Angular_en_monorepo_Nx.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Librerías compartidas en Nx: Angular y TypeScript para múltiples apps",
+        "video": "/platzi/videos/monorepo_007_Librerías_compartidas_en_Nx__Angular_y_TypeScript_para_múlti.mp4",
+        "transcript": "/platzi/monorepo/007_Librer%C3%ADas_compartidas_en_Nx__Angular_y_TypeScript_para_m%C3%BAlti.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Integración de Node.js en monorepos con Nx",
+        "video": "/platzi/videos/monorepo_008_Integración_de_Node_js_en_monorepos_con_Nx.mp4",
+        "transcript": "/platzi/monorepo/008_Integraci%C3%B3n_de_Node_js_en_monorepos_con_Nx.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Componentes compartidos en Angular con ui-shared y utils-common",
+        "video": "/platzi/videos/monorepo_009_Componentes_compartidos_en_Angular_con_ui-shared_y_utils-com.mp4.ytdl",
+        "transcript": "/platzi/monorepo/009_Componentes_compartidos_en_Angular_con_ui-shared_y_utils-com.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Configuración de servidor Node.js como API REST para Angular",
+        "video": "/platzi/videos/monorepo_010_Configuración_de_servidor_Node_js_como_API_REST_para_Angular.mp4",
+        "transcript": "/platzi/monorepo/010_Configuraci%C3%B3n_de_servidor_Node_js_como_API_REST_para_Angular.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Construcción de la primera app Angular con componentes compartidos",
+        "video": "/platzi/videos/monorepo_011_Construcción_de_la_primera_app_Angular_con_componentes_compa.mp4",
+        "transcript": "/platzi/monorepo/011_Construcci%C3%B3n_de_la_primera_app_Angular_con_componentes_compa.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Aplicación Angular de profesores con componentes compartidos",
+        "video": "/platzi/videos/monorepo_012_Aplicación_Angular_de_profesores_con_componentes_compartidos.mp4",
+        "transcript": "/platzi/monorepo/012_Aplicaci%C3%B3n_Angular_de_profesores_con_componentes_compartidos.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Tests unitarios en monorepo Next/Nx con caché y comandos",
+        "video": "/platzi/videos/monorepo_013_Tests_unitarios_en_monorepo_Next_Nx_con_caché_y_comandos.mp4.ytdl",
+        "transcript": "/platzi/monorepo/013_Tests_unitarios_en_monorepo_Next_Nx_con_cach%C3%A9_y_comandos.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Análisis estático con Linter en proyectos Nx y Angular 17",
+        "video": "/platzi/videos/monorepo_014_Análisis_estático_con_Linter_en_proyectos_Nx_y_Angular_17.mp4.ytdl",
+        "transcript": "/platzi/monorepo/014_An%C3%A1lisis_est%C3%A1tico_con_Linter_en_proyectos_Nx_y_Angular_17.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Configuración de Nx Cloud para acelerar builds y tests",
+        "video": "/platzi/videos/monorepo_015_Configuración_de_Nx_Cloud_para_acelerar_builds_y_tests.mp4",
+        "transcript": "/platzi/monorepo/015_Configuraci%C3%B3n_de_Nx_Cloud_para_acelerar_builds_y_tests.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Configuración de tags y constraints en Nx para evitar dependencias circulares",
+        "video": "/platzi/videos/monorepo_016_Configuración_de_tags_y_constraints_en_Nx_para_evitar_depend.mp4",
+        "transcript": "/platzi/monorepo/016_Configuraci%C3%B3n_de_tags_y_constraints_en_Nx_para_evitar_depend.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Aceleración de builds con caché de Nx y automatización con GitHub Actions",
+        "video": "/platzi/videos/monorepo_017_Aceleración_de_builds_con_caché_de_Nx_y_automatización_con_G.mp4",
+        "transcript": "/platzi/monorepo/017_Aceleraci%C3%B3n_de_builds_con_cach%C3%A9_de_Nx_y_automatizaci%C3%B3n_con_G.txt"
+      }
+    ],
+    "total": 17,
+    "with_video": 17,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "react-ssr",
+    "name": "Curso de Server Side Render o SSR con React.js",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Server Side Rendering con ReactJS: Fundamentos y Aplicaciones",
+        "video": "/platzi/videos/react-ssr_001_Server_Side_Rendering_con_ReactJS__Fundamentos_y_Aplicacione.mp4",
+        "transcript": "/platzi/react-ssr/001_Server_Side_Rendering_con_ReactJS__Fundamentos_y_Aplicacione.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Problemas y limitaciones de las Single Page Applications (SPAs)",
+        "video": "/platzi/videos/react-ssr_002_Problemas_y_limitaciones_de_las_Single_Page_Applications__SP.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/002_Problemas_y_limitaciones_de_las_Single_Page_Applications__SP.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Creación y Funcionamiento de una SPA con Create React App",
+        "video": "/platzi/videos/react-ssr_003_Creación_y_Funcionamiento_de_una_SPA_con_Create_React_App.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/003_Creaci%C3%B3n_y_Funcionamiento_de_una_SPA_con_Create_React_App.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Renderizado en el Cliente vs. Servidor: Comparativa y Aplicaciones",
+        "video": "/platzi/videos/react-ssr_004_Renderizado_en_el_Cliente_vs__Servidor__Comparativa_y_Aplica.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/004_Renderizado_en_el_Cliente_vs__Servidor__Comparativa_y_Aplica.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Ventajas y desventajas del Server Side Rendering",
+        "video": "/platzi/videos/react-ssr_005_Ventajas_y_desventajas_del_Server_Side_Rendering.mp4",
+        "transcript": "/platzi/react-ssr/005_Ventajas_y_desventajas_del_Server_Side_Rendering.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Transformación de Aplicaciones React a Server-Side Rendering",
+        "video": "/platzi/videos/react-ssr_006_Transformación_de_Aplicaciones_React_a_Server-Side_Rendering.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/006_Transformaci%C3%B3n_de_Aplicaciones_React_a_Server-Side_Rendering.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Configuración de Webpack para Servidor Node con TypeScript",
+        "video": "/platzi/videos/react-ssr_007_Configuración_de_Webpack_para_Servidor_Node_con_TypeScript.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/007_Configuraci%C3%B3n_de_Webpack_para_Servidor_Node_con_TypeScript.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Servidor Express con TypeScript: Configuración y Primeros Pasos",
+        "video": "/platzi/videos/react-ssr_008_Servidor_Express_con_TypeScript__Configuración_y_Primeros_Pa.mp4",
+        "transcript": "/platzi/react-ssr/008_Servidor_Express_con_TypeScript__Configuraci%C3%B3n_y_Primeros_Pa.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Creación de Plantillas HTML Dinámicas en TypeScript",
+        "video": "/platzi/videos/react-ssr_009_Creación_de_Plantillas_HTML_Dinámicas_en_TypeScript.mp4.ytdl",
+        "transcript": "/platzi/react-ssr/009_Creaci%C3%B3n_de_Plantillas_HTML_Din%C3%A1micas_en_TypeScript.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Renderizado e Hidratación de Aplicaciones React en el Servidor",
+        "video": "/platzi/videos/react-ssr_010_Renderizado_e_Hidratación_de_Aplicaciones_React_en_el_Servid.mp4",
+        "transcript": "/platzi/react-ssr/010_Renderizado_e_Hidrataci%C3%B3n_de_Aplicaciones_React_en_el_Servid.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Renderizado e Hidratación de React con Server-Side Rendering",
+        "video": "/platzi/videos/react-ssr_011_Renderizado_e_Hidratación_de_React_con_Server-Side_Rendering.mp4",
+        "transcript": "/platzi/react-ssr/011_Renderizado_e_Hidrataci%C3%B3n_de_React_con_Server-Side_Rendering.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Renderizado en Servidor: Peticiones y Transferencia de Datos a Cliente",
+        "video": "/platzi/videos/react-ssr_012_Renderizado_en_Servidor__Peticiones_y_Transferencia_de_Datos.mp4",
+        "transcript": "/platzi/react-ssr/012_Renderizado_en_Servidor__Peticiones_y_Transferencia_de_Datos.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Inyección de Props en React para Server-Side Rendering",
+        "video": "/platzi/videos/react-ssr_013_Inyección_de_Props_en_React_para_Server-Side_Rendering.mp4",
+        "transcript": "/platzi/react-ssr/013_Inyecci%C3%B3n_de_Props_en_React_para_Server-Side_Rendering.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Extracción e Inyección de Estilos con Server Side Rendering",
+        "video": "/platzi/videos/react-ssr_014_Extracción_e_Inyección_de_Estilos_con_Server_Side_Rendering.mp4",
+        "transcript": "/platzi/react-ssr/014_Extracci%C3%B3n_e_Inyecci%C3%B3n_de_Estilos_con_Server_Side_Rendering.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Configuración de Webpack y Hot Module Replacement en Express",
+        "video": "/platzi/videos/react-ssr_015_Configuración_de_Webpack_y_Hot_Module_Replacement_en_Express.mp4",
+        "transcript": "/platzi/react-ssr/015_Configuraci%C3%B3n_de_Webpack_y_Hot_Module_Replacement_en_Express.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Comparativa de Rendimiento: Nuestro Motor vs Next.js en Service Render",
+        "video": "/platzi/videos/react-ssr_016_Comparativa_de_Rendimiento__Nuestro_Motor_vs_Next_js_en_Serv.mp4",
+        "transcript": "/platzi/react-ssr/016_Comparativa_de_Rendimiento__Nuestro_Motor_vs_Next_js_en_Serv.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Mejoras a Proyecto Helix Eye con API de NASA",
+        "video": "/platzi/videos/react-ssr_017_Mejoras_a_Proyecto_Helix_Eye_con_API_de_NASA.mp4",
+        "transcript": "/platzi/react-ssr/017_Mejoras_a_Proyecto_Helix_Eye_con_API_de_NASA.txt"
+      }
+    ],
+    "total": 17,
+    "with_video": 17,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "cloudflare-workers",
+    "name": "Curso de Cloudflare Workers",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "APIs sin regiones con Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_001_APIs_sin_regiones_con_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/001_APIs_sin_regiones_con_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Crea tu primer Cloudflare Worker desde cero",
+        "video": "/platzi/videos/cloudflare-workers_002_Crea_tu_primer_Cloudflare_Worker_desde_cero.mp4",
+        "transcript": "/platzi/cloudflare-workers/002_Crea_tu_primer_Cloudflare_Worker_desde_cero.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Deploy de worker en Cloudflare con CI/CD",
+        "video": "/platzi/videos/cloudflare-workers_003_Deploy_de_worker_en_Cloudflare_con_CI_CD.mp4",
+        "transcript": "/platzi/cloudflare-workers/003_Deploy_de_worker_en_Cloudflare_con_CI_CD.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Monorepo con dos workers en Cloudflare",
+        "video": "/platzi/videos/cloudflare-workers_004_Monorepo_con_dos_workers_en_Cloudflare.mp4",
+        "transcript": "/platzi/cloudflare-workers/004_Monorepo_con_dos_workers_en_Cloudflare.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Objeto CF y request en Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_005_Objeto_CF_y_request_en_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/005_Objeto_CF_y_request_en_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Middlewares JWT con scopes en Hono",
+        "video": "/platzi/videos/cloudflare-workers_006_Middlewares_JWT_con_scopes_en_Hono.mp4",
+        "transcript": "/platzi/cloudflare-workers/006_Middlewares_JWT_con_scopes_en_Hono.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Secrets Store para múltiples Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_007_Secrets_Store_para_múltiples_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/007_Secrets_Store_para_m%C3%BAltiples_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Cómo los service bindings reducen latencia entre workers",
+        "video": "/platzi/videos/cloudflare-workers_008_Cómo_los_service_bindings_reducen_latencia_entre_workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/008_C%C3%B3mo_los_service_bindings_reducen_latencia_entre_workers.txt"
+      },
+      {
+        "idx": 9,
+        "title": "D1: base de datos SQL en Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_009_D1__base_de_datos_SQL_en_Cloudflare_Workers.mp4.ytdl",
+        "transcript": "/platzi/cloudflare-workers/009_D1__base_de_datos_SQL_en_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Cómo usar Key/Value de Cloudflare en Workers",
+        "video": "/platzi/videos/cloudflare-workers_010_Cómo_usar_Key_Value_de_Cloudflare_en_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/010_C%C3%B3mo_usar_Key_Value_de_Cloudflare_en_Workers.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Por qué fetch falla entre Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_011_Por_qué_fetch_falla_entre_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/011_Por_qu%C3%A9_fetch_falla_entre_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Cómo usar Cloudflare R2 para subir imágenes",
+        "video": "/platzi/videos/cloudflare-workers_012_Cómo_usar_Cloudflare_R2_para_subir_imágenes.mp4",
+        "transcript": "/platzi/cloudflare-workers/012_C%C3%B3mo_usar_Cloudflare_R2_para_subir_im%C3%A1genes.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Tablero de comentarios con Durable Objects y WebSockets",
+        "video": "/platzi/videos/cloudflare-workers_013_Tablero_de_comentarios_con_Durable_Objects_y_WebSockets.mp4.ytdl",
+        "transcript": "/platzi/cloudflare-workers/013_Tablero_de_comentarios_con_Durable_Objects_y_WebSockets.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Workflows de Cloudflare para onboarding",
+        "video": "/platzi/videos/cloudflare-workers_014_Workflows_de_Cloudflare_para_onboarding.mp4",
+        "transcript": "/platzi/cloudflare-workers/014_Workflows_de_Cloudflare_para_onboarding.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Rate limiting y WAF en Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_015_Rate_limiting_y_WAF_en_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/015_Rate_limiting_y_WAF_en_Cloudflare_Workers.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Rollback en segundos con Cloudflare Workers",
+        "video": "/platzi/videos/cloudflare-workers_016_Rollback_en_segundos_con_Cloudflare_Workers.mp4",
+        "transcript": "/platzi/cloudflare-workers/016_Rollback_en_segundos_con_Cloudflare_Workers.txt"
+      }
+    ],
+    "total": 16,
+    "with_video": 16,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "ingeniero-observabilidad-newrelic",
+    "name": "36 opiniones",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Examen de Conocimientos Previos en Telemetría y Monitoreo",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/001_Examen_de_Conocimientos_Previos_en_Telemetr%C3%ADa_y_Monitoreo.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Instrumentación y Monitoreo con New Relic en Aplicaciones",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_002_Instrumentación_y_Monitoreo_con_New_Relic_en_Aplicaciones.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/002_Instrumentaci%C3%B3n_y_Monitoreo_con_New_Relic_en_Aplicaciones.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Configuración de Glitch y New Relic para monitorear apps",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_003_Configuración_de_Glitch_y_New_Relic_para_monitorear_apps.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/003_Configuraci%C3%B3n_de_Glitch_y_New_Relic_para_monitorear_apps.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Configuración de Monitoreo de Aplicaciones con New Relic en FoodMe App",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_004_Configuración_de_Monitoreo_de_Aplicaciones_con_New_Relic_en.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/004_Configuraci%C3%B3n_de_Monitoreo_de_Aplicaciones_con_New_Relic_en.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Configuración de Agente de Monitoreo Frontend en New Relic",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_005_Configuración_de_Agente_de_Monitoreo_Frontend_en_New_Relic.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/005_Configuraci%C3%B3n_de_Agente_de_Monitoreo_Frontend_en_New_Relic.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Creación de Dashboards con NRQL en New Relic",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_006_Creación_de_Dashboards_con_NRQL_en_New_Relic.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/006_Creaci%C3%B3n_de_Dashboards_con_NRQL_en_New_Relic.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Consultas SQL para Dashboards en Aplicaciones",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/007_Consultas_SQL_para_Dashboards_en_Aplicaciones.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Creación de Dashboards en New Relic: Ejercicios Prácticos",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_008_Creación_de_Dashboards_en_New_Relic__Ejercicios_Prácticos.mp4.ytdl",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/008_Creaci%C3%B3n_de_Dashboards_en_New_Relic__Ejercicios_Pr%C3%A1cticos.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Creación de Queries Gráficos en New Relic con NRQL",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_009_Creación_de_Queries_Gráficos_en_New_Relic_con_NRQL.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/009_Creaci%C3%B3n_de_Queries_Gr%C3%A1ficos_en_New_Relic_con_NRQL.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Creación de Queries con New Relic: Anatomía y Estructura",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_010_Creación_de_Queries_con_New_Relic__Anatomía_y_Estructura.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/010_Creaci%C3%B3n_de_Queries_con_New_Relic__Anatom%C3%ADa_y_Estructura.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Creación de Consultas con Explorador de Datos en New Relic",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/011_Creaci%C3%B3n_de_Consultas_con_Explorador_de_Datos_en_New_Relic.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Creación de Alertas en New Relic Basadas en SLOs",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_012_Creación_de_Alertas_en_New_Relic_Basadas_en_SLOs.mp4.ytdl",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/012_Creaci%C3%B3n_de_Alertas_en_New_Relic_Basadas_en_SLOs.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Estructura y Configuración de Alertas en New Relic",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_013_Estructura_y_Configuración_de_Alertas_en_New_Relic.mp4.ytdl",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/013_Estructura_y_Configuraci%C3%B3n_de_Alertas_en_New_Relic.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Creación de Monitores Sintéticos con Synthetics y Selenium",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_014_Creación_de_Monitores_Sintéticos_con_Synthetics_y_Selenium.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/014_Creaci%C3%B3n_de_Monitores_Sint%C3%A9ticos_con_Synthetics_y_Selenium.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Umbrales de Alerta: Configuración Estática y Dinámica",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_015_Umbrales_de_Alerta__Configuración_Estática_y_Dinámica.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/015_Umbrales_de_Alerta__Configuraci%C3%B3n_Est%C3%A1tica_y_Din%C3%A1mica.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Alertas de Duración Máxima en FoodMe con NRQL",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/016_Alertas_de_Duraci%C3%B3n_M%C3%A1xima_en_FoodMe_con_NRQL.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Tipos de Synthetics en New Relic y sus Aplicaciones",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_017_Tipos_de_Synthetics_en_New_Relic_y_sus_Aplicaciones.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/017_Tipos_de_Synthetics_en_New_Relic_y_sus_Aplicaciones.txt"
+      },
+      {
+        "idx": 18,
+        "title": "Monitores Sintéticos para Disponibilidad Web",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/018_Monitores_Sint%C3%A9ticos_para_Disponibilidad_Web.txt"
+      },
+      {
+        "idx": 19,
+        "title": "Análisis del Rendimiento del Navegador en FoodMe",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/019_An%C3%A1lisis_del_Rendimiento_del_Navegador_en_FoodMe.txt"
+      },
+      {
+        "idx": 20,
+        "title": "Rendimiento Frontend y Core Web Vitals: Claves y Medición",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_020_Rendimiento_Frontend_y_Core_Web_Vitals__Claves_y_Medición.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/020_Rendimiento_Frontend_y_Core_Web_Vitals__Claves_y_Medici%C3%B3n.txt"
+      },
+      {
+        "idx": 21,
+        "title": "Medición del Rendimiento de Apps con Apdex y New Relic",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_021_Medición_del_Rendimiento_de_Apps_con_Apdex_y_New_Relic.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/021_Medici%C3%B3n_del_Rendimiento_de_Apps_con_Apdex_y_New_Relic.txt"
+      },
+      {
+        "idx": 22,
+        "title": "Cambio del Umbral de Apdex en FoodMe",
+        "video": null,
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/022_Cambio_del_Umbral_de_Apdex_en_FoodMe.txt"
+      },
+      {
+        "idx": 23,
+        "title": "Certificación en Ingeniería de Observabilidad con New Relic",
+        "video": "/platzi/videos/ingeniero-observabilidad-newrelic_023_Certificación_en_Ingeniería_de_Observabilidad_con_New_Relic.mp4",
+        "transcript": "/platzi/ingeniero-observabilidad-newrelic/023_Certificaci%C3%B3n_en_Ingenier%C3%ADa_de_Observabilidad_con_New_Relic.txt"
+      }
+    ],
+    "total": 23,
+    "with_video": 16,
+    "completion_pct": 70,
+    "status": "partial"
+  },
+  {
+    "slug": "jamstack",
+    "name": "90 opiniones",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Introducción a Jamstack: No Code para Crear Sitios Web Rápidos y Escalables",
+        "video": "/platzi/videos/jamstack_001_Introducción_a_Jamstack__No_Code_para_Crear_Sitios_Web_Rápid.mp4.ytdl",
+        "transcript": "/platzi/jamstack/001_Introducci%C3%B3n_a_Jamstack__No_Code_para_Crear_Sitios_Web_R%C3%A1pid.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Creación de un blog con herramientas low code",
+        "video": "/platzi/videos/jamstack_002_Creación_de_un_blog_con_herramientas_low_code.mp4",
+        "transcript": "/platzi/jamstack/002_Creaci%C3%B3n_de_un_blog_con_herramientas_low_code.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Introducción a JamStack: Arquitectura Web Rápida y Segura",
+        "video": "/platzi/videos/jamstack_003_Introducción_a_JamStack__Arquitectura_Web_Rápida_y_Segura.mp4.part-Frag28",
+        "transcript": "/platzi/jamstack/003_Introducci%C3%B3n_a_JamStack__Arquitectura_Web_R%C3%A1pida_y_Segura.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Fundamentos de JAMStack y Desarrollo Web Moderno",
+        "video": null,
+        "transcript": "/platzi/jamstack/004_Fundamentos_de_JAMStack_y_Desarrollo_Web_Moderno.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Creación de un Blog Portafolio con Jam Stack y SEO",
+        "video": "/platzi/videos/jamstack_005_Creación_de_un_Blog_Portafolio_con_Jam_Stack_y_SEO.mp4",
+        "transcript": "/platzi/jamstack/005_Creaci%C3%B3n_de_un_Blog_Portafolio_con_Jam_Stack_y_SEO.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Creación de Blogs con Low Code usando Jamstack y Next.js",
+        "video": "/platzi/videos/jamstack_006_Creación_de_Blogs_con_Low_Code_usando_Jamstack_y_Next_js.mp4.ytdl",
+        "transcript": "/platzi/jamstack/006_Creaci%C3%B3n_de_Blogs_con_Low_Code_usando_Jamstack_y_Next_js.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Transferencia de Proyectos Visuales a Código en GitHub",
+        "video": "/platzi/videos/jamstack_007_Transferencia_de_Proyectos_Visuales_a_Código_en_GitHub.mp4",
+        "transcript": "/platzi/jamstack/007_Transferencia_de_Proyectos_Visuales_a_C%C3%B3digo_en_GitHub.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Clonación y Configuración de Repositorio con Visual Studio Code",
+        "video": "/platzi/videos/jamstack_008_Clonación_y_Configuración_de_Repositorio_con_Visual_Studio_C.mp4",
+        "transcript": "/platzi/jamstack/008_Clonaci%C3%B3n_y_Configuraci%C3%B3n_de_Repositorio_con_Visual_Studio_C.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Modificaciones y Configuración de Proyectos Web Locales",
+        "video": "/platzi/videos/jamstack_009_Modificaciones_y_Configuración_de_Proyectos_Web_Locales.mp4.ytdl",
+        "transcript": "/platzi/jamstack/009_Modificaciones_y_Configuraci%C3%B3n_de_Proyectos_Web_Locales.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Conexión y despliegue de proyectos con Stackbit y Netlify",
+        "video": "/platzi/videos/jamstack_010_Conexión_y_despliegue_de_proyectos_con_Stackbit_y_Netlify.mp4",
+        "transcript": "/platzi/jamstack/010_Conexi%C3%B3n_y_despliegue_de_proyectos_con_Stackbit_y_Netlify.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Configuración y compra de dominios para tu sitio web",
+        "video": "/platzi/videos/jamstack_011_Configuración_y_compra_de_dominios_para_tu_sitio_web.mp4",
+        "transcript": "/platzi/jamstack/011_Configuraci%C3%B3n_y_compra_de_dominios_para_tu_sitio_web.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Configuración de DNS y seguridad de dominios con Clover y Netlify",
+        "video": "/platzi/videos/jamstack_012_Configuración_de_DNS_y_seguridad_de_dominios_con_Clover_y_Ne.mp4.ytdl",
+        "transcript": "/platzi/jamstack/012_Configuraci%C3%B3n_de_DNS_y_seguridad_de_dominios_con_Clover_y_Ne.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Plataformas para Hospedar Sitios Web: Netlify, GitHub Pages, Firebase y Más",
+        "video": "/platzi/videos/jamstack_013_Plataformas_para_Hospedar_Sitios_Web__Netlify__GitHub_Pages.mp4",
+        "transcript": "/platzi/jamstack/013_Plataformas_para_Hospedar_Sitios_Web__Netlify__GitHub_Pages.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Integración de Google Analytics en tu sitio web paso a paso",
+        "video": "/platzi/videos/jamstack_014_Integración_de_Google_Analytics_en_tu_sitio_web_paso_a_paso.mp4",
+        "transcript": "/platzi/jamstack/014_Integraci%C3%B3n_de_Google_Analytics_en_tu_sitio_web_paso_a_paso.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Uso de Google Search Console para Optimizar tu Sitio Web",
+        "video": "/platzi/videos/jamstack_015_Uso_de_Google_Search_Console_para_Optimizar_tu_Sitio_Web.mp4",
+        "transcript": "/platzi/jamstack/015_Uso_de_Google_Search_Console_para_Optimizar_tu_Sitio_Web.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Optimización SEO para Mejorar Visibilidad Web",
+        "video": "/platzi/videos/jamstack_016_Optimización_SEO_para_Mejorar_Visibilidad_Web.mp4",
+        "transcript": "/platzi/jamstack/016_Optimizaci%C3%B3n_SEO_para_Mejorar_Visibilidad_Web.txt"
+      },
+      {
+        "idx": 17,
+        "title": "Creación de Sitios Web con Integraciones y Optimización SEO",
+        "video": "/platzi/videos/jamstack_017_Creación_de_Sitios_Web_con_Integraciones_y_Optimización_SEO.mp4",
+        "transcript": "/platzi/jamstack/017_Creaci%C3%B3n_de_Sitios_Web_con_Integraciones_y_Optimizaci%C3%B3n_SEO.txt"
+      }
+    ],
+    "total": 17,
+    "with_video": 16,
+    "completion_pct": 94,
+    "status": "partial"
+  },
+  {
+    "slug": "observabilidad-ai",
+    "name": "Curso de Observabilidad de Agentes AI con LangSmith",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Optimización de Chatbots para Soporte en Ecommerce",
+        "video": "/platzi/videos/observabilidad-ai_001_Optimización_de_Chatbots_para_Soporte_en_Ecommerce.mp4.ytdl",
+        "transcript": "/platzi/observabilidad-ai/001_Optimizaci%C3%B3n_de_Chatbots_para_Soporte_en_Ecommerce.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Observabilidad de Agentes de IA con Langsmith y OpenAI",
+        "video": "/platzi/videos/observabilidad-ai_002_Observabilidad_de_Agentes_de_IA_con_Langsmith_y_OpenAI.mp4",
+        "transcript": "/platzi/observabilidad-ai/002_Observabilidad_de_Agentes_de_IA_con_Langsmith_y_OpenAI.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Organización de Proyectos, Traces y Runs en Lancemith",
+        "video": "/platzi/videos/observabilidad-ai_003_Organización_de_Proyectos__Traces_y_Runs_en_Lancemith.mp4",
+        "transcript": "/platzi/observabilidad-ai/003_Organizaci%C3%B3n_de_Proyectos__Traces_y_Runs_en_Lancemith.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Trazabilidad y Optimización de Agentes Virtuales con OpenAI",
+        "video": "/platzi/videos/observabilidad-ai_004_Trazabilidad_y_Optimización_de_Agentes_Virtuales_con_OpenAI.mp4.ytdl",
+        "transcript": "/platzi/observabilidad-ai/004_Trazabilidad_y_Optimizaci%C3%B3n_de_Agentes_Virtuales_con_OpenAI.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Organización de Interacciones con Run Three en Landsmith",
+        "video": "/platzi/videos/observabilidad-ai_005_Organización_de_Interacciones_con_Run_Three_en_Landsmith.mp4",
+        "transcript": "/platzi/observabilidad-ai/005_Organizaci%C3%B3n_de_Interacciones_con_Run_Three_en_Landsmith.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Evaluación y Mejora de Agentes con Langsmith",
+        "video": "/platzi/videos/observabilidad-ai_006_Evaluación_y_Mejora_de_Agentes_con_Langsmith.mp4",
+        "transcript": "/platzi/observabilidad-ai/006_Evaluaci%C3%B3n_y_Mejora_de_Agentes_con_Langsmith.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Creación de Dataset para Evaluar Agentes en Lansmith",
+        "video": "/platzi/videos/observabilidad-ai_007_Creación_de_Dataset_para_Evaluar_Agentes_en_Lansmith.mp4",
+        "transcript": "/platzi/observabilidad-ai/007_Creaci%C3%B3n_de_Dataset_para_Evaluar_Agentes_en_Lansmith.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Evaluación de Agentes con Emojis y Amabilidad",
+        "video": "/platzi/videos/observabilidad-ai_008_Evaluación_de_Agentes_con_Emojis_y_Amabilidad.mp4",
+        "transcript": "/platzi/observabilidad-ai/008_Evaluaci%C3%B3n_de_Agentes_con_Emojis_y_Amabilidad.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Evaluación de Agentes con Python en PlatziStore Agent",
+        "video": "/platzi/videos/observabilidad-ai_009_Evaluación_de_Agentes_con_Python_en_PlatziStore_Agent.mp4",
+        "transcript": "/platzi/observabilidad-ai/009_Evaluaci%C3%B3n_de_Agentes_con_Python_en_PlatziStore_Agent.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Evaluación y Mejora de Agentes Virtuales en Langsmith",
+        "video": "/platzi/videos/observabilidad-ai_010_Evaluación_y_Mejora_de_Agentes_Virtuales_en_Langsmith.mp4.ytdl",
+        "transcript": "/platzi/observabilidad-ai/010_Evaluaci%C3%B3n_y_Mejora_de_Agentes_Virtuales_en_Langsmith.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Evaluación del Comportamiento de Agentes Inteligentes",
+        "video": "/platzi/videos/observabilidad-ai_011_Evaluación_del_Comportamiento_de_Agentes_Inteligentes.mp4.ytdl",
+        "transcript": "/platzi/observabilidad-ai/011_Evaluaci%C3%B3n_del_Comportamiento_de_Agentes_Inteligentes.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Evaluación de Feedback en Agentes Conversacionales",
+        "video": "/platzi/videos/observabilidad-ai_012_Evaluación_de_Feedback_en_Agentes_Conversacionales.mp4",
+        "transcript": "/platzi/observabilidad-ai/012_Evaluaci%C3%B3n_de_Feedback_en_Agentes_Conversacionales.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Técnicas de Observabilidad para Optimizar Inventarios en eCommerce",
+        "video": "/platzi/videos/observabilidad-ai_013_Técnicas_de_Observabilidad_para_Optimizar_Inventarios_en_eCo.mp4",
+        "transcript": "/platzi/observabilidad-ai/013_T%C3%A9cnicas_de_Observabilidad_para_Optimizar_Inventarios_en_eCo.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Gestión de Costos y Retención de Datos en Lansmith",
+        "video": "/platzi/videos/observabilidad-ai_014_Gestión_de_Costos_y_Retención_de_Datos_en_Lansmith.mp4",
+        "transcript": "/platzi/observabilidad-ai/014_Gesti%C3%B3n_de_Costos_y_Retenci%C3%B3n_de_Datos_en_Lansmith.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Creación de Dashboards Interactivos para Visualizar Métricas",
+        "video": "/platzi/videos/observabilidad-ai_015_Creación_de_Dashboards_Interactivos_para_Visualizar_Métricas.mp4.ytdl",
+        "transcript": "/platzi/observabilidad-ai/015_Creaci%C3%B3n_de_Dashboards_Interactivos_para_Visualizar_M%C3%A9tricas.txt"
+      },
+      {
+        "idx": 16,
+        "title": "Mejora de Agentes de IA con Documentación y Observabilidad",
+        "video": "/platzi/videos/observabilidad-ai_016_Mejora_de_Agentes_de_IA_con_Documentación_y_Observabilidad.mp4",
+        "transcript": "/platzi/observabilidad-ai/016_Mejora_de_Agentes_de_IA_con_Documentaci%C3%B3n_y_Observabilidad.txt"
+      }
+    ],
+    "total": 16,
+    "with_video": 16,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "arquitectura-frontend",
+    "name": "Audiocurso de Frameworks y Arquitecturas Frontend: Casos de Estudio",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "¿Qué aprenderás en este curso?",
+        "video": "/platzi/videos/arquitectura-frontend_001_Qué_aprenderás_en_este_curso.mp4",
+        "transcript": "/platzi/arquitectura-frontend/001_Qu%C3%A9_aprender%C3%A1s_en_este_curso.txt"
+      },
+      {
+        "idx": 2,
+        "title": "¿Qué es la Arquitectura en el Frontend?",
+        "video": "/platzi/videos/arquitectura-frontend_002_Qué_es_la_Arquitectura_en_el_Frontend.mp4",
+        "transcript": "/platzi/arquitectura-frontend/002_Qu%C3%A9_es_la_Arquitectura_en_el_Frontend.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Patrones de arquitectura clásicos",
+        "video": "/platzi/videos/arquitectura-frontend_003_Patrones_de_arquitectura_clásicos.mp4",
+        "transcript": "/platzi/arquitectura-frontend/003_Patrones_de_arquitectura_cl%C3%A1sicos.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Clean Architecture en el Frontend",
+        "video": "/platzi/videos/arquitectura-frontend_004_Clean_Architecture_en_el_Frontend.mp4",
+        "transcript": "/platzi/arquitectura-frontend/004_Clean_Architecture_en_el_Frontend.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Screaming Architecture",
+        "video": "/platzi/videos/arquitectura-frontend_005_Screaming_Architecture.mp4",
+        "transcript": "/platzi/arquitectura-frontend/005_Screaming_Architecture.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Tipos de renderizado: Server Side Rendering, Client Side Rendering y modos estáticos",
+        "video": "/platzi/videos/arquitectura-frontend_006_Tipos_de_renderizado__Server_Side_Rendering__Client_Side_Ren.mp4",
+        "transcript": "/platzi/arquitectura-frontend/006_Tipos_de_renderizado__Server_Side_Rendering__Client_Side_Ren.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Next.js, Nuxt.js, Astro, Remix...",
+        "video": "/platzi/videos/arquitectura-frontend_007_Next_js__Nuxt_js__Astro__Remix.mp4",
+        "transcript": "/platzi/arquitectura-frontend/007_Next_js__Nuxt_js__Astro__Remix.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Monorepositorios vs. Multirepositorios",
+        "video": "/platzi/videos/arquitectura-frontend_008_Monorepositorios_vs__Multirepositorios.mp4",
+        "transcript": "/platzi/arquitectura-frontend/008_Monorepositorios_vs__Multirepositorios.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Flujos de trabajo en Git para trabajar en equipo",
+        "video": "/platzi/videos/arquitectura-frontend_009_Flujos_de_trabajo_en_Git_para_trabajar_en_equipo.mp4",
+        "transcript": "/platzi/arquitectura-frontend/009_Flujos_de_trabajo_en_Git_para_trabajar_en_equipo.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Objetivo: crear una plataforma web",
+        "video": "/platzi/videos/arquitectura-frontend_010_Objetivo__crear_una_plataforma_web.mp4",
+        "transcript": "/platzi/arquitectura-frontend/010_Objetivo__crear_una_plataforma_web.txt"
+      },
+      {
+        "idx": 11,
+        "title": "La mala fama de los monolitos",
+        "video": "/platzi/videos/arquitectura-frontend_011_La_mala_fama_de_los_monolitos.mp4",
+        "transcript": "/platzi/arquitectura-frontend/011_La_mala_fama_de_los_monolitos.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Microfrontends: ¿qué son y cuándo usarlos?",
+        "video": "/platzi/videos/arquitectura-frontend_012_Microfrontends___qué_son_y_cuándo_usarlos.mp4",
+        "transcript": "/platzi/arquitectura-frontend/012_Microfrontends___qu%C3%A9_son_y_cu%C3%A1ndo_usarlos.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Backend for Frontend",
+        "video": "/platzi/videos/arquitectura-frontend_013_Backend_for_Frontend.mp4",
+        "transcript": "/platzi/arquitectura-frontend/013_Backend_for_Frontend.txt"
+      },
+      {
+        "idx": 14,
+        "title": "¿Cómo elegir mi arquitectura de frontend y framework?",
+        "video": "/platzi/videos/arquitectura-frontend_014_Cómo_elegir_mi_arquitectura_de_frontend_y_framework.mp4",
+        "transcript": "/platzi/arquitectura-frontend/014_C%C3%B3mo_elegir_mi_arquitectura_de_frontend_y_framework.txt"
+      },
+      {
+        "idx": 15,
+        "title": "¿Y ahora por dónde sigo?",
+        "video": "/platzi/videos/arquitectura-frontend_015_Y_ahora_por_dónde_sigo.mp4.part",
+        "transcript": "/platzi/arquitectura-frontend/015_Y_ahora_por_d%C3%B3nde_sigo.txt"
+      }
+    ],
+    "total": 15,
+    "with_video": 15,
+    "completion_pct": 100,
+    "status": "complete"
+  },
+  {
+    "slug": "new-relic",
+    "name": "225 opiniones",
+    "classes": [
+      {
+        "idx": 1,
+        "title": "Observabilidad en Sistemas Digitales Complejos",
+        "video": "/platzi/videos/new-relic_001_Observabilidad_en_Sistemas_Digitales_Complejos.mp4.ytdl",
+        "transcript": "/platzi/new-relic/001_Observabilidad_en_Sistemas_Digitales_Complejos.txt"
+      },
+      {
+        "idx": 2,
+        "title": "Evolución del Desarrollo Web: De Monolitos a Microservicios y DevOps",
+        "video": "/platzi/videos/new-relic_002_Evolución_del_Desarrollo_Web__De_Monolitos_a_Microservicios.mp4",
+        "transcript": "/platzi/new-relic/002_Evoluci%C3%B3n_del_Desarrollo_Web__De_Monolitos_a_Microservicios.txt"
+      },
+      {
+        "idx": 3,
+        "title": "Contenedores y Microservicios: Fundamentos y Orquestación",
+        "video": "/platzi/videos/new-relic_003_Contenedores_y_Microservicios__Fundamentos_y_Orquestación.mp4.ytdl",
+        "transcript": "/platzi/new-relic/003_Contenedores_y_Microservicios__Fundamentos_y_Orquestaci%C3%B3n.txt"
+      },
+      {
+        "idx": 4,
+        "title": "Aplicaciones Nativas en la Nube: Conceptos y Beneficios",
+        "video": "/platzi/videos/new-relic_004_Aplicaciones_Nativas_en_la_Nube__Conceptos_y_Beneficios.mp4.ytdl",
+        "transcript": "/platzi/new-relic/004_Aplicaciones_Nativas_en_la_Nube__Conceptos_y_Beneficios.txt"
+      },
+      {
+        "idx": 5,
+        "title": "Monitoreo en DevOps: SaaS vs Open Source y sus Desafíos",
+        "video": "/platzi/videos/new-relic_005_Monitoreo_en_DevOps__SaaS_vs_Open_Source_y_sus_Desafíos.mp4",
+        "transcript": "/platzi/new-relic/005_Monitoreo_en_DevOps__SaaS_vs_Open_Source_y_sus_Desaf%C3%ADos.txt"
+      },
+      {
+        "idx": 6,
+        "title": "Monitoreo y Observabilidad en Aplicaciones Web Modernas",
+        "video": "/platzi/videos/new-relic_006_Monitoreo_y_Observabilidad_en_Aplicaciones_Web_Modernas.mp4",
+        "transcript": "/platzi/new-relic/006_Monitoreo_y_Observabilidad_en_Aplicaciones_Web_Modernas.txt"
+      },
+      {
+        "idx": 7,
+        "title": "Observabilidad vs Monitoreo en Sistemas Digitales",
+        "video": "/platzi/videos/new-relic_007_Observabilidad_vs_Monitoreo_en_Sistemas_Digitales.mp4.ytdl",
+        "transcript": "/platzi/new-relic/007_Observabilidad_vs_Monitoreo_en_Sistemas_Digitales.txt"
+      },
+      {
+        "idx": 8,
+        "title": "Componentes Clave para Lograr Observabilidad en Software",
+        "video": "/platzi/videos/new-relic_008_Componentes_Clave_para_Lograr_Observabilidad_en_Software.mp4",
+        "transcript": "/platzi/new-relic/008_Componentes_Clave_para_Lograr_Observabilidad_en_Software.txt"
+      },
+      {
+        "idx": 9,
+        "title": "Telemetría y observabilidad con MELT en aplicaciones web",
+        "video": "/platzi/videos/new-relic_009_Telemetría_y_observabilidad_con_MELT_en_aplicaciones_web.mp4",
+        "transcript": "/platzi/new-relic/009_Telemetr%C3%ADa_y_observabilidad_con_MELT_en_aplicaciones_web.txt"
+      },
+      {
+        "idx": 10,
+        "title": "Métricas y Eventos en Telemetría para Negocios Eficientes",
+        "video": "/platzi/videos/new-relic_010_Métricas_y_Eventos_en_Telemetría_para_Negocios_Eficientes.mp4",
+        "transcript": "/platzi/new-relic/010_M%C3%A9tricas_y_Eventos_en_Telemetr%C3%ADa_para_Negocios_Eficientes.txt"
+      },
+      {
+        "idx": 11,
+        "title": "Uso de Logs para Análisis de Telemetría y Depuración",
+        "video": "/platzi/videos/new-relic_011_Uso_de_Logs_para_Análisis_de_Telemetría_y_Depuración.mp4.part-Frag2",
+        "transcript": "/platzi/new-relic/011_Uso_de_Logs_para_An%C3%A1lisis_de_Telemetr%C3%ADa_y_Depuraci%C3%B3n.txt"
+      },
+      {
+        "idx": 12,
+        "title": "Rastros Distribuidos en Telemetría: Análisis y Optimización",
+        "video": "/platzi/videos/new-relic_012_Rastros_Distribuidos_en_Telemetría__Análisis_y_Optimización.mp4.ytdl",
+        "transcript": "/platzi/new-relic/012_Rastros_Distribuidos_en_Telemetr%C3%ADa__An%C3%A1lisis_y_Optimizaci%C3%B3n.txt"
+      },
+      {
+        "idx": 13,
+        "title": "Uso de New Relic: Análisis de Mapas de Aplicaciones Web",
+        "video": null,
+        "transcript": "/platzi/new-relic/013_Uso_de_New_Relic__An%C3%A1lisis_de_Mapas_de_Aplicaciones_Web.txt"
+      },
+      {
+        "idx": 14,
+        "title": "Certificación en Observabilidad con New Relic y Platzi",
+        "video": "/platzi/videos/new-relic_014_Certificación_en_Observabilidad_con_New_Relic_y_Platzi.mp4",
+        "transcript": "/platzi/new-relic/014_Certificaci%C3%B3n_en_Observabilidad_con_New_Relic_y_Platzi.txt"
+      },
+      {
+        "idx": 15,
+        "title": "Retroalimentación sobre Cursos de Platzi",
+        "video": null,
+        "transcript": "/platzi/new-relic/015_Retroalimentaci%C3%B3n_sobre_Cursos_de_Platzi.txt"
+      }
+    ],
+    "total": 15,
+    "with_video": 13,
+    "completion_pct": 87,
+    "status": "partial"
+  }
+]

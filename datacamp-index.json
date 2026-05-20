@@ -1,0 +1,9 @@
+{
+  "course": "Datacamp Cybersecurity + Data Science",
+  "type": "rag_only",
+  "note": "Datacamp NO descarga videos (DRM HLS). Solo manifests + RAG semántico.",
+  "total_courses": 0,
+  "rag_chunks_file_bytes": 29971336,
+  "rag_query_skill": "/datacamp-rag",
+  "courses": []
+}
