@@ -273,6 +273,11 @@ const WG_UI = (() => {
     renderKillChain(state);
     renderMitreHeatmap(state);
 
+    // NEW: Battle field + Waterfall + Performance
+    renderBattleField(state);
+    renderWaterfall(state);
+    renderPerformance(state);
+
     // Telemetry feed
     renderFeed(state);
 
@@ -486,6 +491,227 @@ const WG_UI = (() => {
         <span class="count">×${count}</span>
       </div>`;
     }).join('')}</div>`;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // NEW: Battle Field (D3-style force-directed SVG graph)
+  // No depende de D3 - implementación nativa con SVG + simple force sim
+  // ═══════════════════════════════════════════════════════════
+  let bfSim = null;
+  let bfNodes = [];
+  let bfLinks = [];
+  let bfMode = 'attack'; // 'agents' | 'attack' | 'full'
+
+  function renderBattleField(state) {
+    const svg = document.getElementById('wg-bf-svg');
+    const emptyEl = document.getElementById('wg-bf-empty');
+    if (!svg) return;
+
+    const width = svg.clientWidth || 800;
+    const height = 320;
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    const attackers = state.agents?.attackers || [];
+    const defenders = state.agents?.defenders || [];
+    const events = state.events || [];
+
+    if (attackers.length === 0 && defenders.length === 0) {
+      svg.innerHTML = '';
+      if (emptyEl) emptyEl.style.display = 'block';
+      return;
+    }
+    if (emptyEl) emptyEl.style.display = 'none';
+
+    // Extraer targets únicos de los playbookId
+    const targetMap = {};
+    events.forEach(ev => {
+      if (ev.playbookId) {
+        const target = (playbooksCache || []).find(p => p.id === ev.playbookId)?.target || ev.playbookId.split('-').pop();
+        if (target) {
+          if (!targetMap[target]) targetMap[target] = { id: 'tgt-' + target, name: target, type: 'target', events: 0 };
+          targetMap[target].events++;
+        }
+      }
+    });
+    const targets = Object.values(targetMap);
+
+    // Construir nodos
+    const nodes = [
+      ...attackers.map((a, i) => ({ ...a, type: 'atk', x: width * 0.18, y: height / (attackers.length + 1) * (i + 1), tx: width * 0.18, ty: height / (attackers.length + 1) * (i + 1) })),
+      ...targets.map((t, i) => ({ ...t, type: 'target', x: width * 0.5, y: height / (targets.length + 1) * (i + 1), tx: width * 0.5, ty: height / (targets.length + 1) * (i + 1) })),
+      ...defenders.map((d, i) => ({ ...d, type: 'def', x: width * 0.82, y: height / (defenders.length + 1) * (i + 1), tx: width * 0.82, ty: height / (defenders.length + 1) * (i + 1) })),
+    ];
+
+    // Construir links basado en eventos recientes (últimos 60s)
+    const cutoff = Date.now() - 60000;
+    const links = [];
+    events.forEach(ev => {
+      const ts = new Date(ev.ts || 0).getTime();
+      if (ts < cutoff) return;
+      const live = (Date.now() - ts) < 5000;
+
+      if (ev.attacker && ev.playbookId) {
+        const targetName = (playbooksCache || []).find(p => p.id === ev.playbookId)?.target || ev.playbookId.split('-').pop();
+        const tnode = nodes.find(n => n.id === 'tgt-' + targetName);
+        const anode = nodes.find(n => n.id === ev.attacker);
+        if (tnode && anode) links.push({ source: anode, target: tnode, kind: 'atk', live });
+      }
+      if (ev.defender && ev.playbookId) {
+        const targetName = (playbooksCache || []).find(p => p.id === ev.playbookId)?.target || ev.playbookId.split('-').pop();
+        const tnode = nodes.find(n => n.id === 'tgt-' + targetName);
+        const dnode = nodes.find(n => n.id === ev.defender);
+        if (tnode && dnode) links.push({ source: tnode, target: dnode, kind: 'def', live });
+      }
+    });
+
+    // Render SVG
+    const linkPaths = links.map(l => {
+      const liveCls = l.live ? ' live' : '';
+      return `<path class="wg-bf-link ${l.kind}${liveCls}" d="M${l.source.x},${l.source.y} L${l.target.x},${l.target.y}" />`;
+    }).join('');
+
+    const nodeElements = nodes.map(n => {
+      const radius = n.type === 'target' ? 14 : 11;
+      const statusCls = n.status && (n.status.includes('execut') || n.status.includes('monitor')) ? n.type : '';
+      const subLabel = n.type === 'target' ? (n.events ? n.events + ' hits' : 'target') : (n.role || '').substring(0, 18);
+      return `<g class="wg-bf-node-grp" onclick="WG_UI.openAgentModal('${escapeHtml(n.id)}')" style="cursor:pointer">
+        <circle cx="${n.x}" cy="${n.y}" r="${radius}" class="wg-bf-node ${n.type} ${statusCls}" />
+        <text class="wg-bf-label" x="${n.x}" y="${n.y - radius - 6}" text-anchor="middle">${escapeHtml((n.name || n.id || '').substring(0, 18))}</text>
+        <text class="wg-bf-sublabel" x="${n.x}" y="${n.y + radius + 12}" text-anchor="middle">${escapeHtml(subLabel)}</text>
+      </g>`;
+    }).join('');
+
+    // Particles animados en links live (estilo Datadog APM trace)
+    const particleAnimations = links.filter(l => l.live).slice(0, 8).map((l, i) => {
+      const dx = l.target.x - l.source.x;
+      const dy = l.target.y - l.source.y;
+      return `<circle r="3" class="wg-bf-link-particle">
+        <animateMotion dur="1.2s" repeatCount="indefinite" begin="${i * 0.15}s"
+          path="M${l.source.x},${l.source.y} L${l.target.x},${l.target.y}" />
+      </circle>`;
+    }).join('');
+
+    svg.innerHTML = linkPaths + particleAnimations + nodeElements;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // NEW: Event Waterfall (timeline horizontal por agente)
+  // Estilo Datadog APM trace view
+  // ═══════════════════════════════════════════════════════════
+  function renderWaterfall(state) {
+    const container = document.getElementById('wg-waterfall');
+    const zoomEl = document.getElementById('wg-wf-zoom');
+    if (!container) return;
+
+    const events = state.events || [];
+    if (events.length === 0 || !state.active && !state.endedAt) {
+      container.innerHTML = `<div class="wg-welcome" style="padding:30px 14px">
+        <div class="wg-welcome-icon">⏱️</div>
+        <div class="wg-welcome-hint">El waterfall muestra cuándo actúa cada agente</div>
+      </div>`;
+      if (zoomEl) zoomEl.textContent = '—';
+      return;
+    }
+
+    // Determinar rango temporal
+    const tsList = events.map(ev => new Date(ev.ts || 0).getTime()).filter(t => t > 0);
+    if (tsList.length === 0) return;
+    const tMin = Math.min(...tsList);
+    const tMax = Math.max(...tsList, Date.now());
+    const duration = Math.max(1000, tMax - tMin);
+    if (zoomEl) {
+      const secs = (duration / 1000).toFixed(1);
+      zoomEl.textContent = `${secs}s · ${events.length} eventos`;
+    }
+
+    // Agrupar eventos por agente (attacker/defender) - cada agente es un "lane"
+    const lanes = {};
+    const allAgents = [...(state.agents?.attackers || []), ...(state.agents?.defenders || [])];
+    allAgents.forEach(a => { lanes[a.id] = { agent: a, events: [], team: a.id.startsWith('atk') ? 'atk' : 'def' }; });
+    lanes['_system'] = { agent: { id: '_system', name: 'system', role: 'engine' }, events: [], team: 'system' };
+
+    events.forEach(ev => {
+      if (ev.attacker && lanes[ev.attacker]) lanes[ev.attacker].events.push(ev);
+      else if (ev.defender && lanes[ev.defender]) lanes[ev.defender].events.push(ev);
+      else lanes['_system'].events.push(ev);
+    });
+
+    // Render lanes
+    const html = Object.values(lanes).filter(l => l.events.length > 0).map(lane => {
+      const eventDots = lane.events.map(ev => {
+        const t = new Date(ev.ts).getTime();
+        const left = ((t - tMin) / duration) * 100;
+        const typeCls = (ev.type || '').toLowerCase().replace(/[^a-z-]/g, '');
+        const tooltip = `${ev.type || 'event'}: ${(ev.message || '').substring(0, 80)}`;
+        return `<div class="wg-wf-event ${typeCls}" style="left:${left}%;width:4px" title="${escapeHtml(tooltip)}"></div>`;
+      }).join('');
+      const teamCls = lane.team;
+      return `<div class="wg-wf-row">
+        <div class="wg-wf-label ${teamCls}">${escapeHtml((lane.agent.name || lane.agent.id).substring(0, 18))}</div>
+        <div class="wg-wf-track">${eventDots}</div>
+      </div>`;
+    }).join('');
+
+    // Time axis
+    const ticks = 5;
+    const axisHtml = `<div class="wg-wf-axis">
+      ${Array.from({ length: ticks + 1 }, (_, i) => {
+        const pct = (i / ticks) * 100;
+        const ts = new Date(tMin + (duration * (i / ticks)));
+        const label = ts.toLocaleTimeString(currentLang === 'es' ? 'es-ES' : 'en-US', { hour12: false, minute: '2-digit', second: '2-digit' });
+        return `<span class="wg-wf-axis-tick" style="left:${pct}%">${label}</span>`;
+      }).join('')}
+    </div>`;
+
+    container.innerHTML = '<div style="padding-left:130px;padding-bottom:6px"></div>' + html + axisHtml;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // NEW: Agent performance grid (success rate + throughput)
+  // ═══════════════════════════════════════════════════════════
+  function renderPerformance(state) {
+    const grid = document.getElementById('wg-perf-grid');
+    if (!grid) return;
+    const events = state.events || [];
+    const all = [...(state.agents?.attackers || []).map(a => ({ ...a, team: 'atk' })), ...(state.agents?.defenders || []).map(a => ({ ...a, team: 'def' }))];
+
+    if (all.length === 0) {
+      grid.innerHTML = `<div class="wg-welcome" style="padding:30px 14px;grid-column:1/-1">
+        <div class="wg-welcome-icon">📊</div>
+        <div class="wg-welcome-hint">Las métricas por agente aparecen al ejecutarse playbooks</div>
+      </div>`;
+      return;
+    }
+
+    const startedAt = state.startedAt ? new Date(state.startedAt).getTime() : Date.now();
+    const elapsed = Math.max(1, (Date.now() - startedAt) / 1000);
+    const maxEvents = Math.max(1, ...all.map(a => events.filter(e => e.attacker === a.id || e.defender === a.id).length));
+
+    grid.innerHTML = all.map(a => {
+      const myEvents = events.filter(e => e.attacker === a.id || e.defender === a.id);
+      const runs = new Set(myEvents.map(e => e.runId).filter(Boolean)).size;
+      const techs = new Set();
+      myEvents.forEach(e => {
+        if (e.playbookId) {
+          (playbooksCache || []).find(p => p.id === e.playbookId)?.mitre?.forEach(t => techs.add(t));
+        }
+      });
+      const throughput = (myEvents.length / elapsed).toFixed(2);
+      const pct = (myEvents.length / maxEvents) * 100;
+
+      return `<div class="wg-perf-card ${a.team}" onclick="WG_UI.openAgentModal('${escapeHtml(a.id)}')" style="cursor:pointer">
+        <div class="wg-perf-head">
+          <div><div class="wg-perf-name">${escapeHtml(a.name)}</div><div class="wg-perf-role">${escapeHtml(a.role || '—')}</div></div>
+        </div>
+        <div class="wg-perf-metrics">
+          <div class="wg-perf-metric"><div class="wg-perf-metric-val">${myEvents.length}</div><div class="wg-perf-metric-lab">Events</div></div>
+          <div class="wg-perf-metric"><div class="wg-perf-metric-val">${runs}</div><div class="wg-perf-metric-lab">Runs</div></div>
+          <div class="wg-perf-metric"><div class="wg-perf-metric-val">${techs.size}</div><div class="wg-perf-metric-lab">MITRE</div></div>
+        </div>
+        <div class="wg-perf-bar"><div class="wg-perf-bar-fill ${a.team}" style="width:${pct}%"></div></div>
+        <div style="font-size:9px;color:var(--muted);margin-top:4px;text-align:right;font-family:monospace">${throughput} ev/s</div>
+      </div>`;
+    }).join('');
   }
 
   // ─── Telemetry feed ───
@@ -709,6 +935,14 @@ const WG_UI = (() => {
 
     openAgentModal,
     closeAgentModal,
+
+    toggleBattleField(mode) {
+      bfMode = mode;
+      document.querySelectorAll('.wg-bf-toggle').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-bfmode') === mode);
+      });
+      if (lastState) renderBattleField(lastState);
+    },
 
     setLanguage(lang) {
       currentLang = lang;

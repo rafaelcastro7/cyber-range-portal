@@ -256,6 +256,135 @@ Inspirado en: Caldera (MITRE), SafeBreach kill-chain, AttackIQ MITRE coverage, R
 .wg-chart-container { padding: 10px 14px; min-height: 180px; position: relative; }
 .wg-chart-container canvas { width: 100% !important; height: 180px !important; }
 
+/* ───── Battle Field (D3 force-directed) ───── */
+.wg-battlefield {
+  position: relative;
+  background: radial-gradient(ellipse at center, rgba(85,214,139,0.04) 0%, transparent 65%), #05070d;
+  min-height: 320px;
+}
+#wg-bf-svg { display: block; }
+.wg-bf-node { cursor: pointer; transition: r 0.15s; }
+.wg-bf-node:hover { stroke-width: 3px; }
+.wg-bf-node.atk { fill: rgba(255,92,87,0.85); stroke: var(--red); }
+.wg-bf-node.def { fill: rgba(107,183,255,0.85); stroke: var(--blue); }
+.wg-bf-node.target { fill: rgba(255,174,87,0.9); stroke: var(--orange); }
+.wg-bf-node.executing,
+.wg-bf-node.monitoring {
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: wgBfPulse 1.2s infinite;
+}
+@keyframes wgBfPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.wg-bf-label { fill: var(--fg); font-size: 10px; font-family: "Cascadia Mono", monospace; pointer-events: none; font-weight: 600; }
+.wg-bf-sublabel { fill: var(--muted); font-size: 8.5px; font-family: "Cascadia Mono", monospace; pointer-events: none; }
+.wg-bf-link { stroke-opacity: 0.4; stroke-width: 1.5; fill: none; transition: stroke-opacity 0.2s; }
+.wg-bf-link.atk { stroke: var(--red); }
+.wg-bf-link.def { stroke: var(--blue); stroke-dasharray: 3 3; }
+.wg-bf-link.live { stroke-opacity: 1; stroke-width: 2.5; filter: drop-shadow(0 0 4px currentColor); }
+.wg-bf-link-particle {
+  fill: var(--fg);
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.wg-bf-toggle {
+  background: var(--bg2); border: 1px solid var(--border); color: var(--muted);
+  font-size: 9.5px; padding: 3px 8px; border-radius: 4px; cursor: pointer; font-weight: 700;
+}
+.wg-bf-toggle.active { background: var(--accent); color: #04110b; border-color: var(--accent); }
+.wg-bf-toggle:hover:not(.active) { color: var(--fg); }
+
+.wg-bf-legend {
+  position: absolute; bottom: 6px; left: 8px;
+  display: flex; gap: 10px; flex-wrap: wrap;
+  font-size: 9px; color: var(--muted);
+  background: rgba(5,7,13,0.7); padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.wg-bf-leg-item { display: flex; align-items: center; gap: 4px; }
+.wg-bf-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.wg-bf-dot.atk { background: var(--red); }
+.wg-bf-dot.def { background: var(--blue); }
+.wg-bf-dot.target { background: var(--orange); }
+.wg-bf-line { width: 14px; height: 2px; display: inline-block; }
+.wg-bf-line.atk { background: var(--red); }
+.wg-bf-line.def { background: var(--blue); }
+
+/* ───── Waterfall ───── */
+.wg-waterfall { padding: 10px 14px; max-height: 280px; overflow-y: auto; }
+.wg-wf-row { display: grid; grid-template-columns: 130px 1fr; gap: 8px; align-items: center; margin-bottom: 4px; font-size: 11px; }
+.wg-wf-label { color: var(--fg); font-size: 10.5px; font-weight: 600; text-align: right; padding-right: 6px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wg-wf-label.atk { color: var(--red); }
+.wg-wf-label.def { color: var(--blue); }
+.wg-wf-track {
+  height: 14px;
+  background: rgba(255,255,255,0.025);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.wg-wf-event {
+  position: absolute;
+  top: 1px; bottom: 1px;
+  min-width: 3px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.wg-wf-event:hover { opacity: 0.7; }
+.wg-wf-event.attack-plan, .wg-wf-event.attack { background: var(--red); box-shadow: 0 0 6px rgba(255,92,87,0.5); }
+.wg-wf-event.defense-action, .wg-wf-event.defense { background: var(--blue); box-shadow: 0 0 6px rgba(107,183,255,0.5); }
+.wg-wf-event.run-started, .wg-wf-event.step-start { background: var(--orange); }
+.wg-wf-event.run-end, .wg-wf-event.step-end { background: var(--purple); }
+.wg-wf-event.start, .wg-wf-event.ready { background: var(--accent); }
+.wg-wf-event.output { background: var(--muted); }
+.wg-wf-axis {
+  margin-top: 6px;
+  height: 16px;
+  position: relative;
+  border-top: 1px solid var(--border);
+  font-size: 9px;
+  color: var(--muted);
+  font-family: "Cascadia Mono", monospace;
+}
+.wg-wf-axis-tick { position: absolute; top: 2px; transform: translateX(-50%); }
+
+/* ───── Performance grid ───── */
+.wg-perf-grid {
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.wg-perf-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  position: relative;
+}
+.wg-perf-card.atk { border-left: 3px solid var(--red); }
+.wg-perf-card.def { border-left: 3px solid var(--blue); }
+.wg-perf-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.wg-perf-name { font-size: 11.5px; font-weight: 700; color: var(--fg); }
+.wg-perf-role { font-size: 9px; color: var(--muted); }
+.wg-perf-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 5px; }
+.wg-perf-metric { background: rgba(255,255,255,0.03); border-radius: 4px; padding: 4px 6px; text-align: center; }
+.wg-perf-metric-val { font-size: 14px; font-weight: 800; font-family: "Cascadia Mono", monospace; color: var(--fg); line-height: 1; }
+.wg-perf-metric-lab { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px; }
+.wg-perf-bar { height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+.wg-perf-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #9ff0c0);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.wg-perf-bar-fill.atk { background: linear-gradient(90deg, var(--red), #ff8c73); }
+.wg-perf-bar-fill.def { background: linear-gradient(90deg, var(--blue), #9bd7ff); }
+
 .wg-killchain {
   padding: 12px 14px;
   max-height: 240px;
@@ -731,6 +860,46 @@ Inspirado en: Caldera (MITRE), SafeBreach kill-chain, AttackIQ MITRE coverage, R
       </div>
     </div>
 
+    <!-- ── NEW: Battle Field (D3 force-directed graph) - máxima visibilidad ── -->
+    <div class="wg-panel" style="margin-bottom:12px">
+      <div class="wg-panel-header">
+        <span>🌐 Battle Field · red vs blue en tiempo real</span>
+        <span style="font-size:10px;color:var(--muted)">
+          <button class="wg-bf-toggle" onclick="WG_UI.toggleBattleField('agents')" data-bfmode="agents">Agentes</button>
+          <button class="wg-bf-toggle active" onclick="WG_UI.toggleBattleField('attack')" data-bfmode="attack">Atacar</button>
+          <button class="wg-bf-toggle" onclick="WG_UI.toggleBattleField('full')" data-bfmode="full">Full</button>
+        </span>
+      </div>
+      <div id="wg-battlefield" class="wg-battlefield">
+        <svg id="wg-bf-svg" width="100%" height="320" style="display:block"></svg>
+        <div id="wg-bf-empty" class="wg-welcome" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;pointer-events:none">
+          <div class="wg-welcome-icon">🌐</div>
+          <div class="wg-welcome-hint">Inicia un juego para ver el campo de batalla en vivo</div>
+        </div>
+        <div class="wg-bf-legend">
+          <span class="wg-bf-leg-item"><span class="wg-bf-dot atk"></span>Atacante</span>
+          <span class="wg-bf-leg-item"><span class="wg-bf-dot def"></span>Defensor</span>
+          <span class="wg-bf-leg-item"><span class="wg-bf-dot target"></span>Target</span>
+          <span class="wg-bf-leg-item"><span class="wg-bf-line atk"></span>Ataque</span>
+          <span class="wg-bf-leg-item"><span class="wg-bf-line def"></span>Defensa</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NEW: Event Waterfall (timeline horizontal estilo Datadog APM) ── -->
+    <div class="wg-panel" style="margin-bottom:12px">
+      <div class="wg-panel-header">
+        <span>⏱️ Event Waterfall · timeline de eventos por agente</span>
+        <span id="wg-wf-zoom" style="font-size:10px;color:var(--muted);font-family:monospace">—</span>
+      </div>
+      <div id="wg-waterfall" class="wg-waterfall">
+        <div class="wg-welcome" style="padding:30px 14px">
+          <div class="wg-welcome-icon">⏱️</div>
+          <div class="wg-welcome-hint">El waterfall muestra cuándo actúa cada agente</div>
+        </div>
+      </div>
+    </div>
+
     <div class="wg-panel" style="margin-bottom:12px">
       <div class="wg-panel-header">
         <span data-i18n="wg_killchain">🎯 Kill chain · actividad por fase</span>
@@ -739,6 +908,19 @@ Inspirado en: Caldera (MITRE), SafeBreach kill-chain, AttackIQ MITRE coverage, R
         <div class="wg-welcome">
           <div class="wg-welcome-icon">🎯</div>
           <div class="wg-welcome-hint" data-i18n="wg_no_active_game">Inicia un juego para ver kill chain</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NEW: Agent performance matrix (radar) ── -->
+    <div class="wg-panel" style="margin-bottom:12px">
+      <div class="wg-panel-header">
+        <span>📊 Agent Performance · success rate, throughput, MITRE coverage</span>
+      </div>
+      <div class="wg-perf-grid" id="wg-perf-grid">
+        <div class="wg-welcome" style="padding:30px 14px">
+          <div class="wg-welcome-icon">📊</div>
+          <div class="wg-welcome-hint">Las métricas por agente aparecen al ejecutarse playbooks</div>
         </div>
       </div>
     </div>
