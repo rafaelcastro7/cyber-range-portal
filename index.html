@@ -664,15 +664,74 @@
 </section>
 
 <section data-tab="wargames">
-  <!-- War Games UI component - loads wargames-ui.html -->
+  <!-- War Games UI component - cargado dinamicamente desde wargames-ui.html + wargames-ui.js -->
+  <div id="wg-loading-placeholder" style="padding:24px;color:var(--muted);text-align:center">
+    <div style="font-size:13px;margin-bottom:8px">Cargando War Games...</div>
+    <div style="font-size:11px;opacity:0.7">Si esto persiste, verifica consola DevTools (F12)</div>
+  </div>
 </section>
 
 <script>
 (async () => {
-  const response = await fetch('wargames-ui.html');
-  const html = await response.text();
-  const section = document.querySelector('section[data-tab="wargames"]');
-  section.innerHTML = html;
+  try {
+    // 1. Fetch HTML del UI component (sin scripts inline - los scripts NO ejecutan via innerHTML)
+    const htmlResp = await fetch('wargames-ui.html', { cache: 'no-cache' });
+    if (!htmlResp.ok) throw new Error('HTTP ' + htmlResp.status + ' loading wargames-ui.html');
+    const html = await htmlResp.text();
+
+    // 2. Inyectar HTML en la seccion
+    const section = document.querySelector('section[data-tab="wargames"]');
+    if (!section) throw new Error('section[data-tab=wargames] no encontrado');
+    section.innerHTML = html;
+
+    // 3. Cargar JS de forma que SI se ejecute (script tag con src dinamico)
+    //    Esto es necesario porque <script> dentro de innerHTML NO ejecuta.
+    await new Promise((resolve, reject) => {
+      // wargames-api.js primero (define WARGAMES_API)
+      if (typeof window.WARGAMES_API === 'undefined') {
+        const apiScript = document.createElement('script');
+        apiScript.src = 'wargames-api.js?v=' + Date.now();
+        apiScript.onload = resolve;
+        apiScript.onerror = () => reject(new Error('Failed loading wargames-api.js'));
+        document.head.appendChild(apiScript);
+      } else {
+        resolve();
+      }
+    });
+
+    // 4. Cargar wargames-ui.js (define WG_UI y auto-init)
+    await new Promise((resolve, reject) => {
+      // Forzar reload si ya estaba cargado
+      if (window.WG_UI) {
+        window.WG_UI.cleanup && window.WG_UI.cleanup();
+        delete window.WG_UI;
+      }
+      const uiScript = document.createElement('script');
+      uiScript.src = 'wargames-ui.js?v=' + Date.now();
+      uiScript.onload = resolve;
+      uiScript.onerror = () => reject(new Error('Failed loading wargames-ui.js'));
+      document.head.appendChild(uiScript);
+    });
+
+    // 5. Init explicito (por si auto-init no se disparo)
+    setTimeout(() => {
+      if (window.WG_UI && window.WG_UI.init) {
+        window.WG_UI.init();
+      }
+    }, 100);
+
+    console.log('[War Games] Loaded successfully');
+  } catch (e) {
+    console.error('[War Games] Load failed:', e);
+    const section = document.querySelector('section[data-tab="wargames"]');
+    if (section) {
+      section.innerHTML = '<div style="padding:24px;color:var(--red);text-align:center">'
+        + '<div style="font-size:14px;margin-bottom:8px">Error cargando War Games</div>'
+        + '<div style="font-size:11px;color:var(--muted)">' + (e.message || e) + '</div>'
+        + '<div style="font-size:11px;margin-top:8px">Verifica DevTools (F12) Console para detalles</div>'
+        + '</div>';
+    }
+  }
 })();
 </script>
 
@@ -3230,8 +3289,11 @@ function connectWS() {
 
 function handleWSEvent(ev) {
   if (ev.type === 'wargame-event') {
-    wgRender(ev.state);
-    wgAppend(ev.event);
+    // El nuevo WG_UI hace polling cada 2s + auto-render. No usar wgRender legacy
+    // (tenia IDs como wg-runs-count que no existen en el nuevo wargames-ui.html)
+    if (typeof window.WG_UI !== 'undefined' && window.WG_UI._state) {
+      // No-op: el polling automatico se encargara
+    }
     return;
   }
   if (ev.warGame) wgAppend({ ts:new Date().toISOString(), type:ev.type, message:`${ev.type} · ${ev.playbookId || ev.runId || ''} ${ev.step ? 'step '+ev.step : ''}` });

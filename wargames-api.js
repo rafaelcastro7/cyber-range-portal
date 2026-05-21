@@ -146,6 +146,7 @@ const WARGAMES_API = (() => {
 
   /**
    * Main fetch wrapper with retry + fallback
+   * FIX: AbortController se crea DENTRO del loop para que cada retry tenga su propio controller
    */
   async function fetchWithRetry(endpoint, options = {}) {
     const env = detectEnvironment();
@@ -156,12 +157,12 @@ const WARGAMES_API = (() => {
     }
 
     const fullURL = `${baseURL}${CONFIG.RUNNER_ENDPOINT}${endpoint}`;
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT_MS);
-
     let lastError = null;
 
     for (let attempt = 0; attempt < CONFIG.RETRY_ATTEMPTS; attempt++) {
+      // CRITICO: nuevo controller por intento
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT_MS);
       try {
         const response = await fetch(fullURL, {
           ...options,
@@ -192,6 +193,7 @@ const WARGAMES_API = (() => {
         return data;
 
       } catch (error) {
+        clearTimeout(timeoutId);
         lastError = error;
 
         if (attempt < CONFIG.RETRY_ATTEMPTS - 1) {
@@ -200,7 +202,6 @@ const WARGAMES_API = (() => {
       }
     }
 
-    clearTimeout(timeoutId);
     isConnected = false;
 
     // Handle different error types
