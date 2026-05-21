@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>⚔️ Cyber Range War Games · Live Battle Field</title>
+<meta name="description" content="Red vs Blue cyber war games - live battle field, MITRE ATT&CK coverage, AI agent telemetry">
+<style>
+  :root { color-scheme: dark; --bg:#06090f; --bg2:#0d1420; --card:#121b28; --border:#263449;
+          --fg:#edf3ff; --muted:#91a0b8; --accent:#55d68b; --red:#ff5c57; --blue:#6bb7ff;
+          --orange:#ffae57; --yellow:#ffd166; --purple:#c79cff; --radius-sm:12px;
+          --line:rgba(140,166,210,.20); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--fg); font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; min-height: 100vh; }
+
+  /* Banner header (minimal, replaces full portal nav) */
+  .wgs-banner {
+    background: linear-gradient(135deg, rgba(255,92,87,0.06), rgba(107,183,255,0.04));
+    border-bottom: 1px solid var(--line);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .wgs-logo {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--blue));
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #04110b; font-size: 14px;
+  }
+  .wgs-title { font-size: 16px; font-weight: 800; }
+  .wgs-sub { font-size: 11px; color: var(--muted); }
+  .wgs-status { margin-left: auto; display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--muted); }
+  .wgs-status-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: wgsPulse 1.5s infinite; }
+  @keyframes wgsPulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .wgs-link { padding: 6px 12px; background: var(--bg2); color: var(--fg); text-decoration: none; border-radius: 6px; font-size: 11px; font-weight: 700; border: 1px solid var(--border); }
+  .wgs-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  main { max-width: 1700px; margin: 0 auto; padding: 16px; }
+
+  /* Pull-in CSS variables that wargames-ui.html expects */
+  :root {
+    --bg:#06090f; --bg2:#0d1420; --card:#121b28; --border:#263449;
+    --fg:#edf3ff; --muted:#91a0b8; --accent:#55d68b; --red:#ff5c57; --blue:#6bb7ff;
+    --orange:#ffae57; --yellow:#ffd166; --purple:#c79cff; --radius-sm:12px;
+  }
+
+  /* Welcome card if WG_UI loading */
+  .wgs-loading {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .wgs-loading-icon { font-size: 36px; margin-bottom: 8px; }
+
+  .wgs-footer {
+    text-align: center;
+    padding: 16px;
+    color: var(--muted);
+    font-size: 10px;
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .wgs-footer code { background: var(--bg2); padding: 1px 6px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header class="wgs-banner">
+  <div class="wgs-logo">CR</div>
+  <div>
+    <div class="wgs-title">⚔️ Cyber Range · War Games</div>
+    <div class="wgs-sub">Red vs Blue · Live battle field · MITRE ATT&CK coverage</div>
+  </div>
+  <div class="wgs-status">
+    <span class="wgs-status-dot"></span>
+    <span id="wgs-conn">Connecting...</span>
+  </div>
+  <a href="/" class="wgs-link" title="Full portal">📊 Full Portal</a>
+</header>
+
+<main>
+  <!-- War Games UI placeholder - dynamically loaded -->
+  <section data-tab="wargames">
+    <div id="wgs-loading-placeholder" class="wgs-loading">
+      <div class="wgs-loading-icon">⚔️</div>
+      <div style="font-size:14px;color:var(--fg);margin-bottom:8px">Loading Battle Field...</div>
+      <div style="font-size:11px">Si esto persiste, abre DevTools (F12) para ver errores</div>
+    </div>
+  </section>
+</main>
+
+<footer class="wgs-footer">
+  Cyber Range Portal · standalone war games view · backend via <code id="wgs-backend">localhost:8090</code> · auto-discovery tunnel
+</footer>
+
+<script>
+// Tunnel auto-discovery (igual que el portal completo)
+(async () => {
+  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  // Si NO es local, intenta detectar tunnel del gist
+  if (!isLocal && !localStorage.getItem('cr-primary-tunnel')) {
+    try {
+      const r = await fetch('https://gist.githubusercontent.com/rafaelcastro7/4ec6171f3bb46b3e4c82ab3045768687/raw/tunnel-url.txt', { cache: 'no-cache' });
+      if (r.ok) {
+        const url = (await r.text()).trim();
+        if (url.startsWith('http')) {
+          localStorage.setItem('cr-primary-tunnel', url);
+          console.log('[Standalone] Tunnel auto-discovered:', url);
+        }
+      }
+    } catch (e) { console.warn('[Standalone] Could not discover tunnel:', e.message); }
+  }
+
+  // Mostrar backend en footer
+  document.getElementById('wgs-backend').textContent = isLocal ? 'localhost:8090' : (localStorage.getItem('cr-primary-tunnel') || 'tunnel');
+  document.getElementById('wgs-conn').textContent = isLocal ? 'Live · localhost' : 'Live · via tunnel';
+
+  // Cargar dinámicamente HTML del UI + JS
+  try {
+    const htmlResp = await fetch('wargames-ui.html', { cache: 'no-cache' });
+    if (!htmlResp.ok) throw new Error('HTTP ' + htmlResp.status + ' loading wargames-ui.html');
+    const html = await htmlResp.text();
+
+    const section = document.querySelector('section[data-tab="wargames"]');
+    if (!section) throw new Error('section wargames not found');
+    section.innerHTML = html;
+
+    // Cargar API
+    await new Promise((resolve, reject) => {
+      if (typeof window.WARGAMES_API !== 'undefined') return resolve();
+      const s = document.createElement('script');
+      s.src = 'wargames-api.js?v=' + Date.now();
+      s.onload = resolve;
+      s.onerror = () => reject(new Error('Failed loading wargames-api.js'));
+      document.head.appendChild(s);
+    });
+
+    // Cargar UI module
+    await new Promise((resolve, reject) => {
+      if (window.WG_UI) {
+        window.WG_UI.cleanup && window.WG_UI.cleanup();
+        delete window.WG_UI;
+      }
+      const s = document.createElement('script');
+      s.src = 'wargames-ui.js?v=' + Date.now();
+      s.onload = resolve;
+      s.onerror = () => reject(new Error('Failed loading wargames-ui.js'));
+      document.head.appendChild(s);
+    });
+
+    // Init
+    setTimeout(() => {
+      if (window.WG_UI && window.WG_UI.init) window.WG_UI.init();
+    }, 100);
+
+    console.log('[Standalone] War Games loaded successfully');
+  } catch (e) {
+    console.error('[Standalone] Load failed:', e);
+    document.getElementById('wgs-loading-placeholder').innerHTML =
+      '<div class="wgs-loading-icon" style="color:var(--red)">⚠️</div>' +
+      '<div style="font-size:14px;color:var(--red);margin-bottom:8px">Error loading War Games</div>' +
+      '<div style="font-size:11px">' + (e.message || e) + '</div>';
+  }
+})();
+</script>
+
+</body>
+</html>
