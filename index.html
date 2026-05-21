@@ -28,10 +28,21 @@
   header h1 { font-size: 18px; font-weight: 900; letter-spacing: 0.9px; background: linear-gradient(100deg,#ffffff 0%,#9bd7ff 38%,#55d68b 78%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   header .stats { margin-left: auto; display: flex; gap: 10px; font-size: 11px; color: var(--muted); font-family: "Cascadia Mono","JetBrains Mono",ui-monospace,monospace; align-items: center; flex-wrap:wrap; justify-content:flex-end; }
   header .stats b { color: var(--accent); }
-  nav.tabs { background: rgba(6,9,15,.66); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 8px 18px; display: flex; gap: 8px; overflow-x: auto; position: sticky; top: 62px; z-index: 99; scrollbar-width: thin; }
-  nav.tabs a { display: block; padding: 9px 13px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 750; border:1px solid transparent; border-radius:999px; white-space: nowrap; transition: transform .16s ease, background .16s ease, color .16s ease, border-color .16s ease; }
-  nav.tabs a:hover { color: var(--fg); background: rgba(255,255,255,.055); transform: translateY(-1px); }
-  nav.tabs a.active { color: #04110b; background: linear-gradient(135deg,var(--accent),#9ff0c0); border-color: rgba(255,255,255,.25); box-shadow: 0 8px 24px rgba(85,214,139,.20); }
+  /* ── Navigation bar (pro UX inspired by VSCode/Linear/GitHub) ── */
+  nav.tabs { background: rgba(6,9,15,.78); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); padding: 8px 18px; display: flex; gap: 4px; overflow-x: auto; position: sticky; top: 62px; z-index: 99; scrollbar-width: none; align-items: center; scroll-behavior: smooth; }
+  nav.tabs::-webkit-scrollbar { height: 0; display: none; }
+  nav.tabs a { display: inline-flex; align-items: center; gap: 5px; padding: 8px 13px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 700; border: 1px solid transparent; border-radius: 8px; white-space: nowrap; transition: all .15s ease; position: relative; flex-shrink: 0; }
+  nav.tabs a:hover { color: var(--fg); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); }
+  nav.tabs a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  nav.tabs a.active { color: #04110b; background: linear-gradient(135deg,var(--accent) 0%, #9ff0c0 100%); border-color: rgba(85,214,139,.5); box-shadow: 0 4px 16px rgba(85,214,139,.35), inset 0 1px 0 rgba(255,255,255,.4); font-weight: 800; }
+  nav.tabs a.active::after { content: ''; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px var(--accent); }
+  /* Group separators - sutil vertical line between groups */
+  nav.tabs .nav-sep { display: inline-block; width: 1px; height: 20px; background: var(--line); margin: 0 4px; flex-shrink: 0; opacity: 0.5; }
+  /* Keyboard hint badge */
+  nav.tabs a kbd { font-family: "Cascadia Mono", monospace; font-size: 9px; padding: 1px 4px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; margin-left: 2px; color: inherit; opacity: 0.7; }
+  nav.tabs a.active kbd { background: rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.2); color: #04110b; opacity: 0.85; }
+  /* Scroll indicator: fade at edges to hint there's more */
+  nav.tabs { mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); }
   main { max-width: 1540px; margin: 0 auto; padding: 26px; }
   section[data-tab] { display: none; }
   section[data-tab].active { display: block; }
@@ -337,6 +348,479 @@
     a, button, .card, .mitre-technique, .playbook-item { min-height: 38px; }
     .card-creds .cred-value { padding: 4px 0; display: inline-block; }
   }
+
+  /* ═══════════════════════════════════════════════════════════
+     EVIDENCE TAB - Pro UX (inspired by Playwright Trace Viewer,
+     Sentry Replay, GitHub Actions UI, Loom)
+     ═══════════════════════════════════════════════════════════ */
+  /* Hero header */
+  .ev-hero {
+    background: linear-gradient(135deg, rgba(188,140,255,0.06) 0%, rgba(85,214,139,0.04) 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .ev-hero-info { min-width: 0; }
+  .ev-hero-title { font-size: 18px; font-weight: 800; color: var(--fg); margin-bottom: 4px; }
+  .ev-hero-sub { font-size: 11.5px; color: var(--muted); line-height: 1.55; max-width: 600px; }
+  .ev-hero-sub code { background: rgba(199,156,255,0.1); color: var(--purple); padding: 1px 6px; border-radius: 4px; font-size: 10.5px; }
+  .ev-hero-kpis { display: flex; gap: 8px; }
+  .ev-kpi {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 14px; text-align: center; min-width: 64px;
+  }
+  .ev-kpi-val { font-size: 20px; font-weight: 800; font-family: 'Cascadia Mono', monospace; line-height: 1; color: var(--fg); }
+  .ev-kpi-val.ok { color: var(--accent); }
+  .ev-kpi-val.err { color: var(--red); }
+  .ev-kpi-lab { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-weight: 700; }
+  .ev-hero-actions { display: flex; gap: 8px; }
+  .ev-btn {
+    padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px;
+    font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .ev-btn.primary { background: linear-gradient(135deg, var(--purple), #d4b3ff); color: #0a0410; border-color: transparent; }
+  .ev-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(199,156,255,0.35); }
+  .ev-btn.ghost { background: var(--bg2); color: var(--fg); }
+  .ev-btn.ghost:hover { background: var(--card); border-color: var(--accent); color: var(--accent); }
+  .ev-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* Layout 3 paneles */
+  .ev-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 320px;
+    gap: 12px;
+    min-height: 720px;
+  }
+  .ev-layout > * { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ev-layout.no-insights { grid-template-columns: 300px 1fr; }
+  @media (max-width: 1280px) {
+    .ev-layout, .ev-layout.no-insights { grid-template-columns: 280px 1fr; }
+    .ev-insights-panel { display: none !important; }
+  }
+  @media (max-width: 720px) {
+    .ev-layout { grid-template-columns: 1fr; }
+    .ev-runs-panel { max-height: 280px; }
+  }
+
+  .ev-panel-head {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+  }
+  .ev-count {
+    background: var(--bg2);
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 10px;
+    color: var(--fg);
+    font-family: 'Cascadia Mono', monospace;
+  }
+
+  /* Left: Runs sidebar */
+  .ev-runs-panel { display: flex; flex-direction: column; max-height: 80vh; }
+  .ev-runs-search { padding: 8px 10px; border-bottom: 1px solid var(--border); display: flex; gap: 6px; flex-direction: column; }
+  .ev-runs-search input, .ev-runs-search select {
+    width: 100%;
+    padding: 7px 10px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--fg);
+    border-radius: 6px;
+    font-size: 11px;
+  }
+  .ev-runs-search input:focus, .ev-runs-search select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .ev-runs-list { overflow-y: auto; padding: 6px; flex: 1; }
+  .ev-runs-list::-webkit-scrollbar { width: 6px; }
+  .ev-runs-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .ev-run-card {
+    background: var(--bg2);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .ev-run-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+  .ev-run-card.failed::before { background: var(--red); }
+  .ev-run-card.partial::before { background: var(--orange); }
+  .ev-run-card:hover { background: rgba(255,255,255,0.04); transform: translateX(2px); }
+  .ev-run-card.active {
+    border-color: var(--accent);
+    background: rgba(85,214,139,0.06);
+    box-shadow: 0 4px 12px rgba(85,214,139,0.15);
+  }
+  .ev-run-id { font-size: 11px; font-weight: 700; color: var(--fg); font-family: 'Cascadia Mono', monospace; word-break: break-all; }
+  .ev-run-time { font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+  .ev-run-time .ev-run-rel { color: var(--accent); font-weight: 600; }
+  .ev-run-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-size: 10px;
+    font-family: 'Cascadia Mono', monospace;
+  }
+  .ev-run-stat-pass { color: var(--accent); font-weight: 700; }
+  .ev-run-stat-fail { color: var(--red); font-weight: 700; }
+  .ev-run-stat-total { color: var(--muted); }
+  .ev-run-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,92,87,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .ev-run-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #9ff0c0);
+    border-radius: 2px;
+  }
+
+  /* Center: Detail panel */
+  .ev-detail-panel { display: flex; flex-direction: column; max-height: 85vh; }
+  .ev-detail-content { overflow-y: auto; flex: 1; padding: 16px 20px; }
+  .ev-detail-content::-webkit-scrollbar { width: 8px; }
+  .ev-detail-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .ev-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .ev-empty-icon { font-size: 48px; margin-bottom: 14px; opacity: 0.4; }
+  .ev-empty-title { font-size: 14px; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
+  .ev-empty-hint { font-size: 11.5px; line-height: 1.6; max-width: 480px; margin: 0 auto; }
+  .ev-empty-hint b { color: var(--purple); }
+
+  /* Run header */
+  .ev-run-header {
+    background: var(--bg2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+  }
+  .ev-run-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ev-run-header h2 { font-size: 16px; font-weight: 800; margin: 0; color: var(--fg); font-family: 'Cascadia Mono', monospace; }
+  .ev-run-summary {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .ev-run-summary b { color: var(--fg); font-weight: 700; }
+  .ev-pill {
+    padding: 3px 9px;
+    border-radius: 99px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .ev-pill.pass { background: rgba(85,214,139,0.15); color: var(--accent); }
+  .ev-pill.fail { background: rgba(255,92,87,0.15); color: var(--red); }
+  .ev-pill.partial { background: rgba(255,174,87,0.15); color: var(--orange); }
+
+  /* Feature tabs (navigation between features inside a run) */
+  .ev-feature-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    margin-bottom: 14px;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+  .ev-feature-tab {
+    padding: 7px 12px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .ev-feature-tab:hover { color: var(--fg); border-color: var(--accent); }
+  .ev-feature-tab.active { background: var(--accent); color: #04110b; border-color: var(--accent); font-weight: 800; }
+  .ev-feature-tab.fail::before { content: '⚠'; color: var(--red); margin-right: 2px; }
+  .ev-feature-tab.pass::before { content: '✓'; color: var(--accent); margin-right: 2px; }
+  .ev-feature-tab.active.pass::before { color: #04110b; }
+
+  /* Feature content */
+  .ev-feature-content {
+    background: var(--bg2);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .ev-feature-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ev-feature-title { font-size: 14px; font-weight: 700; color: var(--fg); margin: 0; flex: 1; }
+  .ev-feature-id { font-size: 10px; color: var(--muted); font-family: 'Cascadia Mono', monospace; background: var(--card); padding: 2px 6px; border-radius: 4px; }
+
+  /* Video player */
+  .ev-video-wrap {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+  }
+  .ev-video-wrap video {
+    width: 100%;
+    max-height: 480px;
+    display: block;
+    background: #000;
+  }
+  .ev-video-meta {
+    padding: 8px 16px;
+    background: var(--card);
+    font-size: 10.5px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Screenshots gallery */
+  .ev-shots {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ev-shots-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .ev-shots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+  .ev-shot {
+    aspect-ratio: 16 / 10;
+    background: var(--card);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.15s;
+  }
+  .ev-shot:hover { transform: scale(1.03); border-color: var(--accent); }
+  .ev-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ev-shot-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.85));
+    color: #fff;
+    font-size: 9.5px;
+    padding: 6px 8px 6px;
+    font-weight: 600;
+  }
+
+  /* Narration card (AI) */
+  .ev-narration {
+    padding: 12px 16px;
+    background: linear-gradient(135deg, rgba(199,156,255,0.06), transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .ev-narration-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .ev-narration-text {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--fg);
+    font-style: italic;
+  }
+
+  /* Report actions */
+  .ev-actions {
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  /* Right insights panel */
+  .ev-insights-panel { display: flex; flex-direction: column; max-height: 85vh; }
+  .ev-insights-body { padding: 14px 16px; overflow-y: auto; flex: 1; }
+  .ev-insight-card {
+    background: var(--bg2);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+  }
+  .ev-insight-title { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 0.4px; margin-bottom: 6px; }
+  .ev-insight-value { font-size: 12px; color: var(--fg); line-height: 1.5; }
+  .ev-insight-value.big { font-size: 20px; font-weight: 800; font-family: 'Cascadia Mono', monospace; }
+
+  /* Trigger modal */
+  .ev-modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(2,4,9,0.7);
+    backdrop-filter: blur(6px);
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .ev-modal-backdrop.visible { display: flex; }
+  .ev-modal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: min(480px, 92vw);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+  .ev-modal-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ev-modal-title { font-size: 14px; font-weight: 700; color: var(--fg); margin: 0; }
+  .ev-modal-close {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .ev-modal-close:hover { background: var(--bg2); color: var(--fg); }
+  .ev-modal-body { padding: 18px; font-size: 12px; line-height: 1.6; color: var(--fg); }
+  .ev-spinner {
+    width: 32px; height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--purple);
+    border-radius: 50%;
+    animation: ev-spin 0.9s linear infinite;
+    margin: 0 auto 14px;
+  }
+  @keyframes ev-spin { to { transform: rotate(360deg); } }
+
+  /* Lightbox */
+  .ev-lightbox {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .ev-lightbox.visible { display: flex; }
+  .ev-lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 6px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    cursor: zoom-out;
+  }
+  .ev-lightbox-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  .ev-lightbox-close:hover { background: rgba(255,255,255,0.2); }
+  .ev-lightbox-nav {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    width: 48px; height: 64px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+  }
+  .ev-lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+  .ev-lightbox-nav.prev { left: 24px; }
+  .ev-lightbox-nav.next { right: 24px; }
+  .ev-lightbox-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .ev-lightbox-counter { font-family: 'Cascadia Mono', monospace; opacity: 0.7; font-size: 10px; }
 </style>
 <script src="wargames-api.js"></script>
 <script src="wargames-tests.js"></script>
@@ -377,24 +861,31 @@
   </div>
 </header>
 
-<nav class="tabs">
-  <a href="#onboarding" data-tab-link="onboarding" data-i18n="tab_onboarding">🎓 Empezar aquí</a>
-  <a href="#dashboard" data-tab-link="dashboard" class="active" data-i18n="tab_dashboard">📊 Dashboard</a>
-  <a href="#console" data-tab-link="console" data-i18n="tab_console">⚡ Attack Console</a>
-  <a href="#wargames" data-tab-link="wargames">⚔️ Juegos de Guerra</a>
-  <a href="#network" data-tab-link="network" data-i18n="tab_network">🌐 Topología</a>
-  <a href="#containerlab" data-tab-link="containerlab" data-i18n="tab_containerlab">🧪 Containerlab</a>
-  <a href="#defense" data-tab-link="defense" data-i18n="tab_defense">🛡️ Defense</a>
-  <a href="#pwnbox" data-tab-link="pwnbox" data-i18n="tab_pwnbox">🥷 Pwnbox</a>
-  <a href="#purple" data-tab-link="purple" data-i18n="tab_purple">💜 Purple Team</a>
-  <a href="#evidence" data-tab-link="evidence" data-i18n="tab_evidence">🎬 Evidence</a>
-  <a href="#visibility" data-tab-link="visibility" data-i18n="tab_visibility">👁️ Visibility</a>
-  <a href="#mitre" data-tab-link="mitre" data-i18n="tab_mitre">🎯 MITRE ATT&CK</a>
-  <a href="#credentials" data-tab-link="credentials" data-i18n="tab_creds">🔐 Credenciales</a>
-  <a href="#manual" data-tab-link="manual" data-i18n="tab_manual">📖 Manual</a>
-  <a href="#academia" id="tab-link-academia" data-tab-link="academia" data-i18n="tab_academia" style="display: none;">🎓 Academia</a>
-  <a href="#jarvis" data-tab-link="jarvis" data-i18n="tab_jarvis">🧠 Jarvis</a>
-  <a href="#about" data-tab-link="about" data-i18n="tab_about">ℹ️ Acerca</a>
+<nav class="tabs" role="tablist" aria-label="Navegación principal">
+  <!-- ── EMPEZAR ── -->
+  <a href="#onboarding" data-tab-link="onboarding" data-i18n="tab_onboarding" title="Onboarding · Empezar aquí (Alt+1)">🎓 Empezar aquí</a>
+  <a href="#dashboard" data-tab-link="dashboard" class="active" data-i18n="tab_dashboard" title="Dashboard · Visión general (Alt+2)">📊 Dashboard</a>
+  <span class="nav-sep" aria-hidden="true"></span>
+  <!-- ── OPERAR ── -->
+  <a href="#console" data-tab-link="console" data-i18n="tab_console" title="Consola de ataque · Ejecutar playbooks (Alt+3)">⚡ Attack Console</a>
+  <a href="#wargames" data-tab-link="wargames" title="Juegos de Guerra · Red vs Blue (Alt+4)">⚔️ Juegos de Guerra</a>
+  <a href="#purple" data-tab-link="purple" data-i18n="tab_purple" title="Purple Team · Cooperación red+blue (Alt+5)">💜 Purple Team</a>
+  <a href="#network" data-tab-link="network" data-i18n="tab_network" title="Topología de red · Diagrama del lab (Alt+6)">🌐 Topología</a>
+  <a href="#containerlab" data-tab-link="containerlab" data-i18n="tab_containerlab" title="Containerlab · Lab virtual">🧪 Containerlab</a>
+  <a href="#pwnbox" data-tab-link="pwnbox" data-i18n="tab_pwnbox" title="Pwnbox · Kali web (kasm_user)">🥷 Pwnbox</a>
+  <span class="nav-sep" aria-hidden="true"></span>
+  <!-- ── ANALIZAR ── -->
+  <a href="#defense" data-tab-link="defense" data-i18n="tab_defense" title="Defense · Blue team tools (Wazuh, MISP)">🛡️ Defense</a>
+  <a href="#evidence" data-tab-link="evidence" data-i18n="tab_evidence" title="Evidence · Replay de runs y forense">🎬 Evidence</a>
+  <a href="#visibility" data-tab-link="visibility" data-i18n="tab_visibility" title="Visibility · Grafana + Prometheus">👁️ Visibility</a>
+  <a href="#mitre" data-tab-link="mitre" data-i18n="tab_mitre" title="MITRE ATT&CK · Coverage matrix">🎯 MITRE ATT&CK</a>
+  <span class="nav-sep" aria-hidden="true"></span>
+  <!-- ── RECURSOS ── -->
+  <a href="#credentials" data-tab-link="credentials" data-i18n="tab_creds" title="Credenciales · Todas las cuentas">🔐 Credenciales</a>
+  <a href="#manual" data-tab-link="manual" data-i18n="tab_manual" title="Manual del operador">📖 Manual</a>
+  <a href="#academia" id="tab-link-academia" data-tab-link="academia" data-i18n="tab_academia" style="display: none;" title="Academia · Cursos">🎓 Academia</a>
+  <a href="#jarvis" data-tab-link="jarvis" data-i18n="tab_jarvis" title="Jarvis · AI assistant local">🧠 Jarvis</a>
+  <a href="#about" data-tab-link="about" data-i18n="tab_about" title="Acerca · Información del proyecto">ℹ️ Acerca</a>
 </nav>
 
 <div id="commandPalette" class="ux-command-palette" onclick="if(event.target.id==='commandPalette') closeCommandPalette()">
@@ -1134,23 +1625,124 @@
 </section>
 
 <section data-tab="evidence">
-  <div class="section-title purple">🎬 Evidence · QA Walkthrough autónomo · video + screenshots + narración IA local</div>
+  <div class="section-title purple">🎬 Evidence · QA Walkthrough autónomo · video + screenshots + narración IA</div>
 
-  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:16px;line-height:1.55;font-size:12.5px;color:var(--muted)">
-    Jarvis recorre todas las funcionalidades usando Playwright headless · graba <code>.webm</code> + <code>.jpg</code> + narración IA (Ollama qwen2.5:7b) por feature ·
-    evidencia organizada por <code>run-{timestamp}</code> en <code>E:\\cyber-range\\orchestration\\evidence\\</code> · regression tracking entre runs · cero tokens cloud.
+  <!-- ── Hero header con KPIs ── -->
+  <div class="ev-hero">
+    <div class="ev-hero-info">
+      <div class="ev-hero-title">Evidence Inspector</div>
+      <div class="ev-hero-sub">
+        Jarvis recorre todas las funcionalidades con Playwright · graba video + screenshots + narración IA local (Ollama) ·
+        organizado por <code>run-{timestamp}</code> · regression tracking · 0 tokens cloud
+      </div>
+    </div>
+    <div class="ev-hero-kpis">
+      <div class="ev-kpi">
+        <div class="ev-kpi-val" id="ev-kpi-runs">—</div>
+        <div class="ev-kpi-lab">Runs</div>
+      </div>
+      <div class="ev-kpi">
+        <div class="ev-kpi-val" id="ev-kpi-features">—</div>
+        <div class="ev-kpi-lab">Features</div>
+      </div>
+      <div class="ev-kpi">
+        <div class="ev-kpi-val ok" id="ev-kpi-pass">—</div>
+        <div class="ev-kpi-lab">Pass</div>
+      </div>
+      <div class="ev-kpi">
+        <div class="ev-kpi-val err" id="ev-kpi-fail">—</div>
+        <div class="ev-kpi-lab">Fail</div>
+      </div>
+      <div class="ev-kpi">
+        <div class="ev-kpi-val" id="ev-kpi-rate">—</div>
+        <div class="ev-kpi-lab">Success</div>
+      </div>
+    </div>
+    <div class="ev-hero-actions">
+      <button class="ev-btn primary" onclick="evidenceTrigger()" id="ev-trigger-btn" title="Lanza Playwright headless · 2-5 min">
+        <span>🚀</span> <span>Nuevo walkthrough</span>
+      </button>
+      <button class="ev-btn ghost" onclick="evidenceLoad()" title="Recargar lista de runs (R)">
+        <span>🔄</span> <span>Refresh</span>
+      </button>
+    </div>
   </div>
 
-  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
-    <button class="btn-attack" onclick="evidenceTrigger()" style="padding:10px 18px">🚀 Trigger walkthrough (2-5 min)</button>
-    <button class="btn-ghost" onclick="evidenceLoad()" style="padding:10px 14px">🔄 Refresh</button>
-    <span id="ev-stat" style="font-size:11px;color:var(--muted)">cargando…</span>
+  <!-- ── Layout 3 paneles ── -->
+  <div class="ev-layout">
+    <!-- LEFT: Runs sidebar -->
+    <aside class="ev-runs-panel">
+      <div class="ev-panel-head">
+        <span>📜 Historial de runs</span>
+        <span id="ev-runs-count" class="ev-count">0</span>
+      </div>
+      <div class="ev-runs-search">
+        <input type="text" id="ev-search" placeholder="🔍 Buscar run ID o fecha..." oninput="evidenceFilter(this.value)">
+        <select id="ev-sort" onchange="evidenceSort(this.value)">
+          <option value="recent">Más recientes</option>
+          <option value="oldest">Más antiguos</option>
+          <option value="best">Mejor tasa éxito</option>
+          <option value="worst">Más fallos</option>
+        </select>
+      </div>
+      <div id="ev-runs" class="ev-runs-list"></div>
+    </aside>
+
+    <!-- CENTER: Feature inspector -->
+    <main class="ev-detail-panel">
+      <div id="ev-detail" class="ev-detail-content">
+        <div class="ev-empty">
+          <div class="ev-empty-icon">🎬</div>
+          <div class="ev-empty-title">Selecciona un run del panel izquierdo</div>
+          <div class="ev-empty-hint">
+            Cada run contiene videos, screenshots y narraciones IA de los tabs del portal probados automáticamente.<br>
+            Si no hay runs, click en <b>🚀 Nuevo walkthrough</b> para generar uno (2-5 min).
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT: AI insights panel (visible cuando hay feature seleccionado) -->
+    <aside class="ev-insights-panel" id="ev-insights" style="display:none">
+      <div class="ev-panel-head">
+        <span>🧠 AI Insights</span>
+      </div>
+      <div id="ev-insights-body" class="ev-insights-body"></div>
+    </aside>
   </div>
 
-  <div style="display:grid;grid-template-columns:280px 1fr;gap:14px;min-height:560px">
-    <div id="ev-runs" style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:8px;overflow-y:auto;max-height:80vh"></div>
-    <div id="ev-detail" style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:14px;overflow-y:auto;max-height:80vh">
-      <div style="color:var(--muted);font-size:12px;padding:30px;text-align:center">Selecciona un run para ver detalle.</div>
+  <!-- ── Trigger status modal ── -->
+  <div id="ev-trigger-modal" class="ev-modal-backdrop" onclick="if(event.target===this) ev_closeTriggerModal()">
+    <div class="ev-modal">
+      <div class="ev-modal-head">
+        <div class="ev-modal-title">🚀 Walkthrough en ejecución</div>
+        <button class="ev-modal-close" onclick="ev_closeTriggerModal()">×</button>
+      </div>
+      <div class="ev-modal-body">
+        <div class="ev-spinner"></div>
+        <p>Playwright está recorriendo todas las pestañas del portal. <b>2 a 5 minutos.</b></p>
+        <div id="ev-trigger-status" style="font-family:'Cascadia Mono',monospace;font-size:11px;color:var(--muted);background:var(--bg2);padding:10px;border-radius:6px;margin-top:12px">
+          PID: <span id="ev-trigger-pid">—</span><br>
+          Started: <span id="ev-trigger-started">—</span><br>
+          Status: <span id="ev-trigger-state" style="color:var(--accent)">running...</span>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:10px">
+          Puedes cerrar este modal. El proceso continúa en background.
+          Click 🔄 Refresh cuando termine para ver el nuevo run.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Lightbox para screenshots ── -->
+  <div id="ev-lightbox" class="ev-lightbox" onclick="ev_closeLightbox()">
+    <button class="ev-lightbox-close" onclick="ev_closeLightbox()" aria-label="Cerrar">×</button>
+    <button class="ev-lightbox-nav prev" onclick="event.stopPropagation();ev_lightboxNav(-1)" aria-label="Anterior">‹</button>
+    <button class="ev-lightbox-nav next" onclick="event.stopPropagation();ev_lightboxNav(1)" aria-label="Siguiente">›</button>
+    <img id="ev-lightbox-img" src="" alt="Screenshot" onclick="event.stopPropagation()">
+    <div class="ev-lightbox-caption">
+      <span id="ev-lightbox-caption-text">—</span>
+      <span id="ev-lightbox-counter" class="ev-lightbox-counter">—</span>
     </div>
   </div>
 </section>
@@ -2869,62 +3461,382 @@ async function visSearch() {
 
 // ─── EVIDENCE — QA Walkthrough viewer ──────────────────────────────
 let EV_INDEX = [];
+// ═══════════════════════════════════════════════════════════
+// EVIDENCE TAB - Pro UX (inspired by Playwright Trace Viewer, Sentry Replay)
+// ═══════════════════════════════════════════════════════════
+let EV_FILTER = '';
+let EV_SORT = 'recent';
+let EV_CURRENT_RUN = null;
+let EV_CURRENT_FEATURE_IDX = 0;
+let EV_LIGHTBOX_SHOTS = [];
+let EV_LIGHTBOX_IDX = 0;
+
+function ev_humanizeDate(s) {
+  if (!s) return '—';
+  // Parse "2026-05-17 20:20:23" o ISO
+  const norm = s.replace(' ', 'T');
+  const d = new Date(/Z|\+/.test(norm) ? norm : norm + 'Z');
+  if (isNaN(d.getTime())) return s;
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 60) return 'hace ' + Math.floor(diff) + 's';
+  if (diff < 3600) return 'hace ' + Math.floor(diff / 60) + 'min';
+  if (diff < 86400) return 'hace ' + Math.floor(diff / 3600) + 'h';
+  if (diff < 86400 * 7) return 'hace ' + Math.floor(diff / 86400) + 'd';
+  return d.toLocaleDateString(currentLang === 'en' ? 'en-US' : 'es-ES');
+}
+
 async function evidenceLoad() {
-  document.getElementById('ev-stat').textContent = 'cargando…';
   try {
     EV_INDEX = await (await fetch(`${RUNNER_BASE}/api/evidence/index`)).json();
-    document.getElementById('ev-stat').textContent = `${EV_INDEX.length} runs registrados`;
-    renderEvRuns();
+    ev_updateKPIs();
+    ev_renderRuns();
   } catch (e) {
-    document.getElementById('ev-stat').textContent = 'sin runs · trigger uno nuevo';
-    renderEvRuns();
+    EV_INDEX = [];
+    ev_updateKPIs();
+    ev_renderRuns();
   }
 }
-function renderEvRuns() {
+
+function ev_updateKPIs() {
+  const totalRuns = EV_INDEX.length;
+  const totalFeatures = EV_INDEX.reduce((a, r) => a + (r.total || 0), 0);
+  const totalPass = EV_INDEX.reduce((a, r) => a + (r.passed || 0), 0);
+  const totalFail = EV_INDEX.reduce((a, r) => a + (r.failed || 0), 0);
+  const rate = totalFeatures > 0 ? Math.round((totalPass / totalFeatures) * 100) : 0;
+  const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  setText('ev-kpi-runs', totalRuns);
+  setText('ev-kpi-features', totalFeatures);
+  setText('ev-kpi-pass', totalPass);
+  setText('ev-kpi-fail', totalFail);
+  setText('ev-kpi-rate', rate + '%');
+  const rateEl = document.getElementById('ev-kpi-rate');
+  if (rateEl) rateEl.className = 'ev-kpi-val ' + (rate >= 90 ? 'ok' : rate >= 70 ? '' : 'err');
+}
+
+function ev_runsFiltered() {
+  let runs = EV_INDEX.slice();
+  if (EV_FILTER) {
+    const q = EV_FILTER.toLowerCase();
+    runs = runs.filter(r => (r.run_id || '').toLowerCase().includes(q) || (r.generated_at || '').toLowerCase().includes(q));
+  }
+  switch (EV_SORT) {
+    case 'oldest': runs.sort((a, b) => (a.generated_at || '').localeCompare(b.generated_at || '')); break;
+    case 'best': runs.sort((a, b) => (b.passed / Math.max(1, b.total)) - (a.passed / Math.max(1, a.total))); break;
+    case 'worst': runs.sort((a, b) => (b.failed || 0) - (a.failed || 0)); break;
+    case 'recent':
+    default: runs.sort((a, b) => (b.generated_at || '').localeCompare(a.generated_at || '')); break;
+  }
+  return runs;
+}
+
+function ev_renderRuns() {
   const el = document.getElementById('ev-runs');
-  if (!EV_INDEX.length) { el.innerHTML='<div style="padding:14px;color:var(--muted);font-size:12px">Sin runs. Click 🚀 Trigger.</div>'; return; }
-  el.innerHTML = EV_INDEX.map(r => `
-    <div onclick="evShow('${r.run_id}')" style="padding:10px 12px;margin-bottom:6px;background:var(--bg2);border-radius:4px;cursor:pointer;border-left:3px solid ${r.failed===0?'var(--accent)':'var(--red)'}">
-      <div style="font-size:11px;font-weight:600;font-family:ui-monospace,monospace">${r.run_id}</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:3px">${r.generated_at}</div>
-      <div style="font-size:10px;margin-top:4px"><span style="color:var(--accent)">✓${r.passed}</span> · <span style="color:var(--red)">✗${r.failed}</span> / ${r.total}</div>
-    </div>`).join('');
+  const countEl = document.getElementById('ev-runs-count');
+  if (!el) return;
+  const runs = ev_runsFiltered();
+  if (countEl) countEl.textContent = runs.length;
+
+  if (runs.length === 0) {
+    if (EV_INDEX.length === 0) {
+      el.innerHTML = `<div class="ev-empty" style="padding:32px 16px">
+        <div class="ev-empty-icon" style="font-size:32px">📂</div>
+        <div class="ev-empty-title" style="font-size:12px">Sin runs todavía</div>
+        <div class="ev-empty-hint" style="font-size:10.5px">Click <b>🚀 Nuevo walkthrough</b> arriba</div>
+      </div>`;
+    } else {
+      el.innerHTML = `<div class="ev-empty" style="padding:24px 16px"><div class="ev-empty-hint">Sin coincidencias para "${escapeHtml(EV_FILTER)}"</div></div>`;
+    }
+    return;
+  }
+
+  el.innerHTML = runs.map(r => {
+    const pct = r.total > 0 ? Math.round((r.passed / r.total) * 100) : 0;
+    const cls = r.failed === 0 ? '' : (r.passed > 0 ? 'partial' : 'failed');
+    const isActive = EV_CURRENT_RUN === r.run_id ? 'active' : '';
+    return `<div class="ev-run-card ${cls} ${isActive}" onclick="ev_show('${escapeHtml(r.run_id)}')">
+      <div class="ev-run-id">${escapeHtml(r.run_id)}</div>
+      <div class="ev-run-time">
+        ${escapeHtml(r.generated_at || '—')}
+        <span class="ev-run-rel">· ${ev_humanizeDate(r.generated_at)}</span>
+      </div>
+      <div class="ev-run-stats">
+        <span class="ev-run-stat-pass">✓${r.passed || 0}</span>
+        <span class="ev-run-stat-fail">✗${r.failed || 0}</span>
+        <span class="ev-run-stat-total">/ ${r.total || 0}</span>
+        <span style="margin-left:auto;font-weight:700;color:${pct>=90?'var(--accent)':pct>=70?'var(--orange)':'var(--red)'}">${pct}%</span>
+      </div>
+      <div class="ev-run-bar"><div class="ev-run-bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
 }
-async function evShow(runId) {
+
+function evidenceFilter(v) { EV_FILTER = v || ''; ev_renderRuns(); }
+function evidenceSort(v) { EV_SORT = v || 'recent'; ev_renderRuns(); }
+
+async function ev_show(runId) {
+  EV_CURRENT_RUN = runId;
+  EV_CURRENT_FEATURE_IDX = 0;
+  ev_renderRuns(); // re-render para marcar activo
   const det = document.getElementById('ev-detail');
-  det.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:20px">Cargando manifest…</div>';
+  if (!det) return;
+  det.innerHTML = `<div class="ev-empty" style="padding:60px 20px"><div class="ev-spinner"></div><div class="ev-empty-hint">Cargando manifest...</div></div>`;
+
   try {
-    const m = await (await fetch(`${RUNNER_BASE}/api/evidence/run/${runId}`)).json();
-    det.innerHTML = `
-      <h2 style="font-size:16px;margin-bottom:6px">${escapeHtml(runId)}</h2>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px">${escapeHtml(m.generated_at)} · <b style="color:var(--accent)">${m.summary.passed} pass</b> · <b style="color:var(--red)">${m.summary.failed} fail</b> / ${m.summary.total}</div>
-      ${(m.features||[]).map(f => `
-        <div style="background:var(--bg2);border-left:3px solid ${f.status==='pass'?'var(--accent)':'var(--red)'};border-radius:4px;padding:12px 14px;margin-bottom:14px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <b style="font-size:13px">${f.status==='pass'?'✅':'❌'} ${escapeHtml(f.title)}</b>
-            <code style="font-size:10px;color:var(--muted);margin-left:auto">${f.id}</code>
-          </div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.55;font-style:italic;background:rgba(188,140,255,0.05);border-left:2px solid var(--purple);padding:6px 10px;margin:6px 0">
-            🤖 <b style="color:var(--purple);font-style:normal">Narración IA:</b> ${escapeHtml(f.narration||'(sin narración)')}
-          </div>
-          ${f.video ? `<video controls preload="metadata" style="width:100%;max-height:380px;background:#000;margin:6px 0;border-radius:4px" src="${RUNNER_BASE}/api/evidence/file/${runId}/${f.video.replace(/\\\\/g,'/')}"></video>` : ''}
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
-            ${(f.screenshots||[]).map(s => `<img onclick="embedModal('${escapeHtml(s)}','${RUNNER_BASE}/api/evidence/file/${runId}/screenshots/${f.id}-${s}.jpg',{icon:'📸'})" src="${RUNNER_BASE}/api/evidence/file/${runId}/screenshots/${f.id}-${s}.jpg" style="height:80px;border-radius:3px;cursor:pointer;border:1px solid var(--border)" title="${escapeHtml(s)}">`).join('')}
-          </div>
-          <div style="margin-top:8px"><button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="embedModal('Report · ${f.id}','${RUNNER_BASE}/api/evidence/file/${runId}/${f.id}.md',{icon:'📄'})">📄 Markdown report</button></div>
-        </div>`).join('')}
-    `;
+    const m = await (await fetch(`${RUNNER_BASE}/api/evidence/run/${encodeURIComponent(runId)}`)).json();
+    if (!m || !m.features) throw new Error('Manifest sin features');
+    ev_renderRun(runId, m);
   } catch (e) {
-    det.innerHTML = `<div style="color:var(--red);padding:14px">Error: ${escapeHtml(e.message)}</div>`;
+    det.innerHTML = `<div class="ev-empty"><div class="ev-empty-icon" style="color:var(--red)">⚠️</div>
+      <div class="ev-empty-title" style="color:var(--red)">Error cargando manifest</div>
+      <div class="ev-empty-hint">${escapeHtml(e.message)}</div></div>`;
   }
 }
-async function evidenceTrigger() {
-  if (!confirm('¿Lanzar nuevo walkthrough? Tarda 2-5 min. Verás el resultado al refresh.')) return;
-  try {
-    const r = await (await fetch(`${RUNNER_BASE}/api/evidence/trigger`, {method:'POST'})).json();
-    toast(`🚀 Walkthrough iniciado · PID ${r.pid}<br>Espera 2-5 min y click 🔄 Refresh.`);
-  } catch (e) { toast('❌ '+e.message,'err'); }
+
+function ev_renderRun(runId, m) {
+  const det = document.getElementById('ev-detail');
+  if (!det) return;
+  const sum = m.summary || { total: m.features.length, passed: 0, failed: 0 };
+  const pct = sum.total > 0 ? Math.round((sum.passed / sum.total) * 100) : 0;
+  const cls = sum.failed === 0 ? 'pass' : (sum.passed > 0 ? 'partial' : 'fail');
+
+  det.innerHTML = `
+    <div class="ev-run-header">
+      <div class="ev-run-header-row">
+        <div style="min-width:0;flex:1">
+          <h2>${escapeHtml(runId)}</h2>
+          <div class="ev-run-summary">
+            <span>📅 <b>${escapeHtml(m.generated_at || '—')}</b></span>
+            <span>· ${ev_humanizeDate(m.generated_at)}</span>
+          </div>
+        </div>
+        <span class="ev-pill ${cls}">${sum.passed}/${sum.total} · ${pct}%</span>
+      </div>
+    </div>
+
+    <div class="ev-feature-tabs" id="ev-feature-tabs">
+      ${m.features.map((f, i) => `<button class="ev-feature-tab ${f.status === 'pass' ? 'pass' : 'fail'} ${i === EV_CURRENT_FEATURE_IDX ? 'active' : ''}"
+        onclick="ev_selectFeature(${i})" data-idx="${i}">${escapeHtml(f.id)}</button>`).join('')}
+    </div>
+
+    <div id="ev-feature-content"></div>
+  `;
+  ev_selectFeature(EV_CURRENT_FEATURE_IDX, m);
 }
+
+let EV_CURRENT_MANIFEST = null;
+async function ev_selectFeature(idx, manifest) {
+  if (manifest) EV_CURRENT_MANIFEST = manifest;
+  if (!EV_CURRENT_MANIFEST) {
+    try {
+      EV_CURRENT_MANIFEST = await (await fetch(`${RUNNER_BASE}/api/evidence/run/${encodeURIComponent(EV_CURRENT_RUN)}`)).json();
+    } catch (e) { return; }
+  }
+  EV_CURRENT_FEATURE_IDX = idx;
+  const f = EV_CURRENT_MANIFEST.features[idx];
+  if (!f) return;
+
+  // Update active tab
+  document.querySelectorAll('.ev-feature-tab').forEach(t => {
+    t.classList.toggle('active', parseInt(t.dataset.idx) === idx);
+  });
+
+  const content = document.getElementById('ev-feature-content');
+  if (!content) return;
+
+  const videoSrc = f.video ? `${RUNNER_BASE}/api/evidence/file/${encodeURIComponent(EV_CURRENT_RUN)}/${f.video.replace(/\\\\/g, '/')}` : null;
+  const reportUrl = `${RUNNER_BASE}/api/evidence/file/${encodeURIComponent(EV_CURRENT_RUN)}/${f.id}.md`;
+
+  // Build screenshots URLs
+  EV_LIGHTBOX_SHOTS = (f.screenshots || []).map(s => ({
+    label: s,
+    url: `${RUNNER_BASE}/api/evidence/file/${encodeURIComponent(EV_CURRENT_RUN)}/screenshots/${f.id}-${s}.jpg`,
+  }));
+
+  content.innerHTML = `
+    <div class="ev-feature-content">
+      <div class="ev-feature-header">
+        <span class="ev-pill ${f.status === 'pass' ? 'pass' : 'fail'}">${f.status === 'pass' ? '✓ PASS' : '✗ FAIL'}</span>
+        <h3 class="ev-feature-title">${escapeHtml(f.title || f.id)}</h3>
+        <span class="ev-feature-id">${escapeHtml(f.id)}</span>
+      </div>
+
+      ${videoSrc ? `
+        <div class="ev-video-wrap">
+          <video controls preload="metadata" src="${videoSrc}" id="ev-video"></video>
+        </div>
+        <div class="ev-video-meta">
+          <span>🎥 <b>Video:</b> ${escapeHtml(f.video.split(/[/\\\\]/).pop())}</span>
+          <span>⌨️ <kbd>Space</kbd> play/pause · <kbd>F</kbd> fullscreen · <kbd>←/→</kbd> seek</span>
+        </div>
+      ` : '<div class="ev-empty" style="padding:24px;border-bottom:1px solid var(--border)"><div class="ev-empty-hint">Sin video grabado para esta feature</div></div>'}
+
+      ${f.narration ? `
+        <div class="ev-narration">
+          <div class="ev-narration-head">🤖 Narración IA (Ollama qwen2.5:7b local)</div>
+          <div class="ev-narration-text">${escapeHtml(f.narration)}</div>
+        </div>
+      ` : ''}
+
+      ${EV_LIGHTBOX_SHOTS.length > 0 ? `
+        <div class="ev-shots">
+          <div class="ev-shots-title">📸 Screenshots (${EV_LIGHTBOX_SHOTS.length}) · click para ampliar</div>
+          <div class="ev-shots-grid">
+            ${EV_LIGHTBOX_SHOTS.map((s, i) => `<div class="ev-shot" onclick="ev_openLightbox(${i})">
+              <img src="${s.url}" alt="${escapeHtml(s.label)}" loading="lazy">
+              <div class="ev-shot-label">${escapeHtml(s.label)}</div>
+            </div>`).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      <div class="ev-actions">
+        <a href="${reportUrl}" target="_blank" class="ev-btn ghost">📄 Markdown report</a>
+        ${videoSrc ? `<a href="${videoSrc}" download class="ev-btn ghost">⬇️ Descargar video</a>` : ''}
+        <button class="ev-btn ghost" onclick="ev_copyShareLink('${escapeHtml(EV_CURRENT_RUN)}','${escapeHtml(f.id)}')">🔗 Copiar link</button>
+      </div>
+    </div>
+  `;
+
+  // Insights panel
+  ev_renderInsights(f);
+}
+
+function ev_renderInsights(feature) {
+  const panel = document.getElementById('ev-insights');
+  const body = document.getElementById('ev-insights-body');
+  if (!panel || !body) return;
+  panel.style.display = 'flex';
+
+  const layout = document.querySelector('.ev-layout');
+  if (layout) layout.classList.remove('no-insights');
+
+  // Calc historical pass rate for this feature across all runs
+  let appearances = 0, passes = 0;
+  EV_INDEX.forEach(r => {
+    // We need to fetch each manifest to count - approximation via run summary
+  });
+
+  body.innerHTML = `
+    <div class="ev-insight-card">
+      <div class="ev-insight-title">Status</div>
+      <div class="ev-insight-value"><span class="ev-pill ${feature.status === 'pass' ? 'pass' : 'fail'}">${feature.status === 'pass' ? '✓ PASS' : '✗ FAIL'}</span></div>
+    </div>
+    <div class="ev-insight-card">
+      <div class="ev-insight-title">Feature ID</div>
+      <div class="ev-insight-value" style="font-family:'Cascadia Mono',monospace">${escapeHtml(feature.id)}</div>
+    </div>
+    <div class="ev-insight-card">
+      <div class="ev-insight-title">Artefactos</div>
+      <div class="ev-insight-value" style="font-size:11px">
+        ${feature.video ? '🎥 Video grabado<br>' : ''}
+        ${(feature.screenshots || []).length > 0 ? `📸 ${feature.screenshots.length} screenshots<br>` : ''}
+        ${feature.narration ? '🤖 Narración IA<br>' : ''}
+        ${feature.report_md ? '📄 Reporte markdown' : ''}
+      </div>
+    </div>
+    <div class="ev-insight-card">
+      <div class="ev-insight-title">Acciones rápidas</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+        <button class="ev-btn ghost" style="justify-content:flex-start;font-size:11px;padding:7px 10px" onclick="ev_runAgain('${escapeHtml(feature.id)}')">🔄 Re-ejecutar walkthrough</button>
+        <button class="ev-btn ghost" style="justify-content:flex-start;font-size:11px;padding:7px 10px" onclick="activateTab('${escapeHtml((feature.id || '').split('-')[0])}');location.hash='${escapeHtml((feature.id || '').split('-')[0])}'">🎯 Ir al tab original</button>
+      </div>
+    </div>
+  `;
+}
+
+function ev_copyShareLink(runId, featureId) {
+  const url = `${location.origin}/#evidence/${runId}/${featureId}`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => toast('🔗 Link copiado al portapapeles'));
+  } else { toast('Link: ' + url); }
+}
+
+function ev_runAgain() {
+  evidenceTrigger();
+}
+
+// Lightbox
+function ev_openLightbox(idx) {
+  EV_LIGHTBOX_IDX = idx;
+  const lb = document.getElementById('ev-lightbox');
+  if (!lb || EV_LIGHTBOX_SHOTS.length === 0) return;
+  ev_updateLightbox();
+  lb.classList.add('visible');
+}
+function ev_closeLightbox() {
+  const lb = document.getElementById('ev-lightbox');
+  if (lb) lb.classList.remove('visible');
+}
+function ev_lightboxNav(delta) {
+  if (EV_LIGHTBOX_SHOTS.length === 0) return;
+  EV_LIGHTBOX_IDX = (EV_LIGHTBOX_IDX + delta + EV_LIGHTBOX_SHOTS.length) % EV_LIGHTBOX_SHOTS.length;
+  ev_updateLightbox();
+}
+function ev_updateLightbox() {
+  const img = document.getElementById('ev-lightbox-img');
+  const caption = document.getElementById('ev-lightbox-caption-text');
+  const counter = document.getElementById('ev-lightbox-counter');
+  const shot = EV_LIGHTBOX_SHOTS[EV_LIGHTBOX_IDX];
+  if (img && shot) img.src = shot.url;
+  if (caption && shot) caption.textContent = shot.label;
+  if (counter) counter.textContent = `${EV_LIGHTBOX_IDX + 1} / ${EV_LIGHTBOX_SHOTS.length}`;
+}
+
+// Trigger
+async function evidenceTrigger() {
+  const btn = document.getElementById('ev-trigger-btn');
+  if (btn) btn.disabled = true;
+  try {
+    const r = await (await fetch(`${RUNNER_BASE}/api/evidence/trigger`, { method: 'POST' })).json();
+    if (r.error) throw new Error(r.error);
+
+    // Open status modal
+    const modal = document.getElementById('ev-trigger-modal');
+    const pidEl = document.getElementById('ev-trigger-pid');
+    const startedEl = document.getElementById('ev-trigger-started');
+    if (pidEl) pidEl.textContent = r.pid || '—';
+    if (startedEl) startedEl.textContent = new Date().toLocaleString();
+    if (modal) modal.classList.add('visible');
+
+    toast(`🚀 Walkthrough iniciado · PID ${r.pid}`);
+  } catch (e) {
+    toast('❌ ' + (e.message || 'Error trigger'), 'err');
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+function ev_closeTriggerModal() {
+  const modal = document.getElementById('ev-trigger-modal');
+  if (modal) modal.classList.remove('visible');
+}
+
+// Keyboard shortcuts cuando estamos en #evidence
+document.addEventListener('keydown', (e) => {
+  if (location.hash !== '#evidence') return;
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  // Lightbox navigation
+  const lb = document.getElementById('ev-lightbox');
+  if (lb && lb.classList.contains('visible')) {
+    if (e.key === 'Escape') { ev_closeLightbox(); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { ev_lightboxNav(-1); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { ev_lightboxNav(1); e.preventDefault(); }
+    return;
+  }
+  // Trigger modal escape
+  if (e.key === 'Escape') { ev_closeTriggerModal(); }
+  // R = refresh
+  if (e.key === 'r' || e.key === 'R') { e.preventDefault(); evidenceLoad(); }
+  // J/K para features
+  if (e.key === 'j' || e.key === 'k' || e.key === 'J' || e.key === 'K') {
+    if (EV_CURRENT_MANIFEST?.features) {
+      const delta = (e.key === 'j' || e.key === 'J') ? 1 : -1;
+      const next = (EV_CURRENT_FEATURE_IDX + delta + EV_CURRENT_MANIFEST.features.length) % EV_CURRENT_MANIFEST.features.length;
+      ev_selectFeature(next);
+      e.preventDefault();
+    }
+  }
+});
 
 // ─── PURPLE TEAM TRACKING ──────────────────────────────────────────
 async function loadPurpleData() {
@@ -3261,6 +4173,11 @@ function activateTab(name) {
   }
   document.querySelectorAll('nav.tabs a').forEach(a => a.classList.toggle('active', a.dataset.tabLink === name));
   document.querySelectorAll('section[data-tab]').forEach(s => s.classList.toggle('active', s.dataset.tab === name));
+  // UX: scroll suave para que el tab activo sea visible en nav (cuando hay overflow horizontal)
+  const activeLink = document.querySelector(`nav.tabs a[data-tab-link="${name}"]`);
+  if (activeLink && activeLink.scrollIntoView) {
+    activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
   if (name === 'console') loadConsoleData();
   if (name === 'academia' && ACAD_PLATZI.length === 0) loadAcademia();
   if (name === 'defense') loadDefenseData();
@@ -3272,6 +4189,25 @@ function activateTab(name) {
 }
 document.querySelectorAll('nav.tabs a').forEach(a => {
   a.onclick = (e) => { e.preventDefault(); activateTab(a.dataset.tabLink); location.hash = a.dataset.tabLink; };
+});
+
+// UX: Keyboard shortcuts Alt+1..9 para los primeros tabs visibles
+document.addEventListener('keydown', (e) => {
+  if (!e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  // Solo si NO estamos escribiendo en un input/textarea
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  const n = parseInt(e.key);
+  if (!isNaN(n) && n >= 1 && n <= 9) {
+    const visibleTabs = Array.from(document.querySelectorAll('nav.tabs a'))
+      .filter(a => getComputedStyle(a).display !== 'none');
+    const target = visibleTabs[n - 1];
+    if (target) {
+      e.preventDefault();
+      activateTab(target.dataset.tabLink);
+      location.hash = target.dataset.tabLink;
+    }
+  }
 });
 
 // ─── ATTACK CONSOLE ────────────────────────────────────────────────

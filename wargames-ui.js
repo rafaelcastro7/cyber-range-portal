@@ -126,9 +126,17 @@ const WG_UI = (() => {
   }
 
   function translatePage() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
+    // CRITICO: scope solo al contenedor war games (no pisar i18n global del portal)
+    // Y solo aplica si el WG_UI tiene la traduccion (sino deja el texto fallback)
+    const root = document.getElementById('wg-container');
+    if (!root) return;
+    root.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      el.textContent = t(key);
+      const dict = translations[currentLang] || translations.en;
+      // Solo traducir si la key existe en NUESTRO diccionario
+      if (dict && Object.prototype.hasOwnProperty.call(dict, key)) {
+        el.textContent = dict[key];
+      }
     });
   }
 
