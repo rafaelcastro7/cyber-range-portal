@@ -350,6 +350,88 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     MITRE ATT&CK MATRIX PRO - Full matrix + drill-down panel
+     Inspired by: MITRE Navigator, DeTT&CT, AttackIQ, Splunk Security Essentials
+     ═══════════════════════════════════════════════════════════ */
+  .mx-toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; }
+  .mx-toolbar input, .mx-toolbar select { background: var(--bg2); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 11px; }
+  .mx-toolbar input { min-width: 280px; }
+  .mx-toolbar input:focus, .mx-toolbar select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .mx-spacer { flex: 1; }
+  .mx-kpi { background: var(--bg2); padding: 5px 12px; border-radius: 99px; font-size: 11px; color: var(--muted); border: 1px solid var(--border); font-family: 'Cascadia Mono', monospace; }
+  .mx-kpi b { color: var(--fg); }
+
+  .mx-matrix-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; padding: 0; }
+  .mx-matrix { display: grid; grid-auto-flow: column; gap: 8px; padding: 12px; min-width: 1400px; }
+  .mx-tactic { display: flex; flex-direction: column; min-width: 150px; }
+  .mx-tactic-head { font-size: 10.5px; font-weight: 800; color: var(--fg); text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 8px; background: linear-gradient(135deg, rgba(199,156,255,0.12), transparent); border-radius: 5px; margin-bottom: 5px; text-align: center; border-bottom: 2px solid var(--purple); }
+  .mx-tactic-count { display: block; font-size: 9px; color: var(--muted); font-weight: 600; margin-top: 2px; letter-spacing: 0.2px; }
+
+  .mx-tech {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 6px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 3px;
+    position: relative;
+  }
+  .mx-tech:hover { transform: translateX(2px); border-color: var(--accent); }
+  .mx-tech.executed { background: rgba(85,214,139,0.12); border-color: var(--accent); }
+  .mx-tech.lab { background: rgba(255,174,87,0.08); border-color: rgba(255,174,87,0.4); }
+  .mx-tech.actor { box-shadow: inset 0 0 0 2px var(--red); }
+  .mx-tech-id { font-family: 'Cascadia Mono', monospace; font-size: 9px; color: var(--muted); font-weight: 700; }
+  .mx-tech.executed .mx-tech-id { color: var(--accent); }
+  .mx-tech-name { color: var(--fg); font-weight: 600; line-height: 1.3; margin-top: 2px; }
+  .mx-tech-meta { display: flex; gap: 4px; margin-top: 3px; flex-wrap: wrap; }
+  .mx-tech-badge { font-size: 8.5px; padding: 1px 5px; border-radius: 3px; background: rgba(255,255,255,0.05); color: var(--muted); }
+  .mx-tech-badge.runs { background: rgba(85,214,139,0.2); color: var(--accent); }
+  .mx-tech-badge.subs { background: rgba(199,156,255,0.15); color: var(--purple); }
+  .mx-tech-hidden { display: none !important; }
+
+  /* Drawer (side panel for technique detail) */
+  .mx-drawer {
+    position: fixed; right: 0; top: 0;
+    height: 100vh; width: min(620px, 92vw);
+    background: var(--card);
+    border-left: 1px solid var(--border);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+    transform: translateX(100%);
+    transition: transform 0.25s ease-out;
+    z-index: 9997;
+    overflow-y: auto;
+  }
+  .mx-drawer.open { transform: translateX(0); }
+  .mx-drawer-content { padding: 0; }
+  .mx-drawer-head { padding: 18px 22px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--card); z-index: 2; display: flex; gap: 12px; align-items: flex-start; }
+  .mx-drawer-id { display: inline-block; background: var(--bg2); padding: 4px 10px; border-radius: 6px; font-family: 'Cascadia Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 700; }
+  .mx-drawer-title { font-size: 17px; font-weight: 800; color: var(--fg); margin: 4px 0; }
+  .mx-drawer-tactic { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .mx-drawer-close { background: transparent; border: 1px solid var(--border); color: var(--muted); width: 30px; height: 30px; border-radius: 6px; cursor: pointer; flex-shrink: 0; }
+  .mx-drawer-close:hover { background: var(--bg2); color: var(--red); }
+  .mx-drawer-section { padding: 14px 22px; border-bottom: 1px solid var(--border); }
+  .mx-drawer-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; font-weight: 700; }
+  .mx-drawer-section p { font-size: 12px; line-height: 1.55; color: var(--fg); margin: 0; }
+  .mx-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+  .mx-chip { padding: 3px 9px; border-radius: 99px; background: var(--bg2); border: 1px solid var(--border); font-size: 10.5px; color: var(--fg); }
+  .mx-chip.purple { background: rgba(199,156,255,0.12); color: var(--purple); border-color: rgba(199,156,255,0.3); }
+  .mx-chip.red { background: rgba(255,92,87,0.12); color: var(--red); border-color: rgba(255,92,87,0.3); }
+  .mx-chip.blue { background: rgba(107,183,255,0.12); color: var(--blue); border-color: rgba(107,183,255,0.3); }
+  .mx-chip.accent { background: rgba(85,214,139,0.12); color: var(--accent); border-color: rgba(85,214,139,0.3); }
+  .mx-pb-card { background: var(--bg2); border-radius: 6px; padding: 9px 12px; margin-bottom: 5px; border-left: 3px solid var(--red); }
+  .mx-pb-name { font-size: 11.5px; font-weight: 700; color: var(--fg); }
+  .mx-pb-meta { font-size: 10px; color: var(--muted); margin-top: 2px; font-family: 'Cascadia Mono', monospace; }
+  .mx-pb-actions { display: flex; gap: 4px; margin-top: 6px; }
+  .mx-stat-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .mx-stat { flex: 1; min-width: 100px; background: var(--bg2); border-radius: 6px; padding: 8px 12px; text-align: center; }
+  .mx-stat-val { font-size: 18px; font-weight: 800; font-family: 'Cascadia Mono', monospace; color: var(--fg); }
+  .mx-stat-lab { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 2px; font-weight: 700; }
+  .mx-link-row a { display: inline-flex; gap: 5px; align-items: center; padding: 4px 9px; background: var(--bg2); border-radius: 99px; font-size: 10.5px; color: var(--fg); text-decoration: none; border: 1px solid var(--border); }
+  .mx-link-row a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ═══════════════════════════════════════════════════════════
      PWNBOX PRO - HTB-style + Kasm Workspaces + TryHackMe AttackBox
      ═══════════════════════════════════════════════════════════ */
   .pwn-hero { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(255,92,87,0.06), rgba(255,174,87,0.04)); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
@@ -1502,19 +1584,45 @@
     Containerlab v0.75 + visualización <b>GNS3-style</b> via Cytoscape.js. Hover en cada nodo para info, doble-click para terminal embebida, click derecho para acciones.
   </div>
 
+  <!-- ── KPI strip ── -->
+  <div id="cl-kpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px"></div>
+
   <!-- VISUAL TOPOLOGY -->
   <div style="background:#0d1117;border:1px solid var(--border);border-radius:8px;padding:0;margin-bottom:18px;overflow:hidden">
     <div style="padding:8px 14px;background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-      <b style="color:var(--blue);font-size:13px">🗺️ Topología visual interactiva</b>
-      <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="cyLayout('cose')">Auto-layout</button>
+      <b style="color:var(--blue);font-size:13px">🗺️ Topología visual interactiva · live</b>
+      <input id="cl-search" placeholder="🔍 Buscar..." oninput="clSearch(this.value)" style="background:var(--bg2);color:var(--fg);border:1px solid var(--border);border-radius:4px;padding:4px 8px;font-size:11px;width:140px"/>
+      <span class="cl-filter-chip active" data-tier="all" onclick="clFilterTier(this,'all')">Todos</span>
+      <span class="cl-filter-chip" data-tier="red" onclick="clFilterTier(this,'red')" style="color:var(--red)">🔴 Red</span>
+      <span class="cl-filter-chip" data-tier="target" onclick="clFilterTier(this,'target')" style="color:var(--orange)">🎯 Target</span>
+      <span class="cl-filter-chip" data-tier="blue" onclick="clFilterTier(this,'blue')" style="color:var(--blue)">🛡️ Blue</span>
+      <span class="cl-filter-chip" data-tier="mgmt" onclick="clFilterTier(this,'mgmt')" style="color:var(--yellow)">🟡 Mgmt</span>
+      <span style="width:1px;height:18px;background:var(--border);margin:0 4px"></span>
+      <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="cyLayout('cose')">Auto</button>
       <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="cyLayout('circle')">Circle</button>
       <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="cyLayout('grid')">Grid</button>
       <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="cyLayout('breadthfirst')">Tree</button>
-      <span style="margin-left:auto;font-size:10.5px;color:var(--muted)">💡 doble-click → terminal · click → info</span>
+      <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px;border-color:var(--accent);color:var(--accent)" onclick="clRefreshLive()" title="Refresh live status">↻ Live</button>
+      <span style="margin-left:auto;font-size:10.5px;color:var(--muted)" id="cl-live-stat">—</span>
     </div>
-    <div id="cy-topology" style="width:100%;height:520px;background:#04060c"></div>
+    <div id="cy-topology" style="width:100%;height:560px;background:#04060c;position:relative">
+      <div id="cl-legend" style="position:absolute;bottom:8px;right:8px;background:rgba(5,7,13,0.85);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:10px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;z-index:5;pointer-events:none">
+        <span><span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%"></span> UP</span>
+        <span><span style="display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%"></span> Restarting</span>
+        <span><span style="display:inline-block;width:8px;height:8px;background:var(--red);border-radius:50%"></span> Down</span>
+        <span><span style="display:inline-block;width:8px;height:8px;background:var(--muted);border-radius:50%"></span> Not deployed</span>
+      </div>
+    </div>
     <div id="cy-detail" style="display:none;padding:10px 14px;border-top:1px solid var(--border);background:var(--bg2);font-size:11.5px"></div>
   </div>
+  <style>
+    .cl-filter-chip { padding: 3px 10px; background: var(--bg2); border: 1px solid var(--border); border-radius: 99px; font-size: 10px; font-weight: 700; cursor: pointer; color: var(--muted); transition: all 0.15s; }
+    .cl-filter-chip:hover { color: var(--fg); }
+    .cl-filter-chip.active { background: var(--accent); color: #04110b; border-color: var(--accent); }
+    .cl-kpi { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; text-align: center; }
+    .cl-kpi-val { font-size: 18px; font-weight: 800; font-family: 'Cascadia Mono', monospace; line-height: 1; }
+    .cl-kpi-lab { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 3px; font-weight: 700; }
+  </style>
   <script src="https://unpkg.com/cytoscape@3.30.0/dist/cytoscape.min.js"></script>
   <script>
   // Topology data: cyber-range full network
@@ -1631,6 +1739,107 @@
     });
   }
   function cyLayout(name) { if (CY) CY.layout({name, animate:true, fit:true, padding:30}).run(); }
+
+  // ─── LIVE STATUS OVERLAY (AUDIT 2026-05-21) ───
+  let CL_LIVE_INTERVAL = null;
+  let CL_TIER_FILTER = 'all';
+  let CL_SEARCH = '';
+
+  async function clRefreshLive() {
+    if (!CY) return;
+    try {
+      // Una sola llamada al endpoint plural (mucho más rápido que N llamadas individuales)
+      let containers = [];
+      try {
+        const r = await fetch(`${RUNNER_BASE}/api/containers`, { signal: AbortSignal.timeout(20000) });
+        if (r.ok) containers = await r.json();
+      } catch {}
+      const byName = {};
+      containers.forEach(c => { if (c.name) byName[c.name] = c; });
+
+      // Map node container -> status
+      const nodes = CY.nodes().toArray().filter(n => n.data('container'));
+      const results = nodes.map(n => {
+        const cn = n.data('container');
+        const c = byName[cn];
+        return { node: n, status: c ? c.state : 'not_deployed' };
+      });
+
+      let up = 0, down = 0, restarting = 0, notDeployed = 0;
+      results.forEach(({ node, status }) => {
+        const s = String(status || '').toLowerCase();
+        const st = (s === 'running' || s === 'up' || s === 'healthy') ? 'up'
+                 : (s === 'restarting' || s === 'starting') ? 'restarting'
+                 : (s === 'not_deployed' || s === 'not-found') ? 'not_deployed'
+                 : 'down';
+        node.data('liveStatus', st);
+        if (st === 'up') up++; else if (st === 'restarting') restarting++; else if (st === 'down') down++; else notDeployed++;
+        const borderColor = st === 'up' ? '#55d68b' : st === 'restarting' ? '#ffae57' : st === 'down' ? '#ff5c57' : '#91a0b8';
+        node.style({ 'border-color': borderColor, 'border-width': st === 'up' ? 3 : 2 });
+      });
+      const total = results.length;
+
+      // KPI strip
+      const kpiEl = document.getElementById('cl-kpis');
+      if (kpiEl) {
+        const pct = total > 0 ? Math.round((up / total) * 100) : 0;
+        kpiEl.innerHTML = `
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:var(--fg)">${total}</div><div class="cl-kpi-lab">Total nodes</div></div>
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:var(--accent)">${up}</div><div class="cl-kpi-lab">UP</div></div>
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:var(--orange)">${restarting}</div><div class="cl-kpi-lab">Restarting</div></div>
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:var(--red)">${down}</div><div class="cl-kpi-lab">Down</div></div>
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:var(--muted)">${notDeployed}</div><div class="cl-kpi-lab">Not deployed</div></div>
+          <div class="cl-kpi"><div class="cl-kpi-val" style="color:${pct>=90?'var(--accent)':pct>=70?'var(--orange)':'var(--red)'}">${pct}%</div><div class="cl-kpi-lab">Healthy</div></div>
+        `;
+      }
+      const liveStat = document.getElementById('cl-live-stat');
+      if (liveStat) liveStat.textContent = `live · refresh ${new Date().toLocaleTimeString()}`;
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  function clFilterTier(el, tier) {
+    CL_TIER_FILTER = tier;
+    document.querySelectorAll('.cl-filter-chip').forEach(c => c.classList.toggle('active', c === el));
+    clApplyFilter();
+  }
+
+  function clSearch(q) {
+    CL_SEARCH = (q || '').toLowerCase();
+    clApplyFilter();
+  }
+
+  function clApplyFilter() {
+    if (!CY) return;
+    CY.elements().show();
+    CY.nodes().forEach(n => {
+      const data = n.data();
+      const matchTier = CL_TIER_FILTER === 'all' || data.type === CL_TIER_FILTER || data.type === 'network';
+      const matchSearch = !CL_SEARCH || (data.label || '').toLowerCase().includes(CL_SEARCH) || (data.container || '').toLowerCase().includes(CL_SEARCH);
+      if (!matchTier || !matchSearch) n.hide();
+    });
+    // Hide edges with at least one hidden endpoint
+    CY.edges().forEach(e => {
+      if (e.source().hidden() || e.target().hidden()) e.hide();
+    });
+  }
+
+  // Auto-refresh live status cada 10s mientras el tab está activo
+  function clStartLivePolling() {
+    if (CL_LIVE_INTERVAL) clearInterval(CL_LIVE_INTERVAL);
+    clRefreshLive();
+    CL_LIVE_INTERVAL = setInterval(() => {
+      if (location.hash === '#containerlab') clRefreshLive();
+    }, 10000);
+  }
+
+  // Hook into tab activation
+  const _origInitCy = initCytoscape;
+  initCytoscape = function() {
+    _origInitCy();
+    setTimeout(clStartLivePolling, 1000);
+  };
   </script>
 
 
@@ -2420,24 +2629,47 @@
 </section>
 
 <section data-tab="mitre">
-  <div class="section-title purple" data-i18n="sec_mitre">MITRE ATT&CK Matrix · Click técnica → detalle inline</div>
-  <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-    <button class="btn-ghost" onclick="openNavigator()">🗺️ Open ATT&CK Navigator (full UI)</button>
-    <button class="btn-ghost" onclick="embedModal('Guacamole — Clientless SSH/RDP/VNC','http://localhost:8485/guacamole/',{icon:'🖥️',note:'Login: guacadmin / guacadmin'})">🖥️ Open Guacamole (clientless access)</button>
-    <span style="font-size:11px;color:var(--muted);align-self:center">Navigator oficial embebido · zero-tracking</span>
+  <div class="section-title purple">🧬 MITRE ATT&CK · Full Matrix + Drill-Down · Enterprise v15</div>
+
+  <!-- ── Pro toolbar ── -->
+  <div class="mx-toolbar">
+    <input type="text" id="mx-search" placeholder="🔍 Buscar técnica (T1190, sql, kerberos...)" oninput="mxSearch(this.value)">
+    <select id="mx-status-filter" onchange="mxStatusFilter(this.value)">
+      <option value="all">Todos los estados</option>
+      <option value="executed">✓ Ejecutadas (con runs)</option>
+      <option value="lab">🟢 Con lab activo</option>
+      <option value="uncovered">⚪ Sin cobertura</option>
+    </select>
+    <select id="mx-actor-filter" onchange="mxActorFilter(this.value)">
+      <option value="all">Todos los actores</option>
+      <option value="apt29">APT29 (Cozy Bear)</option>
+      <option value="apt28">APT28 (Fancy Bear)</option>
+      <option value="fin7">FIN7</option>
+      <option value="lazarus">Lazarus</option>
+      <option value="conti">Conti/Ryuk</option>
+    </select>
+    <span class="mx-spacer"></span>
+    <span class="mx-kpi"><b id="mx-kpi-total">0</b> techniques</span>
+    <span class="mx-kpi"><b id="mx-kpi-executed" style="color:var(--accent)">0</b> executed</span>
+    <span class="mx-kpi"><b id="mx-kpi-with-lab" style="color:var(--orange)">0</b> with lab</span>
+    <span class="mx-kpi"><b id="mx-kpi-coverage" style="color:var(--purple)">0%</b> coverage</span>
+    <button class="btn-ghost" style="font-size:10.5px;padding:4px 10px" onclick="openNavigator()">🗺️ ATT&CK Navigator</button>
   </div>
-  <div class="mitre-legend">
-    <span><span class="lg-box" style="background: rgba(63,185,80,0.3); border:1px solid var(--accent)"></span>Cobertura con lab activo</span>
-    <span><span class="lg-box" style="background: var(--card); border:1px solid var(--border)"></span>Sin lab</span>
-    <span style="margin-left:auto; color:var(--accent)"><b id="mitre-covered">0</b> técnicas cubiertas</span>
+
+  <!-- ── Matrix view (full Enterprise) ── -->
+  <div class="mx-matrix-wrap">
+    <div id="mx-matrix" class="mx-matrix"></div>
   </div>
-  <div class="mitre-matrix" id="mitre-matrix"></div>
-  <div id="mitre-drawer" style="display:none; margin-top:20px; background:var(--card); border:1px solid var(--accent); border-radius:8px; padding:20px; position:relative">
-    <button onclick="document.getElementById('mitre-drawer').style.display='none'" style="position:absolute;top:10px;right:14px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer">×</button>
-    <div id="mitre-detail"></div>
+
+  <!-- ── Drill-down side drawer ── -->
+  <div id="mx-drawer" class="mx-drawer">
+    <div class="mx-drawer-content" id="mx-drawer-content"></div>
   </div>
-  <p style="margin-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.6">
-    <b>336 Atomic Red Team techniques</b> · <b>3132 Sigma rules</b> · <b>328 Vulhub CVE labs</b> · ejecutables vía Console tab
+
+  <p style="margin-top: 14px; color: var(--muted); font-size: 11px; line-height: 1.55">
+    💡 Click cualquier técnica → drawer con sub-techniques · detection · mitigation · related playbooks · Sigma rules · Atomic tests · Vulhub labs · actores conocidos.
+    Coverage live calculado de tu attack-runner history + 13 playbooks locales.
+    <b>336 Atomic Red Team techniques</b> · <b>3132 Sigma rules</b> · <b>328 Vulhub CVE labs</b>.
   </p>
 </section>
 
@@ -3309,8 +3541,362 @@ function showTechniqueDetail(id, name, covered, tactic) {
   loadMitrePlaybooks(id);
 }
 
+// ═══════════════════════════════════════════════════════════
+// MITRE ATT&CK PRO - Full matrix + drill-down (AUDIT 2026-05-21)
+// Inspired by: MITRE Navigator, DeTT&CT, AttackIQ, Splunk SSE
+// Dataset CURADO de techniques más relevantes para el lab (Enterprise v15)
+// ═══════════════════════════════════════════════════════════
+const MX_TACTICS = ['Reconnaissance','Resource Development','Initial Access','Execution','Persistence','Privilege Escalation','Defense Evasion','Credential Access','Discovery','Lateral Movement','Collection','Command and Control','Exfiltration','Impact'];
+
+// Dataset curado (~120 techniques + sub-techniques) cubriendo todos los playbooks + APT scenarios + atomic-red-team essentials
+const MX_DATA = [
+  // Reconnaissance
+  {id:'T1595',name:'Active Scanning',tactic:'Reconnaissance',desc:'Probes a target to gather information that can be used during targeting.',subs:['T1595.001','T1595.002','T1595.003'],detection:'Network traffic anomalies, IDS signatures (nmap fingerprint)',mitigation:'Limit info disclosure, filter inbound scans'},
+  {id:'T1595.001',name:'Scanning IP Blocks',tactic:'Reconnaissance',parent:'T1595'},
+  {id:'T1595.002',name:'Vulnerability Scanning',tactic:'Reconnaissance',parent:'T1595'},
+  {id:'T1592',name:'Gather Victim Host Information',tactic:'Reconnaissance',desc:'Information about victim hosts (hardware, OS, software, config).'},
+  {id:'T1589',name:'Gather Victim Identity Information',tactic:'Reconnaissance',desc:'Credentials, emails, employee names.'},
+  {id:'T1590',name:'Gather Victim Network Information',tactic:'Reconnaissance'},
+  {id:'T1593',name:'Search Open Websites/Domains',tactic:'Reconnaissance'},
+  {id:'T1598',name:'Phishing for Information',tactic:'Reconnaissance'},
+
+  // Resource Development
+  {id:'T1583',name:'Acquire Infrastructure',tactic:'Resource Development'},
+  {id:'T1587',name:'Develop Capabilities',tactic:'Resource Development'},
+  {id:'T1588',name:'Obtain Capabilities',tactic:'Resource Development'},
+
+  // Initial Access
+  {id:'T1190',name:'Exploit Public-Facing Application',tactic:'Initial Access',desc:'Exploit a weakness in an Internet-facing computer or program using software, data, or commands to cause unintended behavior.',detection:'WAF alerts, anomalous HTTP requests, OWASP rules',mitigation:'Patch management, WAF, network segmentation, SAST/DAST',examples:'SQL Injection, RCE in web apps, OWASP Top 10'},
+  {id:'T1078',name:'Valid Accounts',tactic:'Initial Access',subs:['T1078.001','T1078.002','T1078.003','T1078.004']},
+  {id:'T1078.001',name:'Default Accounts',tactic:'Initial Access',parent:'T1078'},
+  {id:'T1078.003',name:'Local Accounts',tactic:'Initial Access',parent:'T1078'},
+  {id:'T1078.004',name:'Cloud Accounts',tactic:'Initial Access',parent:'T1078'},
+  {id:'T1566',name:'Phishing',tactic:'Initial Access',subs:['T1566.001','T1566.002','T1566.003'],desc:'Adversaries send phishing messages to gain access.',detection:'Email gateway filters, user reports',mitigation:'Email filtering, MFA, user training'},
+  {id:'T1566.001',name:'Spearphishing Attachment',tactic:'Initial Access',parent:'T1566'},
+  {id:'T1566.002',name:'Spearphishing Link',tactic:'Initial Access',parent:'T1566'},
+  {id:'T1133',name:'External Remote Services',tactic:'Initial Access'},
+  {id:'T1189',name:'Drive-by Compromise',tactic:'Initial Access'},
+
+  // Execution
+  {id:'T1059',name:'Command and Scripting Interpreter',tactic:'Execution',subs:['T1059.001','T1059.003','T1059.004','T1059.006','T1059.007']},
+  {id:'T1059.001',name:'PowerShell',tactic:'Execution',parent:'T1059'},
+  {id:'T1059.003',name:'Windows Command Shell',tactic:'Execution',parent:'T1059'},
+  {id:'T1059.004',name:'Unix Shell',tactic:'Execution',parent:'T1059'},
+  {id:'T1059.006',name:'Python',tactic:'Execution',parent:'T1059'},
+  {id:'T1203',name:'Exploitation for Client Execution',tactic:'Execution'},
+  {id:'T1204',name:'User Execution',tactic:'Execution',subs:['T1204.001','T1204.002']},
+  {id:'T1204.002',name:'Malicious File',tactic:'Execution',parent:'T1204'},
+  {id:'T1053',name:'Scheduled Task/Job',tactic:'Execution',subs:['T1053.005']},
+  {id:'T1053.005',name:'Scheduled Task',tactic:'Execution',parent:'T1053'},
+
+  // Persistence
+  {id:'T1547',name:'Boot or Logon Autostart Execution',tactic:'Persistence',subs:['T1547.001']},
+  {id:'T1547.001',name:'Registry Run Keys / Startup Folder',tactic:'Persistence',parent:'T1547'},
+  {id:'T1136',name:'Create Account',tactic:'Persistence'},
+  {id:'T1098',name:'Account Manipulation',tactic:'Persistence'},
+  {id:'T1505',name:'Server Software Component',tactic:'Persistence'},
+
+  // Privilege Escalation
+  {id:'T1068',name:'Exploitation for Privilege Escalation',tactic:'Privilege Escalation'},
+  {id:'T1055',name:'Process Injection',tactic:'Privilege Escalation'},
+  {id:'T1548',name:'Abuse Elevation Control Mechanism',tactic:'Privilege Escalation'},
+  {id:'T1134',name:'Access Token Manipulation',tactic:'Privilege Escalation'},
+
+  // Defense Evasion
+  {id:'T1027',name:'Obfuscated Files or Information',tactic:'Defense Evasion'},
+  {id:'T1140',name:'Deobfuscate/Decode Files or Information',tactic:'Defense Evasion'},
+  {id:'T1070',name:'Indicator Removal',tactic:'Defense Evasion'},
+  {id:'T1218',name:'System Binary Proxy Execution',tactic:'Defense Evasion',subs:['T1218.011']},
+  {id:'T1218.011',name:'Rundll32',tactic:'Defense Evasion',parent:'T1218'},
+  {id:'T1036',name:'Masquerading',tactic:'Defense Evasion'},
+  {id:'T1562',name:'Impair Defenses',tactic:'Defense Evasion'},
+
+  // Credential Access
+  {id:'T1003',name:'OS Credential Dumping',tactic:'Credential Access',subs:['T1003.001','T1003.002']},
+  {id:'T1003.001',name:'LSASS Memory',tactic:'Credential Access',parent:'T1003'},
+  {id:'T1110',name:'Brute Force',tactic:'Credential Access',subs:['T1110.001','T1110.002','T1110.003','T1110.004'],desc:'Adversaries use brute force techniques to gain access.',detection:'Failed login spikes, lockout alerts',mitigation:'MFA, account lockouts, strong password policy'},
+  {id:'T1110.001',name:'Password Guessing',tactic:'Credential Access',parent:'T1110'},
+  {id:'T1110.002',name:'Password Cracking',tactic:'Credential Access',parent:'T1110'},
+  {id:'T1110.003',name:'Password Spraying',tactic:'Credential Access',parent:'T1110'},
+  {id:'T1555',name:'Credentials from Password Stores',tactic:'Credential Access'},
+  {id:'T1558',name:'Steal or Forge Kerberos Tickets',tactic:'Credential Access'},
+  {id:'T1187',name:'Forced Authentication',tactic:'Credential Access'},
+
+  // Discovery
+  {id:'T1018',name:'Remote System Discovery',tactic:'Discovery'},
+  {id:'T1046',name:'Network Service Discovery',tactic:'Discovery',desc:'Adversaries attempt to get a listing of services running on remote hosts.',detection:'Port scanning patterns, Suricata signatures',mitigation:'Network segmentation, firewall rules'},
+  {id:'T1082',name:'System Information Discovery',tactic:'Discovery'},
+  {id:'T1083',name:'File and Directory Discovery',tactic:'Discovery'},
+  {id:'T1135',name:'Network Share Discovery',tactic:'Discovery'},
+  {id:'T1057',name:'Process Discovery',tactic:'Discovery'},
+  {id:'T1087',name:'Account Discovery',tactic:'Discovery'},
+  {id:'T1016',name:'System Network Configuration Discovery',tactic:'Discovery'},
+  {id:'T1518',name:'Software Discovery',tactic:'Discovery'},
+
+  // Lateral Movement
+  {id:'T1021',name:'Remote Services',tactic:'Lateral Movement',subs:['T1021.001','T1021.002','T1021.004']},
+  {id:'T1021.001',name:'Remote Desktop Protocol',tactic:'Lateral Movement',parent:'T1021'},
+  {id:'T1021.002',name:'SMB/Windows Admin Shares',tactic:'Lateral Movement',parent:'T1021'},
+  {id:'T1570',name:'Lateral Tool Transfer',tactic:'Lateral Movement'},
+  {id:'T1550',name:'Use Alternate Authentication Material',tactic:'Lateral Movement'},
+  {id:'T1210',name:'Exploitation of Remote Services',tactic:'Lateral Movement'},
+
+  // Collection
+  {id:'T1005',name:'Data from Local System',tactic:'Collection'},
+  {id:'T1560',name:'Archive Collected Data',tactic:'Collection'},
+  {id:'T1119',name:'Automated Collection',tactic:'Collection'},
+
+  // Command and Control
+  {id:'T1071',name:'Application Layer Protocol',tactic:'Command and Control',subs:['T1071.001']},
+  {id:'T1071.001',name:'Web Protocols',tactic:'Command and Control',parent:'T1071'},
+  {id:'T1105',name:'Ingress Tool Transfer',tactic:'Command and Control'},
+  {id:'T1573',name:'Encrypted Channel',tactic:'Command and Control'},
+  {id:'T1090',name:'Proxy',tactic:'Command and Control'},
+
+  // Exfiltration
+  {id:'T1041',name:'Exfiltration Over C2 Channel',tactic:'Exfiltration'},
+  {id:'T1567',name:'Exfiltration Over Web Service',tactic:'Exfiltration'},
+
+  // Impact
+  {id:'T1485',name:'Data Destruction',tactic:'Impact'},
+  {id:'T1486',name:'Data Encrypted for Impact',tactic:'Impact',desc:'Encrypts data on target systems to interrupt availability (ransomware).',detection:'Mass file modifications, shadow copy deletions',mitigation:'Backups offline, EDR, MFA on backup systems'},
+  {id:'T1489',name:'Service Stop',tactic:'Impact'},
+  {id:'T1490',name:'Inhibit System Recovery',tactic:'Impact'},
+  {id:'T1496',name:'Resource Hijacking',tactic:'Impact'},
+];
+
+// Threat actor mappings (from playbooks)
+const MX_ACTORS = {
+  apt29: ['T1566.002','T1059.001','T1547.001','T1003.001','T1071.001','T1041'],
+  apt28: ['T1190','T1059.003','T1078','T1021.001','T1486'],
+  fin7:  ['T1566.001','T1204.002','T1055','T1053.005','T1486'],
+  lazarus:['T1566.001','T1059.003','T1027','T1036','T1485'],
+  conti: ['T1078','T1486','T1490','T1489','T1485'],
+};
+
+let MX_PLAYBOOKS_CACHE = null;
+let MX_HISTORY_CACHE = null;
+let MX_FILTER_QUERY = '';
+let MX_FILTER_STATUS = 'all';
+let MX_FILTER_ACTOR = 'all';
+
+async function mxLoadData() {
+  try {
+    if (!MX_PLAYBOOKS_CACHE) MX_PLAYBOOKS_CACHE = await (await fetch(`${RUNNER_BASE}/api/playbooks`)).json();
+  } catch {}
+  try {
+    MX_HISTORY_CACHE = await (await fetch(`${RUNNER_BASE}/api/history`)).json();
+  } catch {}
+}
+
+function mxGetTechniqueStats(techId) {
+  // Cuántos playbooks tienen esta técnica
+  const playbooks = (MX_PLAYBOOKS_CACHE || []).filter(p => (p.mitre || []).includes(techId));
+  // Cuántas veces se ejecutó (history)
+  const runs = (MX_HISTORY_CACHE || []).filter(h => {
+    const pb = (MX_PLAYBOOKS_CACHE || []).find(p => p.id === h.playbookId);
+    return pb && (pb.mitre || []).includes(techId);
+  });
+  // Sub-techniques
+  const subs = MX_DATA.filter(t => t.parent === techId);
+  return { playbooks, runs, subs, hasLab: playbooks.length > 0, executed: runs.length > 0 };
+}
+
+function mxRenderMatrix() {
+  const root = document.getElementById('mx-matrix');
+  if (!root) return;
+
+  const q = MX_FILTER_QUERY.toLowerCase();
+  const actorTechs = MX_FILTER_ACTOR !== 'all' ? (MX_ACTORS[MX_FILTER_ACTOR] || []) : [];
+
+  // Group by tactic
+  const byTactic = {};
+  MX_TACTICS.forEach(t => byTactic[t] = []);
+  MX_DATA.filter(t => !t.parent).forEach(t => {  // top-level only en matriz
+    if (byTactic[t.tactic]) byTactic[t.tactic].push(t);
+  });
+
+  let total = 0, executed = 0, withLab = 0;
+
+  root.innerHTML = MX_TACTICS.map(tactic => {
+    const techs = byTactic[tactic] || [];
+    return `<div class="mx-tactic">
+      <div class="mx-tactic-head">
+        ${tactic}
+        <span class="mx-tactic-count">${techs.length} tech</span>
+      </div>
+      ${techs.map(t => {
+        const stats = mxGetTechniqueStats(t.id);
+        total++;
+        if (stats.executed) executed++;
+        if (stats.hasLab) withLab++;
+
+        const matchSearch = !q || t.id.toLowerCase().includes(q) || t.name.toLowerCase().includes(q);
+        const matchStatus = MX_FILTER_STATUS === 'all'
+          || (MX_FILTER_STATUS === 'executed' && stats.executed)
+          || (MX_FILTER_STATUS === 'lab' && stats.hasLab)
+          || (MX_FILTER_STATUS === 'uncovered' && !stats.hasLab);
+        const matchActor = MX_FILTER_ACTOR === 'all' || actorTechs.some(at => at === t.id || at.startsWith(t.id + '.'));
+
+        const visible = matchSearch && matchStatus && matchActor;
+        const classes = [
+          'mx-tech',
+          stats.executed ? 'executed' : '',
+          stats.hasLab && !stats.executed ? 'lab' : '',
+          matchActor && MX_FILTER_ACTOR !== 'all' ? 'actor' : '',
+          !visible ? 'mx-tech-hidden' : '',
+        ].filter(Boolean).join(' ');
+
+        return `<div class="${classes}" onclick="mxOpenDrawer('${t.id}')">
+          <div class="mx-tech-id">${t.id}</div>
+          <div class="mx-tech-name">${escapeHtml(t.name)}</div>
+          <div class="mx-tech-meta">
+            ${stats.subs.length > 0 ? `<span class="mx-tech-badge subs">${stats.subs.length} subs</span>` : ''}
+            ${stats.playbooks.length > 0 ? `<span class="mx-tech-badge runs">${stats.playbooks.length}pb</span>` : ''}
+            ${stats.runs.length > 0 ? `<span class="mx-tech-badge runs">${stats.runs.length}×</span>` : ''}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+
+  // Update KPIs
+  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  setText('mx-kpi-total', total);
+  setText('mx-kpi-executed', executed);
+  setText('mx-kpi-with-lab', withLab);
+  setText('mx-kpi-coverage', Math.round((withLab / total) * 100) + '%');
+}
+
+function mxSearch(v) { MX_FILTER_QUERY = v || ''; mxRenderMatrix(); }
+function mxStatusFilter(v) { MX_FILTER_STATUS = v || 'all'; mxRenderMatrix(); }
+function mxActorFilter(v) { MX_FILTER_ACTOR = v || 'all'; mxRenderMatrix(); }
+
+function mxOpenDrawer(techId) {
+  const t = MX_DATA.find(x => x.id === techId);
+  if (!t) return;
+  const stats = mxGetTechniqueStats(techId);
+  const drawer = document.getElementById('mx-drawer');
+  const content = document.getElementById('mx-drawer-content');
+  if (!drawer || !content) return;
+
+  const subTechs = MX_DATA.filter(x => x.parent === techId);
+  const navUrl = `https://attack.mitre.org/techniques/${techId.replace('.', '/')}/`;
+  const sigmaUrl = `https://sigmahq.io/`;
+  const atomicUrl = `https://github.com/redcanaryco/atomic-red-team/tree/master/atomics/${techId}`;
+  const vulhubUrl = `https://github.com/vulhub/vulhub`;
+
+  // Find actors using this technique
+  const actors = Object.entries(MX_ACTORS).filter(([k, techs]) => techs.some(at => at === techId || at.startsWith(techId + '.'))).map(([k]) => k);
+
+  content.innerHTML = `
+    <div class="mx-drawer-head">
+      <div style="flex:1;min-width:0">
+        <div class="mx-drawer-id">${t.id}</div>
+        <h2 class="mx-drawer-title">${escapeHtml(t.name)}</h2>
+        <div class="mx-drawer-tactic">${escapeHtml(t.tactic)}</div>
+      </div>
+      <button class="mx-drawer-close" onclick="mxCloseDrawer()">×</button>
+    </div>
+
+    <div class="mx-drawer-section">
+      <h4>📋 Description</h4>
+      <p>${escapeHtml(t.desc || 'Sin descripción curada. Ver MITRE oficial para detalles completos.')}</p>
+    </div>
+
+    <div class="mx-drawer-section">
+      <h4>📊 Coverage Stats</h4>
+      <div class="mx-stat-row">
+        <div class="mx-stat"><div class="mx-stat-val">${stats.playbooks.length}</div><div class="mx-stat-lab">Playbooks</div></div>
+        <div class="mx-stat"><div class="mx-stat-val" style="color:${stats.executed?'var(--accent)':'var(--muted)'}">${stats.runs.length}</div><div class="mx-stat-lab">Runs</div></div>
+        <div class="mx-stat"><div class="mx-stat-val">${subTechs.length}</div><div class="mx-stat-lab">Sub-techniques</div></div>
+      </div>
+    </div>
+
+    ${subTechs.length > 0 ? `<div class="mx-drawer-section">
+      <h4>🧬 Sub-techniques (${subTechs.length})</h4>
+      <div class="mx-chips">
+        ${subTechs.map(s => `<span class="mx-chip purple" onclick="mxOpenDrawer('${s.id}')" style="cursor:pointer">${s.id} · ${escapeHtml(s.name)}</span>`).join('')}
+      </div>
+    </div>` : ''}
+
+    ${stats.playbooks.length > 0 ? `<div class="mx-drawer-section">
+      <h4>🎯 Playbooks que ejecutan esta técnica (${stats.playbooks.length})</h4>
+      ${stats.playbooks.map(p => `<div class="mx-pb-card">
+        <div class="mx-pb-name">${escapeHtml(p.name)}</div>
+        <div class="mx-pb-meta">${p.id} · ${p.difficulty || '—'} · ${p.duration || '—'} · ${p.stepCount || 0} steps</div>
+        <div class="mx-pb-actions">
+          <button class="btn-ghost" style="font-size:10px;padding:3px 8px;min-height:0" onclick="mxRunPlaybook('${p.id}')">▶ Run</button>
+          <button class="btn-ghost" style="font-size:10px;padding:3px 8px;min-height:0" onclick="activateTab('console');location.hash='console'">→ Console</button>
+        </div>
+      </div>`).join('')}
+    </div>` : ''}
+
+    ${actors.length > 0 ? `<div class="mx-drawer-section">
+      <h4>🎭 Threat actors que usan esta técnica</h4>
+      <div class="mx-chips">${actors.map(a => `<span class="mx-chip red">${a.toUpperCase()}</span>`).join('')}</div>
+    </div>` : ''}
+
+    ${t.detection ? `<div class="mx-drawer-section">
+      <h4>🔍 Detection</h4>
+      <p>${escapeHtml(t.detection)}</p>
+    </div>` : ''}
+
+    ${t.mitigation ? `<div class="mx-drawer-section">
+      <h4>🛡️ Mitigation</h4>
+      <p>${escapeHtml(t.mitigation)}</p>
+    </div>` : ''}
+
+    ${t.examples ? `<div class="mx-drawer-section">
+      <h4>💡 Ejemplos / contexto</h4>
+      <p>${escapeHtml(t.examples)}</p>
+    </div>` : ''}
+
+    <div class="mx-drawer-section">
+      <h4>🔗 External Resources</h4>
+      <div class="mx-chips mx-link-row">
+        <a href="${navUrl}" target="_blank">📖 MITRE ATT&CK ↗</a>
+        <a href="${atomicUrl}" target="_blank">⚛️ Atomic Red Team ↗</a>
+        <a href="${sigmaUrl}" target="_blank">🛡️ Sigma rules ↗</a>
+        <a href="${vulhubUrl}" target="_blank">🧪 Vulhub labs ↗</a>
+      </div>
+    </div>
+  `;
+
+  drawer.classList.add('open');
+}
+function mxCloseDrawer() {
+  document.getElementById('mx-drawer')?.classList.remove('open');
+}
+function mxRunPlaybook(id) {
+  if (!confirm(`¿Ejecutar playbook ${id}? Verás el resultado en Console tab.`)) return;
+  fetch(`${RUNNER_BASE}/api/run/${id}`, { method:'POST' }).then(r=>r.json()).then(d => {
+    toast(`▶ Playbook ${id} iniciado · ${d.runId || 'OK'}`);
+    activateTab('console'); location.hash='console';
+    mxCloseDrawer();
+  }).catch(e => toast('❌ ' + e.message, 'err'));
+}
+
+// Escape para cerrar drawer
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('mx-drawer')?.classList.contains('open')) {
+    mxCloseDrawer();
+  }
+});
+
+// Hook into tab activation
+const _origActivateTab = activateTab;
+activateTab = async function(name) {
+  _origActivateTab(name);
+  if (name === 'mitre') {
+    await mxLoadData();
+    mxRenderMatrix();
+  }
+};
+
 async function loadMitrePlaybooks(tid) {
   const el = document.getElementById('mitre-playbooks');
+  if (!el) return; // legacy element no existe en nueva UI
   try {
     const r = await fetch(`${RUNNER_BASE}/api/mitre/${tid}`, {cache:'no-cache'});
     if (!r.ok) throw new Error(`runner_http_${r.status}`);
