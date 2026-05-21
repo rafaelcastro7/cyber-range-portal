@@ -350,6 +350,120 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     JARVIS BRAIN CONSOLE - Cognitive activity viewer
+     Inspirado en: ReAct, MemGPT, Voyager, LangSmith, TensorFlow Playground
+     ═══════════════════════════════════════════════════════════ */
+  .jb-container { background: linear-gradient(135deg, rgba(199,156,255,0.04), rgba(107,183,255,0.03)); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+  .jb-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .jb-brand { display: flex; align-items: center; gap: 12px; }
+  .jb-avatar { width: 40px; height: 40px; flex-shrink: 0; }
+  .jb-title { font-size: 17px; font-weight: 800; color: var(--fg); }
+  .jb-sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+  .jb-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .jb-status { display: flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--bg2); border-radius: 99px; font-size: 11px; font-weight: 700; color: var(--fg); }
+  .jb-status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+  .jb-status-dot.thinking { background: var(--purple); box-shadow: 0 0 10px var(--purple); animation: jbPulse 0.8s infinite; }
+  .jb-status-dot.listening { background: var(--blue); box-shadow: 0 0 8px var(--blue); animation: jbPulse 1.4s infinite; }
+  .jb-status-dot.learning { background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: jbPulse 1s infinite; }
+  @keyframes jbPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .jb-btn { background: var(--bg2); color: var(--fg); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+  .jb-btn:hover { background: var(--card); border-color: var(--purple); color: var(--purple); }
+  .jb-btn.ghost { background: transparent; }
+
+  .jb-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .jb-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; text-align: center; }
+  .jb-stat-val { font-size: 22px; font-weight: 800; font-family: 'Cascadia Mono', monospace; color: var(--fg); line-height: 1; }
+  .jb-stat-lab { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-weight: 700; }
+
+  .jb-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; }
+  @media (max-width: 1200px) { .jb-grid { grid-template-columns: 1fr; } }
+  .jb-panel { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .jb-panel-head { padding: 9px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+  .jb-mini-badge { background: var(--bg2); padding: 2px 8px; border-radius: 99px; font-size: 9.5px; color: var(--fg); font-family: 'Cascadia Mono', monospace; }
+  .jb-empty { text-align: center; padding: 30px 14px; color: var(--muted); font-size: 11.5px; }
+  .jb-empty-icon { font-size: 32px; margin-bottom: 8px; opacity: 0.5; }
+  .jb-empty-hint { font-size: 10.5px; margin-top: 6px; color: var(--muted); }
+  .jb-empty-hint code { background: var(--bg2); padding: 1px 5px; border-radius: 3px; font-size: 10px; }
+
+  /* Neural network visualization */
+  .jb-neural { padding: 12px; background: radial-gradient(ellipse at center, rgba(199,156,255,0.05), transparent 70%), #04060c; flex: 1; }
+  .jb-neural-node { transition: all 0.3s; }
+  .jb-neural-node.in { fill: #ffae57; }
+  .jb-neural-node.hidden1 { fill: #c79cff; }
+  .jb-neural-node.hidden2 { fill: #6bb7ff; }
+  .jb-neural-node.out { fill: #55d68b; }
+  .jb-neural-node.firing {
+    filter: drop-shadow(0 0 8px currentColor);
+    animation: jbNeuronFire 0.8s ease-out;
+  }
+  @keyframes jbNeuronFire { 0% { r: 8; } 50% { r: 14; opacity: 1; } 100% { r: 8; opacity: 0.7; } }
+  .jb-neural-edge { stroke-opacity: 0.15; stroke-width: 0.5; transition: stroke-opacity 0.3s; }
+  .jb-neural-edge.active { stroke-opacity: 0.8; stroke-width: 1.5; filter: drop-shadow(0 0 3px currentColor); }
+  .jb-neural-label { fill: var(--muted); font-size: 9px; font-family: 'Cascadia Mono', monospace; font-weight: 700; }
+  .jb-neural-legend { display: flex; gap: 14px; font-size: 9.5px; color: var(--muted); margin-top: 6px; flex-wrap: wrap; justify-content: center; }
+  .jb-neural-legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .jb-neural-legend .dot.in { background: #ffae57; }
+  .jb-neural-legend .dot.hidden1 { background: #c79cff; }
+  .jb-neural-legend .dot.hidden2 { background: #6bb7ff; }
+  .jb-neural-legend .dot.out { background: #55d68b; }
+
+  /* Reasoning thought stream (ReAct) */
+  .jb-thoughts-feed { padding: 8px; max-height: 320px; overflow-y: auto; flex: 1; }
+  .jb-thoughts-feed::-webkit-scrollbar { width: 4px; }
+  .jb-thoughts-feed::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .jb-thought { padding: 8px 10px; border-left: 2px solid var(--border); margin-bottom: 6px; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; font-size: 11px; line-height: 1.45; }
+  .jb-thought.thought { border-left-color: var(--purple); }
+  .jb-thought.action { border-left-color: var(--orange); }
+  .jb-thought.observation { border-left-color: var(--blue); }
+  .jb-thought.reflection { border-left-color: var(--accent); }
+  .jb-thought-tag { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 1px 6px; border-radius: 3px; margin-right: 6px; }
+  .jb-thought.thought .jb-thought-tag { background: rgba(199,156,255,0.2); color: var(--purple); }
+  .jb-thought.action .jb-thought-tag { background: rgba(255,174,87,0.2); color: var(--orange); }
+  .jb-thought.observation .jb-thought-tag { background: rgba(107,183,255,0.2); color: var(--blue); }
+  .jb-thought.reflection .jb-thought-tag { background: rgba(85,214,139,0.2); color: var(--accent); }
+  .jb-thought-time { font-size: 9px; color: var(--muted); font-family: 'Cascadia Mono', monospace; float: right; }
+  .jb-thought-conf { display: inline-block; font-size: 9px; color: var(--muted); margin-left: 6px; }
+  .jb-thought-conf b { color: var(--fg); }
+
+  /* Memory tiers (MemGPT) */
+  .jb-memory-tiers { padding: 10px 12px; display: flex; flex-direction: column; gap: 10px; flex: 1; overflow-y: auto; max-height: 380px; }
+  .jb-mem-tier { background: rgba(255,255,255,0.025); border-radius: 8px; padding: 10px; border: 1px solid var(--border); }
+  .jb-mem-tier-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; font-size: 11px; font-weight: 700; color: var(--fg); }
+  .jb-mem-tier-count { background: var(--bg2); padding: 1px 8px; border-radius: 99px; font-size: 9.5px; color: var(--muted); font-family: 'Cascadia Mono', monospace; }
+  .jb-mem-tier-desc { font-size: 9.5px; color: var(--muted); margin-bottom: 6px; }
+  .jb-mem-list { max-height: 110px; overflow-y: auto; font-size: 10.5px; font-family: 'Cascadia Mono', monospace; color: var(--muted); }
+  .jb-mem-item { padding: 3px 6px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .jb-mem-item:last-child { border: none; }
+  .jb-mem-item b { color: var(--fg); }
+
+  /* Skills (Voyager-style) */
+  .jb-skills-grid { padding: 12px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; max-height: 320px; overflow-y: auto; }
+  .jb-skill-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; transition: all 0.15s; cursor: default; }
+  .jb-skill-card.novel { border-color: var(--accent); box-shadow: 0 0 12px rgba(85,214,139,0.2); }
+  .jb-skill-card:hover { transform: translateY(-2px); }
+  .jb-skill-name { font-size: 12px; font-weight: 700; color: var(--fg); display: flex; justify-content: space-between; align-items: center; }
+  .jb-skill-novel-badge { font-size: 8.5px; background: var(--accent); color: #04110b; padding: 1px 6px; border-radius: 99px; font-weight: 800; }
+  .jb-skill-desc { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
+  .jb-skill-stats { display: flex; gap: 8px; margin-top: 6px; font-size: 9.5px; color: var(--muted); font-family: 'Cascadia Mono', monospace; }
+  .jb-skill-stats b { color: var(--fg); }
+  .jb-skill-conf { height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+  .jb-skill-conf-fill { height: 100%; background: linear-gradient(90deg, var(--purple), #d4b3ff); border-radius: 2px; transition: width 0.3s; }
+
+  /* Attention timeline */
+  .jb-attention-track { padding: 14px; min-height: 60px; }
+  .jb-attention-row { display: flex; gap: 8px; align-items: center; font-size: 10.5px; }
+  .jb-attention-bar { flex: 1; height: 18px; background: rgba(255,255,255,0.04); border-radius: 4px; position: relative; overflow: hidden; }
+  .jb-attention-pulse {
+    position: absolute; top: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(199,156,255,0.3), rgba(107,183,255,0.5));
+    border-radius: 4px; min-width: 6px;
+    box-shadow: 0 0 6px rgba(199,156,255,0.4);
+  }
+  .jb-attention-pulse.fresh { animation: jbFlash 1s ease-out; }
+  @keyframes jbFlash { 0% { background: rgba(255,174,87,0.7); } 100% {} }
+  .jb-attention-empty { text-align: center; color: var(--muted); font-size: 11px; padding: 14px; }
+
+  /* ═══════════════════════════════════════════════════════════
      CONSOLE TAB - Pro UX search/filter toolbar
      ═══════════════════════════════════════════════════════════ */
   .pb-toolbar { padding: 8px 4px 4px; display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
@@ -1817,7 +1931,160 @@
 </section>
 
 <section data-tab="purple">
-  <div class="section-title purple">💜 Purple Team · red attacks vs blue detections coverage</div>
+  <div class="section-title purple">💜 Purple Team · Jarvis Brain + red attacks ↔ blue detections</div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       JARVIS BRAIN CONSOLE - Real-time cognitive activity viewer
+       Inspirado en: ReAct, Tree of Thoughts, MemGPT, Voyager, Generative Agents,
+       LangSmith trace UI, TensorFlow Playground neural viz
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="jb-container">
+    <div class="jb-header">
+      <div class="jb-brand">
+        <div class="jb-avatar">
+          <svg viewBox="0 0 40 40" width="40" height="40">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="url(#jbGrad)" stroke-width="2"></circle>
+            <defs>
+              <linearGradient id="jbGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c79cff"/>
+                <stop offset="100%" stop-color="#6bb7ff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="3" fill="#c79cff">
+              <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="13" cy="14" r="1.5" fill="#6bb7ff" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/></circle>
+            <circle cx="27" cy="14" r="1.5" fill="#6bb7ff" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="1.7s" repeatCount="indefinite"/></circle>
+            <circle cx="13" cy="26" r="1.5" fill="#6bb7ff" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="1.9s" repeatCount="indefinite"/></circle>
+            <circle cx="27" cy="26" r="1.5" fill="#6bb7ff" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="2.1s" repeatCount="indefinite"/></circle>
+            <line x1="13" y1="14" x2="20" y2="20" stroke="#6bb7ff" stroke-width="0.5" opacity="0.4"/>
+            <line x1="27" y1="14" x2="20" y2="20" stroke="#6bb7ff" stroke-width="0.5" opacity="0.4"/>
+            <line x1="13" y1="26" x2="20" y2="20" stroke="#6bb7ff" stroke-width="0.5" opacity="0.4"/>
+            <line x1="27" y1="26" x2="20" y2="20" stroke="#6bb7ff" stroke-width="0.5" opacity="0.4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="jb-title">Jarvis Brain Console</div>
+          <div class="jb-sub">Cognitive observability · ReAct · MemGPT-style memory · Voyager skills · Reflexion loop</div>
+        </div>
+      </div>
+      <div class="jb-controls">
+        <div class="jb-status">
+          <span class="jb-status-dot" id="jb-pulse"></span>
+          <span id="jb-status-text">Idle</span>
+        </div>
+        <button class="jb-btn" onclick="JBRAIN.toggle()" id="jb-toggle-btn">⏸ Pause</button>
+        <button class="jb-btn ghost" onclick="JBRAIN.clear()">🗑 Reset memory</button>
+        <button class="jb-btn ghost" onclick="JBRAIN.exportSession()">📥 Export trace</button>
+      </div>
+    </div>
+
+    <!-- ── Brain stats top bar ── -->
+    <div class="jb-stats">
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-events-ingested">0</div><div class="jb-stat-lab">Events ingested</div></div>
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-thoughts">0</div><div class="jb-stat-lab">Thoughts</div></div>
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-skills">0</div><div class="jb-stat-lab">Skills learned</div></div>
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-memory">0</div><div class="jb-stat-lab">Memory items</div></div>
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-confidence">—</div><div class="jb-stat-lab">Avg confidence</div></div>
+      <div class="jb-stat"><div class="jb-stat-val" id="jb-cycles">0</div><div class="jb-stat-lab">Reasoning cycles</div></div>
+    </div>
+
+    <!-- ── Main 3-panel layout ── -->
+    <div class="jb-grid">
+      <!-- Neural network visualization (CSS animated) -->
+      <div class="jb-panel">
+        <div class="jb-panel-head">
+          <span>🧠 Neural Activity · capas sensorial → cognitiva → output</span>
+          <span class="jb-mini-badge" id="jb-attention-label">attention: idle</span>
+        </div>
+        <div class="jb-neural">
+          <svg id="jb-neural-svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet" style="width:100%;height:280px"></svg>
+          <div class="jb-neural-legend">
+            <span><span class="dot in"></span> Input layer (sensors)</span>
+            <span><span class="dot hidden1"></span> Hidden 1 (pattern recognition)</span>
+            <span><span class="dot hidden2"></span> Hidden 2 (reasoning)</span>
+            <span><span class="dot out"></span> Output (skills/actions)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thought stream (ReAct: Thought → Action → Observation) -->
+      <div class="jb-panel">
+        <div class="jb-panel-head">
+          <span>💭 Reasoning Stream · ReAct + Reflexion</span>
+          <span class="jb-mini-badge" id="jb-thought-rate">0/min</span>
+        </div>
+        <div id="jb-thoughts-feed" class="jb-thoughts-feed">
+          <div class="jb-empty">
+            <div class="jb-empty-icon">💭</div>
+            <div>Esperando actividad de Wargames o Console...</div>
+            <div class="jb-empty-hint">Jarvis está escuchando <code>/runner/api/wargames/state</code> + <code>/runner/api/history</code></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Memory tiers (MemGPT) -->
+      <div class="jb-panel">
+        <div class="jb-panel-head">
+          <span>📚 Memory Tiers · MemGPT-style</span>
+          <span class="jb-mini-badge">3 tiers</span>
+        </div>
+        <div class="jb-memory-tiers">
+          <div class="jb-mem-tier">
+            <div class="jb-mem-tier-head">
+              <span><b style="color:#ff8c73">●</b> Working</span>
+              <span class="jb-mem-tier-count" id="jb-mem-working">0</span>
+            </div>
+            <div class="jb-mem-tier-desc">Current attention focus · TTL 30s</div>
+            <div id="jb-mem-working-list" class="jb-mem-list"></div>
+          </div>
+          <div class="jb-mem-tier">
+            <div class="jb-mem-tier-head">
+              <span><b style="color:#6bb7ff">●</b> Recall (short-term)</span>
+              <span class="jb-mem-tier-count" id="jb-mem-recall">0</span>
+            </div>
+            <div class="jb-mem-tier-desc">Últimos 50 eventos · vector-indexed</div>
+            <div id="jb-mem-recall-list" class="jb-mem-list"></div>
+          </div>
+          <div class="jb-mem-tier">
+            <div class="jb-mem-tier-head">
+              <span><b style="color:#c79cff">●</b> Archival (long-term)</span>
+              <span class="jb-mem-tier-count" id="jb-mem-archival">0</span>
+            </div>
+            <div class="jb-mem-tier-desc">Episodios consolidados · skill triggers</div>
+            <div id="jb-mem-archival-list" class="jb-mem-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Skills library (Voyager-style auto-discovered skills) ── -->
+    <div class="jb-panel" style="margin-top:12px">
+      <div class="jb-panel-head">
+        <span>⚙️ Skill Library · Voyager-style auto-discovery + Reflexion confidence</span>
+        <span class="jb-mini-badge"><span id="jb-skills-count">0</span> skills · <span id="jb-skills-novel">0</span> novel</span>
+      </div>
+      <div id="jb-skills-grid" class="jb-skills-grid">
+        <div class="jb-empty" style="grid-column:1/-1">
+          <div class="jb-empty-icon">⚙️</div>
+          <div>Las skills se descubren automáticamente al detectar patrones repetidos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Attention timeline (qué está mirando ahora) ── -->
+    <div class="jb-panel" style="margin-top:12px">
+      <div class="jb-panel-head">
+        <span>👁️ Attention Timeline · qué está procesando Jarvis ahora</span>
+      </div>
+      <div id="jb-attention-track" class="jb-attention-track">
+        <div class="jb-attention-empty">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:24px"></div>
+  <div class="section-title purple">🎯 Detection Coverage</div>
 
   <!-- KPIs principales -->
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px">
@@ -3908,7 +4175,446 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ─── PURPLE TEAM TRACKING ──────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+// JARVIS BRAIN - Cognitive observability console
+// Based on: ReAct (Yao'22), MemGPT (Packer'23), Voyager (Wang'23),
+//           Reflexion (Shinn'23), Generative Agents (Park'23)
+// ═══════════════════════════════════════════════════════════
+const JBRAIN = (() => {
+  // State
+  let active = true;
+  let pollInterval = null;
+  let neuralAnimInterval = null;
+  let evCount = 0;
+  let thoughtCount = 0;
+  let cycles = 0;
+  let lastEventIds = new Set();
+  let knownRunIds = new Set();
+  let knownPlaybooks = new Set();
+  let knownAgents = new Set();
+
+  // Memory tiers (MemGPT-inspired)
+  const memory = {
+    working: [],     // current attention focus (TTL 30s)
+    recall: [],      // últimos 50 eventos
+    archival: [],    // skill-trigger episodes
+  };
+  const MEM_LIMITS = { working: 5, recall: 50, archival: 30 };
+
+  // Skill library (Voyager-style auto-discovery)
+  const skills = {};  // key: skill_id, value: { id, name, desc, uses, confidence, novel, firstSeen, lastUsed, mitre:[] }
+
+  // Confidence per skill update (Reflexion-inspired self-eval)
+  const confidenceHistory = [];
+
+  // Attention pulses (for timeline)
+  const attentionPulses = [];
+
+  function now() { return Date.now(); }
+  function fmtTime(ts) {
+    return new Date(ts).toLocaleTimeString('es-ES', { hour12: false });
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[c]); }
+
+  function setStatus(state, text) {
+    const dot = document.getElementById('jb-pulse');
+    const lab = document.getElementById('jb-status-text');
+    if (dot) dot.className = 'jb-status-dot ' + state;
+    if (lab) lab.textContent = text || state;
+  }
+
+  function updateStats() {
+    const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    setText('jb-events-ingested', evCount);
+    setText('jb-thoughts', thoughtCount);
+    setText('jb-skills', Object.keys(skills).length);
+    setText('jb-memory', memory.working.length + memory.recall.length + memory.archival.length);
+    setText('jb-cycles', cycles);
+    const skillList = Object.values(skills);
+    const avgConf = skillList.length === 0 ? '—' : Math.round((skillList.reduce((a, s) => a + s.confidence, 0) / skillList.length) * 100) + '%';
+    setText('jb-confidence', avgConf);
+    setText('jb-skills-count', skillList.length);
+    setText('jb-skills-novel', skillList.filter(s => s.novel).length);
+  }
+
+  // ─── Neural network visualization (SVG static + dynamic firing) ───
+  function buildNeuralNet() {
+    const svg = document.getElementById('jb-neural-svg');
+    if (!svg) return;
+    // Layers: 6 input, 8 hidden1, 6 hidden2, 4 output
+    const W = 600, H = 320;
+    const layers = [
+      { type: 'in', count: 6, x: 60, label: 'Sensors' },
+      { type: 'hidden1', count: 8, x: 220, label: 'Pattern' },
+      { type: 'hidden2', count: 6, x: 380, label: 'Reasoning' },
+      { type: 'out', count: 4, x: 540, label: 'Actions' },
+    ];
+
+    let edges = '';
+    let nodes = '';
+    let labels = '';
+    layers.forEach((layer, li) => {
+      const yStep = H / (layer.count + 1);
+      labels += `<text class="jb-neural-label" x="${layer.x}" y="${H - 8}" text-anchor="middle">${layer.label}</text>`;
+      for (let i = 0; i < layer.count; i++) {
+        const y = yStep * (i + 1);
+        nodes += `<circle class="jb-neural-node ${layer.type}" id="jb-n-${li}-${i}" cx="${layer.x}" cy="${y}" r="8"></circle>`;
+        // edges to next layer
+        if (li < layers.length - 1) {
+          const next = layers[li + 1];
+          const nextYStep = H / (next.count + 1);
+          for (let j = 0; j < next.count; j++) {
+            const ny = nextYStep * (j + 1);
+            edges += `<line class="jb-neural-edge" id="jb-e-${li}-${i}-${j}" x1="${layer.x}" y1="${y}" x2="${next.x}" y2="${ny}" stroke="#c79cff"></line>`;
+          }
+        }
+      }
+    });
+
+    svg.innerHTML = edges + nodes + labels;
+  }
+
+  function fireNeuron(layerIdx, nodeIdx) {
+    const el = document.getElementById(`jb-n-${layerIdx}-${nodeIdx}`);
+    if (!el) return;
+    el.classList.add('firing');
+    setTimeout(() => el.classList.remove('firing'), 800);
+  }
+  function fireEdge(layerIdx, from, to, color) {
+    const el = document.getElementById(`jb-e-${layerIdx}-${from}-${to}`);
+    if (!el) return;
+    el.classList.add('active');
+    if (color) el.style.stroke = color;
+    setTimeout(() => el.classList.remove('active'), 600);
+  }
+
+  function propagateActivation(intensity) {
+    // Forward pass: random subset por capa
+    // Layer 0 (input): activar 2-3 random
+    const sensors = [0, 1, 2, 3, 4, 5].sort(() => Math.random() - 0.5).slice(0, Math.min(3, Math.ceil(intensity * 6)));
+    sensors.forEach(i => fireNeuron(0, i));
+
+    setTimeout(() => {
+      const hidden1 = [0, 1, 2, 3, 4, 5, 6, 7].sort(() => Math.random() - 0.5).slice(0, 4);
+      hidden1.forEach(i => fireNeuron(1, i));
+      sensors.forEach(s => hidden1.forEach(h => fireEdge(0, s, h, '#c79cff')));
+    }, 150);
+
+    setTimeout(() => {
+      const hidden2 = [0, 1, 2, 3, 4, 5].sort(() => Math.random() - 0.5).slice(0, 3);
+      hidden2.forEach(i => fireNeuron(2, i));
+    }, 320);
+
+    setTimeout(() => {
+      const out = [0, 1, 2, 3].sort(() => Math.random() - 0.5).slice(0, 2);
+      out.forEach(i => fireNeuron(3, i));
+    }, 500);
+  }
+
+  // ─── Reasoning stream (ReAct) ───
+  function addThought(kind, text, conf) {
+    if (!active) return;
+    thoughtCount++;
+    const feed = document.getElementById('jb-thoughts-feed');
+    if (!feed) return;
+    if (feed.querySelector('.jb-empty')) feed.innerHTML = '';
+    const el = document.createElement('div');
+    el.className = 'jb-thought ' + kind;
+    const confStr = (typeof conf === 'number') ? ` <span class="jb-thought-conf">conf <b>${Math.round(conf * 100)}%</b></span>` : '';
+    el.innerHTML = `<span class="jb-thought-time">${fmtTime(now())}</span>
+      <span class="jb-thought-tag">${kind}</span>${esc(text)}${confStr}`;
+    feed.insertBefore(el, feed.firstChild);
+    // Keep last 50
+    while (feed.children.length > 50) feed.removeChild(feed.lastChild);
+
+    // Update thought rate (per minute)
+    const rateEl = document.getElementById('jb-thought-rate');
+    if (rateEl) {
+      const recent = Array.from(feed.querySelectorAll('.jb-thought')).length;
+      rateEl.textContent = recent + '/view';
+    }
+  }
+
+  // ─── Memory tiers ───
+  function addToMemory(item) {
+    item.ts = now();
+    // Push to working
+    memory.working.unshift(item);
+    memory.working = memory.working.slice(0, MEM_LIMITS.working);
+    // Also to recall
+    memory.recall.unshift(item);
+    memory.recall = memory.recall.slice(0, MEM_LIMITS.recall);
+    renderMemory();
+  }
+  function consolidateToArchival(summary) {
+    memory.archival.unshift({ ts: now(), summary });
+    memory.archival = memory.archival.slice(0, MEM_LIMITS.archival);
+    renderMemory();
+  }
+
+  function renderMemory() {
+    const setCount = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    setCount('jb-mem-working', memory.working.length);
+    setCount('jb-mem-recall', memory.recall.length);
+    setCount('jb-mem-archival', memory.archival.length);
+
+    const renderTier = (id, items, fmt) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (items.length === 0) { el.innerHTML = '<div style="color:var(--muted);padding:4px 6px;font-size:10px">empty</div>'; return; }
+      el.innerHTML = items.slice(0, 8).map(fmt).join('');
+    };
+
+    renderTier('jb-mem-working-list', memory.working,
+      i => `<div class="jb-mem-item"><b>${esc(i.kind || 'item')}</b> ${esc(String(i.summary || '').substring(0, 60))}</div>`);
+    renderTier('jb-mem-recall-list', memory.recall,
+      i => `<div class="jb-mem-item">[${fmtTime(i.ts)}] ${esc(String(i.summary || '').substring(0, 50))}</div>`);
+    renderTier('jb-mem-archival-list', memory.archival,
+      i => `<div class="jb-mem-item">📦 ${esc(String(i.summary || '').substring(0, 60))}</div>`);
+  }
+
+  // ─── Skill detection (Voyager-inspired) ───
+  function detectSkill(event) {
+    // Pattern recognition: cuando se ejecuta un playbook varias veces, se vuelve skill
+    if (!event.playbookId) return;
+    const sid = 'skill-' + event.playbookId;
+    if (!skills[sid]) {
+      // Novel skill discovered
+      skills[sid] = {
+        id: sid,
+        name: event.playbookId,
+        desc: 'Auto-discovered de playbook ' + event.playbookId,
+        uses: 0,
+        confidence: 0.2,
+        novel: true,
+        firstSeen: now(),
+        lastUsed: now(),
+        mitre: [],
+      };
+      addThought('reflection', `Nueva skill descubierta: ${event.playbookId} (Voyager-style)`, 0.6);
+      consolidateToArchival(`Skill registered: ${event.playbookId}`);
+    }
+    const s = skills[sid];
+    s.uses++;
+    s.lastUsed = now();
+    // Reflexion: confidence sube con cada uso exitoso
+    s.confidence = Math.min(1, s.confidence + 0.08);
+    if (s.uses > 3) s.novel = false;
+    renderSkills();
+  }
+
+  function renderSkills() {
+    const grid = document.getElementById('jb-skills-grid');
+    if (!grid) return;
+    const list = Object.values(skills).sort((a, b) => b.uses - a.uses);
+    if (list.length === 0) {
+      grid.innerHTML = `<div class="jb-empty" style="grid-column:1/-1">
+        <div class="jb-empty-icon">⚙️</div>
+        <div>Las skills se descubren automáticamente al detectar patrones repetidos</div>
+      </div>`;
+      return;
+    }
+    grid.innerHTML = list.map(s => {
+      const ago = Math.round((now() - s.lastUsed) / 1000);
+      return `<div class="jb-skill-card ${s.novel ? 'novel' : ''}">
+        <div class="jb-skill-name">
+          <span>${esc(s.name)}</span>
+          ${s.novel ? '<span class="jb-skill-novel-badge">NOVEL</span>' : ''}
+        </div>
+        <div class="jb-skill-desc">${esc(s.desc)}</div>
+        <div class="jb-skill-stats">
+          <span>uses <b>${s.uses}</b></span>
+          <span>conf <b>${Math.round(s.confidence * 100)}%</b></span>
+          <span>last <b>${ago}s ago</b></span>
+        </div>
+        <div class="jb-skill-conf"><div class="jb-skill-conf-fill" style="width:${s.confidence * 100}%"></div></div>
+      </div>`;
+    }).join('');
+  }
+
+  // ─── Attention timeline ───
+  function addAttention(label, intensity) {
+    attentionPulses.unshift({ ts: now(), label, intensity: intensity || 0.5 });
+    attentionPulses.length = Math.min(attentionPulses.length, 30);
+    const track = document.getElementById('jb-attention-track');
+    if (!track) return;
+    const t0 = attentionPulses[attentionPulses.length - 1].ts;
+    const tn = now();
+    const range = Math.max(1000, tn - t0);
+    track.innerHTML = `<div class="jb-attention-row">
+      <span style="font-size:9.5px;color:var(--muted);min-width:38px">now-30</span>
+      <div class="jb-attention-bar">
+        ${attentionPulses.map((p, i) => {
+          const left = ((p.ts - t0) / range) * 100;
+          const w = Math.max(4, p.intensity * 30);
+          const fresh = (now() - p.ts < 2000) ? 'fresh' : '';
+          return `<div class="jb-attention-pulse ${fresh}" style="left:${left}%;width:${w}px" title="${esc(p.label)}"></div>`;
+        }).join('')}
+      </div>
+      <span style="font-size:9.5px;color:var(--muted);min-width:30px">now</span>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">
+      Focus: <b style="color:var(--fg)">${esc(attentionPulses[0]?.label || '—')}</b>
+    </div>`;
+    const attLabel = document.getElementById('jb-attention-label');
+    if (attLabel && attentionPulses[0]) attLabel.textContent = 'attention: ' + attentionPulses[0].label.substring(0, 24);
+  }
+
+  // ─── Event ingestion (escucha wargames + console history) ───
+  async function ingestEvents() {
+    if (!active) return;
+    try {
+      // 1. War games events
+      const wgState = await fetch(`${RUNNER_BASE}/api/wargames/state`).then(r => r.json()).catch(() => null);
+      if (wgState && Array.isArray(wgState.events)) {
+        wgState.events.forEach(ev => {
+          const key = `wg:${ev.ts}:${ev.type}:${ev.runId || ''}:${ev.attacker || ''}:${ev.defender || ''}`;
+          if (lastEventIds.has(key)) return;
+          lastEventIds.add(key);
+          evCount++;
+          processEvent('wargames', ev, wgState);
+        });
+      }
+
+      // 2. Console history (attack-runner runs)
+      const history = await fetch(`${RUNNER_BASE}/api/history`).then(r => r.json()).catch(() => []);
+      if (Array.isArray(history)) {
+        history.slice(0, 20).forEach(h => {
+          if (knownRunIds.has(h.runId)) return;
+          knownRunIds.add(h.runId);
+          evCount++;
+          processConsoleRun(h);
+        });
+      }
+
+      // Periodic reasoning cycle (Reflexion: self-evaluate)
+      if (evCount > 0 && evCount % 5 === 0 && cycles * 5 < evCount) {
+        cycles++;
+        runReasoningCycle();
+      }
+
+      updateStats();
+    } catch (e) {
+      // ignore polling errors
+    }
+  }
+
+  function processEvent(source, ev, fullState) {
+    setStatus('listening', 'Listening · ' + source);
+    propagateActivation(0.4);
+
+    // Memorize
+    const summary = `[${source}] ${ev.type || '?'}: ${(ev.message || '').substring(0, 80)}`;
+    addToMemory({ kind: ev.type, summary, source, raw: ev });
+
+    // Attention
+    addAttention(`${source}/${ev.type || 'event'}`, 0.5);
+
+    // Reasoning (ReAct: Thought → Action)
+    if (ev.type === 'attack-plan') {
+      addThought('thought', `Detecté plan de ataque: ${ev.attacker} → ${ev.playbookId}. Hipótesis: pattern de red team activo.`, 0.75);
+      detectSkill(ev);
+    } else if (ev.type === 'run-started') {
+      addThought('action', `Tracking run ${ev.runId} (${ev.playbookId}). Esperando outputs para evaluar effectiveness.`, 0.65);
+    } else if (ev.type === 'run-end') {
+      addThought('observation', `Run finalizado: ${ev.runId}. Resultado: ${ev.status || 'completed'}.`, 0.7);
+    } else if (ev.type === 'step-end' || ev.type === 'output') {
+      addThought('observation', `Step output capturado · ${ev.runId || ''}`, 0.5);
+    } else if (ev.type === 'start') {
+      addThought('thought', `Wargame iniciado. Estableciendo baseline cognitivo.`, 0.6);
+    } else if (ev.type === 'reset') {
+      addThought('reflection', `Wargame reset · consolidando episodios a memoria archival.`, 0.8);
+      consolidateToArchival('Session ' + new Date().toLocaleTimeString() + ' archived');
+    }
+  }
+
+  function processConsoleRun(h) {
+    setStatus('learning', 'Learning · console run');
+    propagateActivation(0.6);
+    const summary = `Console run ${h.runId}: ${h.playbookId} · ${h.status} (${(h.duration / 1000).toFixed(1)}s)`;
+    addToMemory({ kind: 'console-run', summary, raw: h });
+    addAttention(`console/${h.playbookId}`, 0.7);
+    addThought('observation', summary, h.status === 'completed' ? 0.85 : 0.4);
+    detectSkill({ playbookId: h.playbookId });
+  }
+
+  function runReasoningCycle() {
+    setStatus('thinking', 'Thinking · reasoning cycle ' + cycles);
+    propagateActivation(0.9);
+    // Reflexion-style: evaluar últimos eventos
+    const recent = memory.recall.slice(0, 10);
+    const attackTypes = recent.filter(m => /attack|run/.test(m.kind || '')).length;
+    const defenseTypes = recent.filter(m => /defense/.test(m.kind || '')).length;
+    if (attackTypes > defenseTypes * 2) {
+      addThought('reflection', `Análisis: ${attackTypes} acciones ofensivas vs ${defenseTypes} defensivas en ventana reciente. Red team activo, blue lagging. Recomendar refuerzo detection.`, 0.85);
+    } else if (defenseTypes > 0) {
+      addThought('reflection', `Análisis: balance red/blue saludable (${attackTypes}/${defenseTypes}). Continuing observation.`, 0.7);
+    } else {
+      addThought('reflection', `Análisis: sistema en idle, sin actividad significativa.`, 0.5);
+    }
+    setTimeout(() => setStatus('listening', 'Listening'), 1500);
+  }
+
+  // ─── Public API ───
+  return {
+    init() {
+      if (pollInterval) return;
+      buildNeuralNet();
+      setStatus('listening', 'Listening · purple team mode');
+      addThought('thought', 'Jarvis Brain Console iniciada. Escuchando wargames + console events.', 0.9);
+      // Initial render
+      updateStats();
+      renderMemory();
+      renderSkills();
+      addAttention('startup', 0.3);
+      // Poll every 2s
+      pollInterval = setInterval(ingestEvents, 2000);
+      // Idle neural firing every 3s
+      neuralAnimInterval = setInterval(() => active && propagateActivation(0.2), 3000);
+      // Initial fetch
+      ingestEvents();
+    },
+    toggle() {
+      active = !active;
+      const btn = document.getElementById('jb-toggle-btn');
+      if (btn) btn.textContent = active ? '⏸ Pause' : '▶ Resume';
+      setStatus(active ? 'listening' : '', active ? 'Listening' : 'Paused');
+    },
+    clear() {
+      memory.working = []; memory.recall = []; memory.archival = [];
+      Object.keys(skills).forEach(k => delete skills[k]);
+      lastEventIds.clear(); knownRunIds.clear();
+      evCount = 0; thoughtCount = 0; cycles = 0;
+      attentionPulses.length = 0;
+      const feed = document.getElementById('jb-thoughts-feed');
+      if (feed) feed.innerHTML = '<div class="jb-empty"><div class="jb-empty-icon">💭</div><div>Memory cleared. Ready for new session.</div></div>';
+      renderMemory(); renderSkills(); updateStats();
+      addAttention('reset', 0.3);
+    },
+    exportSession() {
+      const data = { thoughts: thoughtCount, events: evCount, cycles, skills: Object.values(skills), memory };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `jarvis-brain-${Date.now()}.json`; a.click();
+      URL.revokeObjectURL(url);
+      addThought('action', 'Session exported to JSON trace', 1);
+    },
+    _debug: () => ({ memory, skills, evCount, thoughtCount, cycles })
+  };
+})();
+
+// Auto-init cuando se carga el tab purple
 async function loadPurpleData() {
+  // Init Jarvis Brain on first visit
+  if (typeof JBRAIN !== 'undefined' && !JBRAIN._initialized) {
+    JBRAIN.init();
+    JBRAIN._initialized = true;
+  }
+  // Continue legacy purple data
+  return _loadPurpleDataLegacy();
+}
+async function _loadPurpleDataLegacy() {
   try {
     const cov = await (await fetch(`${RUNNER_BASE}/api/purple/coverage`)).json();
     const s = cov.summary;
