@@ -1,333 +1,799 @@
 <!--
-War Games UI Component (HTML-only - JS en wargames-ui.js)
-wargames-api.js y wargames-ui.js se cargan desde index.html para que se ejecuten correctamente.
+War Games UI - Pro Edition
+Inspirado en: Caldera (MITRE), SafeBreach kill-chain, AttackIQ MITRE coverage, RangeForce dashboards
 -->
 
 <style>
-.wg-container {
+/* ───── Layout ───── */
+.wg-pro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 360px 1fr 380px;
+  gap: 12px;
+  min-height: 720px;
+}
+@media (max-width: 1280px) {
+  .wg-pro { grid-template-columns: 320px 1fr; }
+  .wg-pro .wg-right { grid-column: 1 / -1; }
 }
 
-.wg-scenario-selector {
+/* ───── Panel base ───── */
+.wg-panel {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
+  border-radius: 10px;
+  overflow: hidden;
 }
-
-.wg-scenario-selector select {
-  width: 100%;
-  padding: 8px 12px;
-  background: var(--bg2);
-  color: var(--fg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  margin: 8px 0;
-  font-size: 13px;
-}
-
-.wg-button-group {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.wg-button-group button {
-  flex: 1;
+.wg-panel-header {
   padding: 10px 14px;
-  background: linear-gradient(135deg, #55d68b, #7fff4d);
-  color: #04110b;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.wg-button-group button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(85, 214, 139, 0.3);
-}
-
-.wg-button-group button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.wg-button-group button.danger {
-  background: linear-gradient(135deg, #ff5c57, #ff8c73);
-  color: #fff;
-}
-
-.wg-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin: 16px 0;
-}
-
-.wg-stat-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 14px;
-  text-align: center;
-}
-
-.wg-stat-label {
-  font-size: 10px;
-  color: var(--muted);
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.wg-stat-value {
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--accent);
-  font-family: "Cascadia Mono", monospace;
-}
-
-.wg-agents {
-  display: grid;
-  gap: 12px;
-}
-
-.wg-agent-group-label {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+  border-bottom: 1px solid var(--border);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--muted);
-  margin-top: 12px;
-  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
 }
+.wg-panel-body { padding: 12px 14px; }
+.wg-panel-body.compact { padding: 8px 10px; }
+.wg-panel-body.dense { padding: 0; }
 
-.wg-agent-card {
-  background: rgba(255, 255, 255, 0.04);
+/* ───── Left: Control + Stats ───── */
+.wg-scenario select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg2);
+  color: var(--fg);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
-  align-items: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
+.wg-scenario select:focus { outline: 2px solid var(--accent); }
 
-.wg-agent-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.wg-agent-name {
-  font-weight: 600;
-  color: var(--fg);
+.wg-btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.wg-btn-row button {
+  padding: 11px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.wg-btn-row button:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+.wg-btn-row button:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+.wg-btn-start {
+  background: linear-gradient(135deg, var(--accent), #7fff4d);
+  color: #04110b;
+}
+.wg-btn-reset {
+  background: linear-gradient(135deg, var(--red), #ff8c73);
+  color: #fff;
 }
 
-.wg-agent-role {
+/* ───── Score widgets ───── */
+.wg-scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.wg-score {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wg-score.atk { border-color: rgba(255,92,87,0.3); }
+.wg-score.def { border-color: rgba(107,183,255,0.3); }
+.wg-score-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.wg-score.atk .wg-score-label { color: var(--red); }
+.wg-score.def .wg-score-label { color: var(--blue); }
+.wg-score-val {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: "Cascadia Mono", monospace;
+  line-height: 1;
+}
+.wg-score.atk .wg-score-val { color: var(--red); }
+.wg-score.def .wg-score-val { color: var(--blue); }
+.wg-score-trend {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-family: "Cascadia Mono", monospace;
+}
+
+/* ───── Status banner ───── */
+.wg-status-banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.wg-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.wg-status-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(85,214,139,0.2);
+  animation: wgPulse 1.5s infinite;
+}
+.wg-status-dot.finished { background: var(--purple); }
+@keyframes wgPulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(85,214,139,0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(85,214,139,0.05); }
+}
+.wg-status-text {
+  font-size: 12px;
+  color: var(--fg);
+  font-weight: 600;
+  flex: 1;
+}
+.wg-status-elapsed {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "Cascadia Mono", monospace;
+}
+
+/* ───── Agents grid ───── */
+.wg-team-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 14px 0 8px;
+}
+.wg-team-label.atk { color: var(--red); }
+.wg-team-label.def { color: var(--blue); }
+.wg-team-label .count {
+  background: var(--bg2);
+  border-radius: 99px;
+  padding: 2px 8px;
   font-size: 10px;
   color: var(--muted);
 }
 
-.wg-agent-badge {
-  background: var(--bg2);
-  padding: 4px 8px;
-  border-radius: 3px;
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.wg-feed {
+.wg-agents-grid { display: grid; gap: 6px; }
+.wg-agent {
   background: var(--bg2);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  max-height: 500px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.wg-agent::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--muted);
+  transition: width 0.2s;
+}
+.wg-agent.atk::before { background: var(--red); }
+.wg-agent.def::before { background: var(--blue); }
+.wg-agent:hover {
+  transform: translateX(2px);
+  background: rgba(255,255,255,0.05);
+}
+.wg-agent:hover::before { width: 5px; }
+.wg-agent-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.wg-agent-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fg);
+}
+.wg-agent-role {
+  font-size: 9.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.wg-agent-status {
+  font-size: 9px;
+  padding: 3px 7px;
+  border-radius: 99px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.wg-agent-status.ready { background: rgba(145,160,184,0.15); color: var(--muted); }
+.wg-agent-status.executing,
+.wg-agent-status.monitoring { background: rgba(85,214,139,0.15); color: var(--accent); }
+.wg-agent-status.executing::before,
+.wg-agent-status.monitoring::before {
+  content: '●';
+  margin-right: 4px;
+  animation: wgPulse 1s infinite;
+}
+.wg-agent-meta {
+  font-size: 9.5px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-family: "Cascadia Mono", monospace;
+  display: flex;
+  gap: 10px;
+}
+.wg-agent-meta b { color: var(--fg); font-weight: 600; }
+
+/* ───── Center: Charts ───── */
+.wg-chart-container { padding: 10px 14px; min-height: 180px; position: relative; }
+.wg-chart-container canvas { width: 100% !important; height: 180px !important; }
+
+.wg-killchain {
+  padding: 12px 14px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.wg-kc-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: 11px;
+}
+.wg-kc-row:last-child { border: none; }
+.wg-kc-phase {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+.wg-kc-bar {
+  height: 18px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.wg-kc-bar-fill {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), #ff8c73);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  font-size: 9.5px;
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.wg-kc-bar-fill.def { background: linear-gradient(90deg, var(--blue), #9bd7ff); color: #0a1929; }
+.wg-kc-count {
+  font-size: 11px;
+  color: var(--fg);
+  font-family: "Cascadia Mono", monospace;
+  text-align: right;
+  font-weight: 700;
+}
+
+/* ───── MITRE heatmap ───── */
+.wg-mitre {
+  padding: 12px 14px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.wg-mitre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 4px;
+}
+.wg-mitre-cell {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 4px;
+  padding: 5px 6px;
+  font-size: 9px;
+  font-family: "Cascadia Mono", monospace;
+  text-align: center;
+  cursor: default;
+  transition: all 0.15s;
+  position: relative;
+}
+.wg-mitre-cell.exec-0 { opacity: 0.4; }
+.wg-mitre-cell.exec-1 { background: rgba(255,92,87,0.15); border-color: rgba(255,92,87,0.4); color: var(--red); font-weight: 700; }
+.wg-mitre-cell.exec-2 { background: rgba(255,92,87,0.3); border-color: rgba(255,92,87,0.6); color: #ff8c73; font-weight: 700; }
+.wg-mitre-cell.exec-3 { background: rgba(255,92,87,0.5); border-color: var(--red); color: #fff; font-weight: 700; }
+.wg-mitre-cell:hover { transform: scale(1.05); z-index: 2; }
+.wg-mitre-cell .tech { display: block; font-size: 9px; }
+.wg-mitre-cell .count { display: block; font-size: 8.5px; color: var(--muted); margin-top: 1px; }
+
+/* ───── Right: Live Telemetry ───── */
+.wg-feed {
+  padding: 0;
+  max-height: 720px;
   overflow-y: auto;
   font-family: "Cascadia Mono", monospace;
   font-size: 11px;
 }
+.wg-feed::-webkit-scrollbar { width: 6px; }
+.wg-feed::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.wg-feed-controls {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+.wg-filter {
+  font-size: 9.5px;
+  padding: 4px 8px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--muted);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.15s;
+}
+.wg-filter.active { background: var(--accent); color: #04110b; border-color: var(--accent); }
+.wg-filter:hover:not(.active) { color: var(--fg); border-color: var(--accent); }
 
 .wg-event {
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.1s;
   display: grid;
-  gap: 2px;
+  grid-template-columns: 60px 1fr;
+  gap: 8px;
+  align-items: start;
 }
-
-.wg-event:last-child {
-  border-bottom: none;
-}
-
+.wg-event:hover { background: rgba(255,255,255,0.03); }
 .wg-event-time {
   color: var(--muted);
   font-size: 10px;
+  white-space: nowrap;
 }
-
+.wg-event-body { min-width: 0; }
 .wg-event-type {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 9px;
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
 }
-
 .wg-event-msg {
   color: var(--fg);
+  line-height: 1.4;
+  font-size: 11px;
+  word-break: break-word;
+}
+/* Type colors */
+.wg-event-type.start { background: rgba(85,214,139,0.2); color: var(--accent); }
+.wg-event-type.attack-plan,
+.wg-event-type.attack { background: rgba(255,92,87,0.2); color: var(--red); }
+.wg-event-type.defense,
+.wg-event-type.defense-action { background: rgba(107,183,255,0.2); color: var(--blue); }
+.wg-event-type.run-started,
+.wg-event-type.step-start { background: rgba(255,174,87,0.2); color: var(--orange); }
+.wg-event-type.run-end,
+.wg-event-type.step-end { background: rgba(199,156,255,0.2); color: var(--purple); }
+.wg-event-type.output { background: rgba(145,160,184,0.15); color: var(--muted); }
+.wg-event-type.ready,
+.wg-event-type.reset { background: rgba(145,160,184,0.2); color: var(--muted); }
+
+/* ───── Agent Detail Modal ───── */
+.wg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,4,9,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: wgFadeIn 0.15s ease-out;
+}
+.wg-modal-backdrop.visible { display: flex; }
+@keyframes wgFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.wg-modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: min(900px, 92vw);
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: wgSlideUp 0.2s ease-out;
+}
+@keyframes wgSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.wg-modal-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+}
+.wg-modal-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 900;
+  font-family: "Cascadia Mono", monospace;
+  flex-shrink: 0;
+}
+.wg-modal-avatar.atk { background: linear-gradient(135deg, var(--red), #ff8c73); color: #fff; }
+.wg-modal-avatar.def { background: linear-gradient(135deg, var(--blue), #9bd7ff); color: #0a1929; }
+.wg-modal-title {
+  flex: 1;
+  min-width: 0;
+}
+.wg-modal-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--fg);
+  margin: 0 0 2px;
+}
+.wg-modal-role {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.wg-modal-team {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.wg-modal-team.atk { background: rgba(255,92,87,0.2); color: var(--red); }
+.wg-modal-team.def { background: rgba(107,183,255,0.2); color: var(--blue); }
+.wg-modal-close {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.15s;
+}
+.wg-modal-close:hover { background: var(--bg2); color: var(--fg); }
+
+.wg-modal-body {
+  padding: 18px 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.wg-modal-section { background: var(--bg2); border-radius: 10px; padding: 14px; border: 1px solid var(--border); }
+.wg-modal-section.full { grid-column: 1 / -1; }
+.wg-modal-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Stats grid */
+.wg-modal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.wg-modal-stat {
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  padding: 8px 10px;
+  text-align: center;
+}
+.wg-modal-stat-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--fg);
+  font-family: "Cascadia Mono", monospace;
+  line-height: 1;
+}
+.wg-modal-stat-label {
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 3px;
+}
+
+/* Toolkit chips */
+.wg-modal-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.wg-modal-chip {
+  background: rgba(85,214,139,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(85,214,139,0.3);
+  border-radius: 99px;
+  padding: 3px 9px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: "Cascadia Mono", monospace;
+}
+.wg-modal-chip.mitre {
+  background: rgba(199,156,255,0.1);
+  color: var(--purple);
+  border-color: rgba(199,156,255,0.3);
+}
+
+/* Activity timeline */
+.wg-modal-timeline {
+  max-height: 320px;
+  overflow-y: auto;
+}
+.wg-modal-event {
+  padding: 8px 10px;
+  border-left: 2px solid var(--border);
+  margin-left: 6px;
+  position: relative;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+.wg-modal-event::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--card);
+}
+.wg-modal-event.atk::before { background: var(--red); }
+.wg-modal-event.def::before { background: var(--blue); }
+.wg-modal-event-time {
+  font-size: 9.5px;
+  color: var(--muted);
+  font-family: "Cascadia Mono", monospace;
+}
+.wg-modal-event-msg {
+  color: var(--fg);
+  line-height: 1.4;
+  margin-top: 2px;
   word-break: break-word;
 }
 
-.wg-event.attack .wg-event-type {
-  color: var(--red);
-}
-
-.wg-event.defense .wg-event-type {
-  color: var(--blue);
-}
-
-.wg-event.info .wg-event-type {
-  color: var(--accent);
-}
-
-.wg-error {
-  background: rgba(255, 92, 87, 0.1);
-  border: 1px solid rgba(255, 92, 87, 0.3);
-  border-radius: 6px;
+.wg-modal-no-data {
+  color: var(--muted);
+  font-size: 11px;
+  font-style: italic;
   padding: 12px;
-  color: var(--red);
-  font-size: 12px;
-  margin: 12px 0;
+  text-align: center;
 }
 
-.wg-loading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* ───── Welcome state ───── */
+.wg-welcome {
+  text-align: center;
+  padding: 40px 20px;
   color: var(--muted);
-  font-size: 12px;
 }
-
-.wg-loading::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+.wg-welcome-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+  opacity: 0.5;
 }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.wg-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  background: var(--bg2);
-  border-radius: 3px;
-  font-size: 10px;
+.wg-welcome-title {
+  color: var(--fg);
+  font-size: 13px;
   font-weight: 600;
+  margin-bottom: 6px;
 }
+.wg-welcome-hint { font-size: 11px; line-height: 1.5; }
 
-.wg-status.active {
-  background: rgba(85, 214, 139, 0.15);
-  color: var(--accent);
-}
-
-.wg-status.idle {
-  background: rgba(145, 160, 184, 0.1);
-  color: var(--muted);
-}
-
-.wg-online-indicator {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s infinite;
-}
-
-.wg-status.idle .wg-online-indicator {
-  background: var(--muted);
-  animation: none;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+/* Error */
+.wg-error {
+  background: rgba(255,92,87,0.1);
+  border: 1px solid rgba(255,92,87,0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--red);
+  font-size: 11px;
+  margin: 10px 0;
 }
 </style>
 
-<div id="wg-container" class="wg-container" style="display: none;">
-  <!-- LEFT COLUMN: Control panel -->
-  <div>
-    <!-- Scenario selector -->
-    <div class="wg-scenario-selector">
-      <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-        <span data-i18n="wg_select_scenario">Select Scenario</span>
-        <span id="wg-connection-status" class="wg-status idle">
-          <span class="wg-online-indicator"></span>
+<div id="wg-container" class="wg-pro" style="display:none">
+  <!-- LEFT: Control + Agents -->
+  <div class="wg-left">
+    <div class="wg-panel">
+      <div class="wg-panel-header">
+        <span data-i18n="wg_control">⚔️ Control</span>
+        <span id="wg-connection-status" style="display:flex;align-items:center;gap:5px;font-size:9.5px;color:var(--muted)">
+          <span class="wg-status-dot"></span>
           <span data-i18n="wg_status_offline">Offline</span>
         </span>
       </div>
-
-      <select id="wg-scenario-select">
-        <option value="purple-owasp" data-i18n="wg_scenario_owasp">Purple OWASP Siege</option>
-        <option value="apt-gauntlet" data-i18n="wg_scenario_apt">APT Gauntlet (Advanced)</option>
-      </select>
-
-      <div class="wg-button-group">
-        <button id="wg-start-btn" onclick="WG_UI.startScenario()" data-i18n="wg_btn_start">Start</button>
-        <button id="wg-reset-btn" class="danger" onclick="WG_UI.resetScenario()" data-i18n="wg_btn_reset">Reset</button>
-      </div>
-
-      <div id="wg-error-container"></div>
-
-      <!-- Stats -->
-      <div class="wg-stats">
-        <div class="wg-stat-card">
-          <div class="wg-stat-label" data-i18n="wg_attacker_score">Attacker Score</div>
-          <div id="wg-atk-score" class="wg-stat-value">0</div>
+      <div class="wg-panel-body">
+        <div class="wg-scenario">
+          <select id="wg-scenario-select">
+            <option value="purple-owasp" data-i18n="wg_scenario_owasp">Asedio Purple OWASP</option>
+            <option value="apt-gauntlet" data-i18n="wg_scenario_apt">Guantelete APT (Avanzado)</option>
+          </select>
         </div>
-        <div class="wg-stat-card">
-          <div class="wg-stat-label" data-i18n="wg_defender_score">Defender Score</div>
-          <div id="wg-def-score" class="wg-stat-value">0</div>
+
+        <div class="wg-btn-row">
+          <button id="wg-start-btn" class="wg-btn-start" onclick="WG_UI.startScenario()" data-i18n="wg_btn_start">Iniciar</button>
+          <button id="wg-reset-btn" class="wg-btn-reset" onclick="WG_UI.resetScenario()" data-i18n="wg_btn_reset">Resetear</button>
         </div>
-        <div class="wg-stat-card" style="grid-column: 1 / -1;">
-          <div class="wg-stat-label" data-i18n="wg_status">Status</div>
-          <div style="color: var(--fg); font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 6px;">
-            <span id="wg-status" style="font-size: 13px;">idle</span>
-            <span id="wg-live" style="display: none; width: 6px; height: 6px; background: #ff5c57; border-radius: 50%; animation: pulse 1s infinite;"></span>
+
+        <div id="wg-error-container"></div>
+
+        <div class="wg-status-banner">
+          <span id="wg-status-dot" class="wg-status-dot"></span>
+          <span id="wg-status-text" class="wg-status-text" data-i18n="wg_status_idle">Inactivo</span>
+          <span id="wg-status-elapsed" class="wg-status-elapsed"></span>
+        </div>
+
+        <div class="wg-scores">
+          <div class="wg-score atk">
+            <div class="wg-score-label" data-i18n="wg_attacker_score">Atacante</div>
+            <div id="wg-atk-score" class="wg-score-val">0</div>
+            <div id="wg-atk-trend" class="wg-score-trend">—</div>
+          </div>
+          <div class="wg-score def">
+            <div class="wg-score-label" data-i18n="wg_defender_score">Defensor</div>
+            <div id="wg-def-score" class="wg-score-val">0</div>
+            <div id="wg-def-trend" class="wg-score-trend">—</div>
           </div>
         </div>
+
+        <div class="wg-team-label atk">
+          <span data-i18n="wg_attackers">Atacantes</span>
+          <span id="wg-atk-count" class="count">0</span>
+        </div>
+        <div id="wg-attackers" class="wg-agents-grid"></div>
+
+        <div class="wg-team-label def">
+          <span data-i18n="wg_defenders">Defensores</span>
+          <span id="wg-def-count" class="count">0</span>
+        </div>
+        <div id="wg-defenders" class="wg-agents-grid"></div>
       </div>
-
-      <!-- Agents: Attackers -->
-      <div class="wg-agent-group-label" style="color: var(--red);" data-i18n="wg_attackers">Attackers</div>
-      <div id="wg-attackers" class="wg-agents"></div>
-
-      <!-- Agents: Defenders -->
-      <div class="wg-agent-group-label" style="color: var(--blue);" data-i18n="wg_defenders">Defenders</div>
-      <div id="wg-defenders" class="wg-agents"></div>
     </div>
   </div>
 
-  <!-- RIGHT COLUMN: Live feed -->
-  <div>
-    <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-      <span data-i18n="wg_telemetry">Real-time Telemetry</span>
-      <span style="color: var(--accent);" data-i18n="wg_live">LIVE</span>
+  <!-- CENTER: Charts + Kill Chain + MITRE -->
+  <div class="wg-center">
+    <div class="wg-panel" style="margin-bottom:12px">
+      <div class="wg-panel-header">
+        <span data-i18n="wg_score_chart">📊 Puntuación · evolución temporal</span>
+        <span id="wg-events-total" style="font-size:10px;color:var(--muted);font-family:monospace">0 eventos</span>
+      </div>
+      <div class="wg-chart-container">
+        <canvas id="wg-score-chart"></canvas>
+      </div>
     </div>
-    <div id="wg-feed" class="wg-feed">
-      <div class="wg-loading" data-i18n="wg_loading">Loading...</div>
+
+    <div class="wg-panel" style="margin-bottom:12px">
+      <div class="wg-panel-header">
+        <span data-i18n="wg_killchain">🎯 Kill chain · actividad por fase</span>
+      </div>
+      <div id="wg-killchain" class="wg-killchain">
+        <div class="wg-welcome">
+          <div class="wg-welcome-icon">🎯</div>
+          <div class="wg-welcome-hint" data-i18n="wg_no_active_game">Inicia un juego para ver kill chain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wg-panel">
+      <div class="wg-panel-header">
+        <span data-i18n="wg_mitre_coverage">🧬 MITRE ATT&CK · técnicas ejecutadas</span>
+        <span id="wg-mitre-total" style="font-size:10px;color:var(--muted);font-family:monospace">0 técnicas</span>
+      </div>
+      <div id="wg-mitre" class="wg-mitre">
+        <div class="wg-welcome">
+          <div class="wg-welcome-icon">🧬</div>
+          <div class="wg-welcome-hint">Las técnicas MITRE aparecen al ejecutar playbooks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Live Telemetry -->
+  <div class="wg-right">
+    <div class="wg-panel" style="height:100%">
+      <div class="wg-panel-header">
+        <span data-i18n="wg_telemetry">📡 Telemetría en vivo</span>
+        <span id="wg-live-indicator" style="font-size:10px;color:var(--accent);display:none;font-weight:700">
+          <span style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:5px;animation:wgPulse 1s infinite"></span>
+          <span data-i18n="wg_live">EN VIVO</span>
+        </span>
+      </div>
+      <div class="wg-feed-controls">
+        <button class="wg-filter active" data-filter="all" onclick="WG_UI.setFilter('all')">Todo</button>
+        <button class="wg-filter" data-filter="attack" onclick="WG_UI.setFilter('attack')">🔴 Ataques</button>
+        <button class="wg-filter" data-filter="defense" onclick="WG_UI.setFilter('defense')">🔵 Defensa</button>
+        <button class="wg-filter" data-filter="step" onclick="WG_UI.setFilter('step')">⚙️ Steps</button>
+      </div>
+      <div id="wg-feed" class="wg-feed"></div>
     </div>
   </div>
 </div>
 
+<!-- Agent Detail Modal -->
+<div id="wg-agent-modal" class="wg-modal-backdrop" onclick="if (event.target === this) WG_UI.closeAgentModal()">
+  <div class="wg-modal">
+    <div class="wg-modal-header">
+      <div id="wg-modal-avatar" class="wg-modal-avatar"></div>
+      <div class="wg-modal-title">
+        <h3 id="wg-modal-name" class="wg-modal-name">—</h3>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span id="wg-modal-role" class="wg-modal-role">—</span>
+          <span id="wg-modal-team" class="wg-modal-team">—</span>
+        </div>
+      </div>
+      <button class="wg-modal-close" onclick="WG_UI.closeAgentModal()" aria-label="Cerrar">×</button>
+    </div>
+    <div id="wg-modal-body" class="wg-modal-body">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</div>
