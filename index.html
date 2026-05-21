@@ -1368,6 +1368,69 @@
       <button class="ops-action" onclick="openCommandPalette()">Buscar con Command</button>
     </div>
   </div>
+  <!-- ═══════ SYSTEM HEALTH OVERVIEW (NUEVO 2026-05-21) ═══════ -->
+  <div class="dash-health-card">
+    <div class="dash-health-head">
+      <span>🩺 System Health Overview · auto-refresh 15s</span>
+      <span id="dash-health-ts" style="font-size:10px;color:var(--muted);font-family:monospace">—</span>
+    </div>
+    <div class="dash-health-grid">
+      <div class="dash-h-item">
+        <div class="dash-h-icon" id="dash-h-containers-icon">🐳</div>
+        <div class="dash-h-vals">
+          <div class="dash-h-val" id="dash-h-containers">—</div>
+          <div class="dash-h-lab">Containers</div>
+        </div>
+        <div class="dash-h-bar"><div id="dash-h-containers-bar" class="dash-h-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="dash-h-item">
+        <div class="dash-h-icon" id="dash-h-api-icon">⚡</div>
+        <div class="dash-h-vals">
+          <div class="dash-h-val" id="dash-h-api">—</div>
+          <div class="dash-h-lab">API endpoints</div>
+        </div>
+        <div class="dash-h-bar"><div id="dash-h-api-bar" class="dash-h-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="dash-h-item">
+        <div class="dash-h-icon">🎯</div>
+        <div class="dash-h-vals">
+          <div class="dash-h-val" id="dash-h-targets">—</div>
+          <div class="dash-h-lab">Targets reachable</div>
+        </div>
+        <div class="dash-h-bar"><div id="dash-h-targets-bar" class="dash-h-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="dash-h-item">
+        <div class="dash-h-icon">🛡️</div>
+        <div class="dash-h-vals">
+          <div class="dash-h-val" id="dash-h-blue">—</div>
+          <div class="dash-h-lab">Blue team tools</div>
+        </div>
+        <div class="dash-h-bar"><div id="dash-h-blue-bar" class="dash-h-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="dash-h-item dash-h-score">
+        <div class="dash-h-icon">📊</div>
+        <div class="dash-h-vals">
+          <div class="dash-h-val" id="dash-h-score">—</div>
+          <div class="dash-h-lab">Overall</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .dash-health-card { background: linear-gradient(135deg, rgba(85,214,139,0.04), rgba(107,183,255,0.04)); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; }
+    .dash-health-head { display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); margin-bottom: 10px; }
+    .dash-health-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    .dash-h-item { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; gap: 4px 10px; align-items: center; }
+    .dash-h-item.dash-h-score { background: linear-gradient(135deg, rgba(85,214,139,0.1), rgba(107,183,255,0.05)); border-color: var(--accent); }
+    .dash-h-icon { font-size: 22px; grid-row: 1 / 3; }
+    .dash-h-val { font-size: 16px; font-weight: 800; font-family: 'Cascadia Mono', monospace; color: var(--fg); line-height: 1; }
+    .dash-h-lab { font-size: 9.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 2px; font-weight: 700; }
+    .dash-h-bar { grid-column: 1 / 3; height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; margin-top: 4px; }
+    .dash-h-bar-fill { height: 100%; transition: width 0.5s ease; background: linear-gradient(90deg, var(--accent), #9ff0c0); border-radius: 2px; }
+    .dash-h-bar-fill.warn { background: linear-gradient(90deg, var(--orange), #ffd166); }
+    .dash-h-bar-fill.err { background: linear-gradient(90deg, var(--red), #ff8c73); }
+  </style>
+
   <!-- ═══════ LIVE STATS BAR ═══════ -->
   <div id="live-stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px">
     <div class="stat" style="border-left:3px solid var(--accent);text-align:left;padding:10px 14px">
@@ -1456,7 +1519,7 @@
         <div id="empty-state" style="color: var(--muted); padding: 40px 20px; text-align: center; font-family: -apple-system,sans-serif">
           <div style="font-size: 28px; margin-bottom: 10px">⚡</div>
           <div style="font-size: 14px; color: var(--fg); margin-bottom: 8px" data-i18n="empty_title">Attack Console listo</div>
-          <div style="font-size: 12px; line-height: 1.6" data-i18n="empty_desc">Click un playbook en el sidebar para ver pre-attack briefing.<br>Luego ▶ Ejecutar para lanzar el ataque con streaming en tiempo real.</div>
+          <div style="font-size: 12px; line-height: 1.6">Click un playbook en el sidebar para ver pre-attack briefing.<br>Luego ▶ Ejecutar para lanzar el ataque con streaming en tiempo real.</div>
           <div style="margin-top: 16px; font-size: 11px; color: var(--muted)">
             <div>📚 <b data-i18n="feat_pedagogy">Pedagogía:</b> <span data-i18n="feat_pedagogy_desc">cada paso muestra what · how · why · learning</span></div>
             <div>🎥 <b data-i18n="feat_recording">Grabación:</b> <span data-i18n="feat_recording_desc">stdout/stderr + timing + exit codes</span></div>
@@ -3976,7 +4039,94 @@ async function refresh() {
   refreshLiveStats();
 }
 
+// Dashboard System Health (AUDIT 2026-05-21)
+async function refreshDashHealth() {
+  if (location.hash !== '#dashboard' && location.hash !== '') return;
+  const setBar = (id, pct) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.width = pct + '%';
+    el.className = 'dash-h-bar-fill' + (pct >= 80 ? '' : pct >= 50 ? ' warn' : ' err');
+  };
+  const setVal = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
+  let scores = []; // collect % for overall
+
+  // Containers
+  try {
+    const r = await fetch(`${RUNNER_BASE}/api/containers`, { signal: AbortSignal.timeout(20000) });
+    if (r.ok) {
+      const containers = await r.json();
+      const total = containers.length;
+      const up = containers.filter(c => c.running).length;
+      setVal('dash-h-containers', `${up}/${total}`);
+      const pct = total > 0 ? Math.round((up / total) * 100) : 0;
+      setBar('dash-h-containers-bar', pct);
+      scores.push(pct);
+    }
+  } catch {}
+
+  // API endpoints
+  const apis = ['playbooks', 'wargames/state', 'history', 'validation/capabilities', 'evidence/index', 'honeypots/stats', 'containers'];
+  const apiResults = await Promise.all(apis.map(async ep => {
+    try {
+      const r = await fetch(`${RUNNER_BASE}/api/${ep}`, { signal: AbortSignal.timeout(5000) });
+      return r.ok;
+    } catch { return false; }
+  }));
+  const apiOk = apiResults.filter(Boolean).length;
+  setVal('dash-h-api', `${apiOk}/${apis.length}`);
+  const apiPct = Math.round((apiOk / apis.length) * 100);
+  setBar('dash-h-api-bar', apiPct);
+  scores.push(apiPct);
+
+  // Targets reachability (juiceshop, dvwa, webgoat, mutillidae, metasploitable, localstack)
+  const targets = ['cr-target-juice-shop', 'cr-target-dvwa', 'cr-target-webgoat', 'cr-target-mutillidae', 'cr-target-metasploitable2', 'cr-target-localstack'];
+  const targetResults = await Promise.all(targets.map(async t => {
+    try {
+      const r = await fetch(`${RUNNER_BASE}/api/container/${t}/stats`, { signal: AbortSignal.timeout(4000) });
+      if (!r.ok) return false;
+      const j = await r.json();
+      return j.running === true;
+    } catch { return false; }
+  }));
+  const targetsOk = targetResults.filter(Boolean).length;
+  setVal('dash-h-targets', `${targetsOk}/${targets.length}`);
+  const tgtPct = Math.round((targetsOk / targets.length) * 100);
+  setBar('dash-h-targets-bar', tgtPct);
+  scores.push(tgtPct);
+
+  // Blue team tools (MISP, TheHive, Cortex, Wazuh)
+  const blue = ['cr-blue-misp', 'cr-blue-thehive', 'cr-blue-cortex', 'cr-blue-wazuh-manager'];
+  const blueResults = await Promise.all(blue.map(async t => {
+    try {
+      const r = await fetch(`${RUNNER_BASE}/api/container/${t}/stats`, { signal: AbortSignal.timeout(4000) });
+      if (!r.ok) return false;
+      const j = await r.json();
+      return j.running === true;
+    } catch { return false; }
+  }));
+  const blueOk = blueResults.filter(Boolean).length;
+  setVal('dash-h-blue', `${blueOk}/${blue.length}`);
+  const bluePct = Math.round((blueOk / blue.length) * 100);
+  setBar('dash-h-blue-bar', bluePct);
+  scores.push(bluePct);
+
+  // Overall score
+  const overall = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0;
+  setVal('dash-h-score', overall + '%');
+  const scoreEl = document.getElementById('dash-h-score');
+  if (scoreEl) scoreEl.style.color = overall >= 80 ? 'var(--accent)' : overall >= 50 ? 'var(--orange)' : 'var(--red)';
+
+  setVal('dash-health-ts', new Date().toLocaleTimeString());
+}
+// auto-refresh cada 15s
+setInterval(refreshDashHealth, 15000);
+setTimeout(refreshDashHealth, 1500);
+
 async function refreshLiveStats() {
+  // Dashboard Health (NUEVO 2026-05-21)
+  refreshDashHealth();
   // Honeypots
   fetch(`${RUNNER_BASE}/api/honeypots/stats`).then(r=>r.json()).then(d => {
     document.getElementById('hp-cowrie-val').textContent = d.cowrie?.sessions_24h ?? '—';
@@ -6240,6 +6390,73 @@ function selectPlaybook(id, el) {
   el.classList.add('selected');
   document.getElementById('current-pb-name').textContent = el.querySelector('.pb-name').textContent;
   document.getElementById('btn-run').disabled = false;
+  // Pre-attack briefing: muestra info antes de ejecutar
+  showPreAttackBriefing(id);
+}
+
+async function showPreAttackBriefing(id) {
+  const out = document.getElementById('console-output');
+  const empty = document.getElementById('empty-state');
+  if (empty) empty.style.display = 'none';
+  if (!out) return;
+  // Busca playbook completo en cache
+  const pb = (ALL_PLAYBOOKS || []).find(p => p.id === id);
+  if (!pb) return;
+  const isAdv = pb.category === 'adversary-emulation';
+  const techs = pb.mitre || [];
+  // Targets, tools - infer from steps si están
+  const target = pb.target || 'cr-target-*';
+  const tools = pb.tools || pb.toolkit || (pb.steps || []).map(s => s.tool).filter(Boolean).filter((t, i, a) => a.indexOf(t) === i).slice(0, 6);
+  const steps = pb.steps || [];
+
+  out.innerHTML = `
+    <div class="pb-briefing">
+      <h3>${escapeHtml(pb.name)}</h3>
+      ${isAdv && pb.threat_actor ? `<div class="pb-brief-actor">🎯 Threat Actor: ${escapeHtml(pb.threat_actor)}</div>` : ''}
+      <div class="pb-brief-desc">${escapeHtml(pb.description || pb.objective || 'Playbook listo para ejecución. Click ▶ Ejecutar arriba para lanzar.')}</div>
+      <div class="pb-brief-grid">
+        <div class="pb-brief-stat ${isAdv?'red':''}">
+          <div class="pb-brief-stat-label">Difficulty</div>
+          <div class="pb-brief-stat-val">${escapeHtml(pb.difficulty || '—')}</div>
+        </div>
+        <div class="pb-brief-stat orange">
+          <div class="pb-brief-stat-label">Duration</div>
+          <div class="pb-brief-stat-val">${escapeHtml(pb.duration || '—')}</div>
+        </div>
+        <div class="pb-brief-stat purple">
+          <div class="pb-brief-stat-label">Steps</div>
+          <div class="pb-brief-stat-val">${steps.length || pb.stepCount || 0}</div>
+        </div>
+        <div class="pb-brief-stat">
+          <div class="pb-brief-stat-label">Target</div>
+          <div class="pb-brief-stat-val" style="font-family:'Cascadia Mono',monospace;font-size:11px">${escapeHtml(target)}</div>
+        </div>
+      </div>
+      ${techs.length > 0 ? `<div style="margin-top:14px">
+        <div class="pb-brief-steps-title">🧬 MITRE Techniques (${techs.length})</div>
+        <div class="pb-brief-mitre">${techs.map(t => `<span class="chip" onclick="activateTab('mitre');setTimeout(()=>mxOpenDrawer('${escapeHtml(t)}'),300);location.hash='mitre'" style="cursor:pointer" title="Ver detalle MITRE">${escapeHtml(t)}</span>`).join('')}</div>
+      </div>` : ''}
+      ${tools && tools.length > 0 ? `<div style="margin-top:14px">
+        <div class="pb-brief-steps-title">🛠️ Tools usadas</div>
+        <div class="pb-brief-mitre">${tools.map(t => `<span class="chip" style="background:rgba(85,214,139,0.12);color:var(--accent);border-color:rgba(85,214,139,0.3)">${escapeHtml(t)}</span>`).join('')}</div>
+      </div>` : ''}
+      ${steps.length > 0 ? `<div class="pb-brief-steps">
+        <div class="pb-brief-steps-title">📋 Steps preview (${steps.length})</div>
+        ${steps.slice(0, 6).map((s, i) => `<div class="pb-brief-step">
+          <div class="pb-brief-step-num">${i+1}</div>
+          <div class="pb-brief-step-body">
+            <div class="pb-brief-step-name">${escapeHtml(s.name || s.title || s.tool || 'Step ' + (i+1))}</div>
+            ${s.cmd || s.command ? `<div class="pb-brief-step-cmd">$ ${escapeHtml(s.cmd || s.command)}</div>` : ''}
+          </div>
+        </div>`).join('')}
+        ${steps.length > 6 ? `<div style="font-size:10.5px;color:var(--muted);text-align:center;padding:6px">+${steps.length - 6} steps más...</div>` : ''}
+      </div>` : ''}
+      <div style="margin-top:14px;padding:10px 12px;background:rgba(255,174,87,0.08);border-left:3px solid var(--orange);border-radius:4px;font-size:11.5px;color:var(--muted);line-height:1.5">
+        💡 <b style="color:var(--orange)">Pre-attack checklist:</b> verifica que el target está UP (#dashboard) · que tienes blue-team escuchando (#defense) ·
+        marca este run en #purple como detected/missed después de ejecutar para alimentar el coverage matrix.
+      </div>
+    </div>
+  `;
 }
 
 document.getElementById('btn-run').onclick = async () => {
