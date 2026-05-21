@@ -350,6 +350,59 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     CONSOLE TAB - Pro UX search/filter toolbar
+     ═══════════════════════════════════════════════════════════ */
+  .pb-toolbar { padding: 8px 4px 4px; display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+  .pb-toolbar input {
+    width: 100%; padding: 7px 10px; background: var(--bg2); color: var(--fg);
+    border: 1px solid var(--border); border-radius: 6px; font-size: 11px;
+  }
+  .pb-toolbar input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .pb-chip-row { display: flex; gap: 3px; flex-wrap: wrap; }
+  .pb-chip {
+    padding: 4px 9px; background: var(--bg2); color: var(--muted); border: 1px solid var(--border);
+    border-radius: 99px; font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.15s;
+  }
+  .pb-chip:hover { color: var(--fg); border-color: var(--accent); }
+  .pb-chip.active { background: var(--accent); color: #04110b; border-color: var(--accent); }
+
+  /* Pre-attack briefing card (visible cuando seleccionas playbook antes de ejecutar) */
+  .pb-briefing {
+    background: linear-gradient(135deg, rgba(255,92,87,0.06), rgba(199,156,255,0.04));
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .pb-briefing h3 { font-size: 16px; font-weight: 800; margin: 0 0 4px; color: var(--fg); }
+  .pb-briefing .pb-brief-actor { font-size: 11px; color: var(--red); font-weight: 700; margin-bottom: 8px; }
+  .pb-briefing .pb-brief-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .pb-briefing .pb-brief-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px;
+  }
+  .pb-brief-stat {
+    background: var(--bg2); border-radius: 6px; padding: 8px 12px;
+    border-left: 3px solid var(--accent);
+  }
+  .pb-brief-stat.red { border-left-color: var(--red); }
+  .pb-brief-stat.purple { border-left-color: var(--purple); }
+  .pb-brief-stat.orange { border-left-color: var(--orange); }
+  .pb-brief-stat-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; font-weight: 700; }
+  .pb-brief-stat-val { font-size: 13px; color: var(--fg); font-weight: 700; margin-top: 3px; }
+  .pb-brief-mitre { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 10px; }
+  .pb-brief-mitre .chip { background: rgba(199,156,255,0.12); color: var(--purple); border: 1px solid rgba(199,156,255,0.3); padding: 2px 8px; border-radius: 4px; font-size: 10px; font-family: 'Cascadia Mono', monospace; font-weight: 700; }
+  .pb-brief-steps { margin-top: 12px; }
+  .pb-brief-steps-title { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 0.5px; margin-bottom: 6px; }
+  .pb-brief-step {
+    display: flex; gap: 10px; padding: 7px 10px; background: var(--bg2); border-radius: 5px;
+    margin-bottom: 4px; font-size: 11px;
+  }
+  .pb-brief-step-num { background: var(--accent); color: #04110b; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10px; flex-shrink: 0; }
+  .pb-brief-step-body { flex: 1; min-width: 0; }
+  .pb-brief-step-name { color: var(--fg); font-weight: 600; }
+  .pb-brief-step-cmd { color: var(--muted); font-family: 'Cascadia Mono', monospace; font-size: 10px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* ═══════════════════════════════════════════════════════════
      EVIDENCE TAB - Pro UX (inspired by Playwright Trace Viewer,
      Sentry Replay, GitHub Actions UI, Loom)
      ═══════════════════════════════════════════════════════════ */
@@ -1086,14 +1139,30 @@
       <button class="btn-attack" id="btn-run" disabled>▶ <span data-i18n="btn_execute">Ejecutar</span></button>
     </div>
 
-    <!-- Sidebar: playbooks + history -->
+    <!-- Sidebar: playbooks + history (Pro UX: search, filter, group) -->
     <div class="console-sidebar">
       <div class="sidebar-section">
-        <h3 data-i18n="sidebar_playbooks">Playbooks</h3>
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+          <span data-i18n="sidebar_playbooks">Playbooks</span>
+          <span id="pb-total-count" style="background:var(--bg2);padding:1px 8px;border-radius:99px;font-size:9.5px;color:var(--muted);font-family:'Cascadia Mono',monospace">0</span>
+        </h3>
+        <div class="pb-toolbar">
+          <input type="text" id="pb-search" placeholder="🔍 Buscar nombre / T-ID / actor..." oninput="pbApplyFilters()" autocomplete="off">
+          <div class="pb-chip-row">
+            <button class="pb-chip active" data-diff="all" onclick="pbToggleDiff(this,'all')">Todas</button>
+            <button class="pb-chip" data-diff="beginner" onclick="pbToggleDiff(this,'beginner')" title="Solo beginner">🟢</button>
+            <button class="pb-chip" data-diff="intermediate" onclick="pbToggleDiff(this,'intermediate')" title="Solo intermediate">🟡</button>
+            <button class="pb-chip" data-diff="advanced" onclick="pbToggleDiff(this,'advanced')" title="Solo advanced">🔴</button>
+            <button class="pb-chip" data-diff="apt" onclick="pbToggleDiff(this,'apt')" title="Solo APT groups">🎯 APT</button>
+          </div>
+        </div>
         <div id="playbook-list" style="font-size: 11px; color: var(--muted)" data-i18n="loading">Cargando…</div>
       </div>
       <div class="sidebar-section" style="margin-top: 8px">
-        <h3 data-i18n="sidebar_history">Historial</h3>
+        <h3 style="display:flex;justify-content:space-between;align-items:center">
+          <span data-i18n="sidebar_history">Historial</span>
+          <button class="btn-ghost" style="font-size:9.5px;padding:2px 7px;min-height:0" onclick="loadHistory()" title="Refrescar (Ctrl+H)">↻</button>
+        </h3>
         <div id="history-list" style="font-size: 11px; color: var(--muted)" data-i18n="no_runs">Sin ejecuciones aún</div>
       </div>
     </div>
@@ -4361,7 +4430,103 @@ const CATEGORY_LABEL = {
   'phishing':              '🎣 Phishing'
 };
 
+let ALL_PLAYBOOKS = [];
+let PB_FILTER_QUERY = '';
+let PB_FILTER_DIFF = 'all';
+
+function pbToggleDiff(btn, diff) {
+  PB_FILTER_DIFF = diff;
+  document.querySelectorAll('.pb-chip').forEach(c => c.classList.toggle('active', c.getAttribute('data-diff') === diff));
+  pbApplyFilters();
+}
+function pbApplyFilters() {
+  const inp = document.getElementById('pb-search');
+  PB_FILTER_QUERY = (inp?.value || '').toLowerCase().trim();
+  pbRenderList();
+}
+
+function pbRenderList() {
+  const list = document.getElementById('playbook-list');
+  if (!list) return;
+  const q = PB_FILTER_QUERY;
+  // Filter
+  let pbs = ALL_PLAYBOOKS.filter(p => {
+    if (q) {
+      const hay = [p.name, p.id, (p.mitre||[]).join(' '), p.threat_actor||'', p.description||''].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    if (PB_FILTER_DIFF === 'apt') return p.category === 'adversary-emulation';
+    if (PB_FILTER_DIFF !== 'all' && p.difficulty !== PB_FILTER_DIFF) return false;
+    return true;
+  });
+
+  // Group by category
+  const byCat = {};
+  pbs.forEach(p => {
+    const c = p.category || 'other';
+    (byCat[c] = byCat[c] || []).push(p);
+  });
+  const cats = Object.keys(byCat).sort((a, b) => {
+    const ai = CATEGORY_ORDER.indexOf(a); const bi = CATEGORY_ORDER.indexOf(b);
+    return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
+  });
+
+  list.innerHTML = '';
+  if (pbs.length === 0) {
+    list.innerHTML = `<div style="padding:18px;text-align:center;color:var(--muted);font-size:11px">
+      Sin resultados para <b style="color:var(--fg)">"${escapeHtml(q || PB_FILTER_DIFF)}"</b><br>
+      <button class="btn-ghost" style="margin-top:8px;font-size:10.5px" onclick="document.getElementById('pb-search').value='';pbToggleDiff(document.querySelector('.pb-chip[data-diff=all]'),'all')">Limpiar filtros</button>
+    </div>`;
+    const totalEl = document.getElementById('pb-total-count');
+    if (totalEl) totalEl.textContent = '0/' + ALL_PLAYBOOKS.length;
+    return;
+  }
+
+  cats.forEach(cat => {
+    const header = document.createElement('div');
+    header.style.cssText = 'font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--purple);margin:14px 0 6px 4px;padding-bottom:4px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center';
+    header.innerHTML = `<span>${escapeHtml(CATEGORY_LABEL[cat] || cat)}</span><span style="color:var(--muted);font-weight:600">${byCat[cat].length}</span>`;
+    list.appendChild(header);
+    byCat[cat].forEach(p => {
+      const isAdv = p.category === 'adversary-emulation';
+      const item = document.createElement('div');
+      item.className = 'playbook-item';
+      item.setAttribute('data-pb-id', p.id);
+      if (isAdv) item.style.borderLeft = '3px solid var(--red)';
+      item.innerHTML = `
+        <div class="pb-name">${escapeHtml(p.name)}</div>
+        ${isAdv && p.threat_actor ? `<div style="font-size:9.5px;color:var(--red);margin-top:2px;font-weight:700">🎯 ${escapeHtml(p.threat_actor.split('(')[0].trim())}</div>` : ''}
+        <div class="pb-mitre">${(p.mitre || []).slice(0, 4).join(' · ')}${(p.mitre || []).length > 4 ? ' +' + (p.mitre.length - 4) : ''}</div>
+        <div class="pb-meta">
+          <span class="chip diff-${p.difficulty}">${p.difficulty || '—'}</span>
+          <span class="chip">⏱ ${p.duration || '—'}</span>
+          <span class="chip">${p.stepCount || 0} step${(p.stepCount || 0) > 1 ? 's' : ''}</span>
+        </div>`;
+      item.onclick = () => selectPlaybook(p.id, item);
+      list.appendChild(item);
+    });
+  });
+
+  const totalEl = document.getElementById('pb-total-count');
+  if (totalEl) totalEl.textContent = `${pbs.length}/${ALL_PLAYBOOKS.length}`;
+}
+
 async function loadConsoleData() {
+  const list = document.getElementById('playbook-list');
+  try {
+    const resp = await fetch(`${RUNNER_BASE}/api/playbooks`, {cache:'no-cache'});
+    if (!resp.ok) throw new Error(`runner_http_${resp.status}`);
+    const pbs = await resp.json();
+    ALL_PLAYBOOKS = pbs;
+    pbRenderList();
+    loadHistory();
+    return;
+  } catch (e) {
+    list.innerHTML = `<div style="color:var(--red);font-size:11px;padding:10px">⚠️ attack-runner no disponible (${RUNNER_BASE}/api/playbooks)<br><span style="color:var(--muted);font-size:10px">${escapeHtml(e.message)}</span></div>`;
+  }
+}
+
+async function _legacyLoadConsoleData() {
   const list = document.getElementById('playbook-list');
   try {
     const resp = await fetch(`${RUNNER_BASE}/api/playbooks`, {cache:'no-cache'});
